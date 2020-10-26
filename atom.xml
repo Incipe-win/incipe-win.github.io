@@ -6,7 +6,7 @@
   <link href="https://incipe-win.github.io/atom.xml" rel="self"/>
   
   <link href="https://incipe-win.github.io/"/>
-  <updated>2020-09-28T15:18:09.678Z</updated>
+  <updated>2020-10-26T02:03:35.254Z</updated>
   <id>https://incipe-win.github.io/</id>
   
   <author>
@@ -15,58 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="https://incipe-win.github.io/2020/10/26/qt/2020/qt-zhi-zuo-yi-ge-jian-yi-yin-le-bo-fang-qi/"/>
-    <id>https://incipe-win.github.io/2020/10/26/qt/2020/qt-zhi-zuo-yi-ge-jian-yi-yin-le-bo-fang-qi/</id>
-    <published>2020-10-26T02:50:28.396Z</published>
-    <updated>2020-09-28T15:18:09.678Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://incipe-win.github.io/2020/10/26/linux/2020/linux-shell-jiao-ben-bian-cheng/"/>
-    <id>https://incipe-win.github.io/2020/10/26/linux/2020/linux-shell-jiao-ben-bian-cheng/</id>
-    <published>2020-10-26T02:50:28.268Z</published>
-    <updated>2020-07-07T07:36:42.323Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://incipe-win.github.io/2020/10/26/linux/2020/lcd-yu-hong-mo-ping-zuo-biao-zhuan-huan/"/>
-    <id>https://incipe-win.github.io/2020/10/26/linux/2020/lcd-yu-hong-mo-ping-zuo-biao-zhuan-huan/</id>
-    <published>2020-10-26T02:50:28.267Z</published>
-    <updated>2020-09-23T14:51:16.839Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://incipe-win.github.io/2020/10/26/c/2020/nei-cun-fen-qu-mo-xing/"/>
-    <id>https://incipe-win.github.io/2020/10/26/c/2020/nei-cun-fen-qu-mo-xing/</id>
-    <published>2020-10-26T02:50:28.120Z</published>
-    <updated>2020-10-04T15:56:15.442Z</updated>
-    
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>978. 最长湍流子数组</title>
@@ -483,6 +431,110 @@
     
     
     <category term="数据分析" scheme="https://incipe-win.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>科学计算Numpy</title>
+    <link href="https://incipe-win.github.io/2020/08/16/python/2020/ke-xue-ji-suan-numpy/"/>
+    <id>https://incipe-win.github.io/2020/08/16/python/2020/ke-xue-ji-suan-numpy/</id>
+    <published>2020-08-15T16:00:00.000Z</published>
+    <updated>2020-08-19T13:38:51.592Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;什么是Numpy&quot;&gt;&lt;a href=&quot;#什么是Numpy&quot; class=&quot;headerlink&quot; title=&quot;什么是Numpy&quot;&gt;&lt;/a&gt;什么是Numpy&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;NumPy</summary>
+        
+      
+    
+    
+    
+    <category term="博客" scheme="https://incipe-win.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="数据分析" scheme="https://incipe-win.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网络模型</title>
+    <link href="https://incipe-win.github.io/2020/08/13/linux/2020/wang-luo-mo-xing/"/>
+    <id>https://incipe-win.github.io/2020/08/13/linux/2020/wang-luo-mo-xing/</id>
+    <published>2020-08-12T16:00:00.000Z</published>
+    <updated>2020-08-17T06:08:31.349Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;IP地址&quot;&gt;&lt;a href=&quot;#IP地址&quot; class=&quot;headerlink&quot; title=&quot;IP地址&quot;&gt;&lt;/a&gt;IP地址&lt;/h2&gt;&lt;p&gt;简单来讲，IP地址就是用来在网络中标记一台电脑的。在本地局域网是唯一的。&lt;/p&gt;
+&lt;h3 id=&quot;IP地址分类&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://incipe-win.github.io/categories/Linux/"/>
+    
+    
+    <category term="web" scheme="https://incipe-win.github.io/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PAT1009</title>
+    <link href="https://incipe-win.github.io/2020/08/12/pat-jia-zu/2020/pat1009/"/>
+    <id>https://incipe-win.github.io/2020/08/12/pat-jia-zu/2020/pat1009/</id>
+    <published>2020-08-11T16:00:00.000Z</published>
+    <updated>2020-08-12T14:24:46.958Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;This time, you are supposed to find</summary>
+        
+      
+    
+    
+    
+    <category term="博客" scheme="https://incipe-win.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="PAT" scheme="https://incipe-win.github.io/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PAT1006</title>
+    <link href="https://incipe-win.github.io/2020/08/10/pat-jia-zu/2020/pat1006/"/>
+    <id>https://incipe-win.github.io/2020/08/10/pat-jia-zu/2020/pat1006/</id>
+    <published>2020-08-09T16:00:00.000Z</published>
+    <updated>2020-08-10T03:17:56.160Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;At the beginning of every day, the first person who</summary>
+        
+      
+    
+    
+    
+    <category term="博客" scheme="https://incipe-win.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="PAT" scheme="https://incipe-win.github.io/tags/PAT/"/>
     
   </entry>
   
