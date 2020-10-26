@@ -1014,26 +1014,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-li-ji-shu-pan-ding/">
+                <a href="/2020/05/13/linux/2020/linux-jin-cheng-zhong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="嵌入式Arm立即数判定">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Linux进程中">
                         
-                        <span class="card-title">嵌入式Arm立即数判定</span>
+                        <span class="card-title">Linux进程中</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            基础知识在ARM中，机器指令的格式大致有以下几种：
+                            一. Linux进程间通信Ⅰ. 管道函数管道是有大小的，通过ulimit -a查看管道大小
 
-立即寻址的方式
+man 2 pipe
+#include &lt;unistd.h>
+int pipe(int pipefd[2]);
 
-立即寻址
-在立即寻址，操作数本身直接在指令中给出，取出指令也就获得了操作数，这个操作数也称为立即数。例子如下
+参数
 
-ADD R0, R1, #0xF      ;R0=R1
+文件描述符。
+
+
+
                         
                     </div>
                     <div class="publish-info">
@@ -1044,8 +1048,8 @@ ADD R0, R1, #0xF      ;R0=R1
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/IOT/" class="post-category">
-                                    IOT
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
@@ -1055,8 +1059,8 @@ ADD R0, R1, #0xF      ;R0=R1
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ARM/">
-                        <span class="chip bg-color">ARM</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -1262,6 +1266,60 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
     <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="2468394136"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
     
     <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
