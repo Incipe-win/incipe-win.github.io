@@ -33,8 +33,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -1024,25 +1024,22 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/13/linux/2020/jie-jue-ubuntu-navicat-de-yi-xie-wen-ti-xu-ni-ji/">
+                <a href="/2020/05/13/linux/2020/jie-jue-wsl-xiu-gai-bu-liao-zi-ti-de-fang-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="解决Ubuntu Navicat的一些问题(虚拟机)">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="解决WSL修改不了字体的方法">
                         
-                        <span class="card-title">解决Ubuntu Navicat的一些问题(虚拟机)</span>
+                        <span class="card-title">解决WSL修改不了字体的方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            先安装好MySQL
-sudo apt-get install mysql-server
-
-sudo apt-get install mysql-client
-
-sudo apt-get install libmysqlclient-dev
-
+                            win+r
+输入regedit
+找到：
+计算机\HKEY_CURRENT_USER\Console\C:_Program Files_WindowsApps_CanonicalGroupLimited.UbuntuonWindows_180
                         
                     </div>
                     <div class="publish-info">
@@ -1064,8 +1061,8 @@ sudo apt-get install libmysqlclient-dev
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                        <span class="chip bg-color">虚拟机</span>
+                    <a href="/tags/WSL/">
+                        <span class="chip bg-color">WSL</span>
                     </a>
                     
                 </div>
@@ -1079,22 +1076,22 @@ sudo apt-get install libmysqlclient-dev
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/13/linux/2020/jie-jue-wsl-xiu-gai-bu-liao-zi-ti-de-fang-fa/">
+                <a href="/2020/05/13/linux/2020/linux-xi-tong-api/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="解决WSL修改不了字体的方法">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Linux系统API">
                         
-                        <span class="card-title">解决WSL修改不了字体的方法</span>
+                        <span class="card-title">Linux系统API</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            win+r
-输入regedit
-找到：
-计算机\HKEY_CURRENT_USER\Console\C:_Program Files_WindowsApps_CanonicalGroupLimited.UbuntuonWindows_180
+                            讲在前面的话本文主要介绍几个主要的 linux 系统 API。
+注：本文讲的简单，每个 API 举了一个例子，不适合深入学习，只适合忘记了某个函数来回顾下用法。
+系统API 和 C语言库函数 区别：
+简单的讲： C库函数 是由 API 封装
                         
                     </div>
                     <div class="publish-info">
@@ -1116,8 +1113,8 @@ sudo apt-get install libmysqlclient-dev
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/WSL/">
-                        <span class="chip bg-color">WSL</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
