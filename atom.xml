@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Incipe&#39;s blog</title>
+  
+  <subtitle>incipe-win</subtitle>
+  <link href="https://incipe-win.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://incipe-win.github.io/"/>
+  <updated>2020-10-04T15:56:15.442Z</updated>
+  <id>https://incipe-win.github.io/</id>
+  
+  <author>
+    <name>incipe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://incipe-win.github.io/2020/10/26/nei-cun-fen-qu-mo-xing/"/>
+    <id>https://incipe-win.github.io/2020/10/26/nei-cun-fen-qu-mo-xing/</id>
+    <published>2020-10-26T02:38:41.084Z</published>
+    <updated>2020-10-04T15:56:15.442Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+</feed>
