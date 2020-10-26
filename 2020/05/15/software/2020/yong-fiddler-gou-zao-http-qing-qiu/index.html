@@ -237,7 +237,7 @@
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+            <a href="https://github.com/Incipe-win" class="waves-effect waves-light" target="_blank">
                 <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
@@ -294,7 +294,7 @@
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/Incipe-win" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -1011,24 +1011,19 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/15/software/2020/an-zhuang-burpsuite-pro/">
+                <a href="/2020/05/15/software/2020/wan-mei-jie-jue-wamp-de-mysql-he-mysql-chong-tu-wen-ti-ji-wamp-wu-fa-da-kai-localhost-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="安装BurpSuite_Pro">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="完美解决wamp的MySQL和MySQL冲突问题及wamp无法打开localhost问题">
                         
-                        <span class="card-title">安装BurpSuite_Pro</span>
+                        <span class="card-title">完美解决wamp的MySQL和MySQL冲突问题及wamp无法打开localhost问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            如果是jdk最新版的环境，建议用用BurpSuiteV1.6破解版，授权日期到2099-12-3。
-下载地址
-提取码：q6yd 
-否则，请参考以下步骤安装最新版burp！
-首先安装java环境，还要有jre（ 很重要 ）
-下载burp-lo
+                            当我们使用wamp时，如果系统之前已经安装了MySQL，会发现wamp的MySQL和原来的MySQL只有一个可以使用，原因就是因为端口冲突。可能还会经常遇到的一个问题，就是安装了wamp后无法打开localhost，原因也是因为端口冲突。下
                         
                     </div>
                     <div class="publish-info">
@@ -1065,19 +1060,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/15/software/2020/wan-mei-jie-jue-wamp-de-mysql-he-mysql-chong-tu-wen-ti-ji-wamp-wu-fa-da-kai-localhost-wen-ti/">
+                <a href="/2020/05/15/software/2020/dian-nao-wang-qia-shi-fou-zhi-chi-5ghz-pin-duan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="完美解决wamp的MySQL和MySQL冲突问题及wamp无法打开localhost问题">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="电脑网卡是否支持5Ghz频段">
                         
-                        <span class="card-title">完美解决wamp的MySQL和MySQL冲突问题及wamp无法打开localhost问题</span>
+                        <span class="card-title">电脑网卡是否支持5Ghz频段</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            当我们使用wamp时，如果系统之前已经安装了MySQL，会发现wamp的MySQL和原来的MySQL只有一个可以使用，原因就是因为端口冲突。可能还会经常遇到的一个问题，就是安装了wamp后无法打开localhost，原因也是因为端口冲突。下
+                            win + r 键入
+netsh wlan show drivers
+
+可查看网卡支持的无线电类型
+
+1）802.11b、802.11g只支持2.4GHz2）802.11a、802.11ac支持5GHz3）802.11n 采用了多重输入/输
                         
                     </div>
                     <div class="publish-info">
@@ -1250,10 +1250,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
     <footer class="page-footer bg-color">
     
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">2019</span>
+            <span id="year">2020</span>
             <a href="/about" target="_blank">incipe</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
@@ -1279,6 +1279,50 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </span>
             
             <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "10";
+                    var startDate = "26";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
             
             <br>
             
