@@ -357,32 +357,6 @@
   </entry>
   
   <entry>
-    <title>Ubuntu20.04安装Anaconda</title>
-    <link href="https://incipe-win.github.io/2020/08/16/linux/2020/ubuntu20.04-an-zhuang-anaconda/"/>
-    <id>https://incipe-win.github.io/2020/08/16/linux/2020/ubuntu20.04-an-zhuang-anaconda/</id>
-    <published>2020-08-15T16:00:00.000Z</published>
-    <updated>2020-10-26T04:00:39.654Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://repo.anaconda.com/archive/index.html&quot;&gt;官网&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://incipe-win.github.io/categories/Linux/"/>
-    
-    
-    <category term="虚拟环境" scheme="https://incipe-win.github.io/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"/>
-    
-  </entry>
-  
-  <entry>
     <title>PAT1009</title>
     <link href="https://incipe-win.github.io/2020/08/16/pat-jia-zu/2020/pat1011/"/>
     <id>https://incipe-win.github.io/2020/08/16/pat-jia-zu/2020/pat1011/</id>
@@ -405,6 +379,32 @@
     
     
     <category term="PAT" scheme="https://incipe-win.github.io/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu20.04安装Anaconda</title>
+    <link href="https://incipe-win.github.io/2020/08/16/linux/2020/ubuntu20.04-an-zhuang-anaconda/"/>
+    <id>https://incipe-win.github.io/2020/08/16/linux/2020/ubuntu20.04-an-zhuang-anaconda/</id>
+    <published>2020-08-15T16:00:00.000Z</published>
+    <updated>2020-10-26T04:00:39.654Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://repo.anaconda.com/archive/index.html&quot;&gt;官网&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://incipe-win.github.io/categories/Linux/"/>
+    
+    
+    <category term="虚拟环境" scheme="https://incipe-win.github.io/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"/>
     
   </entry>
   

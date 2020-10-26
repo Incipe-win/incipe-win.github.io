@@ -1021,26 +1021,25 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/12/hdu/2020/zhan-zhuan-xiang-chu-fa-he-geng-xiang-jian-sun-zhu/">
+                <a href="/2020/05/12/hdu/2020/su-shu-shai-xuan-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="辗转相除法和更相减损术">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="素数筛选法">
                         
-                        <span class="card-title">辗转相除法和更相减损术</span>
+                        <span class="card-title">素数筛选法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            高中学过的求大公约数的方法就是辗转相除法和更相减损术了。
-辗转相除法递归版
+                            朴素检测一般我们判断某个区间中的的素数，都是直接循环遍历，进行判断。
+这样的话，时间复杂度就是 $O(n \sqrt{n})$ 
+代码如下:
+#include &lt;cmath>
 #include &lt;iostream>
-using std::cin;
-using std::cout;
-using std::endl;
 
-int gcd(
+bool 
                         
                     </div>
                     <div class="publish-info">
@@ -1051,8 +1050,8 @@ int gcd(
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2/" class="post-category">
-                                    博客
+                            <a href="/categories/Leetcode/" class="post-category">
+                                    Leetcode
                                 </a>
                             
                             
@@ -1077,23 +1076,24 @@ int gcd(
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/11/c/2020/wan-neng-tou-bao-han-de-tou-wen-jian/">
+                <a href="/2020/05/11/c/2020/const-int-p-he-int-const-p/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="万能头包含的头文件">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="const int p 和 int const p">
                         
-                        <span class="card-title">万能头包含的头文件</span>
+                        <span class="card-title">const int p 和 int const p</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            // C++ includes used for precompiling -*- C++ -*-
+                            主要讲下这两者的区别及用法！高能区
 
-// Copyright (C) 2003-2018 Free Software Foundation, Inc.
-//
-// This 
+const int* p 和 int const* p是完全等价的！const int* const p 和 int const const* p 是完全等价的！
+
+下面举几个例子来分析：
+int x 
                         
                     </div>
                     <div class="publish-info">

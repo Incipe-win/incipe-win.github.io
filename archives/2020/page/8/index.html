@@ -468,24 +468,20 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2020/05/15/software/2020/dian-nao-wang-qia-shi-fou-zhi-chi-5ghz-pin-duan/">
+                        <a href="/2020/05/15/software/2020/yong-fiddler-gou-zao-http-qing-qiu/">
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="电脑网卡是否支持5Ghz频段">
+                                <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="用Fiddler构造http请求">
                                 
-                                <span class="card-title">电脑网卡是否支持5Ghz频段</span>
+                                <span class="card-title">用Fiddler构造http请求</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    win + r 键入
-netsh wlan show drivers
-
-可查看网卡支持的无线电类型
-
-1）802.11b、802.11g只支持2.4GHz2）802.11a、802.11ac支持5GHz3）802.11n 采用了多重输入/输
+                                    用Fiddler构造http请求时，发现 $_POST数组中怎么也获取不到值，以为自己操作错了，但也没发现什么问题，后来得知，原来缺少了一个请求头，Fiddler不会为我们自动添加。
+Content-Type: application/x-
                                 
                             </div>
                             <div class="publish-info">
@@ -992,26 +988,36 @@ Embe
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-li-ji-shu-pan-ding/">
+                        <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-xue-xi-bi-ji-2/">
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="嵌入式Arm立即数判定">
+                                <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="嵌入式学习笔记(2)">
                                 
-                                <span class="card-title">嵌入式Arm立即数判定</span>
+                                <span class="card-title">嵌入式学习笔记(2)</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    基础知识在ARM中，机器指令的格式大致有以下几种：
+                                    ARM体系ARM：Advanced RISC Machine
+ARM命名规则
 
-立即寻址的方式
 
-立即寻址
-在立即寻址，操作数本身直接在指令中给出，取出指令也就获得了操作数，这个操作数也称为立即数。例子如下
+ARMv
+n
+variants
+x (variants)
 
-ADD R0, R1, #0xF      ;R0=R1
+
+
+固定字符，即ARM Version
+指令集版本号
+变种
+排除x后指定的变种
+
+
+常见的vari
                                 
                             </div>
                             <div class="publish-info">
