@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -472,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    677
+                    94
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -494,166 +496,166 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*
+                <pre class=" language-lang-cpp"><code class="language-lang-cpp">/*
  * @Author: incipe
  * @Date: 2019-09-22 23:14:53
  * @LastEditTime: 2019-10-21 21:35:58
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath:
- */</span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cmath></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fstream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;map></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;utility></span></span>
+ */
+#include <cmath>
+#include <fstream>
+#include <iostream>
+#include <map>
+#include <utility>
 
-std<span class="token operator">::</span>map<span class="token operator">&lt;</span>std<span class="token operator">::</span>string<span class="token punctuation">,</span> std<span class="token operator">::</span>string<span class="token operator">></span> mp<span class="token punctuation">;</span>
-<span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//输出，初始化</span>
-  <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-  ofstream file<span class="token punctuation">;</span>
-  file<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"1.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  map<span class="token operator">&lt;</span>string<span class="token punctuation">,</span> string<span class="token operator">></span><span class="token operator">::</span>iterator it<span class="token punctuation">;</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span>it <span class="token operator">=</span> mp<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it <span class="token operator">!=</span> mp<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it<span class="token operator">++</span><span class="token punctuation">)</span>
-    file <span class="token operator">&lt;&lt;</span> it<span class="token operator">-</span><span class="token operator">></span>first <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span> <span class="token operator">&lt;&lt;</span> it<span class="token operator">-</span><span class="token operator">></span>second <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  file<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+std::map<std::string, std::string> mp;
+void init() { //输出，初始化
+  using namespace std;
+  ofstream file;
+  file.open("1.txt");
+  map<string, string>::iterator it;
+  for (it = mp.begin(); it != mp.end(); it++)
+    file << it->first << " " << it->second << endl;
+  file.close();
+}
 
-<span class="token keyword">void</span> <span class="token function">Find</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//查找学生</span>
-  <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入要查找人的学号:"</span><span class="token punctuation">;</span>
-  string id<span class="token punctuation">;</span>
-  cin <span class="token operator">>></span> id<span class="token punctuation">;</span>
-  map<span class="token operator">&lt;</span>string<span class="token punctuation">,</span> string<span class="token operator">></span><span class="token operator">::</span>iterator it<span class="token punctuation">;</span>
-  it <span class="token operator">=</span> mp<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>it <span class="token operator">==</span> mp<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"查无此人！"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"查找成功！"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"他的名字是:"</span> <span class="token operator">&lt;&lt;</span> it<span class="token operator">-</span><span class="token operator">></span>second <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">void</span> <span class="token function">alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//删除学生信息</span>
-  <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">// std::ofstream file;</span>
-  <span class="token comment" spellcheck="true">// file.open("1.txt");</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入要修改的学号："</span><span class="token punctuation">;</span>
-  string id<span class="token punctuation">;</span>
-  cin <span class="token operator">>></span> id<span class="token punctuation">;</span>
-  map<span class="token operator">&lt;</span>string<span class="token punctuation">,</span> string<span class="token operator">></span><span class="token operator">::</span>iterator it<span class="token punctuation">;</span>
-  it <span class="token operator">=</span> mp<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>it <span class="token operator">!=</span> mp<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"查找成功，名字是："</span> <span class="token operator">&lt;&lt;</span> it<span class="token operator">-</span><span class="token operator">></span>second<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n是否删除? yes:no: "</span><span class="token punctuation">;</span>
-    string temp<span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      cin <span class="token operator">>></span> temp<span class="token punctuation">;</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>temp <span class="token operator">==</span> <span class="token string">"yes"</span> <span class="token operator">||</span> temp <span class="token operator">==</span> <span class="token string">"YES"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        mp<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"删除成功！"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-        <span class="token keyword">break</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">// file.close();</span>
-      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>temp <span class="token operator">==</span> <span class="token string">"no"</span> <span class="token operator">||</span> temp <span class="token operator">==</span> <span class="token string">"NO"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"您已经取消修改"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-        <span class="token keyword">break</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"输入非法，请重新输入!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-        <span class="token keyword">continue</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"没有这个人！"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+void Find() { //查找学生
+  using namespace std;
+  cout << "请输入要查找人的学号:";
+  string id;
+  cin >> id;
+  map<string, string>::iterator it;
+  it = mp.find(id);
+  if (it == mp.end()) {
+    cout << "查无此人！" << endl;
+  } else {
+    cout << "查找成功！" << endl;
+    cout << "他的名字是:" << it->second << endl;
+  }
+}
+void alter() { //删除学生信息
+  using namespace std;
+  // std::ofstream file;
+  // file.open("1.txt");
+  cout << "请输入要修改的学号：";
+  string id;
+  cin >> id;
+  map<string, string>::iterator it;
+  it = mp.find(id);
+  if (it != mp.end()) {
+    cout << "查找成功，名字是：" << it->second;
+    cout << "\n是否删除? yes:no: ";
+    string temp;
+    while (1) {
+      cin >> temp;
+      if (temp == "yes" || temp == "YES") {
+        mp.erase(id);
+        init();
+        cout << "删除成功！" << endl;
+        break;
+        // file.close();
+      } else if (temp == "no" || temp == "NO") {
+        cout << "您已经取消修改" << endl;
+        break;
+      } else {
+        cout << "输入非法，请重新输入!" << endl;
+        continue;
+      }
+    }
+  } else {
+    cout << "没有这个人！" << endl;
+  }
+}
 
-<span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//打印学生信息</span>
-  <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">// ifstream file;</span>
-  <span class="token comment" spellcheck="true">// file.open("1.txt");</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"如下所示："</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  map<span class="token operator">&lt;</span>string<span class="token punctuation">,</span> string<span class="token operator">></span><span class="token operator">::</span>iterator it<span class="token punctuation">;</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span>it <span class="token operator">=</span> mp<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it <span class="token operator">!=</span> mp<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    cout <span class="token operator">&lt;&lt;</span> it<span class="token operator">-</span><span class="token operator">></span>first <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span> <span class="token operator">&lt;&lt;</span> it<span class="token operator">-</span><span class="token operator">></span>second <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  <span class="token comment" spellcheck="true">// file.close();</span>
-<span class="token punctuation">}</span>
+void print() { //打印学生信息
+  using namespace std;
+  // ifstream file;
+  // file.open("1.txt");
+  cout << "如下所示：" << endl;
+  map<string, string>::iterator it;
+  for (it = mp.begin(); it != mp.end(); it++) {
+    cout << it->first << " " << it->second << endl;
+  }
+  // file.close();
+}
 
-<span class="token keyword">void</span> <span class="token function">Insert</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//插入学生信息</span>
-  <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-  map<span class="token operator">&lt;</span>string<span class="token punctuation">,</span> string<span class="token operator">></span><span class="token operator">::</span>iterator it<span class="token punctuation">;</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入要插入同学的学号："</span><span class="token punctuation">;</span>
-  string temp1<span class="token punctuation">,</span> temp2<span class="token punctuation">;</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    cin <span class="token operator">>></span> temp1<span class="token punctuation">;</span>
-    it <span class="token operator">=</span> mp<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>temp1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>it <span class="token operator">!=</span> mp<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      cout <span class="token operator">&lt;&lt;</span> <span class="token string">"此学号已经存在了，请重新输入！"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-      <span class="token keyword">continue</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-      <span class="token keyword">break</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请输入要插入同学的姓名："</span><span class="token punctuation">;</span>
-  cin <span class="token operator">>></span> temp2<span class="token punctuation">;</span>
-  mp<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token function">make_pair</span><span class="token punctuation">(</span>temp1<span class="token punctuation">,</span> temp2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+void Insert() { //插入学生信息
+  using namespace std;
+  map<string, string>::iterator it;
+  cout << "请输入要插入同学的学号：";
+  string temp1, temp2;
+  while (1) {
+    cin >> temp1;
+    it = mp.find(temp1);
+    if (it != mp.end()) {
+      cout << "此学号已经存在了，请重新输入！" << endl;
+      continue;
+    } else {
+      break;
+    }
+  }
+  cout << "请输入要插入同学的姓名：";
+  cin >> temp2;
+  mp.insert(make_pair(temp1, temp2));
+  init();
+}
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-  mp<span class="token punctuation">[</span><span class="token string">"xxxxxxxx00"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"xx1"</span><span class="token punctuation">;</span>
-  mp<span class="token punctuation">[</span><span class="token string">"xxxxxxxx01"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"xx2"</span><span class="token punctuation">;</span>
-  mp<span class="token punctuation">[</span><span class="token string">"xxxxxxxx02"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"xx3"</span><span class="token punctuation">;</span>
-  mp<span class="token punctuation">[</span><span class="token string">"xxxxxxxx03"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"xx4"</span><span class="token punctuation">;</span>
-  mp<span class="token punctuation">[</span><span class="token string">"xxxxxxxx04"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"xx5"</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">// ios::sync_with_stdio(false);</span>
-  <span class="token comment" spellcheck="true">// cin.tie(0);</span>
-  <span class="token comment" spellcheck="true">// cout.tie(0);</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"欢迎来到XXXXXX班级管理系统！"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"生成班级成员数据成功！"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"1:查找"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"2:删除"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"3:插入"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"4:打印"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"5.退出"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"6.清屏"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"请选择:"</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
-    cin <span class="token operator">>></span> n<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      cout <span class="token operator">&lt;&lt;</span> <span class="token string">"感谢您的使用，祝您生活愉快！"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-      <span class="token keyword">break</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">switch</span> <span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span>
-      <span class="token function">Find</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">break</span><span class="token punctuation">;</span>
-    <span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span>
-      <span class="token function">alter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">break</span><span class="token punctuation">;</span>
-    <span class="token keyword">case</span> <span class="token number">3</span><span class="token operator">:</span>
-      <span class="token function">Insert</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">break</span><span class="token punctuation">;</span>
-    <span class="token keyword">case</span> <span class="token number">4</span><span class="token operator">:</span>
-      <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">break</span><span class="token punctuation">;</span>
-    <span class="token keyword">case</span> <span class="token number">6</span><span class="token operator">:</span>
-      <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"cls"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">break</span><span class="token punctuation">;</span>
-    <span class="token keyword">default</span><span class="token operator">:</span>
-      cout <span class="token operator">&lt;&lt;</span> <span class="token string">"输入非法！"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-      <span class="token keyword">continue</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-  cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">// map是自动排序的，数字按大小，字符串按字典顺序</span></code></pre>
-<p>  <valine></valine></p>
-
+int main() {
+  using namespace std;
+  mp["xxxxxxxx00"] = "xx1";
+  mp["xxxxxxxx01"] = "xx2";
+  mp["xxxxxxxx02"] = "xx3";
+  mp["xxxxxxxx03"] = "xx4";
+  mp["xxxxxxxx04"] = "xx5";
+  // ios::sync_with_stdio(false);
+  // cin.tie(0);
+  // cout.tie(0);
+  cout << "欢迎来到XXXXXX班级管理系统！" << endl;
+  init();
+  cout << "生成班级成员数据成功！" << endl;
+  while (1) {
+    cout << "1:查找" << endl;
+    cout << "2:删除" << endl;
+    cout << "3:插入" << endl;
+    cout << "4:打印" << endl;
+    cout << "5.退出" << endl;
+    cout << "6.清屏" << endl;
+    cout << "请选择:";
+    int n;
+    cin >> n;
+    if (n == 5) {
+      cout << "感谢您的使用，祝您生活愉快！" << endl;
+      break;
+    }
+    switch (n) {
+    case 1:
+      Find();
+      break;
+    case 2:
+      alter();
+      break;
+    case 3:
+      Insert();
+      break;
+    case 4:
+      print();
+      break;
+    case 6:
+      system("cls");
+      break;
+    default:
+      cout << "输入非法！" << endl;
+      continue;
+    }
+  }
+  cin.get();
+  return 0;
+}
+// map是自动排序的，数字按大小，字符串按字典顺序
+</code></pre>
+  <valine></valine>
             </div>
             <hr/>
 
@@ -889,23 +891,26 @@ std<span class="token operator">::</span>map<span class="token operator">&lt;</s
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/11/c/2020/wan-neng-tou-bao-han-de-tou-wen-jian/">
+                <a href="/2020/05/11/c/2020/guan-yu-memset/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="万能头包含的头文件">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="关于memset">
                         
-                        <span class="card-title">万能头包含的头文件</span>
+                        <span class="card-title">关于memset</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            // C++ includes used for precompiling -*- C++ -*-
-
-// Copyright (C) 2003-2018 Free Software Foundation, Inc.
-//
-// This 
+                            被不了解memset狠狠的坑了一把，难受。
+对于整型数组，若要是初始化为非0的值时应该使用for循环，字符型或0，用memset即可。
+例如：
+#include
+int main()
+{
+    int s[100];
+    memset
                         
                     </div>
                     <div class="publish-info">
@@ -955,10 +960,12 @@ std<span class="token operator">::</span>map<span class="token operator">&lt;</s
                     <div class="summary block-with-text">
                         
                             为了方便粘贴，就没有放多文件编译。感谢leetcode的题库！要实现归并二叉树，自己要稍微更改下代码：
-#include&lt;bits/stdc++.h>
+#include
 using std::cin;
 using std::cout;
-using st
+using std::endl;
+
+const in
                         
                     </div>
                     <div class="publish-info">
@@ -1188,7 +1195,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

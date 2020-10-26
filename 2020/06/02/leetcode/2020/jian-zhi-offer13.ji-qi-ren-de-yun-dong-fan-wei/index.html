@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -472,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    693
+                    403
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -517,58 +519,59 @@
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这题很容易误解， <strong>直接遍历整个二维数组，判断是否小于k，小于就说明满足条件</strong> ，这样子做就不对了。</p>
 <p>因为有些格子他的行坐标和列坐标的数位之和小于k，但是，机器人也到不了这里。因为机器人只能上下左右移动，有些满足小于k的格子被挡住了。</p>
 <p>看到 <strong>上、下、左、右</strong> 四个方向就要马上想到搜索，这题是一道比较典型的搜索题目。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/12caa81dac294f7194440e51cacb9ab3.gif"></p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/12caa81dac294f7194440e51cacb9ab3.gif" alt=""></p>
 <ul>
 <li>c++代码</li>
 </ul>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">private</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> movDistance<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> flag<span class="token punctuation">[</span><span class="token number">101</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">101</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution {
+private:
+    int movDistance[4][2] = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
+    int flag[101][101] = {0};
+    int ans = 0;
 
-    <span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">,</span> <span class="token keyword">int</span> m<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        flag<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">int</span> mx <span class="token operator">=</span> x <span class="token operator">+</span> movDistance<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> my <span class="token operator">=</span> y <span class="token operator">+</span> movDistance<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">&lt;=</span> mx <span class="token operator">&amp;&amp;</span> mx <span class="token operator">&lt;</span> m <span class="token operator">&amp;&amp;</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> my <span class="token operator">&amp;&amp;</span> my <span class="token operator">&lt;</span> n <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>flag<span class="token punctuation">[</span>mx<span class="token punctuation">]</span><span class="token punctuation">[</span>my<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token function">sum</span><span class="token punctuation">(</span>mx<span class="token punctuation">,</span> my<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token operator">++</span>ans<span class="token punctuation">;</span>
-                <span class="token function">dfs</span><span class="token punctuation">(</span>mx<span class="token punctuation">,</span> my<span class="token punctuation">,</span> m<span class="token punctuation">,</span> n<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">int</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token punctuation">(</span>x <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">+</span> x <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>y <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">+</span> y <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 因为题目说了0 &lt;= n, m &lt;= 100, 所以这里简化写法了。</span>
-    <span class="token punctuation">}</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">movingCount</span><span class="token punctuation">(</span><span class="token keyword">int</span> m<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> m<span class="token punctuation">,</span> n<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> ans <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+    void dfs(int x, int y, int m, int n, int k) {
+        flag[x][y] = 1;
+        for (int i = 0; i < 4; ++i) {
+            int mx = x + movDistance[i][0], my = y + movDistance[i][1];
+            if (0 <= mx && mx < m && 0 <= my && my < n && !flag[mx][my] && sum(mx, my) <= k) {
+                ++ans;
+                dfs(mx, my, m, n, k);
+            }
+        }
+    }
+    int sum(int x, int y) {
+        return (x % 10 + x / 10) + (y % 10 + y / 10); // 因为题目说了0 <= n, m <= 100, 所以这里简化写法了。
+    }
+public:
+    int movingCount(int m, int n, int k) {
+        dfs(0, 0, m, n, k);
+        return ans + 1;
+    }
+};
+</code></pre>
 <ul>
 <li>python代码</li>
 </ul>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>ans <span class="token operator">=</span> <span class="token number">0</span>
-        self<span class="token punctuation">.</span>mvDistance <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-        self<span class="token punctuation">.</span>flag <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">101</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">102</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<pre class=" language-lang-python"><code class="language-lang-python">class Solution:
+    def __init__(self):
+        self.ans = 0
+        self.mvDistance = [[-1, 0], [1, 0], [0, -1], [0, 1]]
+        self.flag = [[0] * 101 for i in range(102)]
 
-    <span class="token keyword">def</span> <span class="token function">movingCount</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> m<span class="token punctuation">:</span> int<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">,</span> k<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
-        <span class="token keyword">def</span> <span class="token function">my_sum</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token punctuation">(</span>x <span class="token operator">//</span> <span class="token number">10</span> <span class="token operator">+</span> x <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>y <span class="token operator">//</span> <span class="token number">10</span> <span class="token operator">+</span> y <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">)</span>
+    def movingCount(self, m: int, n: int, k: int) -> int:
+        def my_sum(x, y):
+            return (x // 10 + x % 10) + (y // 10 + y % 10)
 
-        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> m<span class="token punctuation">,</span> n<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            self<span class="token punctuation">.</span>flag<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
-            <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                mx<span class="token punctuation">,</span> my <span class="token operator">=</span> x <span class="token operator">+</span> self<span class="token punctuation">.</span>mvDistance<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> y <span class="token operator">+</span> self<span class="token punctuation">.</span>mvDistance<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-                <span class="token keyword">if</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> mx <span class="token operator">&lt;</span> m <span class="token operator">and</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> my <span class="token operator">&lt;</span> n <span class="token operator">and</span> <span class="token operator">not</span> self<span class="token punctuation">.</span>flag<span class="token punctuation">[</span>mx<span class="token punctuation">]</span><span class="token punctuation">[</span>my<span class="token punctuation">]</span> <span class="token operator">and</span> my_sum<span class="token punctuation">(</span>mx<span class="token punctuation">,</span> my<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> k<span class="token punctuation">:</span>
-                    self<span class="token punctuation">.</span>ans <span class="token operator">+=</span> <span class="token number">1</span>
-                    dfs<span class="token punctuation">(</span>mx<span class="token punctuation">,</span> my<span class="token punctuation">,</span> m<span class="token punctuation">,</span> n<span class="token punctuation">,</span> k<span class="token punctuation">)</span>
+        def dfs(x, y, m, n, k):
+            self.flag[x][y] = 1
+            for i in range(4):
+                mx, my = x + self.mvDistance[i][0], y + self.mvDistance[i][1]
+                if 0 <= mx < m and 0 <= my < n and not self.flag[mx][my] and my_sum(mx, my) <= k:
+                    self.ans += 1
+                    dfs(mx, my, m, n, k)
 
-        dfs<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> m<span class="token punctuation">,</span> n<span class="token punctuation">,</span> k<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> self<span class="token punctuation">.</span>ans <span class="token operator">+</span> <span class="token number">1</span>
+        dfs(0, 0, m, n, k)
+        return self.ans + 1
 </code></pre>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>搜索之类的题目，基本上都是有模板可以套的，千万不要去人肉递归，这样之会越搞越糊涂，要是不理解，画个递归树还是可以的。真正掌握这种题，还是要多刷，刷多了就有感觉了。</p>
 
@@ -1102,7 +1105,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

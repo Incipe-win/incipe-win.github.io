@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -497,11 +499,10 @@
                 <p>win+r</p>
 <p>输入<code>regedit</code></p>
 <p>找到：</p>
-<pre><code>计算机\HKEY_CURRENT_USER\Console\C:_Program Files_WindowsApps_CanonicalGroupLimited.UbuntuonWindows_1804.2019.521.0_x64__79rhkp1fndgsc_ubuntu.exe</code></pre>
-<p>右键新建：<code>DWORD类型</code>，名字<code>CodePage</code>，确定，右键修改：16进制<code>0x01b5</code></p>
+<pre><code>计算机\HKEY_CURRENT_USER\Console\C:_Program Files_WindowsApps_CanonicalGroupLimited.UbuntuonWindows_1804.2019.521.0_x64__79rhkp1fndgsc_ubuntu.exe
+</code></pre><p>右键新建：<code>DWORD类型</code>，名字<code>CodePage</code>，确定，右键修改：16进制<code>0x01b5</code></p>
 <p>解决问题。</p>
-<p><valine></valine></p>
-
+<valine></valine>
             </div>
             <hr/>
 
@@ -737,19 +738,25 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/13/linux/2020/xu-ni-ji-an-zhuang-ubuntu18.04/">
+                <a href="/2020/05/13/linux/2020/jie-jue-ubuntu-navicat-de-yi-xie-wen-ti-xu-ni-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="虚拟机安装Ubuntu18.04">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="解决Ubuntu Navicat的一些问题(虚拟机)">
                         
-                        <span class="card-title">虚拟机安装Ubuntu18.04</span>
+                        <span class="card-title">解决Ubuntu Navicat的一些问题(虚拟机)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Ubuntu19.04只有九个月的支持服务时间、可以去体验下。下载vmware workstation下载地址用这个密钥激活应该就可以了YG5H2-ANZ0H-M8ERY-TXZZZ-YKRV8下载Ubuntu18.04镜像文件链接：htt
+                            先安装好MySQL
+sudo apt-get install mysql-server
+
+sudo apt-get install mysql-client
+
+sudo apt-get install libmysqlclient-dev
+
                         
                     </div>
                     <div class="publish-info">
@@ -771,8 +778,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                        <span class="chip bg-color">虚拟机</span>
                     </a>
                     
                 </div>
@@ -1029,7 +1036,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

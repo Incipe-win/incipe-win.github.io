@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -472,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    862
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    4 分
                 </div>
                 
 
@@ -495,238 +497,238 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>为了方便粘贴，就没有放多文件编译。<br>感谢leetcode的题库！<br>要实现归并二叉树，自己要稍微更改下代码：</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
-<span class="token keyword">using</span> std<span class="token operator">::</span>cin<span class="token punctuation">;</span>
-<span class="token keyword">using</span> std<span class="token operator">::</span>cout<span class="token punctuation">;</span>
-<span class="token keyword">using</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">#include<bits/stdc++.h>
+using std::cin;
+using std::cout;
+using std::endl;
 
-<span class="token keyword">const</span> <span class="token keyword">int</span> MAX <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+const int MAX = 10;
 
-<span class="token keyword">struct</span> BiTree <span class="token punctuation">{</span>
-    <span class="token keyword">char</span> data<span class="token punctuation">;</span>
-    <span class="token keyword">struct</span> BiTree<span class="token operator">*</span> left<span class="token punctuation">,</span> <span class="token operator">*</span> right<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+struct BiTree {
+    char data;
+    struct BiTree* left, * right;
+};
 
-<span class="token comment" spellcheck="true">//创建二叉树，以#结束</span>
-<span class="token keyword">void</span> <span class="token function">CreatBiTree</span><span class="token punctuation">(</span>BiTree<span class="token operator">*</span><span class="token operator">&amp;</span> T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">char</span> ch<span class="token punctuation">;</span>
-    ch <span class="token operator">=</span> <span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">'#'</span><span class="token punctuation">)</span>T <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
-    <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        T <span class="token operator">=</span> <span class="token keyword">new</span> BiTree<span class="token punctuation">;</span>
-        T<span class="token operator">-</span><span class="token operator">></span>data <span class="token operator">=</span> ch<span class="token punctuation">;</span>
-        <span class="token function">CreatBiTree</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">CreatBiTree</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+//创建二叉树，以#结束
+void CreatBiTree(BiTree*& T) {
+    char ch;
+    ch = getchar();
+    if (ch == '#')T = nullptr;
+    else {
+        T = new BiTree;
+        T->data = ch;
+        CreatBiTree(T->left);
+        CreatBiTree(T->right);
+    }
+}
 
-<span class="token comment" spellcheck="true">//先序遍历二叉树,先序遍历就是:根->左子树->右子树</span>
-<span class="token keyword">void</span> <span class="token function">PreOrderTraverse</span><span class="token punctuation">(</span>BiTree<span class="token operator">*</span><span class="token operator">&amp;</span> T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        cout <span class="token operator">&lt;&lt;</span> T<span class="token operator">-</span><span class="token operator">></span>data <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span><span class="token punctuation">;</span>
-        <span class="token function">PreOrderTraverse</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">PreOrderTraverse</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">""</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+//先序遍历二叉树,先序遍历就是:根->左子树->右子树
+void PreOrderTraverse(BiTree*& T) {
+    if (T) {
+        cout << T->data << " ";
+        PreOrderTraverse(T->left);
+        PreOrderTraverse(T->right);
+    }
+    else {
+        cout << "";
+    }
+}
 
-<span class="token comment" spellcheck="true">//中序遍历二叉树,中序遍历就是:左子树->根->右子树</span>
-<span class="token keyword">void</span> <span class="token function">InoderTraverse</span><span class="token punctuation">(</span>BiTree<span class="token operator">*</span><span class="token operator">&amp;</span> T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">InoderTraverse</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        cout <span class="token operator">&lt;&lt;</span> T<span class="token operator">-</span><span class="token operator">></span>data<span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>
-        <span class="token function">InoderTraverse</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">""</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+//中序遍历二叉树,中序遍历就是:左子树->根->右子树
+void InoderTraverse(BiTree*& T) {
+    if (T) {
+        InoderTraverse(T->left);
+        cout << T->data<<" ";
+        InoderTraverse(T->right);
+    }
+    else {
+        cout << "";
+    }
+}
 
-<span class="token comment" spellcheck="true">//后序遍历二叉树,后续遍历就是:左子树->右子树->根</span>
-<span class="token keyword">void</span> <span class="token function">PosoderTraverse</span><span class="token punctuation">(</span>BiTree<span class="token operator">*</span><span class="token operator">&amp;</span> T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token function">PosoderTraverse</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">PosoderTraverse</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        cout <span class="token operator">&lt;&lt;</span> T<span class="token operator">-</span><span class="token operator">></span>data <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">""</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+//后序遍历二叉树,后续遍历就是:左子树->右子树->根
+void PosoderTraverse(BiTree*& T) {
+    if (T) {
+        PosoderTraverse(T->left);
+        PosoderTraverse(T->right);
+        cout << T->data << " ";
+    }
+    else {
+        cout << "";
+    }
+}
 
-<span class="token keyword">void</span> <span class="token function">LevleOrder</span><span class="token punctuation">(</span>BiTree<span class="token operator">*</span> T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    BiTree<span class="token operator">*</span> Queue<span class="token punctuation">[</span>MAX<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">*</span>b<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> front<span class="token punctuation">,</span> rear<span class="token punctuation">;</span>
-    front <span class="token operator">=</span> rear <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Queue<span class="token punctuation">[</span>rear<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> T<span class="token punctuation">;</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>front <span class="token operator">!=</span> rear<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            b <span class="token operator">=</span> Queue<span class="token punctuation">[</span>front<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            cout <span class="token operator">&lt;&lt;</span> b<span class="token operator">-</span><span class="token operator">></span>data <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>b<span class="token operator">-</span><span class="token operator">></span>left <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>Queue<span class="token punctuation">[</span>rear<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> b<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>b<span class="token operator">-</span><span class="token operator">></span>right <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>Queue<span class="token punctuation">[</span>rear<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> b<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+void LevleOrder(BiTree* T) {
+    BiTree* Queue[MAX], *b;
+    int front, rear;
+    front = rear = 0;
+    if (T) {
+        Queue[rear++] = T;
+        while (front != rear) {
+            b = Queue[front++];
+            cout << b->data << " ";
+            if (b->left != nullptr)Queue[rear++] = b->left;
+            if (b->right != nullptr)Queue[rear++] = b->right;
+        }
+    }
+}
 
-<span class="token comment" spellcheck="true">//求二叉树的深度:递归解决,先遍历左子树,再遍历右子树,大的+1</span>
-<span class="token keyword">int</span> <span class="token function">BiTreeDepth</span><span class="token punctuation">(</span>BiTree<span class="token operator">*</span> T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>T <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> left<span class="token punctuation">,</span> right<span class="token punctuation">;</span>
-    left <span class="token operator">=</span> <span class="token function">BiTreeDepth</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    right <span class="token operator">=</span> <span class="token function">BiTreeDepth</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> left <span class="token operator">></span> right <span class="token operator">?</span> left <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">:</span> right <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+//求二叉树的深度:递归解决,先遍历左子树,再遍历右子树,大的+1
+int BiTreeDepth(BiTree* T) {
+    if (T == nullptr)
+        return 0;
+    int left, right;
+    left = BiTreeDepth(T->left);
+    right = BiTreeDepth(T->right);
+    return left > right ? left + 1 : right + 1;
+}
 
-<span class="token comment" spellcheck="true">/*判断二叉树是否为平衡二叉树,平衡二叉树应满足以下三个条件:
+/*判断二叉树是否为平衡二叉树,平衡二叉树应满足以下三个条件:
 1.左子树是平衡二叉树
 2.右子树是平衡二叉树
 3.左右子树之间的深度不超过1
-*/</span>
-<span class="token comment" spellcheck="true">/*int countFloor(BiTree* T) {
+*/
+/*int countFloor(BiTree* T) {
     if (!T)
         return 0;
     int left, right;
     left = countFloor(T->left);
     right = countFloor(T->right);
     return left > right ? left + 1 : right + 1;
-}//注意到这个函数跟求二叉树深度的函数一样,即可省略.*/</span>
+}//注意到这个函数跟求二叉树深度的函数一样,即可省略.*/
 
-<span class="token keyword">bool</span> <span class="token function">IsBalanced</span><span class="token punctuation">(</span>BiTree<span class="token operator">*</span> T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>T<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token function">BiTreeDepth</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">BiTreeDepth</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token comment" spellcheck="true">//判断左子树与右子树的高度差</span>
-    <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">IsBalanced</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">IsBalanced</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token comment" spellcheck="true">//判断左子树与右子树是不是平衡二叉树</span>
-<span class="token punctuation">}</span>
+bool IsBalanced(BiTree* T) {
+    if (!T)
+        return true;
+    if (abs(BiTreeDepth(T->left) - BiTreeDepth(T->right)) > 1) {
+        return false;
+    }//判断左子树与右子树的高度差
+    else {
+        if (IsBalanced(T->left) && IsBalanced(T->right)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }//判断左子树与右子树是不是平衡二叉树
+}
 
-<span class="token comment" spellcheck="true">/*判断二叉树是不是对称二叉树
+/*判断二叉树是不是对称二叉树
 列如:[1,2,2,3,4,4,3](层次遍历)就是对称二叉树,
 从根节点开始递归,判断左子树是不是等于右子树.
-*/</span>
-<span class="token keyword">bool</span> <span class="token function">IsMirror</span><span class="token punctuation">(</span>BiTree<span class="token operator">*</span> q<span class="token punctuation">,</span>BiTree<span class="token operator">*</span>    p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>q<span class="token operator">==</span><span class="token keyword">nullptr</span><span class="token operator">&amp;&amp;</span>p<span class="token operator">==</span><span class="token keyword">nullptr</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//左右子树为空</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>q <span class="token operator">==</span> <span class="token keyword">nullptr</span> <span class="token operator">||</span> p <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//左右子树高度不等</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>q<span class="token operator">-</span><span class="token operator">></span>data <span class="token operator">==</span> p<span class="token operator">-</span><span class="token operator">></span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token function">IsMirror</span><span class="token punctuation">(</span>q<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">,</span> p<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">IsMirror</span><span class="token punctuation">(</span>q<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">,</span> p<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token comment" spellcheck="true">//递归判断节点值是否相等</span>
-    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+*/
+bool IsMirror(BiTree* q,BiTree*    p) {
+    if (q==nullptr&&p==nullptr)
+        return true;//左右子树为空
+    if (q == nullptr || p == nullptr)
+        return false;//左右子树高度不等
+    if (q->data == p->data) {
+        return IsMirror(q->left, p->right) && IsMirror(q->right, p->left);
+    }//递归判断节点值是否相等
+    return false;
+}
 
-<span class="token keyword">bool</span> <span class="token function">IsSymmetric</span><span class="token punctuation">(</span>BiTree<span class="token operator">*</span> T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token function">IsMirror</span><span class="token punctuation">(</span>T<span class="token punctuation">,</span> T<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+bool IsSymmetric(BiTree* T) {
+    return IsMirror(T, T);
+}
 
-<span class="token comment" spellcheck="true">//二叉树的最小深度</span>
-<span class="token keyword">int</span> <span class="token function">MinDepth</span><span class="token punctuation">(</span>BiTree<span class="token operator">*</span> T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>T <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> left<span class="token punctuation">,</span> right<span class="token punctuation">;</span>
-    left <span class="token operator">=</span> <span class="token function">MinDepth</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    right <span class="token operator">=</span> <span class="token function">MinDepth</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>left <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> right <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> left <span class="token operator">></span> right <span class="token operator">?</span> right <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">:</span> left <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//如果左右子树都不为空,这样子做是可以的.</span>
-    <span class="token keyword">return</span> left <span class="token operator">=</span> <span class="token number">0</span> <span class="token operator">?</span> right <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">:</span> left <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//如果左右子树有"空树",比如[1,2],[1,null,2,null,null,3,4](层次遍历)</span>
-<span class="token punctuation">}</span>
+//二叉树的最小深度
+int MinDepth(BiTree* T) {
+    if (T == nullptr)
+        return 0;
+    int left, right;
+    left = MinDepth(T->left);
+    right = MinDepth(T->right);
+    if (left > 0 && right > 0)
+        return left > right ? right + 1 : left + 1;//如果左右子树都不为空,这样子做是可以的.
+    return left = 0 ? right + 1 : left + 1;//如果左右子树有"空树",比如[1,2],[1,null,2,null,null,3,4](层次遍历)
+}
 
-<span class="token comment" spellcheck="true">//翻转二叉树</span>
-<span class="token keyword">struct</span> BiTree<span class="token operator">*</span> <span class="token function">invertTree</span><span class="token punctuation">(</span>BiTree<span class="token operator">*</span> T<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>T <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> T<span class="token punctuation">;</span>
-    <span class="token keyword">struct</span> BiTree<span class="token operator">*</span> p<span class="token punctuation">;</span>
-    p <span class="token operator">=</span> T<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">;</span>
-    T<span class="token operator">-</span><span class="token operator">></span>left <span class="token operator">=</span> <span class="token function">invertTree</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    T<span class="token operator">-</span><span class="token operator">></span>right <span class="token operator">=</span> <span class="token function">invertTree</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> T<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+//翻转二叉树
+struct BiTree* invertTree(BiTree* T) {
+    if (T == nullptr)
+        return T;
+    struct BiTree* p;
+    p = T->left;
+    T->left = invertTree(T->right);
+    T->right = invertTree(p);
+    return T;
+}
 
-<span class="token keyword">void</span> <span class="token function">BiTreeCopy</span><span class="token punctuation">(</span>BiTree<span class="token operator">*</span> T<span class="token punctuation">,</span> BiTree<span class="token operator">*</span><span class="token operator">&amp;</span> NewT<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>T <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        NewT <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        NewT <span class="token operator">=</span> <span class="token keyword">new</span> BiTree<span class="token punctuation">;</span>
-        NewT<span class="token operator">-</span><span class="token operator">></span>data <span class="token operator">=</span> T<span class="token operator">-</span><span class="token operator">></span>data<span class="token punctuation">;</span>
-        <span class="token function">BiTreeCopy</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">,</span> NewT<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">BiTreeCopy</span><span class="token punctuation">(</span>T<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">,</span> NewT<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+void BiTreeCopy(BiTree* T, BiTree*& NewT) {
+    if (T == nullptr) {
+        NewT = nullptr;
+        return;
+    }
+    else {
+        NewT = new BiTree;
+        NewT->data = T->data;
+        BiTreeCopy(T->left, NewT->left);
+        BiTreeCopy(T->right, NewT->right);
+    }
+}
 
-<span class="token comment" spellcheck="true">/*合并二叉树
+/*合并二叉树
 大概意思是，给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。
 你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，
 否则不为 NULL 的节点将直接作为新二叉树的节点。
 比如:二叉树[1,3,2,5,null,null,null],[2,1,3,null,4,null,7](层次遍历)
 合并后为[3,4,5,5,4,null,7]
-*/</span>
-<span class="token keyword">struct</span> BiTree<span class="token operator">*</span> <span class="token function">mergeTrees</span><span class="token punctuation">(</span>BiTree<span class="token operator">*</span> t1<span class="token punctuation">,</span>BiTree<span class="token operator">*</span> t2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>t1 <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> t2<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>t2 <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> t1<span class="token punctuation">;</span>
-    t1<span class="token operator">-</span><span class="token operator">></span>data <span class="token operator">=</span> t1<span class="token operator">-</span><span class="token operator">></span>data <span class="token operator">+</span> t2<span class="token operator">-</span><span class="token operator">></span>data<span class="token punctuation">;</span>
-    t1<span class="token operator">-</span><span class="token operator">></span>left <span class="token operator">=</span> <span class="token function">mergeTrees</span><span class="token punctuation">(</span>t1<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">,</span> t2<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    t1<span class="token operator">-</span><span class="token operator">></span>right <span class="token operator">=</span> <span class="token function">mergeTrees</span><span class="token punctuation">(</span>t1<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">,</span> t2<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> t1<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+*/
+struct BiTree* mergeTrees(BiTree* t1,BiTree* t2) {
+    if (t1 == nullptr)
+        return t2;
+    if (t2 == nullptr)
+        return t1;
+    t1->data = t1->data + t2->data;
+    t1->left = mergeTrees(t1->left, t2->left);
+    t1->right = mergeTrees(t1->right, t2->right);
+    return t1;
+}
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">struct</span> BiTree<span class="token operator">*</span> T<span class="token punctuation">,</span><span class="token operator">*</span>NewT<span class="token operator">=</span><span class="token keyword">nullptr</span><span class="token punctuation">;</span><span class="token operator">/</span><span class="token comment" spellcheck="true">/*t1,*t2;
+int main() {
+    struct BiTree* T,*NewT=nullptr;//*t1,*t2;
     CreatBiTree(T);
     /*CreatBiTree(t1);
     CreatBiTree(t2);
     mergeTrees(t1, t2);
-    cout &lt;&lt; "\n合并的二叉树为(层次遍历）：" &lt;&lt; endl;
-    LevleOrder(t1);*/</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n创建二叉树成功！"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"先序遍历为："</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token function">PreOrderTraverse</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n中序遍历为："</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token function">InoderTraverse</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n后序遍历为："</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token function">PosoderTraverse</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n层次遍历为："</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token function">LevleOrder</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n二叉树深度为："</span> <span class="token operator">&lt;&lt;</span> <span class="token function">BiTreeDepth</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">IsBalanced</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"BiTree is Banlanced Tree !"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"BiTree is't Banlanced Tree !"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">IsSymmetric</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"BiTree is Symmetric Tree !"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"BiTree is't Symmetric Tree !"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"二叉树最小深度为："</span><span class="token operator">&lt;&lt;</span> <span class="token function">MinDepth</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token function">invertTree</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"翻转的二叉树为(层次遍历）："</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token function">LevleOrder</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">BiTreeCopy</span><span class="token punctuation">(</span>T<span class="token punctuation">,</span> NewT<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n复制的二叉树为(层次遍历）："</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token function">LevleOrder</span><span class="token punctuation">(</span>NewT<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p>  <valine></valine></p>
-
+    cout << "\n合并的二叉树为(层次遍历）：" << endl;
+    LevleOrder(t1);*/
+    cout << "\n创建二叉树成功！" << endl;
+    cout << "先序遍历为：" << endl;
+    PreOrderTraverse(T);
+    cout << "\n中序遍历为：" << endl;
+    InoderTraverse(T);
+    cout << "\n后序遍历为：" << endl;
+    PosoderTraverse(T);
+    cout << "\n层次遍历为：" << endl;
+    LevleOrder(T);
+    cout << "\n二叉树深度为：" << BiTreeDepth(T) << endl;
+    if (IsBalanced(T)) {
+        cout << "BiTree is Banlanced Tree !" << endl;
+    }
+    else {
+        cout << "BiTree is't Banlanced Tree !" << endl;
+    }
+    if (IsSymmetric(T)) {
+        cout << "BiTree is Symmetric Tree !" << endl;
+    }
+    else {
+        cout << "BiTree is't Symmetric Tree !" << endl;
+    }
+    cout << "二叉树最小深度为："<< MinDepth(T) << endl;
+    invertTree(T);
+    cout << "翻转的二叉树为(层次遍历）：" << endl;
+    LevleOrder(T);
+    BiTreeCopy(T, NewT);
+    cout << "\n复制的二叉树为(层次遍历）：" << endl;
+    LevleOrder(NewT);
+    cout << endl;
+    cin.get();
+    return 0;
+}
+</code></pre>
+  <valine></valine>
             </div>
             <hr/>
 
@@ -1028,10 +1030,12 @@
                     <div class="summary block-with-text">
                         
                             为了方便粘贴，就没有放多文件编译。感谢leetcode的题库！要实现归并二叉树，自己要稍微更改下代码：
-#include&lt;bits/stdc++.h>
+#include
 using std::cin;
 using std::cout;
-using st
+using std::endl;
+
+const in
                         
                     </div>
                     <div class="publish-info">
@@ -1262,7 +1266,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

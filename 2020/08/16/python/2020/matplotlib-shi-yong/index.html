@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -497,13 +499,16 @@
                 <h2 id="什么是matplotlib"><a href="#什么是matplotlib" class="headerlink" title="什么是matplotlib"></a>什么是matplotlib</h2><blockquote>
 <p>Matplotlib 可能是 Python 2D-绘图领域使用最广泛的套件。它能让使用者很轻松地将数据图形化，并且提供多样化的输出格式。这里将会探索 matplotlib 的常见用法。</p>
 <div align="right"> 菜鸟教程</div>
+
 </blockquote>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="Ⅰ-绘制折线图"><a href="#Ⅰ-绘制折线图" class="headerlink" title="Ⅰ. 绘制折线图"></a>Ⅰ. 绘制折线图</h3><h4 id="绘制简单图"><a href="#绘制简单图" class="headerlink" title="绘制简单图"></a>绘制简单图</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> matplotlib <span class="token keyword">import</span> pyplot <span class="token keyword">as</span> plt
-x <span class="token operator">=</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
-y <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">94</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">]</span>
-plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<h4 id="修改图片大小"><a href="#修改图片大小" class="headerlink" title="修改图片大小"></a>修改图片大小</h4><pre class=" language-python"><code class="language-python">figure<span class="token punctuation">(</span>num<span class="token operator">=</span>None<span class="token punctuation">,</span> figsize<span class="token operator">=</span>None<span class="token punctuation">,</span> dpi<span class="token operator">=</span>None<span class="token punctuation">,</span> facecolor<span class="token operator">=</span>None<span class="token punctuation">,</span> edgecolor<span class="token operator">=</span>None<span class="token punctuation">,</span> frameon<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></code></pre>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="Ⅰ-绘制折线图"><a href="#Ⅰ-绘制折线图" class="headerlink" title="Ⅰ. 绘制折线图"></a>Ⅰ. 绘制折线图</h3><h4 id="绘制简单图"><a href="#绘制简单图" class="headerlink" title="绘制简单图"></a>绘制简单图</h4><pre class=" language-lang-python"><code class="language-lang-python">from matplotlib import pyplot as plt
+x = range(2, 26, 2)
+y = [1, 20, 34, 4, 53, 64, 7, 8, 94, -10, 11, 22]
+plt.plot(x, y)
+plt.show()
+</code></pre>
+<h4 id="修改图片大小"><a href="#修改图片大小" class="headerlink" title="修改图片大小"></a>修改图片大小</h4><pre class=" language-lang-python"><code class="language-lang-python">figure(num=None, figsize=None, dpi=None, facecolor=None, edgecolor=None, frameon=True)
+</code></pre>
 <ul>
 <li><code>num</code> 图像编号或名称，数字表示编号，字符串表示名称。</li>
 <li><code>figsize</code> 图像大小，宽高，单位为英寸。</li>
@@ -514,35 +519,42 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 </ul>
 <p>用例：</p>
 <p><code>plt.figure(figsize=(20, 8), dpi=80)``figsize</code> </p>
-<h4 id="保存图片"><a href="#保存图片" class="headerlink" title="保存图片"></a>保存图片</h4><pre class=" language-python"><code class="language-python">plt<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"./xxx.svg"</span><span class="token punctuation">)</span></code></pre>
+<h4 id="保存图片"><a href="#保存图片" class="headerlink" title="保存图片"></a>保存图片</h4><pre class=" language-lang-python"><code class="language-lang-python">plt.savefig("./xxx.svg")
+</code></pre>
 <p>保存图片到本地，支持 <code>svg</code> 矢量图形。</p>
 <h4 id="设置坐标轴"><a href="#设置坐标轴" class="headerlink" title="设置坐标轴"></a>设置坐标轴</h4><p>以x轴为例。</p>
-<pre class=" language-python"><code class="language-python">x_ticks <span class="token operator">=</span> <span class="token punctuation">[</span>i<span class="token operator">/</span><span class="token number">2</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-plt<span class="token punctuation">.</span>xticks<span class="token punctuation">(</span>x_ticks<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-lang-python"><code class="language-lang-python">x_ticks = [i/2 for i in range(4, 49)]
+plt.xticks(x_ticks[::3])
+</code></pre>
 <p>从2开始，每隔1.5个单位显示一个刻度。</p>
 <p>还可以起别名。</p>
-<pre class=" language-python"><code class="language-python">x_ticks <span class="token operator">=</span> <span class="token punctuation">[</span>i<span class="token operator">/</span><span class="token number">2</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-x_labels <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"h"</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-plt<span class="token punctuation">.</span>xticks<span class="token punctuation">(</span>x_ticks<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> x_labels<span class="token punctuation">)</span></code></pre>
+<pre class=" language-lang-python"><code class="language-lang-python">x_ticks = [i/2 for i in range(4, 49)]
+x_labels = ["h" + str(i) for i in range(1, 14)]
+plt.xticks(x_ticks[::3], x_labels)
+</code></pre>
 <p>字体旋转 <code>rotation</code> 后接旋转度数。</p>
-<pre class=" language-python"><code class="language-python">plt<span class="token punctuation">.</span>xticks<span class="token punctuation">(</span>list<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">120</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> labels<span class="token operator">=</span>x<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> rotation<span class="token operator">=</span><span class="token number">45</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-lang-python"><code class="language-lang-python">plt.xticks(list(range(120))[::3], labels=x[::3], rotation=45)
+</code></pre>
 <p>y轴即 <code>plt.yticks</code> </p>
-<pre class=" language-python"><code class="language-python">plt<span class="token punctuation">.</span>yticks<span class="token punctuation">(</span>range<span class="token punctuation">(</span>min<span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">,</span> max<span class="token punctuation">(</span>y<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-lang-python"><code class="language-lang-python">plt.yticks(range(min(y), max(y) + 1))
+</code></pre>
 <h4 id="设置字体"><a href="#设置字体" class="headerlink" title="设置字体"></a>设置字体</h4><p>查看 <code>linux</code> 有哪些字体： <code>fc-list</code> 有哪些中文字体 <code>fc-list :lang=zh</code></p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib
-font <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"family"</span><span class="token punctuation">:</span> <span class="token string">"Noto Sans Mono"</span><span class="token punctuation">,</span>
-        <span class="token string">"weight"</span><span class="token punctuation">:</span> <span class="token string">"bold"</span><span class="token punctuation">,</span>
-        <span class="token string">"size"</span><span class="token punctuation">:</span> <span class="token string">"larger"</span>
-        <span class="token punctuation">}</span>
-matplotlib<span class="token punctuation">.</span>rc<span class="token punctuation">(</span><span class="token string">"font"</span><span class="token punctuation">,</span> <span class="token operator">**</span>font<span class="token punctuation">)</span></code></pre>
+<pre class=" language-lang-python"><code class="language-lang-python">import matplotlib
+font = {"family": "Noto Sans Mono",
+        "weight": "bold",
+        "size": "larger"
+        }
+matplotlib.rc("font", **font)
+</code></pre>
 <p>或者：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> matplotlib <span class="token keyword">import</span> font_manager
+<pre class=" language-lang-python"><code class="language-lang-python">from matplotlib import font_manager
 
-my_font <span class="token operator">=</span> font_manager<span class="token punctuation">.</span>FontProperties<span class="token punctuation">(</span>
-    fname<span class="token operator">=</span><span class="token string">"/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc"</span><span class="token punctuation">)</span>
+my_font = font_manager.FontProperties(
+    fname="/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc")
 
-plt<span class="token punctuation">.</span>xticks<span class="token punctuation">(</span>list<span class="token punctuation">(</span>range<span class="token punctuation">(</span><span class="token number">120</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> labels<span class="token operator">=</span>x<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> rotation<span class="token operator">=</span><span class="token number">45</span><span class="token punctuation">,</span>
-           fontproperties<span class="token operator">=</span>my_font<span class="token punctuation">)</span></code></pre>
+plt.xticks(list(range(120))[::3], labels=x[::3], rotation=45,
+           fontproperties=my_font)
+</code></pre>
 <blockquote>
 <ul>
 <li><p>family: A list of font names in decreasing order of priority.<br>The items may include a generic font family name, either<br>‘serif’, ‘sans-serif’, ‘cursive’, ‘fantasy’, or ‘monospace’.<br>In that case, the actual font to be used will be looked up<br>from the associated rcParam.</p>
@@ -559,49 +571,55 @@ plt<span class="token punctuation">.</span>xticks<span class="token punctuation"
 </li>
 </ul>
 </blockquote>
-<h4 id="添加描述信息"><a href="#添加描述信息" class="headerlink" title="添加描述信息"></a>添加描述信息</h4><pre class=" language-python"><code class="language-python">plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">"时间"</span><span class="token punctuation">,</span> fontproperties<span class="token operator">=</span>my_font<span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">"温度 单位(摄氏度)"</span><span class="token punctuation">,</span> fontproperties<span class="token operator">=</span>my_font<span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">"10～12点每分钟气温变化情况"</span><span class="token punctuation">,</span> fontproperties<span class="token operator">=</span>my_font<span class="token punctuation">)</span></code></pre>
-<h4 id="绘制网格"><a href="#绘制网格" class="headerlink" title="绘制网格"></a>绘制网格</h4><pre class=" language-python"><code class="language-python">plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<h4 id="添加描述信息"><a href="#添加描述信息" class="headerlink" title="添加描述信息"></a>添加描述信息</h4><pre class=" language-lang-python"><code class="language-lang-python">plt.xlabel("时间", fontproperties=my_font)
+plt.ylabel("温度 单位(摄氏度)", fontproperties=my_font)
+plt.title("10～12点每分钟气温变化情况", fontproperties=my_font)
+</code></pre>
+<h4 id="绘制网格"><a href="#绘制网格" class="headerlink" title="绘制网格"></a>绘制网格</h4><pre class=" language-lang-python"><code class="language-lang-python">plt.grid()
+</code></pre>
 <ul>
 <li><code>alpha</code> 设置透明度。范围 <code>0~1</code></li>
 <li><code>axis</code> 显示哪个轴的网格 <code>axis='x'</code> 显示 <code>x</code> 轴，<code>axis='y</code> 显示 <code>y</code>  轴，<code>axis='both</code> 都显示。</li>
 <li><code>color</code> 设置网格线颜色。</li>
 <li><code>linestyle</code> 线条风格，<code>plt.grid(linestyle='-.')</code></li>
 </ul>
-<h4 id="绘制多次图形"><a href="#绘制多次图形" class="headerlink" title="绘制多次图形"></a>绘制多次图形</h4><pre class=" language-python"><code class="language-python">plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y1<span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"green"</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"XX1"</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y2<span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"blue"</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"XX2"</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span>prop<span class="token operator">=</span>my_font<span class="token punctuation">)</span></code></pre>
+<h4 id="绘制多次图形"><a href="#绘制多次图形" class="headerlink" title="绘制多次图形"></a>绘制多次图形</h4><pre class=" language-lang-python"><code class="language-lang-python">plt.plot(x, y1, color="green", label="XX1")
+plt.plot(x, y2, color="blue", label="XX2")
+plt.legend(prop=my_font)
+</code></pre>
 <p>多次调用 <code>plot</code> 方法即可，为了区分，给 <code>plot</code> 方法传入 <code>label</code> 参数，最后调用 <code>legend</code> 方法显示即可。</p>
 <h3 id="Ⅱ-绘制散点图"><a href="#Ⅱ-绘制散点图" class="headerlink" title="Ⅱ. 绘制散点图"></a>Ⅱ. 绘制散点图</h3><p>跟绘制折线图没太大却别。</p>
 <p>把 <code>plt.plot()</code> 改成 <code>plt.scatter()</code> 即可。</p>
-<h4 id="隐藏坐标轴"><a href="#隐藏坐标轴" class="headerlink" title="隐藏坐标轴"></a>隐藏坐标轴</h4><pre class=" language-python"><code class="language-python">plt<span class="token punctuation">.</span>axes<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get_xaxis<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>set_visible<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>axes<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get_yaxis<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>set_visible<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span></code></pre>
+<h4 id="隐藏坐标轴"><a href="#隐藏坐标轴" class="headerlink" title="隐藏坐标轴"></a>隐藏坐标轴</h4><pre class=" language-lang-python"><code class="language-lang-python">plt.axes().get_xaxis().set_visible(False)
+plt.axes().get_yaxis().set_visible(False)
+</code></pre>
 <h3 id="Ⅲ-绘制条形图"><a href="#Ⅲ-绘制条形图" class="headerlink" title="Ⅲ. 绘制条形图"></a>Ⅲ. 绘制条形图</h3><p>方法 <code>plt.bar()</code> 绘制竖直条形图，方法 <code>plt.barh()</code> 绘制横向条形图。</p>
-<pre class=" language-python"><code class="language-python">plt<span class="token punctuation">.</span>bar<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y width<span class="token operator">=</span>bar_width<span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"blue"</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"xxx"</span>
-plt<span class="token punctuation">.</span>barh<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y height<span class="token operator">=</span>bar_width<span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"red"</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"xxx"</span></code></pre>
+<pre class=" language-lang-python"><code class="language-lang-python">plt.bar(x, y width=bar_width, color="blue", label="xxx"
+plt.barh(x, y height=bar_width, color="red", label="xxx"
+</code></pre>
 <h3 id="Ⅳ-绘制直方图"><a href="#Ⅳ-绘制直方图" class="headerlink" title="Ⅳ. 绘制直方图"></a>Ⅳ. 绘制直方图</h3><h4 id="直方图与条形图区别"><a href="#直方图与条形图区别" class="headerlink" title="直方图与条形图区别"></a>直方图与条形图区别</h4><ol>
 <li><p>条形图 是用条形的 “长度” 表示各类别频数的多少，其宽度（表示类别）则是固定的。</p>
 </li>
-<li><p>直方图 是用 “面积” 表示各组频数的多少，矩形的高度表示每一组的频数或频率，宽度则表示各组的组距，因此其高度与宽度均有意义。$$组数 = \frac{极差}{组距}$$</p>
+<li><p>直方图 是用 “面积” 表示各组频数的多少，矩形的高度表示每一组的频数或频率，宽度则表示各组的组距，因此其高度与宽度均有意义。<script type="math/tex">组数 = \frac{极差}{组距}</script></p>
 </li>
-<li><p>条形图主要用于展示分类数据，而直方图则主要用于展示数据型数据。’</p>
-</li>
+<li>条形图主要用于展示分类数据，而直方图则主要用于展示数据型数据。’</li>
 </ol>
-<h4 id="频数分布直方图"><a href="#频数分布直方图" class="headerlink" title="频数分布直方图"></a>频数分布直方图</h4><pre class=" language-python"><code class="language-python">d <span class="token operator">=</span> <span class="token number">3</span>
-num_bins <span class="token operator">=</span> <span class="token punctuation">(</span>max<span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">-</span> min<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">//</span> d
-plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">80</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>a<span class="token punctuation">,</span> num_bins<span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>xticks<span class="token punctuation">(</span>range<span class="token punctuation">(</span>min<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">,</span> max<span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">+</span> d<span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<h4 id="频率分布直方图"><a href="#频率分布直方图" class="headerlink" title="频率分布直方图"></a>频率分布直方图</h4><pre class=" language-python"><code class="language-python">d <span class="token operator">=</span> <span class="token number">3</span>
-num_bins <span class="token operator">=</span> <span class="token punctuation">(</span>max<span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">-</span> min<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">//</span> d
-plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">80</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>a<span class="token punctuation">,</span> num_bins<span class="token punctuation">,</span> density<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>xticks<span class="token punctuation">(</span>range<span class="token punctuation">(</span>min<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">,</span> max<span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">+</span> d<span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<h4 id="频数分布直方图"><a href="#频数分布直方图" class="headerlink" title="频数分布直方图"></a>频数分布直方图</h4><pre class=" language-lang-python"><code class="language-lang-python">d = 3
+num_bins = (max(a) - min(a)) // d
+plt.figure(figsize=(20, 8), dpi=80)
+plt.hist(a, num_bins)
+plt.xticks(range(min(a), max(a) + d, d))
+plt.grid()
+plt.show()
+</code></pre>
+<h4 id="频率分布直方图"><a href="#频率分布直方图" class="headerlink" title="频率分布直方图"></a>频率分布直方图</h4><pre class=" language-lang-python"><code class="language-lang-python">d = 3
+num_bins = (max(a) - min(a)) // d
+plt.figure(figsize=(20, 8), dpi=80)
+plt.hist(a, num_bins, density=True)
+plt.xticks(range(min(a), max(a) + d, d))
+plt.grid()
+plt.show()
+</code></pre>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个内容太多了，只罗列了一些比较常用的。更多的可以去看源码。</p>
 <p>更多图形直接参考 <code>matplotlib</code> <a target="_blank" rel="noopener" href="https://matplotlib.org/gallery/index.html">官方文档</a> </p>
 
@@ -840,25 +858,33 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/08/16/pat-jia-zu/2020/pat1011/">
+                <a href="/2020/08/20/python/2020/pandas-ru-men/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="PAT1009">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="pandas入门">
                         
-                        <span class="card-title">PAT1009</span>
+                        <span class="card-title">pandas入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            原题
-With the 2010 FIFA World Cup running, football fans the world over were becoming increasingly excited as the best pla
+                            什么是pandaspandas 是基于一种 NumPy 的一种工具。NumPy 只能处理数值型的数据，但是 pandas 除了处理数值之外，还可以处理其它类型的数据。比如，字符串，时间序列等。
+使用Ⅰ. 数据结构
+
+
+
+维数
+名称
+描述
+
+
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-20
                         </span>
                         <span class="publish-author">
                             
@@ -875,8 +901,8 @@ With the 2010 FIFA World Cup running, football fans the world over were becoming
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/PAT/">
-                        <span class="chip bg-color">PAT</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">数据分析</span>
                     </a>
                     
                 </div>
@@ -1141,7 +1167,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

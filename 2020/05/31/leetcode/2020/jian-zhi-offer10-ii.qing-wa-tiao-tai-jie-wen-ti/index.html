@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -472,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    392
+                    371
                 </div>
                 
 
@@ -515,7 +517,7 @@
 <p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof">https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof</a></p>
 </blockquote>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这类题一般具有递推关系。</p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS8wMTEwZjc5Zi01NWRmLTQxYTQtYmExMy1jNTVhYzNhMWI4MjYucG5n?x-oss-process=image/format,png"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS8wMTEwZjc5Zi01NWRmLTQxYTQtYmExMy1jNTVhYzNhMWI4MjYucG5n?x-oss-process=image/format,png" alt=""></p>
 <p>通过分析，我们容易得知，我们走上$n$阶台阶的种数就是我们走上$n-1$阶和$n-2$阶的种数和。</p>
 <blockquote>
 <p><em>假设我们要走上第四阶台阶，我们已知走上第一级台阶有1种走法，第二级有2种走法，第三级有3种走法。</em></p>
@@ -525,28 +527,30 @@
 <ul>
 <li>c++代码</li>
 </ul>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">numWays</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-           <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">1000000007</span><span class="token punctuation">;</span>
-           a <span class="token operator">=</span> b<span class="token punctuation">;</span>
-           b <span class="token operator">=</span> sum<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> a<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution {
+public:
+    int numWays(int n) {
+        int a = 1, b = 1;
+        for (int i = 0; i < n; ++i) {
+           int sum = (a + b) % 1000000007;
+           a = b;
+           b = sum;
+        }
+        return a;
+    }
+};
+</code></pre>
 <ul>
 <li>python代码</li>
 </ul>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">numWays</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
-        a<span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span>
-        <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            a<span class="token punctuation">,</span> b <span class="token operator">=</span> b<span class="token punctuation">,</span> a <span class="token operator">+</span> b
-        <span class="token keyword">return</span> a <span class="token operator">%</span> <span class="token number">1000000007</span></code></pre>
-<p>更详细的 [斐波那契数列](<a href="https://incipe-win.github.io/views/Leetcode/2020/%E5%89%91%E6%8C%87offer10-">https://incipe-win.github.io/views/Leetcode/2020/剑指offer10-</a> II. 青蛙跳台阶问题.html) 解析。</p>
+<pre class=" language-lang-python"><code class="language-lang-python">class Solution:
+    def numWays(self, n: int) -> int:
+        a, b = 1, 1
+        for _ in range(n):
+            a, b = b, a + b
+        return a % 1000000007
+</code></pre>
+<p>更详细的 <a href="https://incipe-win.github.io/views/Leetcode/2020/剑指offer10- II. 青蛙跳台阶问题.html">斐波那契数列</a> 解析。</p>
 
             </div>
             <hr/>
@@ -1083,7 +1087,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

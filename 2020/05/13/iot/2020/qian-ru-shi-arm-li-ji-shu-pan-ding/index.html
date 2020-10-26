@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -501,8 +503,9 @@
 <h2 id="立即寻址"><a href="#立即寻址" class="headerlink" title="立即寻址"></a>立即寻址</h2><ul>
 <li>在立即寻址，操作数本身直接在指令中给出，取出指令也就获得了操作数，这个操作数也称为立即数。例子如下</li>
 </ul>
-<pre class=" language-assembly"><code class="language-assembly">ADD R0, R1, #0xF      ;R0=R1+15
-MOV R0, #0x55       ;R0=0x55 </code></pre>
+<pre class=" language-lang-assembly"><code class="language-lang-assembly">ADD R0, R1, #0xF      ;R0=R1+15
+MOV R0, #0x55       ;R0=0x55
+</code></pre>
 <p>在这两个例子中0xF和0x55就是立即数。(立即数要以#开头)</p>
 <h2 id="抛出问题"><a href="#抛出问题" class="headerlink" title="抛出问题"></a>抛出问题</h2><ul>
 <li>我们知道因为ARM指令长度是32-bit的，所以立即数不可能还有32-bit。</li>
@@ -576,8 +579,7 @@ MOV R0, #0x55       ;R0=0x55 </code></pre>
 </ul>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>适合自己的方法才是最好了，真正理解了才能叫懂了！</p>
 <p><strong>才疏学浅，望雅正！</strong></p>
-<p><valine></valine></p>
-
+<valine></valine>
             </div>
             <hr/>
 
@@ -813,29 +815,32 @@ MOV R0, #0x55       ;R0=0x55 </code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-xue-xi-bi-ji-3/">
+                <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-xue-xi-bi-ji-1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="嵌入式学习笔记(3)">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="嵌入式学习笔记(1)">
                         
-                        <span class="card-title">嵌入式学习笔记(3)</span>
+                        <span class="card-title">嵌入式学习笔记(1)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ARM指令集精简指令集设计理念(The  RISC design philosophy)
-设计原则(Design rules)
-指令”短小精悍”
-应用流水线技术设计
-大量采用寄存器
-Load/Store存储结构
+                            计算机系统(Computer System)
+个人计算机(Personal Computer)
+服务器(Server)
+嵌入式系统(Embedded System)
+
+对比
 
 
 
-ARM指令集特点
-所有
+
+
+Server
+Personal Computer
+Emb
                         
                     </div>
                     <div class="publish-info">
@@ -872,26 +877,33 @@ ARM指令集特点
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/13/linux/2020/ubuntu18.04-an-zhuang/">
+                <a href="/2020/05/13/linux/2020/linux-jin-cheng-zhong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Ubuntu18.04安装">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Linux进程中">
                         
-                        <span class="card-title">Ubuntu18.04安装</span>
+                        <span class="card-title">Linux进程中</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            WSL就是Windows Subsystem for Linux（Windows系统的Linux子系统），因为依赖于win10，所以“子系统”会受到一些限制。
-使用方法：
-打开控制面板
+                            一. Linux进程间通信Ⅰ. 管道函数管道是有大小的，通过ulimit -a查看管道大小
+
+man 2 pipe
+#include 
+int pipe(int pipefd[2]);
 
 
+参数
+
+文件描述符。
 
 
-按照提示重启就好了，要是没有这个选项，就说明系
+读管道
+
+写端全部关闭 
                         
                     </div>
                     <div class="publish-info">
@@ -913,8 +925,8 @@ ARM指令集特点
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                        <span class="chip bg-color">虚拟机</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -1121,7 +1133,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

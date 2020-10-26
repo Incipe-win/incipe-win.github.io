@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -472,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    289
+                    117
                 </div>
                 
 
@@ -496,112 +498,115 @@
             <div id="articleContent">
                 <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/super-pow/">超级次方</a></p>
 <p>一开始直接用快速幂，结果直接超时。</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">long</span> <span class="token keyword">long</span> <span class="token function">FastPow</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span> a<span class="token punctuation">,</span><span class="token keyword">long</span> <span class="token keyword">long</span> c<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">long</span> <span class="token keyword">long</span> res<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token operator">&amp;</span><span class="token number">1</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            res<span class="token operator">*</span><span class="token operator">=</span>a<span class="token punctuation">;</span>
-            res<span class="token operator">%</span><span class="token operator">=</span><span class="token number">1337</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        a<span class="token operator">*</span><span class="token operator">=</span>a<span class="token punctuation">;</span>
-        a<span class="token operator">%</span><span class="token operator">=</span><span class="token number">1337</span><span class="token punctuation">;</span>
-        c<span class="token operator">>>=</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">long long FastPow(long long a,long long c)
+{
+    long long res=1;
+    while(c)
+    {
+        if(c&1)
+        {
+            res*=a;
+            res%=1337;
+        }
+        a*=a;
+        a%=1337;
+        c>>=1;
+    }
+    return res;
+}
 
-<span class="token keyword">int</span> <span class="token function">superPow</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">*</span> b<span class="token punctuation">,</span> <span class="token keyword">int</span> bSize<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">long</span> <span class="token keyword">long</span> count<span class="token punctuation">,</span>c<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>bSize<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-        c<span class="token operator">+</span><span class="token operator">=</span><span class="token punctuation">(</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">*</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token punctuation">(</span>bSize<span class="token operator">-</span>i<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//printf("%d ",c);</span>
-    count<span class="token operator">=</span><span class="token function">FastPow</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> count<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+int superPow(int a, int* b, int bSize){
+    long long count,c=0;
+    for(int i=0;i<bSize;i++)
+        c+=(b[i]*pow(10,(bSize-i-1)));
+    //printf("%d ",c);
+    count=FastPow(a,c);
+    return count;
+}
 </code></pre>
 <p>欧拉降幂公式：</p>
 <p><img src="https://img-blog.csdnimg.cn/20190818155329442.png" alt="在这里插入图片描述"></p>
 <p>Φ（c）是欧拉函数</p>
 <p>详情请看：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0">欧拉函数</a></p>
 <p>求法如下：</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">eular</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> ret<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>i<span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span> i<span class="token operator">*</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">%</span>i<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            n<span class="token operator">/</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
-            ret<span class="token operator">*</span><span class="token operator">=</span>i<span class="token number">-1</span><span class="token punctuation">;</span>
-            <span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token operator">%</span>i<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                n<span class="token operator">/</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
-                ret<span class="token operator">*</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">></span><span class="token number">1</span><span class="token punctuation">)</span>
-        ret<span class="token operator">*</span><span class="token operator">=</span>n<span class="token number">-1</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> ret<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">int eular(int n)
+{
+    int ret=1,i;
+    for(i=2; i*i<=n; i++)
+    {
+        if(n%i==0)
+        {
+            n/=i;
+            ret*=i-1;
+            while(n%i==0)
+            {
+                n/=i;
+                ret*=i;
+            }
+        }
+    }
+    if(n>1)
+        ret*=n-1;
+    return ret;
+}
+</code></pre>
 <p>欧拉函数求出来了，直接A题，代码如下：</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">long</span> <span class="token keyword">long</span> <span class="token function">FastPow</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span> a<span class="token punctuation">,</span><span class="token keyword">long</span> <span class="token keyword">long</span> c<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">long</span> <span class="token keyword">long</span> res<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-    a<span class="token operator">%</span><span class="token operator">=</span><span class="token number">1337</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>c<span class="token operator">&amp;</span><span class="token number">1</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            res<span class="token operator">*</span><span class="token operator">=</span>a<span class="token punctuation">;</span>
-            res<span class="token operator">%</span><span class="token operator">=</span><span class="token number">1337</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        a<span class="token operator">*</span><span class="token operator">=</span>a<span class="token punctuation">;</span>
-        a<span class="token operator">%</span><span class="token operator">=</span><span class="token number">1337</span><span class="token punctuation">;</span>
-        c<span class="token operator">>>=</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">long long FastPow(long long a,long long c)
+{
+    long long res=1;
+    a%=1337;
+    while(c)
+    {
+        if(c&1)
+        {
+            res*=a;
+            res%=1337;
+        }
+        a*=a;
+        a%=1337;
+        c>>=1;
+    }
+    return res;
+}
 
-<span class="token keyword">int</span> <span class="token function">eular</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> ret<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>i<span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span> i<span class="token operator">*</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">%</span>i<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            n<span class="token operator">/</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
-            ret<span class="token operator">*</span><span class="token operator">=</span>i<span class="token number">-1</span><span class="token punctuation">;</span>
-            <span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token operator">%</span>i<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                n<span class="token operator">/</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
-                ret<span class="token operator">*</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">></span><span class="token number">1</span><span class="token punctuation">)</span>
-        ret<span class="token operator">*</span><span class="token operator">=</span>n<span class="token number">-1</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> ret<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+int eular(int n)
+{
+    int ret=1,i;
+    for(i=2; i*i<=n; i++)
+    {
+        if(n%i==0)
+        {
+            n/=i;
+            ret*=i-1;
+            while(n%i==0)
+            {
+                n/=i;
+                ret*=i;
+            }
+        }
+    }
+    if(n>1)
+        ret*=n-1;
+    return ret;
+}
 
-<span class="token keyword">int</span> <span class="token function">superPow</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">*</span> b<span class="token punctuation">,</span> <span class="token keyword">int</span> bSize<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>temp<span class="token punctuation">;</span>
-    temp<span class="token operator">=</span><span class="token function">eular</span><span class="token punctuation">(</span><span class="token number">1337</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>bSize<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>bSize<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        n<span class="token operator">*</span><span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span>
-        n<span class="token operator">+</span><span class="token operator">=</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        n<span class="token operator">%</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
-        n<span class="token operator">+</span><span class="token operator">=</span>temp<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token function">FastPow</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p><valine></valine></p>
+int superPow(int a, int* b, int bSize){
+    int n = 0,temp;
+    temp=eular(1337);
+    if(bSize==0){
+        return 0;
+    }
+    for(int i=0;i<bSize;i++){
+        n*=10;
+        n+=b[i];
+        n%=temp;
+        n+=temp;
+    }
+    return FastPow(a,n);
+}
+</code></pre>
+<valine></valine>
+
 
             </div>
             <hr/>
@@ -838,59 +843,6 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/16/leetcode/2020/22-gua-hao-sheng-cheng/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="22. 括号生成">
-                        
-                        <span class="card-title">22. 括号生成</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            原题
-数字 n 代表生成括号的对数，请你设计一个函数，用于能够生成所有可能的并且 有效的 括号组合。
-示例：
-
-输入：n = 3输出：[       “((()))”,       “(()())”,       “(())()”,    
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-16
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Leetcode/" class="post-category">
-                                    Leetcode
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%E9%81%8D%E5%8E%86/">
-                        <span class="chip bg-color">深度优先搜索遍历</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2020/05/16/leetcode/2020/3-wu-chong-fu-zi-fu-chuan-de-zui-chang-zi-chuan/">
                     <div class="card-image">
                         
@@ -918,6 +870,59 @@
                         
                     </div>
                     <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Leetcode/" class="post-category">
+                                    Leetcode
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                        <span class="chip bg-color">字符串</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/05/16/leetcode/2020/22-gua-hao-sheng-cheng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="22. 括号生成">
+                        
+                        <span class="card-title">22. 括号生成</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            原题
+数字 n 代表生成括号的对数，请你设计一个函数，用于能够生成所有可能的并且 有效的 括号组合。
+示例：
+
+输入：n = 3输出：[       “((()))”,       “(()())”,       “(())()”,    
+                        
+                    </div>
+                    <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2020-05-16
                             </span>
@@ -936,8 +941,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <span class="chip bg-color">字符串</span>
+                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%E9%81%8D%E5%8E%86/">
+                        <span class="chip bg-color">深度优先搜索遍历</span>
                     </a>
                     
                 </div>
@@ -1144,7 +1149,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

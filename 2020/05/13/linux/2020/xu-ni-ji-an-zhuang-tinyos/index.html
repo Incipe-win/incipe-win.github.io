@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -496,32 +498,38 @@
             <div id="articleContent">
                 <h2 id="讲在前面的话"><a href="#讲在前面的话" class="headerlink" title="讲在前面的话"></a>讲在前面的话</h2><p>不建议大家用虚拟机ubuntu18.04LTS安装Tinyos，很多坑。</p>
 <p>弄了好久，最后编译还各种无法解决的错误，还望各位不吝赐教！</p>
-<p><a href="%5Bhttps://incipe-win.github.io/2020/03/13/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85Ubuntu18.04/%5D(https://incipe-win.github.io/2020/03/13/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85Ubuntu18.04/)">Vmware下载</a></p>
+<p><a href="[https://incipe-win.github.io/2020/03/13/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85Ubuntu18.04/](https://incipe-win.github.io/2020/03/13/虚拟机安装Ubuntu18.04/">Vmware下载</a>)</p>
 <p><a target="_blank" rel="noopener" href="https://mirrors.aliyun.com/deepin-cd/15.11/deepin-15.11-amd64.iso">推荐系统Debain</a></p>
 <h2 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h2><h3 id="1-搭建java环境"><a href="#1-搭建java环境" class="headerlink" title="1. 搭建java环境"></a>1. 搭建java环境</h3><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1162527">Ubuntu(Debian)安装教程</a></p>
-<h3 id="2-搭建python开发环境和g-编译工具"><a href="#2-搭建python开发环境和g-编译工具" class="headerlink" title="2. 搭建python开发环境和g++编译工具"></a>2. 搭建python开发环境和g++编译工具</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> python2.7-dev
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> gcc
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> g++
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> gcc-msp430</code></pre>
+<h3 id="2-搭建python开发环境和g-编译工具"><a href="#2-搭建python开发环境和g-编译工具" class="headerlink" title="2. 搭建python开发环境和g++编译工具"></a>2. 搭建python开发环境和g++编译工具</h3><pre class=" language-lang-bash"><code class="language-lang-bash">sudo apt-get install python2.7-dev
+sudo apt-get install gcc
+sudo apt-get install g++
+sudo apt-get install gcc-msp430
+</code></pre>
 <h2 id="1-Tell-apt-about-the-TinyProd-Signing-Key"><a href="#1-Tell-apt-about-the-TinyProd-Signing-Key" class="headerlink" title="1. Tell apt about the TinyProd Signing Key."></a>1. Tell apt about the TinyProd Signing Key.</h2><p>告诉apt TinyProd签名密钥</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> -O - http://tinyprod.net/repos/debian/tinyprod.key <span class="token operator">|</span> <span class="token function">sudo</span> apt-key add -</code></pre>
-<h2 id="2-添加Tinyos源"><a href="#2-添加Tinyos源" class="headerlink" title="2. 添加Tinyos源"></a>2. 添加Tinyos源</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> -s
-<span class="token function">cd</span> /etc/apt/sources.list.d
-<span class="token keyword">echo</span> <span class="token string">"deb http://tinyprod.net/repos/debian wheezy main"</span> <span class="token operator">>></span> tinyprod-debian.list
-<span class="token keyword">echo</span> <span class="token string">"deb http://tinyprod.net/repos/debian msp430-46 main"</span> <span class="token operator">>></span> tinyprod-debian.list</code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">wget -O - http://tinyprod.net/repos/debian/tinyprod.key | sudo apt-key add -
+</code></pre>
+<h2 id="2-添加Tinyos源"><a href="#2-添加Tinyos源" class="headerlink" title="2. 添加Tinyos源"></a>2. 添加Tinyos源</h2><pre class=" language-lang-bash"><code class="language-lang-bash">sudo -s
+cd /etc/apt/sources.list.d
+echo "deb http://tinyprod.net/repos/debian wheezy main" >> tinyprod-debian.list
+echo "deb http://tinyprod.net/repos/debian msp430-46 main" >> tinyprod-debian.list
+</code></pre>
 <p>最后两句的意思是把”deb <a target="_blank" rel="noopener" href="http://tinyprod.net/repos/debian">http://tinyprod.net/repos/debian</a> wheezy main”重定向到tinyprod-debian.list文件</p>
-<h2 id="3-更新源并且安装tinyos依赖包"><a href="#3-更新源并且安装tinyos依赖包" class="headerlink" title="3. 更新源并且安装tinyos依赖包"></a>3. 更新源并且安装tinyos依赖包</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> nesc tinyos-tools</code></pre>
+<h2 id="3-更新源并且安装tinyos依赖包"><a href="#3-更新源并且安装tinyos依赖包" class="headerlink" title="3. 更新源并且安装tinyos依赖包"></a>3. 更新源并且安装tinyos依赖包</h2><pre class=" language-lang-bash"><code class="language-lang-bash">sudo apt-get update
+sudo apt-get install nesc tinyos-tools
+</code></pre>
 <p>这个过程可能有点长，请耐心等待！</p>
-<h2 id="4-下载Tinyos源代码"><a href="#4-下载Tinyos源代码" class="headerlink" title="4. 下载Tinyos源代码"></a>4. 下载Tinyos源代码</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> http://github.com/tinyos/tinyos-release/archive/tinyos-2_1_2.tar.gz  
-<span class="token function">tar</span> xf tinyos-2_1_2.tar.gz </code></pre>
+<h2 id="4-下载Tinyos源代码"><a href="#4-下载Tinyos源代码" class="headerlink" title="4. 下载Tinyos源代码"></a>4. 下载Tinyos源代码</h2><pre class=" language-lang-bash"><code class="language-lang-bash">wget http://github.com/tinyos/tinyos-release/archive/tinyos-2_1_2.tar.gz  
+tar xf tinyos-2_1_2.tar.gz
+</code></pre>
 <p>你可以将tinyos-release-tinyos-2_1_2文件命名为tinyos-main或者其它。</p>
 <p>移动到个自己熟悉的地方保存起来。</p>
 <h2 id="5-建立-env或者-sh文件"><a href="#5-建立-env或者-sh文件" class="headerlink" title="5. 建立.env或者.sh文件"></a>5. 建立.env或者.sh文件</h2><p>快速启动Tinyos</p>
 <p>在tinyos-main目录下</p>
-<pre class=" language-bash"><code class="language-bash">vim tinyos.env</code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">vim tinyos.env
+</code></pre>
 <p>添加如下内容</p>
-<pre class=" language-sh"><code class="language-sh"># Here we setup the environment
+<pre class=" language-lang-sh"><code class="language-lang-sh"># Here we setup the environment
 # variables needed by the tinyos 
 # make system
 
@@ -531,7 +539,8 @@ export CLASSPATH=.:$CLASSPATH:$TOSROOT/support/sdk/java/tinyos.jar
 export MAKERULES="$TOSROOT/support/make/Makerules"
 export PYTHONPATH=$PYTHONPATH:$TOSROOT/support/sdk/python:PYTHONPATH
 echo "setting up TinyOS on source path $TOSROOT"
-export CPATH=:/usr/include/python2.7/</code></pre>
+export CPATH=:/usr/include/python2.7/
+</code></pre>
 <p>这里的  <strong>&lt; local-tinyos-path&gt;</strong> 替换成自己tinyos-main的路径。</p>
 <p>添加shell访问</p>
 <ol>
@@ -540,40 +549,44 @@ export CPATH=:/usr/include/python2.7/</code></pre>
 </ol>
 <p>这里采用第二种方法</p>
 <p>如果安装了zsh就是添加到.zshrc</p>
-<pre class=" language-bash"><code class="language-bash">vim ~/.zshrc</code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">vim ~/.zshrc
+</code></pre>
 <p>添加source &lt; local-tinyos-path&gt;/tinyos.env </p>
 <p>同理，这里的&lt; local-tinyos-path&gt;也是tinyos-main的安装路径。</p>
 <p>重启终端，终端输出setting up TinyOS on source path &lt; local-tinyos-path&gt;即说明添加成功！</p>
-<h2 id="4-检查是否安装成功"><a href="#4-检查是否安装成功" class="headerlink" title="4. 检查是否安装成功"></a>4. 检查是否安装成功</h2><pre class=" language-bash"><code class="language-bash">tos-check-env</code></pre>
+<h2 id="4-检查是否安装成功"><a href="#4-检查是否安装成功" class="headerlink" title="4. 检查是否安装成功"></a>4. 检查是否安装成功</h2><pre class=" language-lang-bash"><code class="language-lang-bash">tos-check-env
+</code></pre>
 <p>查看选项 nesc 、java 以及 graphviz 是否已经正确安装。</p>
 <p>打开仿真程序目录下的  <strong>Blink</strong> 仿真程序</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /opt/tinyos-main/apps/Blink</code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">cd /opt/tinyos-main/apps/Blink
+</code></pre>
 <p>编译示例程序</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">make</span> telosb（编译不添加仿真）
+<pre class=" language-lang-bash"><code class="language-lang-bash">make telosb（编译不添加仿真）
 或者
-<span class="token function">make</span> telosb sim（编译添加仿真）</code></pre>
-<h2 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h2><pre class=" language-bash"><code class="language-bash"><span class="token variable">$make</span> micaz sim
-<span class="token function">mkdir</span> -p simbuild/micaz
+make telosb sim（编译添加仿真）
+</code></pre>
+<h2 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h2><pre class=" language-lang-bash"><code class="language-lang-bash">$make micaz sim
+mkdir -p simbuild/micaz
 make: python2.5-config: Command not found
 make: python2.5-config: Command not found
-make: python2.5-config: Command not found</code></pre>
+make: python2.5-config: Command not found
+</code></pre>
 <p>请确定安装好的python2.7</p>
 <p>打开tinyos-main文件</p>
 <p>搜索： <strong>“sim.extra”</strong> ，打开更改</p>
 <blockquote>
-<p>PYTHON_VERSION ?= $(shell python –version 2&gt;&amp;1 | sed ‘s/Python 2.([0-9]).[0-9]+{0,1}/2.\1/‘)</p>
+<p>PYTHON_VERSION ?= $(shell python —version 2&gt;&amp;1 | sed ‘s/Python 2.([0-9]).[0-9]+\{0,1\}/2.\1/‘)</p>
 </blockquote>
 <p>为：</p>
 <blockquote>
-<p>PYTHON_VERSION ?= $(shell python –version 3&gt;&amp;1 | sed ‘s/Python 2.([0-9]).[0-9]+{0,1}/2.\1/‘)</p>
+<p>PYTHON_VERSION ?= $(shell python —version 3&gt;&amp;1 | sed ‘s/Python 2.([0-9]).[0-9]+\{0,1\}/2.\1/‘)</p>
 </blockquote>
 <p>有其它问题可以自行谷歌😂。</p>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://askubuntu.com/questions/799603/install-tinyos-on-ubuntu">https://askubuntu.com/questions/799603/install-tinyos-on-ubuntu</a></p>
 <p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/34139897/make-python2-5-config-command-not-found-error-on-tinyos/50547278">https://stackoverflow.com/questions/34139897/make-python2-5-config-command-not-found-error-on-tinyos/50547278</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/tinyos/tinyos-main/issues/289">https://github.com/tinyos/tinyos-main/issues/289</a></p>
 <p><a target="_blank" rel="noopener" href="http://tinyos.stanford.edu/tinyos-wiki/index.php/Automatic_installation">http://tinyos.stanford.edu/tinyos-wiki/index.php/Automatic_installation</a></p>
-<p><valine></valine></p>
-
+<valine></valine>
             </div>
             <hr/>
 
@@ -809,20 +822,21 @@ make: python2.5-config: Command not found</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/13/linux/2020/jie-jue-centos-shi-yong-sudo-shi-chu-xian-yong-hu-ming-is-not-in-the-sudoers-file.this-incident-will-be-reported.de-wen-ti/">
+                <a href="/2020/05/13/linux/2020/gei-xu-ni-ji-de-ubuntu-huan-a-li-yuan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="解决centos使用sudo时出现“用户名 is not in the sudoers file. This incident will be reported.”的问题">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="给虚拟机的Ubuntu换阿里源">
                         
-                        <span class="card-title">解决centos使用sudo时出现“用户名 is not in the sudoers file. This incident will be reported.”的问题</span>
+                        <span class="card-title">给虚拟机的Ubuntu换阿里源</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            活在自然美景之中，人就懒，懒就善。
-安装好Centos后，想通过终端安装点软件，总是提示用户权限不足，使用 sudo 提升权限的话，就会出现 用户名 is not in the sudoers file. This incident wil
+                            安装的Ubuntu安装东西速度实在是不敢恭维QAQ，因为是国外的网址。 
+所以我们要换成国内的源，然后就可以尽情飞越了。
+首先我们还是要先备份下：sudo cp /etc/apt/sources.list /etc/apt/sources.
                         
                     </div>
                     <div class="publish-info">
@@ -859,25 +873,19 @@ make: python2.5-config: Command not found</code></pre>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/13/linux/2020/jie-jue-ubuntu-navicat-de-yi-xie-wen-ti-xu-ni-ji/">
+                <a href="/2020/05/13/linux/2020/xu-ni-ji-an-zhuang-ubuntu18.04/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="解决Ubuntu Navicat的一些问题(虚拟机)">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="虚拟机安装Ubuntu18.04">
                         
-                        <span class="card-title">解决Ubuntu Navicat的一些问题(虚拟机)</span>
+                        <span class="card-title">虚拟机安装Ubuntu18.04</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            先安装好MySQL
-sudo apt-get install mysql-server
-
-sudo apt-get install mysql-client
-
-sudo apt-get install libmysqlclient-dev
-
+                            Ubuntu19.04只有九个月的支持服务时间、可以去体验下。下载vmware workstation下载地址用这个密钥激活应该就可以了YG5H2-ANZ0H-M8ERY-TXZZZ-YKRV8下载Ubuntu18.04镜像文件链接：htt
                         
                     </div>
                     <div class="publish-info">
@@ -899,8 +907,8 @@ sudo apt-get install libmysqlclient-dev
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                        <span class="chip bg-color">虚拟机</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -1107,7 +1115,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

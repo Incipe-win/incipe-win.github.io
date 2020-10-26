@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -475,13 +477,14 @@
                             
                                 所谓贪心，只是人的一种本能反应
 原题链接
-#include &lt;algorithm>
-#include &lt;iostream>
+#include 
+#include 
 using std::cin;
 using std::cout;
 using std::endl;
 
-/
+//各个节目的开始时间，结束时间！
+struct Ti 
                             
                         </div>
                         <div class="publish-info">
@@ -506,6 +509,56 @@ using std::endl;
                         
                         <a href="/tags/%E8%B4%AA%E5%BF%83/">
                             <span class="chip bg-color">贪心</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/05/12/hdu/2020/ru-men-shen-sou-di-gui/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="入门深搜(递归)">
+                            
+                            <span class="card-title">入门深搜(递归)</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                所谓无底深渊，下去，也是前程万里
+入门深搜，以hdu1241为例进行讲解！
+题目的意思大概是有一块油田，要你求有多少个不同的石油储藏（如果每个油袋是上下左右，对角相邻的，那么说这是一个石油储藏，*代表没有油袋，@代表有油袋）
+典型的深搜算法
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Leetcode/" class="post-category">
+                                    Leetcode
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%E9%81%8D%E5%8E%86/">
+                            <span class="chip bg-color">深度优先搜索遍历</span>
                         </a>
                         
                     </div>
@@ -557,56 +610,6 @@ struct ListNode {
                         
                         <a href="/tags/%E9%93%BE%E8%A1%A8/">
                             <span class="chip bg-color">链表</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/05/12/hdu/2020/ru-men-shen-sou-di-gui/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="入门深搜(递归)">
-                            
-                            <span class="card-title">入门深搜(递归)</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                所谓无底深渊，下去，也是前程万里
-入门深搜，以hdu1241为例进行讲解！
-题目的意思大概是有一块油田，要你求有多少个不同的石油储藏（如果每个油袋是上下左右，对角相邻的，那么说这是一个石油储藏，*代表没有油袋，@代表有油袋）
-典型的深搜算法
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-12
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Leetcode/" class="post-category">
-                                    Leetcode
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%E9%81%8D%E5%8E%86/">
-                            <span class="chip bg-color">深度优先搜索遍历</span>
                         </a>
                         
                     </div>
@@ -686,8 +689,9 @@ struct ListNode {
      int val;
      struct ListNode *next;
  };
+
 快慢指针就是指指针每次移动的速度不一样，一般快指针每次移动两步，慢指针移动一步。
-既然快慢指针移动的速度
+既然快慢指针移动的速
                             
                         </div>
                         <div class="publish-info">
@@ -785,38 +789,18 @@ struct ListNode {
                             
                                 斯特林公式是用来估算阶乘的，n越大，结果越准确！
 斯特林公式：
-
 或更精确的：
-
-
 或：
-
-
-
-
-或：
-
+&lt;/div&gt;&lt;/section&gt;&lt;/div&gt;或：
 
 
 
  ，
 
-
 或：
 
-
-
 ，
-
-
-
-如果要计算N后得到的数字为几位数，则我们可以知道其位数等于lgN！+1；
-
-
-
-
-代码如下：
-#
+如果要计算N后得到的数字为几位数，则我们可以
                             
                         </div>
                         <div class="publish-info">
@@ -914,10 +898,11 @@ struct ListNode {
                                 朴素检测一般我们判断某个区间中的的素数，都是直接循环遍历，进行判断。
 这样的话，时间复杂度就是 $O(n \sqrt{n})$ 
 代码如下:
-#include &lt;cmath>
-#include &lt;iostream>
+#include 
+#include 
 
-bool 
+bool IsPrime(int n) {
+  int 
                             
                         </div>
                         <div class="publish-info">
@@ -966,12 +951,12 @@ bool
                             
                                 高中学过的求大公约数的方法就是辗转相除法和更相减损术了。
 辗转相除法递归版
-#include &lt;iostream>
+#include 
 using std::cin;
 using std::cout;
 using std::endl;
 
-int gcd(
+int gcd(int a, int b)
                             
                         </div>
                         <div class="publish-info">
@@ -1102,7 +1087,7 @@ int gcd(
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

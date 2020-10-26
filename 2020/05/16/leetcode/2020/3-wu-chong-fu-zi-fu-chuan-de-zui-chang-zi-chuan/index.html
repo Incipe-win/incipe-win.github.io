@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -472,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    870
+                    856
                 </div>
                 
 
@@ -518,167 +520,173 @@
 <p>来源：力扣（LeetCode）</p>
 <p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters">https://leetcode-cn.com/problems/longest-substring-without-repeating-characters</a></p>
 </blockquote>
-<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><h3 id="暴力"><a href="#暴力" class="headerlink" title="暴力"></a>暴力</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-  <span class="token keyword">int</span> <span class="token function">lengthOfLongestSubstring</span><span class="token punctuation">(</span>string s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> size <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> k<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// 本质还是滑动窗口！</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>k <span class="token operator">=</span> i<span class="token punctuation">;</span> k <span class="token operator">&lt;</span> j<span class="token punctuation">;</span> <span class="token operator">++</span>k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          <span class="token comment" spellcheck="true">/**
+<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><h3 id="暴力"><a href="#暴力" class="headerlink" title="暴力"></a>暴力</h3><pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution {
+public:
+  int lengthOfLongestSubstring(string s) {
+    int size = s.size(), ans = 0, k, i, j;
+    // 本质还是滑动窗口！
+    for (i = 0; i < size; ++i) {
+      for (j = i + 1; j < size; ++j) {
+        for (k = i; k < j; ++k) {
+          /**
            * 比如：a b c a b c b b
            * i = 0， j = 1, 我们要找的是 i 到 j 之间的最长无重复子串
-           */</span>
-          <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">==</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token comment" spellcheck="true">// 有重复，就退出</span>
-            <span class="token keyword">break</span><span class="token punctuation">;</span>
-          <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">!=</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          <span class="token comment" spellcheck="true">/* 如果，中间有重复，第三层 for 会通过 break 退出，这里也要退出，要使
+           */
+          if (s[k] == s[j]) {
+            // 有重复，就退出
+            break;
+          }
+        }
+        if (k != j) {
+          /* 如果，中间有重复，第三层 for 会通过 break 退出，这里也要退出，要使
            * i + 1
-           */</span>
-          <span class="token keyword">break</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span>
-      <span class="token keyword">int</span> tmp <span class="token operator">=</span> j <span class="token operator">-</span> i<span class="token punctuation">;</span>
-      <span class="token comment" spellcheck="true">// 求出最长的无重复子串</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>ans <span class="token operator">&lt;</span> tmp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        ans <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+           */
+          break;
+        }
+      }
+      int tmp = j - i;
+      // 求出最长的无重复子串
+      if (ans < tmp) {
+        ans = tmp;
+      }
+    }
+    return ans;
+  }
+};
+</code></pre>
 <p><strong><em>python代码</em></strong></p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">lengthOfLongestSubstring</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
-        size <span class="token operator">=</span> len<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> size <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token number">1</span>
-        ans <span class="token operator">=</span> <span class="token number">0</span>
-        i <span class="token operator">=</span> <span class="token number">0</span>
-        j <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span>
-        k <span class="token operator">=</span> i
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> size<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> size<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                <span class="token keyword">for</span> k <span class="token keyword">in</span> range<span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                    <span class="token keyword">if</span> s<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">==</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                        <span class="token keyword">break</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    k <span class="token operator">+=</span> <span class="token number">1</span>
-                <span class="token keyword">if</span> k <span class="token operator">!=</span> j<span class="token punctuation">:</span>
-                    <span class="token keyword">break</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                j <span class="token operator">+=</span> <span class="token number">1</span>
-            tmp <span class="token operator">=</span> j <span class="token operator">-</span> i
-            <span class="token keyword">if</span> ans <span class="token operator">&lt;</span> tmp<span class="token punctuation">:</span>
-                ans <span class="token operator">=</span> tmp
-        <span class="token keyword">return</span> ans</code></pre>
+<pre class=" language-lang-python"><code class="language-lang-python">class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        size = len(s)
+        if size == 1:
+            return 1
+        ans = 0
+        i = 0
+        j = i + 1
+        k = i
+        for i in range(0, size, 1):
+            for j in range(i + 1, size, 1):
+                for k in range(i, j, 1):
+                    if s[k] == s[j]:
+                        break
+                else:
+                    k += 1
+                if k != j:
+                    break
+            else:
+                j += 1
+            tmp = j - i
+            if ans < tmp:
+                ans = tmp
+        return ans
+</code></pre>
 <p><strong><em>python暴力必超时啊😱</em></strong></p>
 <h3 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h3><p>不用 <strong><em>unordered_set</em></strong></p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-  <span class="token keyword">int</span> <span class="token function">lengthOfLongestSubstring</span><span class="token punctuation">(</span>string s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">//三指针, mid指针用来判断left ~ right中间是否有重复元素,</span>
-    <span class="token comment" spellcheck="true">// left跟right指针用来计算元素个数</span>
-    <span class="token keyword">int</span> len <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> max <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> right<span class="token punctuation">,</span> mid<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>len <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>right <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> right <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> <span class="token operator">++</span>right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token comment" spellcheck="true">// 判断left ~ right中间有没有重复元素</span>
-      <span class="token keyword">for</span> <span class="token punctuation">(</span>mid <span class="token operator">=</span> left<span class="token punctuation">;</span> mid <span class="token operator">&lt;</span> right<span class="token punctuation">;</span> <span class="token operator">++</span>mid<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">==</span> s<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          <span class="token comment" spellcheck="true">// 如果有重复元素, 一切作废!</span>
-          <span class="token comment" spellcheck="true">/**比如:
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution {
+public:
+  int lengthOfLongestSubstring(string s) {
+    //三指针, mid指针用来判断left ~ right中间是否有重复元素,
+    // left跟right指针用来计算元素个数
+    int len = s.size(), max = 1, left = 0, right, mid;
+    if (len == 0) {
+      return 0;
+    }
+    for (right = 1; right < len; ++right) {
+      // 判断left ~ right中间有没有重复元素
+      for (mid = left; mid < right; ++mid) {
+        if (s[mid] == s[right]) {
+          // 如果有重复元素, 一切作废!
+          /**比如:
            * a   b   c   a   b   c   b   b
            *            left  mid        right
            * 此时s[mid] == s[right]
            * 说明不满足条件, left指针此时应该指向c元素, 即left = mid + 1
            * 跳出判断子串重复循环!
-           */</span>
-          left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-          <span class="token keyword">break</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span>
+           */
+          left = mid + 1;
+          break;
+        }
+      }
 
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">></span> max<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">/**比如:
+      if (right - left + 1 > max) {
+        /**比如:
          * 0   1   2   3   4   5   6   7
          * a   b   c   a   b   c   b   b
          * left    right
          * 此时满足题意, 子串长度为 2 - 0 + 1, 即right - left + 1
          * 更新max即可
-         */</span>
-        max <span class="token operator">=</span> right <span class="token operator">-</span> left <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> max<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+         */
+        max = right - left + 1;
+      }
+    }
+    return max;
+  }
+};
+</code></pre>
 <p><strong><em>python代码</em></strong></p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">lengthOfLongestSubstring</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
-        size <span class="token operator">=</span> len<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-        maxValue <span class="token operator">=</span> <span class="token number">1</span>
-        low <span class="token operator">=</span> <span class="token number">0</span>
-        high <span class="token operator">=</span> <span class="token number">1</span>
-        mid <span class="token operator">=</span> low
-        <span class="token keyword">if</span> size <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token number">0</span>
-        <span class="token keyword">for</span> high <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> size<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">for</span> mid <span class="token keyword">in</span> range<span class="token punctuation">(</span>low<span class="token punctuation">,</span> high<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                <span class="token keyword">if</span> s<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">==</span> s<span class="token punctuation">[</span>high<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                    low <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span>
-                    <span class="token keyword">break</span>
-            <span class="token keyword">if</span> high <span class="token operator">-</span> low <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">></span> maxValue<span class="token punctuation">:</span>
-                maxValue <span class="token operator">=</span> high <span class="token operator">-</span> low <span class="token operator">+</span> <span class="token number">1</span>
-        <span class="token keyword">return</span> maxValue</code></pre>
+<pre class=" language-lang-python"><code class="language-lang-python">class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        size = len(s)
+        maxValue = 1
+        low = 0
+        high = 1
+        mid = low
+        if size == 0:
+            return 0
+        for high in range(1, size, 1):
+            for mid in range(low, high, 1):
+                if s[mid] == s[high]:
+                    low = mid + 1
+                    break
+            if high - low + 1 > maxValue:
+                maxValue = high - low + 1
+        return maxValue
+</code></pre>
 <p>使用 <strong><em>unordered_set</em></strong></p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-  <span class="token keyword">int</span> <span class="token function">lengthOfLongestSubstring</span><span class="token punctuation">(</span>string s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    unordered_set<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span> appear<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> size <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> right <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        appear<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-      <span class="token keyword">while</span> <span class="token punctuation">(</span>right <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">&lt;</span> size <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>appear<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>right <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        appear<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>right <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">++</span>right<span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-      ans <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>ans<span class="token punctuation">,</span> right <span class="token operator">-</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution {
+public:
+  int lengthOfLongestSubstring(string s) {
+    unordered_set<char> appear;
+    int size = s.size();
+    int right = -1, ans = 0;
+    for (int i = 0; i < size; ++i) {
+      if (i != 0) {
+        appear.erase(s[i - 1]);
+      }
+      while (right + 1 < size && !appear.count(s[right + 1])) {
+        appear.insert(s[right + 1]);
+        ++right;
+      }
+      ans = max(ans, right - i + 1);
+    }
+    return ans;
+  }
+};
+</code></pre>
 <p><strong><em>python代码</em></strong></p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">lengthOfLongestSubstring</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
-        appear <span class="token operator">=</span> set<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        n <span class="token operator">=</span> len<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-        right<span class="token punctuation">,</span> ans <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> i <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">:</span>
-                appear<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>s<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-            <span class="token keyword">while</span> right <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">&lt;</span> n <span class="token operator">and</span> s<span class="token punctuation">[</span>right <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">not</span> <span class="token keyword">in</span> appear<span class="token punctuation">:</span>
-                appear<span class="token punctuation">.</span>add<span class="token punctuation">(</span>s<span class="token punctuation">[</span>right <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-                right <span class="token operator">+=</span> <span class="token number">1</span>
-            ans <span class="token operator">=</span> max<span class="token punctuation">(</span>ans<span class="token punctuation">,</span> right <span class="token operator">-</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> ans</code></pre>
+<pre class=" language-lang-python"><code class="language-lang-python">class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        appear = set()
+        n = len(s)
+        right, ans = -1, 0
+        for i in range(n):
+            if i != 0:
+                appear.remove(s[i - 1])
+            while right + 1 < n and s[right + 1] not in appear:
+                appear.add(s[right + 1])
+                right += 1
+            ans = max(ans, right - i + 1)
+        return ans
+</code></pre>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>多刷题，做多了都是套路，哈哈哈🤣🤣🤣</p>
 <h2 id="诗情画意"><a href="#诗情画意" class="headerlink" title="诗情画意"></a>诗情画意</h2><blockquote>
 <center>卜算子·咏梅</center>
 
 <center>陆游</center>驿外断桥边，寂寞开无主。已是黄昏独自愁，更着风和雨。
 <center>无意苦争春，一任群芳妒。零落成泥碾作尘，只有香如故。</center>
-</blockquote>
-<p><valine></valine></p>
 
+</blockquote>
+<valine></valine>
             </div>
             <hr/>
 
@@ -914,6 +922,61 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2020/05/16/leetcode/2020/200-dao-yu-shu-liang/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="200. 岛屿数量">
+                        
+                        <span class="card-title">200. 岛屿数量</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            原题
+给你一个由 ‘1’（陆地）和 ‘0’（水）组成的的二维网格，请你计算网格中岛屿的数量。
+岛屿总是被水包围，并且每座岛屿只能由水平方向和/或竖直方向上相邻的陆地连接形成。
+此外，你可以假设该网格的四条边均被水包围。
+示例 1:
+
+输入:
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Leetcode/" class="post-category">
+                                    Leetcode
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%E9%81%8D%E5%8E%86/">
+                        <span class="chip bg-color">深度优先搜索遍历</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2020/05/16/leetcode/2020/372.chao-ji-ci-fang/">
                     <div class="card-image">
                         
@@ -937,58 +1000,6 @@ long long FastPow(long long a,long long c)
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-16
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Leetcode/" class="post-category">
-                                    Leetcode
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
-                        <span class="chip bg-color">数学</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/05/16/leetcode/2020/42-jie-yu-shui/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="42. 接雨水">
-                        
-                        <span class="card-title">42. 接雨水</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            原题
-给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。
-
-上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2020-05-16
                             </span>
@@ -1007,8 +1018,8 @@ long long FastPow(long long a,long long c)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%A0%88/">
-                        <span class="chip bg-color">栈</span>
+                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                        <span class="chip bg-color">数学</span>
                     </a>
                     
                 </div>
@@ -1215,7 +1226,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -476,7 +478,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.5k
                 </div>
                 
 
@@ -503,251 +505,264 @@
 <p>注：本文不介绍git历史，也不介绍如何安装git，更不介绍如何使用github。</p>
 <p>有需要的读者可以参考 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43826212/article/details/100023631?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160139441419724836744898%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&amp;request_id=160139441419724836744898&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_v2~rank_blog_v1-1-100023631.pc_v2_rank_blog_v1&amp;utm_term=git&amp;spm=1018.2118.3001.4187">同时推送代码至github和gitee</a></p>
 </blockquote>
-<h2 id="Ⅰ-基本操作"><a href="#Ⅰ-基本操作" class="headerlink" title="Ⅰ. 基本操作"></a>Ⅰ. 基本操作</h2><h3 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">mkdir</span> <span class="token function">git</span>
+<h2 id="Ⅰ-基本操作"><a href="#Ⅰ-基本操作" class="headerlink" title="Ⅰ. 基本操作"></a>Ⅰ. 基本操作</h2><h3 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h3><pre class=" language-lang-bash"><code class="language-lang-bash">mkdir git
 
-<span class="token function">cd</span> <span class="token function">git</span>
+cd git
 
-<span class="token function">git</span> init
-Initialized empty Git repository <span class="token keyword">in</span> /home/incipe/Desktop/git/.git/
+git init
+Initialized empty Git repository in /home/incipe/Desktop/git/.git/
 
-<span class="token function">ls</span> -a
-<span class="token keyword">.</span>  <span class="token punctuation">..</span>  .git</code></pre>
-<h3 id="添加到版本库"><a href="#添加到版本库" class="headerlink" title="添加到版本库"></a>添加到版本库</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">touch</span> first.md
+ls -a
+.  ..  .git
+</code></pre>
+<h3 id="添加到版本库"><a href="#添加到版本库" class="headerlink" title="添加到版本库"></a>添加到版本库</h3><pre class=" language-lang-bash"><code class="language-lang-bash">touch first.md
 
-<span class="token keyword">echo</span> <span class="token string">"Hello git"</span> <span class="token operator">></span> first.md
+echo "Hello git" > first.md
 
-<span class="token function">cat</span> first.md 
- Hello <span class="token function">git</span>
+cat first.md 
+ Hello git
 
-<span class="token function">git</span> add first.md
+git add first.md
 
-<span class="token function">git</span> commit -m <span class="token string">"first commit"</span>
- <span class="token punctuation">[</span>master <span class="token punctuation">(</span>root-commit<span class="token punctuation">)</span> ff57502<span class="token punctuation">]</span> first commit
-  1 <span class="token function">file</span> changed, 1 insertion<span class="token punctuation">(</span>+<span class="token punctuation">)</span>
-  create mode 100644 first.md</code></pre>
+git commit -m "first commit"
+ [master (root-commit) ff57502] first commit
+  1 file changed, 1 insertion(+)
+  create mode 100644 first.md
+</code></pre>
 <p><code>git commit</code> <code>-m</code> 后输入本次的提交信息，可以输入任何内容，最好是有意义的。</p>
 <p>查看版本记录。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> log <span class="token comment" spellcheck="true"># git log --graph --pretty=oneline</span>
-commit ff57502578c70c7fc5225e1fc5aa0b6dfe6d86fc <span class="token punctuation">(</span>HEAD -<span class="token operator">></span> master<span class="token punctuation">)</span>
-Author: Incipe-win <span class="token operator">&lt;</span>xxxxxx@163.com<span class="token operator">></span>
+<pre class=" language-lang-bash"><code class="language-lang-bash">git log # git log --graph --pretty=oneline
+commit ff57502578c70c7fc5225e1fc5aa0b6dfe6d86fc (HEAD -> master)
+Author: Incipe-win <xxxxxx@163.com>
 Date:   Thu Oct 1 19:50:09 2020 +0800
 
-    first commit</code></pre>
+    first commit
+</code></pre>
 <h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><p>我们在 <strong>first.md</strong> 增加如下内容：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">cat</span> first.md 
-Hello <span class="token function">git</span>
-That's the second line</code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">cat first.md 
+Hello git
+That's the second line
+</code></pre>
 <p>再次使用 <code>git commit -m</code> 提交。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> add first.md
+<pre class=" language-lang-bash"><code class="language-lang-bash">git add first.md
 
-<span class="token function">git</span> commit first.md
- <span class="token punctuation">[</span>master f732109<span class="token punctuation">]</span> second commit
- 1 <span class="token function">file</span> changed, 1 insertion<span class="token punctuation">(</span>+<span class="token punctuation">)</span>
+git commit first.md
+ [master f732109] second commit
+ 1 file changed, 1 insertion(+)
 
-<span class="token function">git</span> log
-commit f732109700ff998f243b67fef59976bf0c7c7ace <span class="token punctuation">(</span>HEAD -<span class="token operator">></span> master<span class="token punctuation">)</span>
-Author: Incipe-win <span class="token operator">&lt;</span>xxxx@163.com<span class="token operator">></span>
+git log
+commit f732109700ff998f243b67fef59976bf0c7c7ace (HEAD -> master)
+Author: Incipe-win <xxxx@163.com>
 Date:   Thu Oct 1 20:05:53 2020 +0800
 
     second commit
 
 commit ff57502578c70c7fc5225e1fc5aa0b6dfe6d86fc
-Author: Incipe-win <span class="token operator">&lt;</span>xxxx@163.com<span class="token operator">></span>
+Author: Incipe-win <xxxx@163.com>
 Date:   Thu Oct 1 19:50:09 2020 +0800
 
-    first commit</code></pre>
+    first commit
+</code></pre>
 <p>回退到第一次提交时的内容：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> reset --hard HEAD^
+<pre class=" language-lang-bash"><code class="language-lang-bash">git reset --hard HEAD^
 HEAD is now at ff57502 first commit
 
-<span class="token function">cat</span> first.md
-Hello <span class="token function">git</span></code></pre>
+cat first.md
+Hello git
+</code></pre>
 <p>这个过程是这样的，有一个 <code>HEAD</code> 指针指向最新提交的那个版本，<code>^</code> 表示回到上一个版本，<code>^^</code> 表示上上个，有多少个  <code>^</code>  就表示回退到第几个版本，也可以用数字代替，比如：<code>git reset --hard HEAD~1</code> 后面这个数字表示回到第几个版本。</p>
 <p>后面还可以接版本序列号。</p>
-<p>如果，此时我想回到版本二应该怎么做，<code>git rest --hard f732109700ff998f243b67fef59976bf0c7c7ace </code> ，这串字符就是版本序列号，可以不要复制全部，只复制一部分也是可以的，跟这个命令等价 <code>git rest --hard f732109</code>  </p>
+<p>如果，此时我想回到版本二应该怎么做，<code>git rest --hard f732109700ff998f243b67fef59976bf0c7c7ace</code> ，这串字符就是版本序列号，可以不要复制全部，只复制一部分也是可以的，跟这个命令等价 <code>git rest --hard f732109</code>  </p>
 <p>如果找不到版本序列号应该怎么回到版本二呢？</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> reflog
-ff57502 <span class="token punctuation">(</span>HEAD -<span class="token operator">></span> master<span class="token punctuation">)</span> HEAD@<span class="token punctuation">{</span>0<span class="token punctuation">}</span>: reset: moving to HEAD^
-f732109 HEAD@<span class="token punctuation">{</span>1<span class="token punctuation">}</span>: commit: second commit
-ff57502 <span class="token punctuation">(</span>HEAD -<span class="token operator">></span> master<span class="token punctuation">)</span> HEAD@<span class="token punctuation">{</span>2<span class="token punctuation">}</span>: reset: moving to HEAD
-ff57502 <span class="token punctuation">(</span>HEAD -<span class="token operator">></span> master<span class="token punctuation">)</span> HEAD@<span class="token punctuation">{</span>3<span class="token punctuation">}</span>: reset: moving to HEAD
-ff57502 <span class="token punctuation">(</span>HEAD -<span class="token operator">></span> master<span class="token punctuation">)</span> HEAD@<span class="token punctuation">{</span>4<span class="token punctuation">}</span>: commit <span class="token punctuation">(</span>initial<span class="token punctuation">)</span>: first commit
+<pre class=" language-lang-bash"><code class="language-lang-bash">git reflog
+ff57502 (HEAD -> master) HEAD@{0}: reset: moving to HEAD^
+f732109 HEAD@{1}: commit: second commit
+ff57502 (HEAD -> master) HEAD@{2}: reset: moving to HEAD
+ff57502 (HEAD -> master) HEAD@{3}: reset: moving to HEAD
+ff57502 (HEAD -> master) HEAD@{4}: commit (initial): first commit
 
-<span class="token function">git</span> reset --hard f732109     
+git reset --hard f732109     
 HEAD is now at f732109 second commit
 
-<span class="token function">cat</span> first.md 
-Hello <span class="token function">git</span>
-That's the second line</code></pre>
+cat first.md 
+Hello git
+That's the second line
+</code></pre>
 <p> <code>git reflog</code> 查看所有的操作记录。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%BB%98%E5%9B%BE1.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%BB%98%E5%9B%BE.png"></p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%BB%98%E5%9B%BE1.png" alt=""></p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%BB%98%E5%9B%BE.png" alt=""></p>
 <p>每次提交，回退都是 <code>HEAD</code> 指针的修改。</p>
 <h3 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h3><p>查看当前工作树状态，  <code>git status</code> </p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">cat</span> first.md 
-Hello <span class="token function">git</span>
+<pre class=" language-lang-bash"><code class="language-lang-bash">cat first.md 
+Hello git
 
-<span class="token comment" spellcheck="true"># 给first.md增加如下内容，但不提交</span>
-<span class="token function">cat</span> first.md 
-Hello <span class="token function">git</span>
+# 给first.md增加如下内容，但不提交
+cat first.md 
+Hello git
 Where there is a will, there is a way
 
-<span class="token function">git</span> status
+git status
 On branch master
-Changes not staged <span class="token keyword">for</span> commit:
-  <span class="token punctuation">(</span>use <span class="token string">"git add &lt;file>..."</span> to update what will be committed<span class="token punctuation">)</span>
-  <span class="token punctuation">(</span>use <span class="token string">"git restore &lt;file>..."</span> to discard changes <span class="token keyword">in</span> working directory<span class="token punctuation">)</span>
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
     modified:   first.md
 
-no changes added to commit <span class="token punctuation">(</span>use <span class="token string">"git add"</span> and/or <span class="token string">"git commit -a"</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 这里会给个提示，告诉我修改了fitst.md 内容，但是没有提交。</span>
+no changes added to commit (use "git add" and/or "git commit -a")
+# 这里会给个提示，告诉我修改了fitst.md 内容，但是没有提交。
 
-<span class="token function">git</span> add first.md
-<span class="token function">git</span> status
+git add first.md
+git status
 On branch master
 Changes to be committed:
-  <span class="token punctuation">(</span>use <span class="token string">"git restore --staged &lt;file>..."</span> to unstage<span class="token punctuation">)</span>
+  (use "git restore --staged <file>..." to unstage)
     modified:   first.md
 
-<span class="token function">git</span> commit -m <span class="token string">"version 3"</span>
-<span class="token punctuation">[</span>master c6ea42a<span class="token punctuation">]</span> version 3
- 1 <span class="token function">file</span> changed, 1 insertion<span class="token punctuation">(</span>+<span class="token punctuation">)</span>
+git commit -m "version 3"
+[master c6ea42a] version 3
+ 1 file changed, 1 insertion(+)
 
-<span class="token function">git</span> status
+git status
 On branch master
-nothing to commit, working tree clean</code></pre>
+nothing to commit, working tree clean
+</code></pre>
 <p>总的来讲，我们操作的目录就叫工作区，<code>git add</code> 就是把工作区的文件体检到暂存区， <code>git commit -m</code> 就是把暂存区所有的修改记录创建一个版本记录。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/w1.png"></p>
-<h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">cat</span> first.md 
-Hello <span class="token function">git</span>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/w1.png" alt=""></p>
+<h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h3><pre class=" language-lang-bash"><code class="language-lang-bash">cat first.md 
+Hello git
 Where there is a will, there is a way
 
-<span class="token function">cat</span> first.md 
-Hello <span class="token function">git</span>
+cat first.md 
+Hello git
 Where there is a will, there is a way
 This is the third line
 
-<span class="token function">git</span> status
+git status
 On branch master
-Changes not staged <span class="token keyword">for</span> commit:
-  <span class="token punctuation">(</span>use <span class="token string">"git add &lt;file>..."</span> to update what will be committed<span class="token punctuation">)</span>
-  <span class="token punctuation">(</span>use <span class="token string">"git restore &lt;file>..."</span> to discard changes <span class="token keyword">in</span> working directory<span class="token punctuation">)</span>
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
     modified:   first.md
 
-no changes added to commit <span class="token punctuation">(</span>use <span class="token string">"git add"</span> and/or <span class="token string">"git commit -a"</span><span class="token punctuation">)</span>
+no changes added to commit (use "git add" and/or "git commit -a")
 
-<span class="token function">git</span> restore first.md 
+git restore first.md 
 
-<span class="token function">cat</span> first.md 
-Hello <span class="token function">git</span>
-Where there is a will, there is a way</code></pre>
-<h3 id="文件对比"><a href="#文件对比" class="headerlink" title="文件对比"></a>文件对比</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">ls</span> -lart 
+cat first.md 
+Hello git
+Where there is a will, there is a way
+</code></pre>
+<h3 id="文件对比"><a href="#文件对比" class="headerlink" title="文件对比"></a>文件对比</h3><pre class=" language-lang-bash"><code class="language-lang-bash">ls -lart 
 total 20
-drwxr-xr-x 3 incipe incipe 4096 10月  1 19:44 <span class="token punctuation">..</span>
+drwxr-xr-x 3 incipe incipe 4096 10月  1 19:44 ..
 -rw-rw-r-- 1 incipe incipe   48 10月  1 21:07 first.md
 -rw-rw-r-- 1 incipe incipe   66 10月  1 21:10 second.md
-drwxrwxr-x 3 incipe incipe 4096 10月  1 21:10 <span class="token keyword">.</span>
+drwxrwxr-x 3 incipe incipe 4096 10月  1 21:10 .
 drwxrwxr-x 8 incipe incipe 4096 10月  1 21:10 .git
 
-<span class="token function">cat</span> first.md 
-Hello <span class="token function">git</span>
+cat first.md 
+Hello git
 Where there is a will, there is a way
 
-<span class="token function">cat</span> second.md 
-Hello <span class="token function">git</span>
+cat second.md 
+Hello git
 Where there is a will, there is a way
 This is new line
 
-<span class="token function">git</span> status
+git status
 On branch master
-Changes not staged <span class="token keyword">for</span> commit:
-  <span class="token punctuation">(</span>use <span class="token string">"git add &lt;file>..."</span> to update what will be committed<span class="token punctuation">)</span>
-  <span class="token punctuation">(</span>use <span class="token string">"git restore &lt;file>..."</span> to discard changes <span class="token keyword">in</span> working directory<span class="token punctuation">)</span>
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
     modified:   second.md
 
-no changes added to commit <span class="token punctuation">(</span>use <span class="token string">"git add"</span> and/or <span class="token string">"git commit -a"</span><span class="token punctuation">)</span>
+no changes added to commit (use "git add" and/or "git commit -a")
 
-<span class="token function">git</span> <span class="token function">diff</span> HEAD -- second.md
-<span class="token function">diff</span> --git a/second.md b/second.md
-index f9c6e01<span class="token punctuation">..</span>6e93719 100644
+git diff HEAD -- second.md
+diff --git a/second.md b/second.md
+index f9c6e01..6e93719 100644
 --- a/second.md
 +++ b/second.md
 @@ -1,3 +1,4 @@
- Hello <span class="token function">git</span>
+ Hello git
  Where there is a will, there is a way
 +This is new line
 
-<span class="token function">git</span> <span class="token function">diff</span> HEAD HEAD^ -- second.md
-<span class="token function">diff</span> --git a/second.md b/second.md
-deleted <span class="token function">file</span> mode 100644
-index f9c6e01<span class="token punctuation">..</span>0000000
+git diff HEAD HEAD^ -- second.md
+diff --git a/second.md b/second.md
+deleted file mode 100644
+index f9c6e01..0000000
 --- a/second.md
 +++ /dev/null
 @@ -1,3 +0,0 @@
--Hello <span class="token function">git</span>
+-Hello git
 -Where there is a will, there is a way
--</code></pre>
+-
+</code></pre>
 <p>每个版本的文件前面有 <code>+ -</code> 两个符号，相应的，文件内容出现那个符号，就表示是哪个文件说拥有的，如果没有，就代表是都有的。</p>
-<h2 id="Ⅱ-分支操作"><a href="#Ⅱ-分支操作" class="headerlink" title="Ⅱ. 分支操作"></a>Ⅱ. 分支操作</h2><h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout -b dev
-Switched to a new branch <span class="token string">'dev'</span>
-<span class="token comment" spellcheck="true"># &lt;=></span>
-<span class="token comment" spellcheck="true"># git branch dev</span>
-<span class="token comment" spellcheck="true"># git checkout dev</span>
+<h2 id="Ⅱ-分支操作"><a href="#Ⅱ-分支操作" class="headerlink" title="Ⅱ. 分支操作"></a>Ⅱ. 分支操作</h2><h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><pre class=" language-lang-bash"><code class="language-lang-bash">git checkout -b dev
+Switched to a new branch 'dev'
+# <=>
+# git branch dev
+# git checkout dev
 
-<span class="token function">git</span> branch
+git branch
 * dev
-  master</code></pre>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/branch.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/fdd.png"></p>
+  master
+</code></pre>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/branch.png" alt=""></p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/fdd.png" alt=""></p>
 <p>合并分支，<code>git</code> 默认会采用快速合并的方法，如果不想采用的话，可以使用 <code>git merge --no-ff -m "合并信息" 分支</code></p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 切换回master</span>
-<span class="token function">git</span> checkout master
+<pre class=" language-lang-bash"><code class="language-lang-bash"># 切换回master
+git checkout master
 M    second.md
-Switched to branch <span class="token string">'master'</span>
+Switched to branch 'master'
 
-<span class="token function">git</span> merge dev
+git merge dev
 Already up to date.
 
-<span class="token function">git</span> branch -d dev
-Deleted branch dev <span class="token punctuation">(</span>was 24df10d<span class="token punctuation">)</span>.
+git branch -d dev
+Deleted branch dev (was 24df10d).
 
-<span class="token function">git</span> branch
-* master</code></pre>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/wds.png"></p>
+git branch
+* master
+</code></pre>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/wds.png" alt=""></p>
 <h3 id="分支冲突"><a href="#分支冲突" class="headerlink" title="分支冲突"></a>分支冲突</h3><p>比如下图，在 <code>dev</code> 分支上对某个文件进行了修改并且进行了提交，切换回 <code>master</code> 分支又对这个文件进行修改并且进行了提交，然后合并分支会导致冲突。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/wfdfd.png"></p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/wfdfd.png" alt=""></p>
 <p>手动解决冲突即可。这个时候合并分支会出现如下信息：</p>
-<pre class=" language-bash"><code class="language-bash">Auto-merging second.md
-CONFLICT <span class="token punctuation">(</span>content<span class="token punctuation">)</span>: Merge conflict <span class="token keyword">in</span> second.md
-Automatic merge failed<span class="token punctuation">;</span> fix conflicts and <span class="token keyword">then</span> commit the result.
+<pre class=" language-lang-bash"><code class="language-lang-bash">Auto-merging second.md
+CONFLICT (content): Merge conflict in second.md
+Automatic merge failed; fix conflicts and then commit the result.
 
 vim second.md
-Hello <span class="token function">git</span>
+Hello git
 Where there is a will, there is a way
-<span class="token operator">&lt;&lt;&lt;</span><span class="token operator">&lt;&lt;&lt;</span><span class="token operator">&lt;</span> HEAD
+<<<<<<< HEAD
 This is a new line
-<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+=======
 This is third line
-<span class="token operator">>></span><span class="token operator">>></span><span class="token operator">>></span><span class="token operator">></span> dev
+>>>>>>> dev
 
-<span class="token comment" spellcheck="true"># 修改为</span>
-Hello <span class="token function">git</span>
+# 修改为
+Hello git
 Where there is a will, there is a way
 This is a new line
 This is third line
 
-<span class="token comment" spellcheck="true"># 手动提交</span>
-<span class="token function">git</span> add second.md
-<span class="token function">git</span> commit -m <span class="token string">"解决冲突"</span>
-<span class="token punctuation">[</span>master b75d71c<span class="token punctuation">]</span> 解决冲突
+# 手动提交
+git add second.md
+git commit -m "解决冲突"
+[master b75d71c] 解决冲突
 
-<span class="token function">git</span> log --graph --pretty<span class="token operator">=</span>oneline
-*   b75d71c42798ca48cf869cf6a0c3709c4dc8127e <span class="token punctuation">(</span>HEAD -<span class="token operator">></span> master<span class="token punctuation">)</span> 解决冲突
-<span class="token operator">|</span>\  
-<span class="token operator">|</span> * f0bc35a5b50666bf709a0c510f7ab73f81d4cdb1 <span class="token punctuation">(</span>dev<span class="token punctuation">)</span> dev
-* <span class="token operator">|</span> 51d0b83dd8be9b3593f1effaaab82f54dd7b636c master
-<span class="token operator">|</span>/  
-* 6f2fc2d87aa23e9a5e82746497f7001c7a0e36ea update</code></pre>
+git log --graph --pretty=oneline
+*   b75d71c42798ca48cf869cf6a0c3709c4dc8127e (HEAD -> master) 解决冲突
+|\  
+| * f0bc35a5b50666bf709a0c510f7ab73f81d4cdb1 (dev) dev
+* | 51d0b83dd8be9b3593f1effaaab82f54dd7b636c master
+|/  
+* 6f2fc2d87aa23e9a5e82746497f7001c7a0e36ea update
+</code></pre>
 <p>如果是这种情况，在 <code>dev</code> 分支上，建立了新的文件，进行提交，切换回 <code>master</code> 分支在创建的文件夹里面进行添加，最后合并分支，不会报错，<code>git</code> 会手动帮我们进行一次新的提交。</p>
 <h2 id="Ⅲ-总结"><a href="#Ⅲ-总结" class="headerlink" title="Ⅲ. 总结"></a>Ⅲ. 总结</h2><p><code>git</code> 用法挺多的，这里罗列了一部分常用的东西，记录下来，方便日后查找用法直接定位。</p>
 
@@ -1293,7 +1308,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

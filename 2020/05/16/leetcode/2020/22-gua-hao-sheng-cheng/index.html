@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -472,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    660
+                    650
                 </div>
                 
 
@@ -504,49 +506,51 @@
 <p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/generate-parentheses">https://leetcode-cn.com/problems/generate-parentheses</a></p>
 </blockquote>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>我们看下当<strong>n = 3</strong>时的二叉树结构</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/20200409124356384.png"></p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/20200409124356384.png" alt=""></p>
 <p>由此二叉树结构图我们可以得知的信息：</p>
 <ul>
 <li>当<strong>左括号小于n</strong>时：<ul>
-<li>先产生**左分支(左括号小于n)**；</li>
-<li><strong>左分支(左括号小于n)且当前左分支已经产生</strong>这两个条件不满足时，产生**右分支(左括号大于右括号)**；</li>
-<li>当产生<strong>左分支条件(左括号小于n)**和</strong>右分支条件(左括号大于右括号)**不满足时，回溯到可以继续产生分支的节点。</li>
+<li>先产生<strong>左分支(左括号小于n)</strong>；</li>
+<li><strong>左分支(左括号小于n)且当前左分支已经产生</strong>这两个条件不满足时，产生<strong>右分支(左括号大于右括号)</strong>；</li>
+<li>当产生<strong>左分支条件(左括号小于n)</strong>和<strong>右分支条件(左括号大于右括号)</strong>不满足时，回溯到可以继续产生分支的节点。</li>
 </ul>
 </li>
 <li>结束寻找的条件是左括号个数等于<strong>n</strong>并且右括号个数等于<strong>n</strong></li>
 </ul>
 <p>思路就是不断搜索，显然跟二叉树的<strong>深度遍历</strong>有点像。</p>
-<p><strong>深度遍历</strong>一般用递归，显然我们已经分析出了递归结束的条件**<em>(左括号个数等于n并且右括号个数等于n)**</em></p>
-<pre class=" language-c++"><code class="language-c++">if (左括号个数 == n && 右括号个数 == n) {
+<p><strong>深度遍历</strong>一般用递归，显然我们已经分析出了递归结束的条件<strong><em>(左括号个数等于n并且右括号个数等于n)</em></strong></p>
+<pre class=" language-lang-c++"><code class="language-lang-c++">if (左括号个数 == n && 右括号个数 == n) {
     vec.emplace_back(当前满足条件的括号匹配);
     return;
-}</code></pre>
+}
+</code></pre>
 <p>由此可得知，我们的递归函数需要的变量<strong>左括号个数left</strong>，<strong>右括号个数right</strong>，题目给的<strong>n</strong>，保存<strong>当前满足条件的括号匹配str</strong>，还有一个<strong>返回给测评机的字符串向量vec</strong>。</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-  vector<span class="token operator">&lt;</span>string<span class="token operator">></span> <span class="token function">generateParenthesis</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    vector<span class="token operator">&lt;</span>string<span class="token operator">></span> vec<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">return</span> vec<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">recursion</span><span class="token punctuation">(</span>vec<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> vec<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution {
+public:
+  vector<string> generateParenthesis(int n) {
+    vector<string> vec;
+    if (n == 0) {
+      return vec;
+    }
+    recursion(vec, "", 0, 0, n);
+    return vec;
+  }
 
-  <span class="token keyword">void</span> <span class="token function">recursion</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>string<span class="token operator">></span> <span class="token operator">&amp;</span>vec<span class="token punctuation">,</span> string str<span class="token punctuation">,</span> <span class="token keyword">int</span> left<span class="token punctuation">,</span> <span class="token keyword">int</span> right<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">//递归结束条件</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>left <span class="token operator">==</span> n <span class="token operator">&amp;&amp;</span> right <span class="token operator">==</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      vec<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">return</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token function">recursion</span><span class="token punctuation">(</span>vec<span class="token punctuation">,</span> str <span class="token operator">+</span> <span class="token string">"("</span><span class="token punctuation">,</span> left <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> right<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>left <span class="token operator">></span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token function">recursion</span><span class="token punctuation">(</span>vec<span class="token punctuation">,</span> str <span class="token operator">+</span> <span class="token string">")"</span><span class="token punctuation">,</span> left<span class="token punctuation">,</span> right <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+  void recursion(vector<string> &vec, string str, int left, int right, int n) {
+    //递归结束条件
+    if (left == n && right == n) {
+      vec.emplace_back(str);
+      return;
+    }
+    if (left < n) {
+      recursion(vec, str + "(", left + 1, right, n);
+    }
+    if (left > right) {
+      recursion(vec, str + ")", left, right + 1, n);
+    }
+  }
+};
+</code></pre>
 <p>因为，最开始的时候<strong>左括号和右括号都没有，所以传0进去，满足要求的括号匹配也没有，传空字符串就好了</strong>。</p>
 <p>深搜题：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/permutations/">全排列</a></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以后遇到，类似 <strong><em><code>所有可能，全排列……</code></em></strong> 这种题，首先要想到的是递归！</p>
@@ -560,9 +564,9 @@
 <center>何处望神州？满眼风光北固楼。千古兴亡多少事？悠悠。不尽长江滚滚流。</center>
 
 <center>年少万兜鍪，坐断东南战未休。天下英雄谁敌手？曹刘。生子当如孙仲谋。</center>
-</blockquote>
-<p><valine></valine></p>
 
+</blockquote>
+<valine></valine>
             </div>
             <hr/>
 
@@ -798,61 +802,6 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/16/leetcode/2020/200-dao-yu-shu-liang/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="200. 岛屿数量">
-                        
-                        <span class="card-title">200. 岛屿数量</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            原题
-给你一个由 ‘1’（陆地）和 ‘0’（水）组成的的二维网格，请你计算网格中岛屿的数量。
-岛屿总是被水包围，并且每座岛屿只能由水平方向和/或竖直方向上相邻的陆地连接形成。
-此外，你可以假设该网格的四条边均被水包围。
-示例 1:
-
-输入:
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-16
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Leetcode/" class="post-category">
-                                    Leetcode
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%E9%81%8D%E5%8E%86/">
-                        <span class="chip bg-color">深度优先搜索遍历</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2020/05/16/leetcode/2020/372.chao-ji-ci-fang/">
                     <div class="card-image">
                         
@@ -876,6 +825,58 @@ long long FastPow(long long a,long long c)
                         
                     </div>
                     <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Leetcode/" class="post-category">
+                                    Leetcode
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                        <span class="chip bg-color">数学</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/05/16/leetcode/2020/42-jie-yu-shui/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="42. 接雨水">
+                        
+                        <span class="card-title">42. 接雨水</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            原题
+给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。
+
+上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示
+                        
+                    </div>
+                    <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2020-05-16
                             </span>
@@ -894,8 +895,8 @@ long long FastPow(long long a,long long c)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
-                        <span class="chip bg-color">数学</span>
+                    <a href="/tags/%E6%A0%88/">
+                        <span class="chip bg-color">栈</span>
                     </a>
                     
                 </div>
@@ -1102,7 +1103,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

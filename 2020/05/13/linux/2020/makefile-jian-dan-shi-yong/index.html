@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -521,7 +523,7 @@
 </ul>
 </li>
 <li>通过 <strong>ar</strong> 工具将目标文件打包成 <strong>.a</strong> 静态库文件<ul>
-<li>**ar -crv libstaticmain.a main.o **</li>
+<li><strong>ar -crv libstaticmain.a main.o </strong></li>
 </ul>
 </li>
 </ul>
@@ -546,42 +548,46 @@
 </ul>
 <p>详细解释可以参考 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/skynet/p/3372855.html">C++静态库与动态库</a></p>
 <h2 id="二-makefile格式"><a href="#二-makefile格式" class="headerlink" title="二. makefile格式"></a>二. makefile格式</h2><blockquote>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>target<span class="token operator">></span> <span class="token keyword">:</span> <span class="token operator">&lt;</span>prerequisites<span class="token operator">></span> 
-<span class="token punctuation">[</span>tab<span class="token punctuation">]</span>  <span class="token operator">&lt;</span>commands<span class="token operator">></span></code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash"><target> : <prerequisites> 
+[tab]  <commands>
+</code></pre>
 </blockquote>
 <p><strong>target</strong> 目标，  <strong>prerequisites</strong>  条件， <strong>commands</strong> 命令 。</p>
 <p>目标不能省略，条件和命令都可以省略。</p>
 <h3 id="2-1-目标"><a href="#2-1-目标" class="headerlink" title="2.1 目标"></a>2.1 目标</h3><p>目标通常是文件名，表明 <strong>make</strong> 要构建的对象。目标可以有多个，中间用空格分开。</p>
 <p>为了防止目标和文件名冲突，产生了伪目标( <strong>phony target</strong> )</p>
 <p>比如：</p>
-<pre class=" language-bash"><code class="language-bash">clean:
-    <span class="token function">rm</span> -r *.o</code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">clean:
+    rm -r *.o
+</code></pre>
 <p>如果当前路径下有个叫 <strong>clean</strong> 的文件，那么使用 <strong>make clean</strong> 就无法生效了。</p>
 <p>这时添加伪目标即可解决。</p>
-<pre class=" language-bash"><code class="language-bash">.PHONY <span class="token keyword">:</span> clean</code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">.PHONY : clean
+</code></pre>
 <p>伪目标可以有多个，中间用空格隔开。</p>
 <p><strong>make</strong> 没有指定目标，默认执行第一个。</p>
 <h3 id="2-2-条件"><a href="#2-2-条件" class="headerlink" title="2.2 条件"></a>2.2 条件</h3><p>前置条件通常是一组文件名，之间用空格分隔。它指定了”目标”是否重新构建的判断标准：只要有一个前置文件不存在，或者有过更新（前置文件的 <strong>last-modification</strong> 时间戳比目标的时间戳新），”目标”就需要重新构建。</p>
 <h3 id="2-3-命令"><a href="#2-3-命令" class="headerlink" title="2.3 命令"></a>2.3 命令</h3><p>命令（ <strong>commands</strong> ）表示如何更新目标文件，由一行或多行的Shell命令组成。它是构建”目标”的具体指令，它的运行结果通常就是生成目标文件。</p>
-<h2 id="三-两种常用的makefile书写方式"><a href="#三-两种常用的makefile书写方式" class="headerlink" title="三. 两种常用的makefile书写方式"></a>三. 两种常用的makefile书写方式</h2><h3 id="3-1-编译多文件"><a href="#3-1-编译多文件" class="headerlink" title="3.1 编译多文件"></a>3.1 编译多文件</h3><pre class=" language-bash"><code class="language-bash">all <span class="token keyword">:</span> app
+<h2 id="三-两种常用的makefile书写方式"><a href="#三-两种常用的makefile书写方式" class="headerlink" title="三. 两种常用的makefile书写方式"></a>三. 两种常用的makefile书写方式</h2><h3 id="3-1-编译多文件"><a href="#3-1-编译多文件" class="headerlink" title="3.1 编译多文件"></a>3.1 编译多文件</h3><pre class=" language-lang-bash"><code class="language-lang-bash">all : app
 
-cc <span class="token operator">=</span> g++
-include <span class="token operator">=</span> <span class="token punctuation">..</span>/Include
+cc = g++
+include = ../Include
 
-.PHONY <span class="token keyword">:</span> clean all
+.PHONY : clean all
 
-src <span class="token operator">=</span> <span class="token variable"><span class="token variable">$(</span>wildcard *.cc<span class="token variable">)</span></span>
-obj <span class="token operator">=</span> <span class="token variable"><span class="token variable">$(</span>patsubst %.cc, %.o, <span class="token punctuation">$(</span>src<span class="token variable">)</span></span><span class="token punctuation">)</span>
+src = $(wildcard *.cc)
+obj = $(patsubst %.cc, %.o, $(src))
 
-app <span class="token keyword">:</span> <span class="token variable"><span class="token variable">$(</span>obj<span class="token variable">)</span></span>
-    <span class="token variable"><span class="token variable">$(</span>cc<span class="token variable">)</span></span> -o app -I <span class="token variable"><span class="token variable">$(</span>include<span class="token variable">)</span></span> <span class="token variable"><span class="token variable">$(</span>obj<span class="token variable">)</span></span>
+app : $(obj)
+    $(cc) -o app -I $(include) $(obj)
 
-%.o <span class="token keyword">:</span> %.cc
-    <span class="token variable"><span class="token variable">$(</span>cc<span class="token variable">)</span></span> -c $<span class="token operator">&lt;</span> -I <span class="token variable"><span class="token variable">$(</span>include<span class="token variable">)</span></span> -o <span class="token variable">$@</span>
+%.o : %.cc
+    $(cc) -c $< -I $(include) -o $@
 
 clean:
-    <span class="token function">rm</span> -f *.o
-    <span class="token function">rm</span> -f app</code></pre>
+    rm -f *.o
+    rm -f app
+</code></pre>
 <p>这里的 <strong>wildcard</strong> 是 <strong>makefile</strong> 的内置函数，找出所有的 <strong>.cc</strong> 文件，赋值给变量 <strong>src</strong> 。</p>
 <p><strong>patsubst</strong> 函数用于模式匹配的替换，它需要 <strong>3</strong> 个参数：第一个是一个需要匹配的式样，第二个表示用什么来替换它，第三个是一个需要被处理的由空格分隔的字列。</p>
 <p> <strong>%.o : %.cc</strong> 用到了 <strong>makefile</strong> 的模式匹配</p>
@@ -610,28 +616,29 @@ clean:
 </li>
 </ul>
 <p>更多可以参考 <a target="_blank" rel="noopener" href="https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html">10.5.3 Automatic Variables</a></p>
-<h3 id="3-2-生成多个可执行文件"><a href="#3-2-生成多个可执行文件" class="headerlink" title="3.2 生成多个可执行文件"></a>3.2 生成多个可执行文件</h3><pre class=" language-bash"><code class="language-bash">all <span class="token keyword">:</span> hello world
+<h3 id="3-2-生成多个可执行文件"><a href="#3-2-生成多个可执行文件" class="headerlink" title="3.2 生成多个可执行文件"></a>3.2 生成多个可执行文件</h3><pre class=" language-lang-bash"><code class="language-lang-bash">all : hello world
 
-cc <span class="token operator">=</span> g++
-include <span class="token operator">=</span> <span class="token punctuation">..</span>/Include
+cc = g++
+include = ../Include
 
-.PHONY <span class="token keyword">:</span> all clean
+.PHONY : all clean
 
-hello <span class="token keyword">:</span> hello.o
-    <span class="token variable"><span class="token variable">$(</span>cc<span class="token variable">)</span></span> -o hello -I <span class="token variable"><span class="token variable">$(</span>include<span class="token variable">)</span></span> hello.o
+hello : hello.o
+    $(cc) -o hello -I $(include) hello.o
 
-world <span class="token keyword">:</span> world.o
-    <span class="token variable"><span class="token variable">$(</span>cc<span class="token variable">)</span></span> -o world -I <span class="token variable"><span class="token variable">$(</span>include<span class="token variable">)</span></span> world.o
+world : world.o
+    $(cc) -o world -I $(include) world.o
 
-hello.o <span class="token keyword">:</span> hello.cc
-    <span class="token variable"><span class="token variable">$(</span>cc<span class="token variable">)</span></span> -c hello.cc -I <span class="token variable"><span class="token variable">$(</span>include<span class="token variable">)</span></span>
+hello.o : hello.cc
+    $(cc) -c hello.cc -I $(include)
 
-world.o <span class="token keyword">:</span> world.cc
-    <span class="token variable"><span class="token variable">$(</span>cc<span class="token variable">)</span></span> -c world.cc -I <span class="token variable"><span class="token variable">$(</span>include<span class="token variable">)</span></span>
+world.o : world.cc
+    $(cc) -c world.cc -I $(include)
 
-clean <span class="token keyword">:</span>
-    <span class="token function">rm</span> -f *.o
-    <span class="token function">rm</span> -f hello world</code></pre>
+clean :
+    rm -f *.o
+    rm -f hello world
+</code></pre>
 <p>更详细可参考 <a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2015/02/make.html">Make 命令教程</a></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>学会 <strong>makefile</strong> 对以后的编程还是有很大帮助的，可以大大提高自己编写代码的效率。</p>
 <blockquote>
@@ -651,6 +658,7 @@ clean <span class="token keyword">:</span>
 <center>锦瑟华年谁与度？月台花榭，锁窗朱户，只有春知处。</center>
 <center>碧云冉冉蘅皋暮，彩笔新题断肠句。</center>
 <center>试问闲愁都几许？一川烟草，满城风絮，梅子黄时雨。</center>
+
 </blockquote>
 
             </div>
@@ -903,15 +911,18 @@ clean <span class="token keyword">:</span>
                             一. Linux进程间通信Ⅰ. 管道函数管道是有大小的，通过ulimit -a查看管道大小
 
 man 2 pipe
-#include &lt;unistd.h>
+#include 
 int pipe(int pipefd[2]);
+
 
 参数
 
 文件描述符。
 
 
+读管道
 
+写端全部关闭 
                         
                     </div>
                     <div class="publish-info">
@@ -948,22 +959,26 @@ int pipe(int pipefd[2]);
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/13/linux/2020/linux-jin-cheng/">
+                <a href="/2020/05/13/linux/2020/ubuntu18.04-an-zhuang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Linux进程">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Ubuntu18.04安装">
                         
-                        <span class="card-title">Linux进程</span>
+                        <span class="card-title">Ubuntu18.04安装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一. 操作系统小知识注：此笔记的重点不是讲操作系统，故操作系统知识比较粗浅，只是介绍。
-1. 进程和程序
-程序，是指编译好的二进制文件，在磁盘上，不占用系统资源。
-进程，是活跃的（动态的）的程序，占用系统资源，在内存中执行。进程是分配系统资
+                            WSL就是Windows Subsystem for Linux（Windows系统的Linux子系统），因为依赖于win10，所以“子系统”会受到一些限制。
+使用方法：
+打开控制面板
+
+
+
+
+按照提示重启就好了，要是没有这个选项，就说明系
                         
                     </div>
                     <div class="publish-info">
@@ -985,8 +1000,8 @@ int pipe(int pipefd[2]);
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                        <span class="chip bg-color">虚拟机</span>
                     </a>
                     
                 </div>
@@ -1193,7 +1208,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

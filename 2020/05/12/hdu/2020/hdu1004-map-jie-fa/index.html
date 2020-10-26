@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -472,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    305
+                    286
                 </div>
                 
 
@@ -494,7 +496,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 style="color:#1A5CC8">Let the Balloon Rise</h1><font><b><span style="font-family:Arial;font-size:12px;font-weight:bold;color:green">Time Limit: 2000/1000 MS (Java/Others)&nbsp;&nbsp;&nbsp;&nbsp;Memory Limit: 65536/32768 K (Java/Others)<br>Total Submission(s): 168777&nbsp;&nbsp;&nbsp;&nbsp;Accepted Submission(s): 67277<br></span></b></font><br><br><div class="panel_title" align="left">Problem Description</div> <div class="panel_content">Contest time again! How excited it is to see balloons floating around. But to tell you a secret, the judges' favorite time is guessing the most popular problem. When the contest is over, they will count the balloons of each color and find the result.<br><br>This year, they decide to leave this lovely job to you. <br></div><div class="panel_bottom">&nbsp;</div><br><div class="panel_title" align="left">Input</div> <div class="panel_content">Input contains multiple test cases. Each test case starts with a number N (0 &lt; N &lt;= 1000) -- the total number of balloons distributed. The next N lines contain one color each. The color of a balloon is a string of up to 15 lower-case letters.<br><br>A test case with N = 0 terminates the input and this test case is not to be processed.<br></div><div class="panel_bottom">&nbsp;</div><br><div class="panel_title" align="left">Output</div> <div class="panel_content">For each case, print the color of balloon for the most popular problem on a single line. It is guaranteed that there is a unique solution for each test case.<br></div><div class="panel_bottom">&nbsp;</div><br><div class="panel_title" align="left">Sample Input</div><div class="panel_content"><pre><div style="font-family:Courier New,Courier,monospace;">5
+                <p></p><h1 style="color:#1A5CC8">Let the Balloon Rise</h1><font><b><span style="font-family:Arial;font-size:12px;font-weight:bold;color:green">Time Limit: 2000/1000 MS (Java/Others)&nbsp;&nbsp;&nbsp;&nbsp;Memory Limit: 65536/32768 K (Java/Others)<br>Total Submission(s): 168777&nbsp;&nbsp;&nbsp;&nbsp;Accepted Submission(s): 67277<br></span></b></font><br><br><div class="panel_title" align="left">Problem Description</div> <div class="panel_content">Contest time again! How excited it is to see balloons floating around. But to tell you a secret, the judges' favorite time is guessing the most popular problem. When the contest is over, they will count the balloons of each color and find the result.<br><br>This year, they decide to leave this lovely job to you. <br></div><div class="panel_bottom">&nbsp;</div><br><div class="panel_title" align="left">Input</div> <div class="panel_content">Input contains multiple test cases. Each test case starts with a number N (0 &lt; N &lt;= 1000) -- the total number of balloons distributed. The next N lines contain one color each. The color of a balloon is a string of up to 15 lower-case letters.<br><br>A test case with N = 0 terminates the input and this test case is not to be processed.<br></div><div class="panel_bottom">&nbsp;</div><br><div class="panel_title" align="left">Output</div> <div class="panel_content">For each case, print the color of balloon for the most popular problem on a single line. It is guaranteed that there is a unique solution for each test case.<br></div><div class="panel_bottom">&nbsp;</div><br><div class="panel_title" align="left">Sample Input</div><div class="panel_content"><pre><div style="font-family:Courier New,Courier,monospace;">5
 green
 red
 blue
@@ -505,41 +507,40 @@ pink
 orange
 pink
 0</div><div class="panel_bottom">&nbsp;</div><div class="panel_title" align="left">Sample Output</div><div class="panel_content"><pre><div style="font-family:Courier New,Courier,monospace;">red
-pink</div><br><br>
+pink</div><br><br><p></p>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">#include <cstring>
+#include <iostream>
+#include <map>
+#include <string>
 
+int main() {
+  using namespace std;
+  int n;
+  string str1;
+  while (cin >> n) {
+    if (n == 0)
+      break;
+    map<string, int> mp;
+    for (int i = 0; i < n; i++) {
+      cin >> str1;
+      mp[str1]++; // map的特点
+    }
+    map<string, int>::iterator it;
+    string str;
+    int sum = 0;
+    for (it = mp.begin(); it != mp.end(); it++) {
+      if (it->second > sum) {
+        str = it->first;
+        sum = it->second; //找出最大的int，保存最大int的string
+      }
+    }
+    cout << str << endl;
+  }
+  return 0;
+}
+</code></pre>
+  <valine></valine>
 
-
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cstring></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;map></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string></span></span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-  <span class="token keyword">int</span> n<span class="token punctuation">;</span>
-  string str1<span class="token punctuation">;</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span>cin <span class="token operator">>></span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
-      <span class="token keyword">break</span><span class="token punctuation">;</span>
-    map<span class="token operator">&lt;</span>string<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span> mp<span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      cin <span class="token operator">>></span> str1<span class="token punctuation">;</span>
-      mp<span class="token punctuation">[</span>str1<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// map的特点</span>
-    <span class="token punctuation">}</span>
-    map<span class="token operator">&lt;</span>string<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span><span class="token operator">::</span>iterator it<span class="token punctuation">;</span>
-    string str<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>it <span class="token operator">=</span> mp<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it <span class="token operator">!=</span> mp<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>it<span class="token operator">-</span><span class="token operator">></span>second <span class="token operator">></span> sum<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        str <span class="token operator">=</span> it<span class="token operator">-</span><span class="token operator">></span>first<span class="token punctuation">;</span>
-        sum <span class="token operator">=</span> it<span class="token operator">-</span><span class="token operator">></span>second<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//找出最大的int，保存最大int的string</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    cout <span class="token operator">&lt;&lt;</span> str <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p>  <valine></valine></p>
 </pre></div></pre></div>
             </div>
             <hr/>
@@ -842,13 +843,14 @@ pink</div><br><br>
                         
                             所谓贪心，只是人的一种本能反应
 原题链接
-#include &lt;algorithm>
-#include &lt;iostream>
+#include 
+#include 
 using std::cin;
 using std::cout;
 using std::endl;
 
-/
+//各个节目的开始时间，结束时间！
+struct Ti 
                         
                     </div>
                     <div class="publish-info">
@@ -1078,7 +1080,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

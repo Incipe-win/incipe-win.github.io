@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -508,15 +510,16 @@
 <p>如图：</p>
 <p><img src="https://img-blog.csdnimg.cn/20190820101545412.png" alt="在这里插入图片描述"></p>
 <p>对于 <code>mirrorlist.msys</code>，贴上如下内容：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">##</span>
-<span class="token comment" spellcheck="true">## MSYS2 repository mirrorlist</span>
-<span class="token comment" spellcheck="true">##</span>
-<span class="token comment" spellcheck="true">## Primary</span>
-<span class="token comment" spellcheck="true">## msys2.org</span>
-Server <span class="token operator">=</span> http://mirrors.ustc.edu.cn/msys2/msys/<span class="token variable">$arch</span>/
-Server <span class="token operator">=</span> http://repo.msys2.org/msys/<span class="token variable">$arch</span>
-Server <span class="token operator">=</span> http://downloads.sourceforge.net/project/msys2/REPOS/MSYS2/<span class="token variable">$arch</span>
-Server <span class="token operator">=</span> http://www2.futureware.at/~nickoe/msys2-mirror/msys/<span class="token variable">$arch</span>/</code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">##
+## MSYS2 repository mirrorlist
+##
+## Primary
+## msys2.org
+Server = http://mirrors.ustc.edu.cn/msys2/msys/$arch/
+Server = http://repo.msys2.org/msys/$arch
+Server = http://downloads.sourceforge.net/project/msys2/REPOS/MSYS2/$arch
+Server = http://www2.futureware.at/~nickoe/msys2-mirror/msys/$arch/
+</code></pre>
 <p><code>mirrorlist.mingw64</code></p>
 <pre><code>##
 ## 64-bit Mingw-w64 repository mirrorlist
@@ -527,28 +530,31 @@ Server = http://mirrors.ustc.edu.cn/msys2/mingw/x86_64/
 Server = http://repo.msys2.org/mingw/x86_64
 Server = http://downloads.sourceforge.net/project/msys2/REPOS/MINGW/x86_64
 Server = http://www2.futureware.at/~nickoe/msys2-mirror/x86_64/
-Server = http://mirror.bit.edu.cn/msys2/REPOS/</code></pre>
-<p><code>mirrorlist.mingw32</code></p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">##</span>
-<span class="token comment" spellcheck="true">## 32-bit Mingw-w64 repository mirrorlist</span>
-<span class="token comment" spellcheck="true">##</span>
-<span class="token comment" spellcheck="true">## Primary</span>
-<span class="token comment" spellcheck="true">## msys2.org</span>
-Server <span class="token operator">=</span> http://mirrors.ustc.edu.cn/msys2/mingw/i686/
-Server <span class="token operator">=</span> http://repo.msys2.org/mingw/i686
-Server <span class="token operator">=</span> http://downloads.sourceforge.net/project/msys2/REPOS/MINGW/i686
-Server <span class="token operator">=</span> http://www2.futureware.at/~nickoe/msys2-mirror/i686/</code></pre>
+Server = http://mirror.bit.edu.cn/msys2/REPOS/
+</code></pre><p><code>mirrorlist.mingw32</code></p>
+<pre class=" language-lang-bash"><code class="language-lang-bash">##
+## 32-bit Mingw-w64 repository mirrorlist
+##
+## Primary
+## msys2.org
+Server = http://mirrors.ustc.edu.cn/msys2/mingw/i686/
+Server = http://repo.msys2.org/mingw/i686
+Server = http://downloads.sourceforge.net/project/msys2/REPOS/MINGW/i686
+Server = http://www2.futureware.at/~nickoe/msys2-mirror/i686/
+</code></pre>
 <h3 id="安装mingw64"><a href="#安装mingw64" class="headerlink" title="安装mingw64"></a>安装mingw64</h3><p><code>msys2</code> 是依赖 <code>pacman</code>的。</p>
 <p>1.更新 <code>msys2</code> 的系统环境：</p>
-<pre class=" language-bash"><code class="language-bash">pacman -Sy
-<span class="token comment" spellcheck="true">#更新源</span>
+<pre class=" language-lang-bash"><code class="language-lang-bash">pacman -Sy
+#更新源
 pacman -Syu
-pacman -Su</code></pre>
+pacman -Su
+</code></pre>
 <p>安装 <code>MinGW-w64</code> 和 <code>MinGW-x86</code> 版本：</p>
 <p>一个是64位，另一个是32位。</p>
 <p>简单讲下，<code>x86，i686</code> 是32位的，<code>x86，x86_64</code> 是64位的。</p>
-<pre class=" language-bash"><code class="language-bash">pacman -S  mingw-w64-i686-toolchain
-pacman -S  mingw-w64-x86_64-toolchain</code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">pacman -S  mingw-w64-i686-toolchain
+pacman -S  mingw-w64-x86_64-toolchain
+</code></pre>
 <p>其它有需求者自装。</p>
 <h3 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h3><p>为 <code>mingw-w64</code> 添加环境变量：</p>
 <p>安装成功后，在你的 <code>msys2</code> 的安装路径下会有 <code>mingw64</code> 文件夹的。</p>
@@ -1100,7 +1106,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

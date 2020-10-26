@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -472,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    425
+                    411
                 </div>
                 
 
@@ -507,144 +509,149 @@
 <p>来源：力扣（LeetCode）<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/">https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/</a></p>
 </blockquote>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="Ⅰ-反转链表"><a href="#Ⅰ-反转链表" class="headerlink" title="Ⅰ. 反转链表"></a>Ⅰ. 反转链表</h3><p>得到反转后的链表，遍历链表即可。</p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS84NTg0NTg1Yy1lMzdlLTRkOWQtYmRhOC1lYjIzOWI5ZDAxMmUuZ2lm"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS84NTg0NTg1Yy1lMzdlLTRkOWQtYmRhOC1lYjIzOWI5ZDAxMmUuZ2lm" alt=""></p>
 <ul>
 <li>C++代码</li>
 </ul>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">/**
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
  *     ListNode *next;
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
- */</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">reversePrint</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> ans<span class="token punctuation">;</span>
-        ListNode<span class="token operator">*</span> res <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">,</span> <span class="token operator">*</span>tmp <span class="token operator">=</span> head<span class="token punctuation">;</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>head <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            tmp <span class="token operator">=</span> head<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
-            head<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> res<span class="token punctuation">;</span>
-            res <span class="token operator">=</span> head<span class="token punctuation">;</span>
-            head <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>res <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            ans<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>res<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            res <span class="token operator">=</span> res<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+ */
+class Solution {
+public:
+    vector<int> reversePrint(ListNode* head) {
+        vector<int> ans;
+        ListNode* res = nullptr, *tmp = head;
+        while (head != nullptr) {
+            tmp = head->next;
+            head->next = res;
+            res = head;
+            head = tmp;
+        }
+        while (res != nullptr) {
+            ans.emplace_back(res->val);
+            res = res->next;
+        }
+        return ans;
+    }
+};
+</code></pre>
 <ul>
 <li>python代码</li>
 </ul>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for singly-linked list.</span>
-<span class="token comment" spellcheck="true"># class ListNode:</span>
-<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
-<span class="token comment" spellcheck="true">#         self.val = x</span>
-<span class="token comment" spellcheck="true">#         self.next = None</span>
+<pre class=" language-lang-python"><code class="language-lang-python"># Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
 
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">reversePrint</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">:</span> ListNode<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">:</span>
-        ans <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        res <span class="token operator">=</span> None
-        <span class="token keyword">while</span> head<span class="token punctuation">:</span>
-            tmp <span class="token operator">=</span> head<span class="token punctuation">.</span>next
-            head<span class="token punctuation">.</span>next <span class="token operator">=</span> res
-            res <span class="token operator">=</span> head
-            head <span class="token operator">=</span> tmp
-        <span class="token keyword">while</span> res<span class="token punctuation">:</span>
-            ans<span class="token punctuation">.</span>append<span class="token punctuation">(</span>res<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
-            res <span class="token operator">=</span> res<span class="token punctuation">.</span>next
-        <span class="token keyword">return</span> ans
+class Solution:
+    def reversePrint(self, head: ListNode) -> List[int]:
+        ans = []
+        res = None
+        while head:
+            tmp = head.next
+            head.next = res
+            res = head
+            head = tmp
+        while res:
+            ans.append(res.val)
+            res = res.next
+        return ans
 </code></pre>
 <h3 id="Ⅱ-栈"><a href="#Ⅱ-栈" class="headerlink" title="Ⅱ. 栈"></a>Ⅱ. 栈</h3><p>利用栈的先进后出性质，易解。</p>
 <ul>
 <li>C++代码</li>
 </ul>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">/**
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
  *     ListNode *next;
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
- */</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">reversePrint</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> s<span class="token punctuation">;</span>
-        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> ans<span class="token punctuation">;</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            s<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>head<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            head <span class="token operator">=</span> head<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>s<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            ans<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            s<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+ */
+class Solution {
+public:
+    vector<int> reversePrint(ListNode* head) {
+        stack<int> s;
+        vector<int> ans;
+        while (head) {
+            s.push(head->val);
+            head = head->next;
+        }
+        while (!s.empty()) {
+            ans.emplace_back(s.top());
+            s.pop();
+        }
+        return ans;
+    }
+};
+</code></pre>
 <ul>
 <li>python代码</li>
 </ul>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for singly-linked list.</span>
-<span class="token comment" spellcheck="true"># class ListNode:</span>
-<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
-<span class="token comment" spellcheck="true">#         self.val = x</span>
-<span class="token comment" spellcheck="true">#         self.next = None</span>
+<pre class=" language-lang-python"><code class="language-lang-python"># Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
 
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">reversePrint</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">:</span> ListNode<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">:</span>
-        s <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        <span class="token keyword">while</span> head<span class="token punctuation">:</span>
-            s<span class="token punctuation">.</span>append<span class="token punctuation">(</span>head<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
-            head <span class="token operator">=</span> head<span class="token punctuation">.</span>next
-        <span class="token keyword">return</span> s<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span></code></pre>
-<h3 id="Ⅲ-递归"><a href="#Ⅲ-递归" class="headerlink" title="Ⅲ. 递归"></a>Ⅲ. 递归</h3><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS8xNWVlZWU2NC01ODA2LTRlOTctOTYyMy01ZDEwNzU5Yjg0NzguZ2lm"></p>
+class Solution:
+    def reversePrint(self, head: ListNode) -> List[int]:
+        s = []
+        while head:
+            s.append(head.val)
+            head = head.next
+        return s[::-1]
+</code></pre>
+<h3 id="Ⅲ-递归"><a href="#Ⅲ-递归" class="headerlink" title="Ⅲ. 递归"></a>Ⅲ. 递归</h3><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS8xNWVlZWU2NC01ODA2LTRlOTctOTYyMy01ZDEwNzU5Yjg0NzguZ2lm" alt=""></p>
 <ul>
 <li>C++代码</li>
 </ul>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">/**
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
  *     ListNode *next;
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
- */</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">private</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> ans<span class="token punctuation">;</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">reversePrint</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        ans <span class="token operator">=</span> <span class="token function">reversePrint</span><span class="token punctuation">(</span>head<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ans<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>head<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+ */
+class Solution {
+private:
+    vector<int> ans;
+public:
+    vector<int> reversePrint(ListNode* head) {
+        if (head == nullptr) {
+            return {};
+        }
+        ans = reversePrint(head->next);
+        ans.push_back(head->val);
+        return ans;
+    }
+};
+</code></pre>
 <ul>
 <li>python代码</li>
 </ul>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for singly-linked list.</span>
-<span class="token comment" spellcheck="true"># class ListNode:</span>
-<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
-<span class="token comment" spellcheck="true">#         self.val = x</span>
-<span class="token comment" spellcheck="true">#         self.next = None</span>
+<pre class=" language-lang-python"><code class="language-lang-python"># Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
 
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">reversePrint</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">:</span> ListNode<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> head <span class="token keyword">is</span> None<span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        s <span class="token operator">=</span> self<span class="token punctuation">.</span>reversePrint<span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">)</span>
-        s<span class="token punctuation">.</span>append<span class="token punctuation">(</span>head<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> s</code></pre>
+class Solution:
+    def reversePrint(self, head: ListNode) -> List[int]:
+        if head is None:
+            return []
+        s = self.reversePrint(head.next)
+        s.append(head.val)
+        return s
+</code></pre>
 
             </div>
             <hr/>
@@ -1186,7 +1193,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -399,10 +401,19 @@
                 </a>
                 
                 
+                <a href="/categories/%E5%89%91%E6%8C%87offer/" title="剑指offer: 12">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #FEF9E7;">剑指offer
+                        <span class="tag-length">12</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/categories/Linux/" title="Linux: 19">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            style="background-color: #FEF9E7;">Linux
+                            style="background-color: #F8F9F9;">Linux
                         <span class="tag-length">19</span>
                     </span>
                 </a>
@@ -411,17 +422,8 @@
                 <a href="/categories/%E6%B1%87%E7%BC%96/" title="汇编: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8F9F9;">汇编
+                            style="background-color: #82E0AA;">汇编
                         <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/%E5%89%91%E6%8C%87offer/" title="剑指offer: 12">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #82E0AA;">剑指offer
-                        <span class="tag-length">12</span>
                     </span>
                 </a>
                 
@@ -598,22 +600,26 @@ B类IP地址，IP地址前16位表示网络
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/06/23/linux/2020/linux-xian-cheng/">
+                    <a href="/2020/06/23/linux/2020/linux-jin-cheng-xia/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Linux线程">
+                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Linux进程下">
                             
-                            <span class="card-title">Linux线程</span>
+                            <span class="card-title">Linux进程下</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                一. 线程pthread不是linux下默认的库，有可能需要安装。
-sudo apt-get install glibc-doc
-sudo apt-get install manpages-posix-dev
-通过man pthread_c
+                                一. 信号Ⅰ. 信号的基本概念信号
+信号产生
+
+按键产生，Ctrl + c、Ctrl + z；
+调用函数，kill、raise、abort；
+定时器，alarm、setitimer；
+命令产生，kill；
+硬件异常，段错误，浮点型错误，总线
                             
                         </div>
                         <div class="publish-info">
@@ -647,26 +653,22 @@ sudo apt-get install manpages-posix-dev
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/06/23/linux/2020/linux-jin-cheng-xia/">
+                    <a href="/2020/06/23/linux/2020/linux-xian-cheng/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Linux进程下">
+                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Linux线程">
                             
-                            <span class="card-title">Linux进程下</span>
+                            <span class="card-title">Linux线程</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                一. 信号Ⅰ. 信号的基本概念信号
-信号产生
-
-按键产生，Ctrl + c、Ctrl + z；
-调用函数，kill、raise、abort；
-定时器，alarm、setitimer；
-命令产生，kill；
-硬件异常，段错误，浮点型错误，总线
+                                一. 线程pthread不是linux下默认的库，有可能需要安装。
+sudo apt-get install glibc-doc
+sudo apt-get install manpages-posix-dev
+通过man pthread_c
                             
                         </div>
                         <div class="publish-info">
@@ -801,6 +803,59 @@ chmod 修改文件的属性
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2020/05/13/linux/2020/ubuntu18.04-an-zhuang/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Ubuntu18.04安装">
+                            
+                            <span class="card-title">Ubuntu18.04安装</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                WSL就是Windows Subsystem for Linux（Windows系统的Linux子系统），因为依赖于win10，所以“子系统”会受到一些限制。
+使用方法：
+打开控制面板
+
+
+
+
+按照提示重启就好了，要是没有这个选项，就说明系
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-13
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                            <span class="chip bg-color">虚拟机</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2020/05/13/linux/2020/makefile-jian-dan-shi-yong/">
                         <div class="card-image tag-image">
                             
@@ -870,15 +925,18 @@ chmod 修改文件的属性
                                 一. Linux进程间通信Ⅰ. 管道函数管道是有大小的，通过ulimit -a查看管道大小
 
 man 2 pipe
-#include &lt;unistd.h>
+#include 
 int pipe(int pipefd[2]);
+
 
 参数
 
 文件描述符。
 
 
+读管道
 
+写端全部关闭 
                             
                         </div>
                         <div class="publish-info">
@@ -903,59 +961,6 @@ int pipe(int pipefd[2]);
                         
                         <a href="/tags/Linux/">
                             <span class="chip bg-color">Linux</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/05/13/linux/2020/ubuntu18.04-an-zhuang/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Ubuntu18.04安装">
-                            
-                            <span class="card-title">Ubuntu18.04安装</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                WSL就是Windows Subsystem for Linux（Windows系统的Linux子系统），因为依赖于win10，所以“子系统”会受到一些限制。
-使用方法：
-打开控制面板
-
-
-
-
-按照提示重启就好了，要是没有这个选项，就说明系
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-13
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Linux/" class="post-category">
-                                    Linux
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                            <span class="chip bg-color">虚拟机</span>
                         </a>
                         
                     </div>
@@ -1060,7 +1065,7 @@ int pipe(int pipefd[2]);
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

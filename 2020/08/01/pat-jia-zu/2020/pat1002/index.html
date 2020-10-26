@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -472,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    571
+                    535
                 </div>
                 
 
@@ -514,53 +516,54 @@
 <p>输出：对于每个测试案列应该按照输入方式一样输出多项式A+B的值，注意在末尾没有额外的空格。请精确到小数点后一位。</p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这个题目也不怎么难，需要注意的是系数在后面就好了。</p>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>定义个降序排序的map，输入第一个多项式时，自己插入到map里面，输入第二个多项式时，要是mp键的值不为0，就加上系数，要是为0，说明没有同类项，就插入到map里面。</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;algorithm></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cmath></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;map></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unordered_map></span></span>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">#include <algorithm>
+#include <cmath>
+#include <iostream>
+#include <map>
+#include <string>
+#include <unordered_map>
 
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+using namespace std;
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">// 默认的map是按照升序排序的，加上greater就是按照int键进行降序排序了。</span>
-  map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">float</span><span class="token punctuation">,</span> greater<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> mp<span class="token punctuation">;</span>
-  <span class="token keyword">int</span> n<span class="token punctuation">,</span> m<span class="token punctuation">,</span> exp<span class="token punctuation">;</span>
-  <span class="token keyword">float</span> coe<span class="token punctuation">;</span>
-  cin <span class="token operator">>></span> n<span class="token punctuation">;</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    cin <span class="token operator">>></span> exp <span class="token operator">>></span> coe<span class="token punctuation">;</span>
-    mp<span class="token punctuation">[</span>exp<span class="token punctuation">]</span> <span class="token operator">=</span> coe<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  cin <span class="token operator">>></span> m<span class="token punctuation">;</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    cin <span class="token operator">>></span> exp <span class="token operator">>></span> coe<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>mp<span class="token punctuation">[</span>exp<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      mp<span class="token punctuation">[</span>exp<span class="token punctuation">]</span> <span class="token operator">=</span> coe<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-      mp<span class="token punctuation">[</span>exp<span class="token punctuation">]</span> <span class="token operator">=</span> mp<span class="token punctuation">[</span>exp<span class="token punctuation">]</span> <span class="token operator">+</span> coe<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-  <span class="token keyword">int</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">float</span><span class="token operator">></span><span class="token operator">::</span>iterator it<span class="token punctuation">;</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span>it <span class="token operator">=</span> mp<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it <span class="token operator">!=</span> mp<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>it<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>it<span class="token operator">-</span><span class="token operator">></span>second <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token operator">++</span>ans<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-  cout <span class="token operator">&lt;&lt;</span> ans<span class="token punctuation">;</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span>it <span class="token operator">=</span> mp<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it <span class="token operator">!=</span> mp<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>it<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">fabs</span><span class="token punctuation">(</span>it<span class="token operator">-</span><span class="token operator">></span>second <span class="token operator">-</span> <span class="token number">0.0</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0.000001</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">continue</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment" spellcheck="true">//     cout &lt;&lt; " " &lt;&lt; it->first &lt;&lt; " " &lt;&lt; it->second;</span>
-    <span class="token comment" spellcheck="true">// 注意输出格式，一位小数，末尾不能有空格！！！</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" %d %.1f"</span><span class="token punctuation">,</span> it<span class="token operator">-</span><span class="token operator">></span>first<span class="token punctuation">,</span> it<span class="token operator">-</span><span class="token operator">></span>second<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+int main() {
+  // 默认的map是按照升序排序的，加上greater就是按照int键进行降序排序了。
+  map<int, float, greater<int>> mp;
+  int n, m, exp;
+  float coe;
+  cin >> n;
+  for (int i = 0; i < n; ++i) {
+    cin >> exp >> coe;
+    mp[exp] = coe;
+  }
+  cin >> m;
+  for (int i = 0; i < m; ++i) {
+    cin >> exp >> coe;
+    if (mp[exp] == 0) {
+      mp[exp] = coe;
+    } else {
+      mp[exp] = mp[exp] + coe;
+    }
+  }
+  int ans = 0;
+  map<int, float>::iterator it;
+  for (it = mp.begin(); it != mp.end(); ++it) {
+    if (it->second != 0) {
+      ++ans;
+    }
+  }
+  cout << ans;
+  for (it = mp.begin(); it != mp.end(); ++it) {
+    if (fabs(it->second - 0.0) < 0.000001) {
+      continue;
+    }
+    //     cout << " " << it->first << " " << it->second;
+    // 注意输出格式，一位小数，末尾不能有空格！！！
+    printf(" %d %.1f", it->first, it->second);
+  }
+  cout << endl;
+  return 0;
+}
+</code></pre>
 
             </div>
             <hr/>
@@ -847,20 +850,19 @@ Given a non-negative integer N, your task is to compute the sum of all the digit
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/31/pat-jia-zu/2020/pat1001/">
+                <a href="/2020/07/31/python/2020/linux-xia-chuang-jian-xu-ni-python-huan-jing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="PAT1001">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Linux下创建虚拟python环境">
                         
-                        <span class="card-title">PAT1001</span>
+                        <span class="card-title">Linux下创建虚拟python环境</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            原题
-Calculate a+b and output the sum in standard format – that is, the digits must be separated into groups of three by c
+                            为什么需要虚拟环境简单来讲，就是因为不同的项目可能需要不同的python package。但是，往往安装了最新版本的package会覆盖掉原来的，导致原有的项目因为package不同而无法正常工作。最常用的一个办法就是使用 virtuale
                         
                     </div>
                     <div class="publish-info">
@@ -882,8 +884,12 @@ Calculate a+b and output the sum in standard format – that is, the digits must
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/PAT/">
-                        <span class="chip bg-color">PAT</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/Liunx/">
+                        <span class="chip bg-color">Liunx</span>
                     </a>
                     
                 </div>
@@ -1090,7 +1096,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

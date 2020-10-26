@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -497,44 +499,50 @@
                 <p><strong><em>我不树敌,敌自树</em></strong></p>
 <p><strong>shutdown</strong>中文就是关机的意思。</p>
 <p>由于linux的关机和重新启动操作是很重大的系统操作,所以一般只有<strong>root</strong>(<strong>超级用户</strong>)才能执行,不过在一些linux发行版中,我们可以使用sudo增加用户权限来执行这些需要<strong>root</strong>身份才能执行的命令。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">shutdown</span> <span class="token punctuation">[</span>-krhc<span class="token punctuation">]</span> <span class="token punctuation">[</span>时间<span class="token punctuation">]</span> <span class="token punctuation">[</span>警告信息<span class="token punctuation">]</span></code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">sudo shutdown [-krhc] [时间] [警告信息]
+</code></pre>
 <p>选项与参数介绍:</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">参数</th>
-<th align="center">功能</th>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">功能</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">-k</td>
-<td align="center">不要真的关机,只是发出警告信息</td>
+<tbody>
+<tr>
+<td style="text-align:center">-k</td>
+<td style="text-align:center">不要真的关机,只是发出警告信息</td>
 </tr>
 <tr>
-<td align="center">-r</td>
-<td align="center">在将系统的服务停掉之后就重启(常用)</td>
+<td style="text-align:center">-r</td>
+<td style="text-align:center">在将系统的服务停掉之后就重启(常用)</td>
 </tr>
 <tr>
-<td align="center">-h</td>
-<td align="center">将系统的服务停掉之后,立即关机(常用)</td>
+<td style="text-align:center">-h</td>
+<td style="text-align:center">将系统的服务停掉之后,立即关机(常用)</td>
 </tr>
 <tr>
-<td align="center">-c</td>
-<td align="center">取消已经在进行的shutdown命令内容</td>
+<td style="text-align:center">-c</td>
+<td style="text-align:center">取消已经在进行的shutdown命令内容</td>
 </tr>
 <tr>
-<td align="center">时间</td>
-<td align="center">指定系统关机的时间,若没有这个项目,则默认一分钟后进行</td>
+<td style="text-align:center">时间</td>
+<td style="text-align:center">指定系统关机的时间,若没有这个项目,则默认一分钟后进行</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>范例:</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">shutdown</span> -h 10 <span class="token string">'I will shutdown after 10 mins'</span></code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">sudo shutdown -h 10 'I will shutdown after 10 mins'
+</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200222141339960.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzODI2MjEy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"> </p>
 <p>‘I will shutdown after 10 mins’<br>会提示其它使用者这台电脑将在10分钟后关机,请做好保存工作!<br> 还有个常用的重启命令<strong>reboot</strong></p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sync</span><span class="token punctuation">;</span> <span class="token function">sync</span><span class="token punctuation">;</span> <span class="token function">sync</span><span class="token punctuation">;</span> <span class="token function">reboot</span></code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">sync; sync; sync; reboot
+</code></pre>
 <p><strong>sync</strong>会使在内存中尚未更新的数据,被写入磁盘中。<br> 每天一个linux终端命令,积少成多,希望大家越来越优秀!<br> <strong>才疏学浅，望雅正！</strong></p>
-<p><valine></valine></p>
-
+<valine></valine>
             </div>
             <hr/>
 
@@ -770,21 +778,21 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/13/linux/2020/gei-xu-ni-ji-de-ubuntu-huan-a-li-yuan/">
+                <a href="/2020/05/13/linux/2020/mei-tian-yi-ge-linux-zhong-duan-ming-ling-man-ming-ling/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="给虚拟机的Ubuntu换阿里源">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="每天一个linux终端命令man命令">
                         
-                        <span class="card-title">给虚拟机的Ubuntu换阿里源</span>
+                        <span class="card-title">每天一个linux终端命令man命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            安装的Ubuntu安装东西速度实在是不敢恭维QAQ，因为是国外的网址。 
-所以我们要换成国内的源，然后就可以尽情飞越了。
-首先我们还是要先备份下：sudo cp /etc/apt/sources.list /etc/apt/sources.
+                            我不树敌,敌自树
+shutdown 中文就是关机的意思。
+由于linux的关机和重新启动操作是很重大的系统操作,所以一般只有 root ( 超级用户 )才能执行,不过在一些linux发行版中,我们可以使用sudo增加用户权限来执行这些需要 
                         
                     </div>
                     <div class="publish-info">
@@ -806,8 +814,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                        <span class="chip bg-color">虚拟机</span>
+                    <a href="/tags/Linux%E5%91%BD%E4%BB%A4/">
+                        <span class="chip bg-color">Linux命令</span>
                     </a>
                     
                 </div>
@@ -821,19 +829,21 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/13/linux/2020/xu-ni-ji-an-zhuang-ubuntu18.04/">
+                <a href="/2020/05/13/linux/2020/gei-xu-ni-ji-de-ubuntu-huan-a-li-yuan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="虚拟机安装Ubuntu18.04">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="给虚拟机的Ubuntu换阿里源">
                         
-                        <span class="card-title">虚拟机安装Ubuntu18.04</span>
+                        <span class="card-title">给虚拟机的Ubuntu换阿里源</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Ubuntu19.04只有九个月的支持服务时间、可以去体验下。下载vmware workstation下载地址用这个密钥激活应该就可以了YG5H2-ANZ0H-M8ERY-TXZZZ-YKRV8下载Ubuntu18.04镜像文件链接：htt
+                            安装的Ubuntu安装东西速度实在是不敢恭维QAQ，因为是国外的网址。 
+所以我们要换成国内的源，然后就可以尽情飞越了。
+首先我们还是要先备份下：sudo cp /etc/apt/sources.list /etc/apt/sources.
                         
                     </div>
                     <div class="publish-info">
@@ -855,8 +865,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                        <span class="chip bg-color">虚拟机</span>
                     </a>
                     
                 </div>
@@ -1063,7 +1073,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

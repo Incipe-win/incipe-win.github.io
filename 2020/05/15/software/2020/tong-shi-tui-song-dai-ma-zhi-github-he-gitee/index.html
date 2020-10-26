@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -519,26 +521,29 @@
 <p>gitee一样的步骤。</p>
 <p>5.绑定用户名跟邮箱</p>
 <p>在git界面输入：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"github的用户名"</span>
+<pre class=" language-lang-bash"><code class="language-lang-bash">git config --global user.name "github的用户名"
 
-<span class="token function">git</span> config --global user.email <span class="token string">"绑定github的邮箱"</span></code></pre>
+git config --global user.email "绑定github的邮箱"
+</code></pre>
 <p>到了这一步就差不多了。</p>
 <p>新建一个文件夹，专门用来传代码。</p>
 <p>右键该文件夹。</p>
 <p>选择Git Bash here</p>
 <p>初始化，同步该文件夹</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> init
+<pre class=" language-lang-bash"><code class="language-lang-bash">git init
 
-<span class="token function">git</span> remote add origin 仓库地址（如下图）
+git remote add origin 仓库地址（如下图）
 
-<span class="token function">git</span> pull origin master</code></pre>
+git pull origin master
+</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20190822210452256.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzODI2MjEy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>然后现在就可以上传代码到github上面了。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> add <span class="token keyword">.</span> 
+<pre class=" language-lang-bash"><code class="language-lang-bash">git add . 
 
-<span class="token function">git</span> commit -m <span class="token string">"理由"</span>
+git commit -m "理由"
 
-<span class="token function">git</span> push origin master</code></pre>
+git push origin master
+</code></pre>
 <p>要修改，只需要在本地进行修改，再同步即可，当然也有其他方法。</p>
 <p>6.同时推送代码至github和gitee</p>
 <p>找到刚刚新建的文件夹，打开显示隐藏项目，会看到<code>.git</code>的文件夹</p>
@@ -547,26 +552,29 @@
 <p>接下来你进入的是vim编辑器，号称编辑器之神。</p>
 <p>这里不讲怎么使用。点击<code>i/a/o</code>j进入插入模式</p>
 <p>增加如下内容</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>remote <span class="token string">"gitee"</span><span class="token punctuation">]</span>
-    url <span class="token operator">=</span> 你的gitee项目地址
-    fetch <span class="token operator">=</span> +refs/heads/*:refs/remotes/gitee/*
-<span class="token punctuation">[</span>branch <span class="token string">"master"</span><span class="token punctuation">]</span>
-    remote <span class="token operator">=</span> gitee
-    merge <span class="token operator">=</span> fefs/heads/master</code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">[remote "gitee"]
+    url = 你的gitee项目地址
+    fetch = +refs/heads/*:refs/remotes/gitee/*
+[branch "master"]
+    remote = gitee
+    merge = fefs/heads/master
+</code></pre>
 <p>可以看到前面已经有内容了，那是上传到github的配置。</p>
 <p>然后按ESC键，多按几次没事的，按<code>Shift+:wq</code></p>
 <p>vim编辑器会在最下面一行显示如下内容，按Enter就可以了</p>
 <p><img src="https://img-blog.csdnimg.cn/20190822211814756.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzODI2MjEy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>最后就可以上传代码了。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> add <span class="token keyword">.</span>
-<span class="token function">git</span> commit -m <span class="token string">"理由"</span></code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">git add .
+git commit -m "理由"
+</code></pre>
 <p>上传至github</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> origin origin master</code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">git origin origin master
+</code></pre>
 <p>上传至gitee</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> push gitee master</code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">git push gitee master
+</code></pre>
 <p>然后就可以享受代码托管，开源的乐趣了。</p>
-<p><valine></valine></p>
-
+<valine></valine>
             </div>
             <hr/>
 
@@ -1102,7 +1110,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

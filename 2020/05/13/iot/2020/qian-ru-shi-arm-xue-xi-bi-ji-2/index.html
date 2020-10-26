@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -495,31 +497,35 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="ARM体系"><a href="#ARM体系" class="headerlink" title="ARM体系"></a>ARM体系</h2><p>ARM：Advanced RISC Machine</p>
-<h3 id="ARM命名规则"><a href="#ARM命名规则" class="headerlink" title="ARM命名规则"></a>ARM命名规则</h3><table>
+<h3 id="ARM命名规则"><a href="#ARM命名规则" class="headerlink" title="ARM命名规则"></a>ARM命名规则</h3><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="center">ARMv</th>
-<th align="center">n</th>
-<th align="center">variants</th>
-<th align="center">x (variants)</th>
+<th style="text-align:center">ARMv</th>
+<th style="text-align:center">n</th>
+<th style="text-align:center">variants</th>
+<th style="text-align:center">x (variants)</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">固定字符，即ARM Version</td>
-<td align="center">指令集版本号</td>
-<td align="center">变种</td>
-<td align="center">排除x后指定的变种</td>
+<tbody>
+<tr>
+<td style="text-align:center">固定字符，即ARM Version</td>
+<td style="text-align:center">指令集版本号</td>
+<td style="text-align:center">变种</td>
+<td style="text-align:center">排除x后指定的变种</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>常见的variants有以下几种：</p>
 <ul>
-<li>T – Thumb指令集</li>
-<li>M – 长乘法指令</li>
-<li>E  – 增强型DSP指令</li>
-<li>J  – Java加速器Jazelle</li>
-<li>D  – 支持片上Debug</li>
-<li>I   – 嵌入式ICE，支持片上断点和调试</li>
-<li>z  – cache</li>
+<li>T — Thumb指令集</li>
+<li>M — 长乘法指令</li>
+<li>E  — 增强型DSP指令</li>
+<li>J  — Java加速器Jazelle</li>
+<li>D  — 支持片上Debug</li>
+<li>I   — 嵌入式ICE，支持片上断点和调试</li>
+<li>z  — cache</li>
 </ul>
 <p>比如： <strong>ARM7TMDI</strong> 表示ARM指令集版本为7，支持 <strong>TMDI</strong> 变种</p>
 <p>在 <strong>ARMv7</strong> 以后时期，统一用 Cortex 作为主名。</p>
@@ -531,24 +537,28 @@
 </ol>
 <p>目前，全世界有几十家著名的半导体公司都使用 <strong>ARM</strong> 公司的授权，其中包括 <strong>MOTOROLA</strong> 、 <strong>IBM</strong> 、 <strong>Intel</strong> 、 <strong>LG</strong> 、 <strong>SONY</strong> 、 <strong>NEC</strong> 、 <strong>ATMEL</strong> 等，从而保证了大量的开发工具和丰富的第三方资源，它们共同保证了基于 <strong>ARM</strong> 处理器核的设计可以很快投入市场。</p>
 <p><strong>ARM</strong> 公司已成为移动通信、手持设备、多媒体数字消费嵌入式解决方案的 <strong>RISC</strong> 标准。</p>
-<h3 id="ARM-Cortex系列"><a href="#ARM-Cortex系列" class="headerlink" title="ARM Cortex系列"></a>ARM Cortex系列</h3><table>
+<h3 id="ARM-Cortex系列"><a href="#ARM-Cortex系列" class="headerlink" title="ARM Cortex系列"></a>ARM Cortex系列</h3><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="center">Cortex-A</th>
-<th align="center">Cortex-R</th>
-<th align="center">Cortex-M</th>
-<th align="center">Machine Learing</th>
-<th align="center">SecureCore</th>
+<th style="text-align:center">Cortex-A</th>
+<th style="text-align:center">Cortex-R</th>
+<th style="text-align:center">Cortex-M</th>
+<th style="text-align:center">Machine Learing</th>
+<th style="text-align:center">SecureCore</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">Highest Performance(高性能)</td>
-<td align="center">Real-Time Processing(实时)</td>
-<td align="center">Lowest Power, Lower Cost(低功率,低成本)</td>
-<td align="center">Efficiency Uplift for All Devices(提高所有设备效率)</td>
-<td align="center">Tamper Resistant(防篡改)</td>
+<tbody>
+<tr>
+<td style="text-align:center">Highest Performance(高性能)</td>
+<td style="text-align:center">Real-Time Processing(实时)</td>
+<td style="text-align:center">Lowest Power, Lower Cost(低功率,低成本)</td>
+<td style="text-align:center">Efficiency Uplift for All Devices(提高所有设备效率)</td>
+<td style="text-align:center">Tamper Resistant(防篡改)</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="ARM处理器运行模式"><a href="#ARM处理器运行模式" class="headerlink" title="ARM处理器运行模式"></a>ARM处理器运行模式</h3><h4 id="内存字节顺序"><a href="#内存字节顺序" class="headerlink" title="内存字节顺序"></a>内存字节顺序</h4><ul>
 <li>大端模式(Big Endian)</li>
 <li>小端模式(Little Endian)</li>
@@ -561,66 +571,70 @@
 <li>一个字(Word)是32bits(4Byte)</li>
 <li>ARM指令集32位，Thumb指令集16位，Thumb集为ARM指令集的子集</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">mode</th>
-<th align="center">特权模式(Y/N)</th>
-<th align="center">异常模式(Y/N)</th>
-<th align="center">description</th>
-<th align="center">二进制表示</th>
+<th style="text-align:center">mode</th>
+<th style="text-align:center">特权模式(Y/N)</th>
+<th style="text-align:center">异常模式(Y/N)</th>
+<th style="text-align:center">description</th>
+<th style="text-align:center">二进制表示</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">User(用户模式)</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">大多数任务运行的非特权模式</td>
-<td align="center">10000</td>
+<tbody>
+<tr>
+<td style="text-align:center">User(用户模式)</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">大多数任务运行的非特权模式</td>
+<td style="text-align:center">10000</td>
 </tr>
 <tr>
-<td align="center">System(系统模式)</td>
-<td align="center">Y</td>
-<td align="center"></td>
-<td align="center">使用与用户相同的寄存器的特权模式</td>
-<td align="center">10001</td>
+<td style="text-align:center">System(系统模式)</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">使用与用户相同的寄存器的特权模式</td>
+<td style="text-align:center">10001</td>
 </tr>
 <tr>
-<td align="center">FIQ(快速中断模式)</td>
-<td align="center">Y</td>
-<td align="center">Y</td>
-<td align="center">当一个高优先级(快速)中断被引起时输入</td>
-<td align="center">10010</td>
+<td style="text-align:center">FIQ(快速中断模式)</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">当一个高优先级(快速)中断被引起时输入</td>
+<td style="text-align:center">10010</td>
 </tr>
 <tr>
-<td align="center">IRQ(外部中断模式)</td>
-<td align="center">Y</td>
-<td align="center">Y</td>
-<td align="center">当一个低优先级(普通)中断被引起时输入</td>
-<td align="center">10011</td>
+<td style="text-align:center">IRQ(外部中断模式)</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">当一个低优先级(普通)中断被引起时输入</td>
+<td style="text-align:center">10011</td>
 </tr>
 <tr>
-<td align="center">Supervisor(管理模式)</td>
-<td align="center">Y</td>
-<td align="center">Y</td>
-<td align="center">在复位和执行软件中断指令时输入</td>
-<td align="center">10111</td>
+<td style="text-align:center">Supervisor(管理模式)</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">在复位和执行软件中断指令时输入</td>
+<td style="text-align:center">10111</td>
 </tr>
 <tr>
-<td align="center">Abort(中止模式)</td>
-<td align="center">Y</td>
-<td align="center">Y</td>
-<td align="center">用于处理内存访问冲突</td>
-<td align="center">11011</td>
+<td style="text-align:center">Abort(中止模式)</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">用于处理内存访问冲突</td>
+<td style="text-align:center">11011</td>
 </tr>
 <tr>
-<td align="center">Undef(未定义模式)</td>
-<td align="center">Y</td>
-<td align="center">Y</td>
-<td align="center">用于处理未定义的指令</td>
-<td align="center">11111</td>
+<td style="text-align:center">Undef(未定义模式)</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">用于处理未定义的指令</td>
+<td style="text-align:center">11111</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>总的来讲可以分为两大类：</p>
 <ul>
 <li>特权模式(其余6个模式)和非特权模式(User)</li>
@@ -659,10 +673,11 @@
 </ul>
 <h3 id="ARM异常处理"><a href="#ARM异常处理" class="headerlink" title="ARM异常处理"></a>ARM异常处理</h3><h4 id="R14-LInk-Register链接寄存器"><a href="#R14-LInk-Register链接寄存器" class="headerlink" title="R14(LInk Register链接寄存器)"></a>R14(LInk Register链接寄存器)</h4><ul>
 <li><p>R14保存的是程序的地址(程序的返回地址)</p>
-<pre class=" language-armasm"><code class="language-armasm"># 调用子程序(异常)
+<pre class=" language-lang-armasm"><code class="language-lang-armasm"># 调用子程序(异常)
 STMFD SP!,{<Regs>,LR}
 # 子程序返回(异常返回)
-LDMFD SP!,{<Regs>,PC}</code></pre>
+LDMFD SP!,{<Regs>,PC}
+</code></pre>
 </li>
 </ul>
 <p>当前程序状态寄存器(Current Program Status Register)</p>
@@ -696,8 +711,7 @@ LDMFD SP!,{<Regs>,PC}</code></pre>
 </ol>
 <p><img src="https://i.loli.net/2020/03/18/kuF5jrey2t4Bown.png" alt="image-20200318213758689"></p>
 <p><strong>才疏学浅，望雅正！</strong></p>
-<p><valine></valine></p>
-
+<valine></valine>
             </div>
             <hr/>
 
@@ -933,36 +947,32 @@ LDMFD SP!,{<Regs>,PC}</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-xue-xi-bi-ji-1/">
+                <a href="/2020/05/14/mcu/2020/dan-pian-ji-fang-zhen-dian-liang-na-zhan-deng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="嵌入式学习笔记(1)">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="单片机仿真循环点亮那盏灯">
                         
-                        <span class="card-title">嵌入式学习笔记(1)</span>
+                        <span class="card-title">单片机仿真循环点亮那盏灯</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            计算机系统(Computer System)
-个人计算机(Personal Computer)
-服务器(Server)
-嵌入式系统(Embedded System)
-
-对比
-
-
-
-
-Server
-Personal Computer
-Embe
+                            目标学单片机课程也有一段时间了，今天亲自动手做个超级 easy 的仿真试验，通过 keil + proteus 来点亮发光二极管。
+所需软件及芯片
+keil
+proteus
+AT89C51
+CAP
+CAP-ELEC 
+CRYSTAL
+LED
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-14
                         </span>
                         <span class="publish-author">
                             
@@ -979,8 +989,8 @@ Embe
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ARM/">
-                        <span class="chip bg-color">ARM</span>
+                    <a href="/tags/MCU/">
+                        <span class="chip bg-color">MCU</span>
                     </a>
                     
                 </div>
@@ -1246,7 +1256,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -509,27 +511,27 @@
 </ol>
 <h2 id="开始动手"><a href="#开始动手" class="headerlink" title="开始动手"></a>开始动手</h2><h3 id="AT89C51引脚"><a href="#AT89C51引脚" class="headerlink" title="AT89C51引脚"></a><strong>AT89C51</strong>引脚</h3><p>简单介绍下这次仿真需要用到的 <strong>AT89C51</strong> 的引脚，这次我们做仿真用到的引脚不多！</p>
 <h4 id="晶振引脚（XTAL1-XTAL2）"><a href="#晶振引脚（XTAL1-XTAL2）" class="headerlink" title="晶振引脚（XTAL1 + XTAL2）"></a>晶振引脚（<strong>XTAL1 + XTAL2</strong>）</h4><ul>
-<li> <strong>XTAL1(Pin19)</strong> ：片内振荡电路的输入端</li>
-<li> <strong>XTAL2(Pin20)</strong> ：片内振荡电路的输出端</li>
+<li><strong>XTAL1(Pin19)</strong> ：片内振荡电路的输入端</li>
+<li><strong>XTAL2(Pin20)</strong> ：片内振荡电路的输出端</li>
 </ul>
 <p>晶振电路：</p>
 <p><img src="https://imgkr.cn-bj.ufileos.com/5ce44b98-7a93-4e1f-8b3f-117c714f1906.png" alt="晶振电路"></p>
 <h4 id="控制引脚"><a href="#控制引脚" class="headerlink" title="控制引脚"></a>控制引脚</h4><ul>
-<li> <strong>$\overline{EA}$(Pin31)</strong> ：程序存储器的内外部选通，接低电平从外部程序存储器读指令，如果接高电平则从内部程序存储器读指令。</li>
+<li><strong>$\overline{EA}$(Pin31)</strong> ：程序存储器的内外部选通，接低电平从外部程序存储器读指令，如果接高电平则从内部程序存储器读指令。</li>
 </ul>
 <h4 id="可编程输入-输出引脚"><a href="#可编程输入-输出引脚" class="headerlink" title="可编程输入/输出引脚"></a>可编程输入/输出引脚</h4><ul>
 <li><strong>51</strong> 单片机有 <strong>4</strong> 组 <strong>8</strong> 位的可编程 <strong>I/O</strong> 口，分别为 <strong>P0、P1、P2、P3</strong> 口，每个口有 <strong>8</strong> 位（ <strong>8</strong> 根引脚），共 <strong>32</strong> 根。<ul>
 <li><strong>PO</strong> 口（ <strong>Pin39～Pin32</strong> ）： <strong>8</strong> 位双向 <strong>I/O</strong> 口线，名称为 <strong>P0.0～P0.7</strong> 。</li>
-<li> <strong>P1</strong> 口（ <strong>Pin1～Pin8</strong> ）： <strong>8</strong> 位准双向I/O口线，名称为 <strong>P1.0～P1.7</strong> 。 </li>
-<li> <strong>P2</strong> 口（ <strong>Pin21～Pin28</strong> ）：<strong>8</strong> 位准双向 <strong>I/O</strong> 口线，名称为 <strong>P2.0～P2.7</strong> 。</li>
-<li> <strong>P3</strong> 口（ <strong>Pin10～Pin17</strong> ）：<strong>8</strong> 位准双向 <strong>I/O</strong> 口线，名称为 <strong>P3.0～P3.7</strong> 。</li>
+<li><strong>P1</strong> 口（ <strong>Pin1～Pin8</strong> ）： <strong>8</strong> 位准双向I/O口线，名称为 <strong>P1.0～P1.7</strong> 。 </li>
+<li><strong>P2</strong> 口（ <strong>Pin21～Pin28</strong> ）：<strong>8</strong> 位准双向 <strong>I/O</strong> 口线，名称为 <strong>P2.0～P2.7</strong> 。</li>
+<li><strong>P3</strong> 口（ <strong>Pin10～Pin17</strong> ）：<strong>8</strong> 位准双向 <strong>I/O</strong> 口线，名称为 <strong>P3.0～P3.7</strong> 。</li>
 </ul>
 </li>
 </ul>
 <p>这就意味着 <strong>P1 ~ P3</strong> 都可以控制二极管！</p>
 <h3 id="电路图"><a href="#电路图" class="headerlink" title="电路图"></a>电路图</h3><p><img src="https://imgkr.cn-bj.ufileos.com/4b76c18b-c187-4406-a346-3b59e9c58905.png" alt="电路图"></p>
 <p>通过实验原理图，我们可以得出，发光二极管共阳极，所以P1.0 ~ P1.7口是低电平时才能点亮二极管。</p>
-<h3 id="汇编代码"><a href="#汇编代码" class="headerlink" title="汇编代码"></a>汇编代码</h3><pre class=" language-assembly"><code class="language-assembly">    ORG 0000H
+<h3 id="汇编代码"><a href="#汇编代码" class="headerlink" title="汇编代码"></a>汇编代码</h3><pre class=" language-lang-assembly"><code class="language-lang-assembly">    ORG 0000H
     LJMP    START                          
 
     ORG 0300H
@@ -552,11 +554,12 @@ DLoop:
     DJNZ R3,DLY2       
     DJNZ R2,DLY1        
     RET                 
-    END</code></pre>
+    END
+</code></pre>
 <p>怎么仿真可以参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43826212/article/details/103777319">如何用proteus仿真8086</a></p>
 <h2 id="提升"><a href="#提升" class="headerlink" title="提升"></a>提升</h2><p>原理图不难，程序不难，这是一个很简单的试验。</p>
 <p>我们把主要的目光放在延时子程序上，这个延时程序到底延时多久？这就需要我们计算了。</p>
-<pre class=" language-assembly"><code class="language-assembly">Delay:
+<pre class=" language-lang-assembly"><code class="language-lang-assembly">Delay:
     MOV R2,#10          ;执行1次, 单周期指令
 L1:
     MOV R3,#200         ;执行10次, 单周期指令
@@ -566,9 +569,10 @@ DLoop:
     DJNZ R3,DLY2        ;执行 2 * 200 * 10, 双周期指令
     DJNZ R2,DLY1        ;执行 2 * 10, 双周期指令
     RET                 ;双周期指令 2
-    ;总时间 1 + 10 + 200 * 10 + 2 * 248 * 200 * 10 + 2 * 200 * 10 + 2 * 10 + 2 = 998033us, 即延时1s</code></pre>
+    ;总时间 1 + 10 + 200 * 10 + 2 * 248 * 200 * 10 + 2 * 200 * 10 + 2 * 10 + 2 = 998033us, 即延时1s
+</code></pre>
 <p>首先我们需要知道 <strong>一个机器周期包括12个时钟周期</strong> ，那么<strong>1</strong>个机器周期是多长时间呢？</p>
-<p>如果一个 <strong>单片机工作于12M晶体震荡器，它的时钟周期是1/12（微秒）</strong> ，那么 *<em>它的一个机器周期是12 <em>（1/12）也就是1微秒。</em></em> </p>
+<p>如果一个 <strong>单片机工作于12M晶体震荡器，它的时钟周期是1/12（微秒）</strong> ，那么 <strong>它的一个机器周期是12 *（1/12）也就是1微秒。</strong> </p>
 <p>还有就是 在 <strong>MCS-51单片机的所有指令中，有一些完成得比较快，只要1个机器周期就行了，有一些完成得比较慢，得要2个机器周期，还有两条指令要4个机器周期才行。</strong> </p>
 <p>所以我们把每条指令执行的次数累加起来就得到了延时的时间了。</p>
 <p>更加具体的可以参考：<a target="_blank" rel="noopener" href="http://www.51hei.com/mcu/1247.html">单片机汇编延时程序的理解</a></p>
@@ -580,9 +584,9 @@ DLoop:
 <center>酒酣胸胆尚开张，鬓微霜，又何妨？持节云中，何日遣冯唐？<br>会挽雕弓如满月，西北望，射天狼。</center>
 
 
-</blockquote>
-<p><valine></valine></p>
 
+</blockquote>
+<valine></valine>
             </div>
             <hr/>
 
@@ -876,31 +880,40 @@ emu8086
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-xue-xi-bi-ji-1/">
+                <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-xue-xi-bi-ji-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="嵌入式学习笔记(1)">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="嵌入式学习笔记(2)">
                         
-                        <span class="card-title">嵌入式学习笔记(1)</span>
+                        <span class="card-title">嵌入式学习笔记(2)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            计算机系统(Computer System)
-个人计算机(Personal Computer)
-服务器(Server)
-嵌入式系统(Embedded System)
-
-对比
+                            ARM体系ARM：Advanced RISC Machine
+ARM命名规则
 
 
 
+ARMv
+n
+variants
+x (variants)
 
-Server
-Personal Computer
-Embe
+
+
+
+固定字符，即ARM Version
+指令集版本号
+变种
+排除x后指定的变种
+
+
+
+
+常见的
                         
                     </div>
                     <div class="publish-info">
@@ -1130,7 +1143,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -500,35 +502,37 @@
 <blockquote>
 <p>D:\wamp64\bin\mysql\mysql5.7.26\my.ini<br>D:\wamp64\apps\phpmyadmin4.8.5\config.inc.php</p>
 </blockquote>
-<h2 id="打开my-ini"><a href="#打开my-ini" class="headerlink" title="打开my.ini"></a>打开my.ini</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token punctuation">[</span>client<span class="token punctuation">]</span>
-<span class="token punctuation">;</span>password <span class="token operator">=</span> your_password
-port <span class="token operator">=</span> <span class="token number">8081</span>
-socket <span class="token operator">=</span> <span class="token operator">/</span>tmp<span class="token operator">/</span>mysql<span class="token punctuation">.</span>sock
+<h2 id="打开my-ini"><a href="#打开my-ini" class="headerlink" title="打开my.ini"></a>打开my.ini</h2><pre class=" language-lang-cpp"><code class="language-lang-cpp">[client]
+;password = your_password
+port = 8081
+socket = /tmp/mysql.sock
 
-<span class="token punctuation">;</span> Here follows entries <span class="token keyword">for</span> some specific programs
+; Here follows entries for some specific programs
 
-<span class="token punctuation">;</span> The MySQL server
-<span class="token punctuation">[</span>wampmysqld64<span class="token punctuation">]</span>
-<span class="token punctuation">;</span>skip<span class="token operator">-</span>grant<span class="token operator">-</span>tables
-default_authentication_plugin<span class="token operator">=</span>mysql_native_password
-port <span class="token operator">=</span> <span class="token number">8081</span>
-socket <span class="token operator">=</span> <span class="token operator">/</span>tmp<span class="token operator">/</span>mysql<span class="token punctuation">.</span>sock
-key_buffer_size <span class="token operator">=</span> 256M
-max_allowed_packet <span class="token operator">=</span> 1M
-<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+; The MySQL server
+[wampmysqld64]
+;skip-grant-tables
+default_authentication_plugin=mysql_native_password
+port = 8081
+socket = /tmp/mysql.sock
+key_buffer_size = 256M
+max_allowed_packet = 1M
+...
 及最后一部分
-<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
-default_authentication_plugin<span class="token operator">=</span>mysql_native_password
-port <span class="token operator">=</span> <span class="token number">8081</span></code></pre>
+[mysqld]
+default_authentication_plugin=mysql_native_password
+port = 8081
+</code></pre>
 <p>把以上的port = 后的端口号改为自己想要的即可(我这里改为了8081，原先是3306的)。</p>
-<h2 id="打开config-inc-php"><a href="#打开config-inc-php" class="headerlink" title="打开config.inc.php"></a>打开config.inc.php</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">if</span><span class="token punctuation">(</span>$mariaFirst<span class="token punctuation">)</span> $i<span class="token operator">++</span><span class="token punctuation">;</span>
-    $cfg<span class="token punctuation">[</span><span class="token string">'Servers'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>$i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'verbose'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'MySQL'</span><span class="token punctuation">;</span>
-    $cfg<span class="token punctuation">[</span><span class="token string">'Servers'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>$i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'host'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'localhost'</span><span class="token punctuation">;</span>
-    $cfg<span class="token punctuation">[</span><span class="token string">'Servers'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>$i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'port'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'8081'</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">//这里改为你的端口号</span>
-    $cfg<span class="token punctuation">[</span><span class="token string">'Servers'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>$i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'extension'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'mysqli'</span><span class="token punctuation">;</span>
-    $cfg<span class="token punctuation">[</span><span class="token string">'Servers'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>$i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'auth_type'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'cookie'</span><span class="token punctuation">;</span>
-    $cfg<span class="token punctuation">[</span><span class="token string">'Servers'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>$i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'user'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'root'</span><span class="token punctuation">;</span>
-    $cfg<span class="token punctuation">[</span><span class="token string">'Servers'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>$i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'password'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'这里填写你的MySQL密码'</span><span class="token punctuation">;</span></code></pre>
+<h2 id="打开config-inc-php"><a href="#打开config-inc-php" class="headerlink" title="打开config.inc.php"></a>打开config.inc.php</h2><pre class=" language-lang-cpp"><code class="language-lang-cpp">if($mariaFirst) $i++;
+    $cfg['Servers'][$i]['verbose'] = 'MySQL';
+    $cfg['Servers'][$i]['host'] = 'localhost';
+    $cfg['Servers'][$i]['port'] = '8081';            //这里改为你的端口号
+    $cfg['Servers'][$i]['extension'] = 'mysqli';
+    $cfg['Servers'][$i]['auth_type'] = 'cookie';
+    $cfg['Servers'][$i]['user'] = 'root';
+    $cfg['Servers'][$i]['password'] = '这里填写你的MySQL密码';
+</code></pre>
 <p>保存退出，重启就好了。<br><strong>（控制台设置wamp的MySQL密码时，如果输入【update user set password=PASSWORD(‘root’) where user=’root’;】报错【ERROR 1054 (42S22): Unknown column ‘password’ in ‘field list’】命令改为update mysql.user set authentication_string=password(‘root’) where user=’root’；即可解决问题<br>）</strong> </p>
 <h1 id="解决localhost无法打开问题"><a href="#解决localhost无法打开问题" class="headerlink" title="解决localhost无法打开问题"></a>解决localhost无法打开问题</h1><p>找到几个文件</p>
 <blockquote>
@@ -548,8 +552,7 @@ port <span class="token operator">=</span> <span class="token number">8081</span
 <p>如果wamp的图标显示绿色，那么说明wamp的所有服务全部开启了。如果是红色或者橙色，说明有服务没开启！</p>
 <p><img src="https://img-blog.csdnimg.cn/20191125125346871.png" alt="在这里插入图片描述"></p>
 <p>才疏学浅，望雅正！</p>
-<p><valine></valine></p>
-
+<valine></valine>
             </div>
             <hr/>
 
@@ -1082,7 +1085,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

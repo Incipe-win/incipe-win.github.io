@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -508,34 +510,38 @@
 <li>如果32位的二进制地址以110开头，就是C类地址。</li>
 </ul>
 <p>三类网络地址范围</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">地址类</th>
-<th align="center">二进制地址前几位值</th>
-<th align="center">点分十进制地址中的第一个字段</th>
-<th align="center">排除地址</th>
+<th style="text-align:center">地址类</th>
+<th style="text-align:center">二进制地址前几位值</th>
+<th style="text-align:center">点分十进制地址中的第一个字段</th>
+<th style="text-align:center">排除地址</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">A</td>
-<td align="center">0</td>
-<td align="center">0~127</td>
-<td align="center">10.0.0.0<del>10.255.255.255 <br>127.0.0.0</del>127.255.255.255</td>
+<tbody>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0~127</td>
+<td style="text-align:center">10.0.0.0~10.255.255.255 <br>127.0.0.0~127.255.255.255</td>
 </tr>
 <tr>
-<td align="center">B</td>
-<td align="center">10</td>
-<td align="center">128~191</td>
-<td align="center">172.16.0.0~172.31.255.255</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">128~191</td>
+<td style="text-align:center">172.16.0.0~172.31.255.255</td>
 </tr>
 <tr>
-<td align="center">C</td>
-<td align="center">110</td>
-<td align="center">192~223</td>
-<td align="center">192.168.0.0~192.169.255.255</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">110</td>
+<td style="text-align:center">192~223</td>
+<td style="text-align:center">192.168.0.0~192.169.255.255</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>此外，还有特殊用途的D类和E类地址</p>
 <ul>
 <li>D类IP地址，前4位总是1110，对应于十进制的224~239，一般用于多点广播。</li>
@@ -556,8 +562,8 @@
 <ul>
 <li><p>知名端口，是众所周知的端口号，范围从0到1023，如果一个程序需要使用知名端口需要有root权限。</p>
 <pre><code>80端口分配给HTTP服务
-21端口分配给FTP服务</code></pre>
-</li>
+21端口分配给FTP服务
+</code></pre></li>
 <li><p>动态端口，范围是从1024到65535，动态分配是指当一个系统程序或应用程序程序需要网络通信时，它向主机申请一个端口，主机从可用的端口号中分配一个供它使用。</p>
 </li>
 </ul>
@@ -885,28 +891,20 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/08/16/python/2020/ke-xue-ji-suan-numpy/">
+                <a href="/2020/08/16/pat-jia-zu/2020/pat1011/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="科学计算Numpy">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="PAT1009">
                         
-                        <span class="card-title">科学计算Numpy</span>
+                        <span class="card-title">PAT1009</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            什么是Numpy
-NumPy 是一个运行速度非常快的数学库，主要用于数组计算，包含：
-
-一个强大的N维数组对象 ndarray
-广播功能函数
-整合 C/C++/Fortran 代码的工具
-线性代数、傅里叶变换、随机数生成等功能
-
-
-使用Ⅰ.
+                            原题
+With the 2010 FIFA World Cup running, football fans the world over were becoming increasingly excited as the best pla
                         
                     </div>
                     <div class="publish-info">
@@ -928,8 +926,8 @@ NumPy 是一个运行速度非常快的数学库，主要用于数组计算，�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
-                        <span class="chip bg-color">数据分析</span>
+                    <a href="/tags/PAT/">
+                        <span class="chip bg-color">PAT</span>
                     </a>
                     
                 </div>
@@ -1187,7 +1185,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

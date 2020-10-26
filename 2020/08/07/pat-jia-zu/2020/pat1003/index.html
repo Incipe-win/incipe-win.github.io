@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -472,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    326
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    1 分
                 </div>
                 
 
@@ -494,7 +496,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="算法简介"><a href="#算法简介" class="headerlink" title="算法简介"></a>算法简介</h2><p>迪杰斯特拉(Dijkstra)是从一个顶点到其余各顶点的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84">最短路径</a>算法，解决的是有权图中最短路径问题。迪杰斯特拉算法主要特点是从起始点开始，采用<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/5411800">贪心算法</a>的策略，每次遍历到始点距离最近且未访问过的顶点的邻接节点，直到扩展到终点为止。 </p>
+                <h2 id="算法简介"><a href="#算法简介" class="headerlink" title="算法简介"></a>算法简介</h2><p>迪杰斯特拉(Dijkstra)是从一个顶点到其余各顶点的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/最短路径">最短路径</a>算法，解决的是有权图中最短路径问题。迪杰斯特拉算法主要特点是从起始点开始，采用<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/贪心算法/5411800">贪心算法</a>的策略，每次遍历到始点距离最近且未访问过的顶点的邻接节点，直到扩展到终点为止。 </p>
 <p>讲白了，就是给你一张有很多城市的地图，要你求指定两个城市之间的最小距离。</p>
 <h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><p><img src="https://i.loli.net/2020/08/07/sZhSK5J7B8iT9WC.png" alt="带权有向图.png"></p>
 <p>给定一个上述图，要求某两个点之间的最短路径，这就叫做 <strong>有权图单源最短路</strong> 。如果是要求任意两个点之间的最短路径，这就是 <strong>有权图无源最短路径</strong> ，无源最短路径用 <strong>Dijkstra</strong> 的时间复杂度就上去了，一般用 <strong>Floyd</strong> 算法了。</p>
@@ -511,162 +513,164 @@
 <p><img src="https://i.loli.net/2020/08/07/HwygvJxIbQThfeo.png" alt="幻灯片9.PNG"></p>
 <h3 id="造轮子"><a href="#造轮子" class="headerlink" title="造轮子"></a>造轮子</h3><p>利用的c++的 <strong>pair和prority_queue</strong> 实现 <strong>Dijkstra</strong> </p>
 <p>c++模板</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">struct</span> cmp <span class="token punctuation">{</span>
-  <span class="token keyword">bool</span> <span class="token keyword">operator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">const</span> pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>a<span class="token punctuation">,</span> <span class="token keyword">const</span> pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> a<span class="token punctuation">.</span>first <span class="token operator">></span> b<span class="token punctuation">.</span>first<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">struct cmp {
+  bool operator()(const pair<int, int> &a, const pair<int, int> &b) {
+    return a.first > b.first;
+  }
+};
 
-<span class="token keyword">class</span> <span class="token class-name">Dijkstra</span> <span class="token punctuation">{</span>
- <span class="token keyword">private</span><span class="token operator">:</span>
-  <span class="token keyword">int</span> n<span class="token punctuation">;</span>
-  vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span>pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">></span> v<span class="token punctuation">;</span>
+class Dijkstra {
+ private:
+  int n;
+  vector<vector<pair<int, int>>> v;
 
- <span class="token keyword">public</span><span class="token operator">:</span>
-  <span class="token keyword">void</span> <span class="token function">Init</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">></span>n <span class="token operator">=</span> n<span class="token punctuation">;</span>
-    v<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    v<span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
+ public:
+  void Init(int n) {
+    this->n = n;
+    v.clear();
+    v.resize(n + 1);
+    for (int i = 1; i <= n; i++) {
+      v[i].clear();
+    }
+  }
 
-  <span class="token keyword">void</span> <span class="token function">Add</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span> <span class="token keyword">int</span> c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    v<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token function">make_pair</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// 如果是双向的，加上下面这一句。</span>
-    <span class="token comment" spellcheck="true">// v[b].push_back(make_pair(a, c));</span>
-  <span class="token punctuation">}</span>
+  void Add(int a, int b, int c) {
+    v[a].push_back(make_pair(b, c));
+    // 如果是双向的，加上下面这一句。
+    // v[b].push_back(make_pair(a, c));
+  }
 
-  <span class="token keyword">void</span> <span class="token function">GetDist</span><span class="token punctuation">(</span><span class="token keyword">int</span> st<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>dist<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>path<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      path<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      dist<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> INT_MAX<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    priority_queue<span class="token operator">&lt;</span>pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">,</span> vector<span class="token operator">&lt;</span>pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">>></span><span class="token punctuation">,</span> cmp<span class="token operator">></span> q<span class="token punctuation">;</span>
-    dist<span class="token punctuation">[</span>st<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">make_pair</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> st<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>q<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">int</span> now <span class="token operator">=</span> q<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>second<span class="token punctuation">;</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>dist<span class="token punctuation">[</span>now<span class="token punctuation">]</span> <span class="token operator">!=</span> q<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>first<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        q<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">continue</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-      q<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>v<span class="token punctuation">[</span>now<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> next <span class="token operator">=</span> v<span class="token punctuation">[</span>now<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>first<span class="token punctuation">,</span> value <span class="token operator">=</span> v<span class="token punctuation">[</span>now<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>second<span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>dist<span class="token punctuation">[</span>now<span class="token punctuation">]</span> <span class="token operator">+</span> value <span class="token operator">&lt;</span> dist<span class="token punctuation">[</span>next<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          dist<span class="token punctuation">[</span>next<span class="token punctuation">]</span> <span class="token operator">=</span> dist<span class="token punctuation">[</span>now<span class="token punctuation">]</span> <span class="token operator">+</span> value<span class="token punctuation">;</span>
-          q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">make_pair</span><span class="token punctuation">(</span>dist<span class="token punctuation">[</span>next<span class="token punctuation">]</span><span class="token punctuation">,</span> next<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-          path<span class="token punctuation">[</span>next<span class="token punctuation">]</span> <span class="token operator">=</span> now<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+  void GetDist(int st, vector<int> &dist, vector<int> &path) {
+    for (int i = 1; i <= n; ++i) {
+      path[i] = -1;
+    }
+    for (int i = 1; i <= n; ++i) {
+      dist[i] = INT_MAX;
+    }
+    priority_queue<pair<int, int>, vector<pair<int, int>>, cmp> q;
+    dist[st] = 0;
+    q.push(make_pair(0, st));
+    while (!q.empty()) {
+      int now = q.top().second;
+      if (dist[now] != q.top().first) {
+        q.pop();
+        continue;
+      }
+      q.pop();
+      for (int i = 0; i < (int)v[now].size(); i++) {
+        int next = v[now][i].first, value = v[now][i].second;
+        if (dist[now] + value < dist[next]) {
+          dist[next] = dist[now] + value;
+          q.push(make_pair(dist[next], next));
+          path[next] = now;
+        }
+      }
+    }
+  }
+};
+</code></pre>
 <p>  参考了网上一位大神的写法。<a target="_blank" rel="noopener" href="https://space.bilibili.com/434011092">bilibili主页地址</a></p>
 <p>测试代码</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;algorithm></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;queue></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stack></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;utility></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">#include <algorithm>
+#include <iostream>
+#include <queue>
+#include <stack>
+#include <utility>
+#include <vector>
 
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+using namespace std;
 
-<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
- <span class="token keyword">public</span><span class="token operator">:</span>
-  pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">solve</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token operator">&amp;</span>edges<span class="token punctuation">,</span>
-                               vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>succProb<span class="token punctuation">,</span> <span class="token keyword">int</span> start<span class="token punctuation">,</span> <span class="token keyword">int</span> end<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    Dijkstra d<span class="token punctuation">;</span>
-    d<span class="token punctuation">.</span><span class="token function">Init</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> size <span class="token operator">=</span> edges<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">int</span> a <span class="token operator">=</span> edges<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> b <span class="token operator">=</span> edges<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-      <span class="token keyword">int</span> c <span class="token operator">=</span> succProb<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-      d<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">dist</span><span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">path</span><span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    d<span class="token punctuation">.</span><span class="token function">GetDist</span><span class="token punctuation">(</span>start<span class="token punctuation">,</span> dist<span class="token punctuation">,</span> path<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token function">make_pair</span><span class="token punctuation">(</span>dist<span class="token punctuation">[</span>end<span class="token punctuation">]</span><span class="token punctuation">,</span> path<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+class Solution {
+ public:
+  pair<int, vector<int>> solve(int n, vector<vector<int>> &edges,
+                               vector<int> &succProb, int start, int end) {
+    Dijkstra d;
+    d.Init(n);
+    int size = edges.size();
+    for (int i = 0; i < size; ++i) {
+      int a = edges[i][0], b = edges[i][1];
+      int c = succProb[i];
+      d.Add(a, b, c);
+    }
+    vector<int> dist(n + 1);
+    vector<int> path(n + 1);
+    d.GetDist(start, dist, path);
+    return make_pair(dist[end], path);
+  }
 
-  <span class="token keyword">void</span> <span class="token function">printWay</span><span class="token punctuation">(</span><span class="token keyword">const</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>path<span class="token punctuation">,</span> <span class="token keyword">int</span> end<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> s<span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>path<span class="token punctuation">[</span>end<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      s<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>path<span class="token punctuation">[</span>end<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      end <span class="token operator">=</span> path<span class="token punctuation">[</span>end<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>s<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      cout <span class="token operator">&lt;&lt;</span> s<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span><span class="token punctuation">;</span>
-      s<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+  void printWay(const vector<int> &path, int end) {
+    stack<int> s;
+    while (path[end] != -1) {
+      s.push(path[end]);
+      end = path[end];
+    }
+    while (!s.empty()) {
+      cout << s.top() << " ";
+      s.pop();
+    }
+    cout << endl;
+  }
+};
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> edges<span class="token punctuation">;</span>
-  edges<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 2</span>
-  edges<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 1</span>
-  edges<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 10</span>
-  edges<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 3</span>
-  edges<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 4</span>
-  edges<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 5</span>
-  edges<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 2</span>
-  edges<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 2</span>
-  edges<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 8</span>
-  edges<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 4</span>
-  edges<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 6</span>
-  edges<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 1</span>
-  vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> succProb<span class="token punctuation">;</span>
-  succProb<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  succProb<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  succProb<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  succProb<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  succProb<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  succProb<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  succProb<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  succProb<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  succProb<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  succProb<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  succProb<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  succProb<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  Solution s<span class="token punctuation">;</span>
-  <span class="token keyword">auto</span> ans1 <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">solve</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> edges<span class="token punctuation">,</span> succProb<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"1->6最短路径长度是: "</span> <span class="token operator">&lt;&lt;</span> ans1<span class="token punctuation">.</span>first <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"路径是: "</span><span class="token punctuation">;</span>
-  s<span class="token punctuation">.</span><span class="token function">printWay</span><span class="token punctuation">(</span>ans1<span class="token punctuation">.</span>second<span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  ans1 <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">solve</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> edges<span class="token punctuation">,</span> succProb<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"1->2最短路径长度是: "</span> <span class="token operator">&lt;&lt;</span> ans1<span class="token punctuation">.</span>first <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"路径是: "</span><span class="token punctuation">;</span>
-  s<span class="token punctuation">.</span><span class="token function">printWay</span><span class="token punctuation">(</span>ans1<span class="token punctuation">.</span>second<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  ans1 <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">solve</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> edges<span class="token punctuation">,</span> succProb<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"1->3最短路径长度是: "</span> <span class="token operator">&lt;&lt;</span> ans1<span class="token punctuation">.</span>first <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"路径是: "</span><span class="token punctuation">;</span>
-  s<span class="token punctuation">.</span><span class="token function">printWay</span><span class="token punctuation">(</span>ans1<span class="token punctuation">.</span>second<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  ans1 <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">solve</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> edges<span class="token punctuation">,</span> succProb<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"1->4最短路径长度是: "</span> <span class="token operator">&lt;&lt;</span> ans1<span class="token punctuation">.</span>first <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"路径是: "</span><span class="token punctuation">;</span>
-  s<span class="token punctuation">.</span><span class="token function">printWay</span><span class="token punctuation">(</span>ans1<span class="token punctuation">.</span>second<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  ans1 <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">solve</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> edges<span class="token punctuation">,</span> succProb<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"1->5最短路径长度是: "</span> <span class="token operator">&lt;&lt;</span> ans1<span class="token punctuation">.</span>first <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"路径是: "</span><span class="token punctuation">;</span>
-  s<span class="token punctuation">.</span><span class="token function">printWay</span><span class="token punctuation">(</span>ans1<span class="token punctuation">.</span>second<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  ans1 <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">solve</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> edges<span class="token punctuation">,</span> succProb<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"1->6最短路径长度是: "</span> <span class="token operator">&lt;&lt;</span> ans1<span class="token punctuation">.</span>first <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"路径是: "</span><span class="token punctuation">;</span>
-  s<span class="token punctuation">.</span><span class="token function">printWay</span><span class="token punctuation">(</span>ans1<span class="token punctuation">.</span>second<span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  ans1 <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">solve</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> edges<span class="token punctuation">,</span> succProb<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"1->7最短路径长度是: "</span> <span class="token operator">&lt;&lt;</span> ans1<span class="token punctuation">.</span>first <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  cout <span class="token operator">&lt;&lt;</span> <span class="token string">"路径是: "</span><span class="token punctuation">;</span>
-  s<span class="token punctuation">.</span><span class="token function">printWay</span><span class="token punctuation">(</span>ans1<span class="token punctuation">.</span>second<span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+int main() {
+  vector<vector<int>> edges;
+  edges.push_back({1, 2});  // 2
+  edges.push_back({1, 4});  // 1
+  edges.push_back({2, 5});  // 10
+  edges.push_back({2, 4});  // 3
+  edges.push_back({3, 1});  // 4
+  edges.push_back({3, 6});  // 5
+  edges.push_back({4, 3});  // 2
+  edges.push_back({4, 5});  // 2
+  edges.push_back({4, 6});  // 8
+  edges.push_back({4, 7});  // 4
+  edges.push_back({5, 7});  // 6
+  edges.push_back({7, 6});  // 1
+  vector<int> succProb;
+  succProb.emplace_back(2);
+  succProb.emplace_back(1);
+  succProb.emplace_back(10);
+  succProb.emplace_back(3);
+  succProb.emplace_back(4);
+  succProb.emplace_back(5);
+  succProb.emplace_back(2);
+  succProb.emplace_back(2);
+  succProb.emplace_back(8);
+  succProb.emplace_back(4);
+  succProb.emplace_back(6);
+  succProb.emplace_back(1);
+  Solution s;
+  auto ans1 = s.solve(7, edges, succProb, 1, 6);
+  cout << "1->6最短路径长度是: " << ans1.first << endl;
+  cout << "路径是: ";
+  s.printWay(ans1.second, 6);
+  ans1 = s.solve(7, edges, succProb, 1, 2);
+  cout << "1->2最短路径长度是: " << ans1.first << endl;
+  cout << "路径是: ";
+  s.printWay(ans1.second, 2);
+  ans1 = s.solve(7, edges, succProb, 1, 3);
+  cout << "1->3最短路径长度是: " << ans1.first << endl;
+  cout << "路径是: ";
+  s.printWay(ans1.second, 3);
+  ans1 = s.solve(7, edges, succProb, 1, 4);
+  cout << "1->4最短路径长度是: " << ans1.first << endl;
+  cout << "路径是: ";
+  s.printWay(ans1.second, 4);
+  ans1 = s.solve(7, edges, succProb, 1, 5);
+  cout << "1->5最短路径长度是: " << ans1.first << endl;
+  cout << "路径是: ";
+  s.printWay(ans1.second, 5);
+  ans1 = s.solve(7, edges, succProb, 1, 6);
+  cout << "1->6最短路径长度是: " << ans1.first << endl;
+  cout << "路径是: ";
+  s.printWay(ans1.second, 6);
+  ans1 = s.solve(7, edges, succProb, 1, 7);
+  cout << "1->7最短路径长度是: " << ans1.first << endl;
+  cout << "路径是: ";
+  s.printWay(ans1.second, 7);
+  return 0;
+}
+</code></pre>
 <h2 id="变种"><a href="#变种" class="headerlink" title="变种"></a>变种</h2><p><a target="_blank" rel="noopener" href="https://pintia.cn/problem-sets/994805342720868352/problems/994805523835109376">PAT 1003 Emergency</a></p>
 <blockquote>
 <p>As an emergency rescue team leader of a city, you are given a special map of your country. The map shows several scattered cities connected by some roads. Amount of rescue teams in each city and the length of each road between any pair of cities are marked on the map. When there is an emergency call to you from some other city, your job is to lead your men to the place as quickly as possible, and at the mean time, call up as many hands on the way as possible.</p>
@@ -684,121 +688,122 @@
 <p>只需要多判断 <code>dist[now] + value = dist[next]</code> 的情况就好了。</p>
 <p>当 <code>dist[now] + value = dist[next]</code> 意味着，最短路径多了一条，我们就用 <code>num[next] += num[now]</code> ，如果 <code>maxPeople[now] + vec[next] &gt; maxPeople[next]</code> ，说明我这条最短路径的救援队人数多，就更新 <strong>maxPeople</strong> 的值。</p>
 <p>在 <code>dist[now] + value &lt; dist[next]</code> 时，最短路径保持不变，也就是 <code>num[next] = num[now]</code> ，但是救援队人数我们还是要累加的 <code>maxPeople[next] = maxPeople[now] + vec[next]</code></p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;algorithm></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;queue></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stack></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;utility></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">#include <algorithm>
+#include <iostream>
+#include <queue>
+#include <stack>
+#include <utility>
+#include <vector>
 
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+using namespace std;
 
-<span class="token keyword">struct</span> cmp <span class="token punctuation">{</span>
-  <span class="token keyword">bool</span> <span class="token keyword">operator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span>pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>a<span class="token punctuation">,</span> pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> a<span class="token punctuation">.</span>first <span class="token operator">></span> b<span class="token punctuation">.</span>first<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+struct cmp {
+  bool operator()(pair<int, int> &a, pair<int, int> &b) {
+    return a.first > b.first;
+  }
+};
 
-<span class="token keyword">class</span> <span class="token class-name">Dijkstra</span> <span class="token punctuation">{</span>
- <span class="token keyword">private</span><span class="token operator">:</span>
-  <span class="token keyword">int</span> n<span class="token punctuation">;</span>
-  vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span>pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">></span> v<span class="token punctuation">;</span>
+class Dijkstra {
+ private:
+  int n;
+  vector<vector<pair<int, int>>> v;
 
- <span class="token keyword">public</span><span class="token operator">:</span>
-  <span class="token keyword">void</span> <span class="token function">Init</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">></span>n <span class="token operator">=</span> n<span class="token punctuation">;</span>
-    v<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    v<span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
+ public:
+  void Init(int n) {
+    this->n = n;
+    v.clear();
+    v.resize(n);
+    for (int i = 0; i < n; ++i) {
+      v[i].clear();
+    }
+  }
 
-  <span class="token keyword">void</span> <span class="token function">Add</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span> <span class="token keyword">int</span> c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    v<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token function">make_pair</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    v<span class="token punctuation">[</span>b<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token function">make_pair</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+  void Add(int a, int b, int c) {
+    v[a].push_back(make_pair(b, c));
+    v[b].push_back(make_pair(a, c));
+  }
 
-  <span class="token keyword">void</span> <span class="token function">GetDist</span><span class="token punctuation">(</span><span class="token keyword">int</span> st<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>dist<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>path<span class="token punctuation">,</span>
-               <span class="token keyword">const</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>vec<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>maxPeople<span class="token punctuation">,</span>
-               vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>num<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      maxPeople<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      num<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    maxPeople<span class="token punctuation">[</span>st<span class="token punctuation">]</span> <span class="token operator">=</span> vec<span class="token punctuation">[</span>st<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    num<span class="token punctuation">[</span>st<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      path<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      dist<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2147483647</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    priority_queue<span class="token operator">&lt;</span>pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">,</span> vector<span class="token operator">&lt;</span>pair<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">>></span><span class="token punctuation">,</span> cmp<span class="token operator">></span> q<span class="token punctuation">;</span>
-    dist<span class="token punctuation">[</span>st<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">make_pair</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> st<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>q<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">int</span> now <span class="token operator">=</span> q<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>second<span class="token punctuation">;</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>dist<span class="token punctuation">[</span>now<span class="token punctuation">]</span> <span class="token operator">!=</span> q<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>first<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        q<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">continue</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-      q<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>v<span class="token punctuation">[</span>now<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> next <span class="token operator">=</span> v<span class="token punctuation">[</span>now<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>first<span class="token punctuation">,</span> value <span class="token operator">=</span> v<span class="token punctuation">[</span>now<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>second<span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>dist<span class="token punctuation">[</span>now<span class="token punctuation">]</span> <span class="token operator">+</span> value <span class="token operator">&lt;</span> dist<span class="token punctuation">[</span>next<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          dist<span class="token punctuation">[</span>next<span class="token punctuation">]</span> <span class="token operator">=</span> dist<span class="token punctuation">[</span>now<span class="token punctuation">]</span> <span class="token operator">+</span> value<span class="token punctuation">;</span>
-          q<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">make_pair</span><span class="token punctuation">(</span>dist<span class="token punctuation">[</span>next<span class="token punctuation">]</span><span class="token punctuation">,</span> next<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-          path<span class="token punctuation">[</span>next<span class="token punctuation">]</span> <span class="token operator">=</span> now<span class="token punctuation">;</span>
-          num<span class="token punctuation">[</span>next<span class="token punctuation">]</span> <span class="token operator">=</span> num<span class="token punctuation">[</span>now<span class="token punctuation">]</span><span class="token punctuation">;</span>
-          maxPeople<span class="token punctuation">[</span>next<span class="token punctuation">]</span> <span class="token operator">=</span> maxPeople<span class="token punctuation">[</span>now<span class="token punctuation">]</span> <span class="token operator">+</span> vec<span class="token punctuation">[</span>next<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>dist<span class="token punctuation">[</span>now<span class="token punctuation">]</span> <span class="token operator">+</span> value <span class="token operator">==</span> dist<span class="token punctuation">[</span>next<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          num<span class="token punctuation">[</span>next<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> num<span class="token punctuation">[</span>now<span class="token punctuation">]</span><span class="token punctuation">;</span>
-          <span class="token keyword">if</span> <span class="token punctuation">(</span>maxPeople<span class="token punctuation">[</span>now<span class="token punctuation">]</span> <span class="token operator">+</span> vec<span class="token punctuation">[</span>next<span class="token punctuation">]</span> <span class="token operator">></span> maxPeople<span class="token punctuation">[</span>next<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            maxPeople<span class="token punctuation">[</span>next<span class="token punctuation">]</span> <span class="token operator">=</span> maxPeople<span class="token punctuation">[</span>now<span class="token punctuation">]</span> <span class="token operator">+</span> vec<span class="token punctuation">[</span>next<span class="token punctuation">]</span><span class="token punctuation">;</span>
-          <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+  void GetDist(int st, vector<int> &dist, vector<int> &path,
+               const vector<int> &vec, vector<int> &maxPeople,
+               vector<int> &num) {
+    for (int i = 0; i < n; ++i) {
+      maxPeople[i] = 0;
+    }
+    for (int i = 0; i < n; ++i) {
+      num[i] = 0;
+    }
+    maxPeople[st] = vec[st];
+    num[st] = 1;
+    for (int i = 0; i < n; ++i) {
+      path[i] = -1;
+    }
+    for (int i = 0; i < n; ++i) {
+      dist[i] = 2147483647;
+    }
+    priority_queue<pair<int, int>, vector<pair<int, int>>, cmp> q;
+    dist[st] = 0;
+    q.push(make_pair(0, st));
+    while (!q.empty()) {
+      int now = q.top().second;
+      if (dist[now] != q.top().first) {
+        q.pop();
+        continue;
+      }
+      q.pop();
+      for (int i = 0; i < (int)v[now].size(); i++) {
+        int next = v[now][i].first, value = v[now][i].second;
+        if (dist[now] + value < dist[next]) {
+          dist[next] = dist[now] + value;
+          q.push(make_pair(dist[next], next));
+          path[next] = now;
+          num[next] = num[now];
+          maxPeople[next] = maxPeople[now] + vec[next];
+        } else if (dist[now] + value == dist[next]) {
+          num[next] += num[now];
+          if (maxPeople[now] + vec[next] > maxPeople[next]) {
+            maxPeople[next] = maxPeople[now] + vec[next];
+          }
+        }
+      }
+    }
+  }
+};
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">int</span> n<span class="token punctuation">,</span> m<span class="token punctuation">,</span> start<span class="token punctuation">,</span> end<span class="token punctuation">;</span>
-  cin <span class="token operator">>></span> n <span class="token operator">>></span> m <span class="token operator">>></span> start <span class="token operator">>></span> end<span class="token punctuation">;</span>
-  vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> vec<span class="token punctuation">;</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> temp<span class="token punctuation">;</span>
-    cin <span class="token operator">>></span> temp<span class="token punctuation">;</span>
-    vec<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> edges<span class="token punctuation">;</span>
-  vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> succProb<span class="token punctuation">;</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> c1<span class="token punctuation">,</span> c2<span class="token punctuation">,</span> c3<span class="token punctuation">;</span>
-    cin <span class="token operator">>></span> c1 <span class="token operator">>></span> c2 <span class="token operator">>></span> c3<span class="token punctuation">;</span>
-    edges<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token punctuation">{</span>c1<span class="token punctuation">,</span> c2<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    succProb<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>c3<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  <span class="token keyword">int</span> size <span class="token operator">=</span> edges<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  Dijkstra d<span class="token punctuation">;</span>
-  d<span class="token punctuation">.</span><span class="token function">Init</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">int</span> a <span class="token operator">=</span> edges<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> b <span class="token operator">=</span> edges<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> c <span class="token operator">=</span> succProb<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    d<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">dist</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">path</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">num</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">maxPeople</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  d<span class="token punctuation">.</span><span class="token function">GetDist</span><span class="token punctuation">(</span>start<span class="token punctuation">,</span> dist<span class="token punctuation">,</span> path<span class="token punctuation">,</span> vec<span class="token punctuation">,</span> maxPeople<span class="token punctuation">,</span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  cout <span class="token operator">&lt;&lt;</span> num<span class="token punctuation">[</span>end<span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span> <span class="token operator">&lt;&lt;</span> maxPeople<span class="token punctuation">[</span>end<span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p><a target="_blank" rel="noopener" href="http://www.xuji.pro/[pat%E8%80%83%E8%AF%95]1003-emergency-25/">嫖了几个测试用例</a></p>
+int main() {
+  int n, m, start, end;
+  cin >> n >> m >> start >> end;
+  vector<int> vec;
+  for (int i = 0; i < n; ++i) {
+    int temp;
+    cin >> temp;
+    vec.emplace_back(temp);
+  }
+  vector<vector<int>> edges;
+  vector<int> succProb;
+  for (int i = 0; i < m; ++i) {
+    int c1, c2, c3;
+    cin >> c1 >> c2 >> c3;
+    edges.push_back({c1, c2});
+    succProb.emplace_back(c3);
+  }
+  int size = edges.size();
+  Dijkstra d;
+  d.Init(n);
+  for (int i = 0; i < size; ++i) {
+    int a = edges[i][0], b = edges[i][1];
+    int c = succProb[i];
+    d.Add(a, b, c);
+  }
+  vector<int> dist(n);
+  vector<int> path(n);
+  vector<int> num(n);
+  vector<int> maxPeople(n);
+  d.GetDist(start, dist, path, vec, maxPeople, num);
+  cout << num[end] << " " << maxPeople[end] << endl;
+  return 0;
+}
+</code></pre>
+<p><a target="_blank" rel="noopener" href="http://www.xuji.pro/[pat考试]1003-emergency-25/">嫖了几个测试用例</a></p>
 <blockquote>
 <p>6 9 0 5</p>
 <p>1 2 1 5 3 4</p>
@@ -1369,7 +1374,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

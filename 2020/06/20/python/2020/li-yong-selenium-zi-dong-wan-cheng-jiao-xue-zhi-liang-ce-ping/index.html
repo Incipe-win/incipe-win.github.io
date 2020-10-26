@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -511,68 +513,72 @@
 <li>通过id定位</li>
 </ol>
 <p><code>driver.find_element_by_id()</code></p>
-<ol start="2">
+<ol>
 <li>通过name定位</li>
 </ol>
 <p><code>driver.find_element_by_name()</code></p>
-<ol start="3">
+<ol>
 <li>通过tag_name定位</li>
 </ol>
 <p><code>driver.find_element_by_tag_name()</code></p>
-<ol start="4">
+<ol>
 <li>通过class_name定位</li>
 </ol>
 <p><code>driver.find_element_by_class_name()</code></p>
-<ol start="5">
+<ol>
 <li>通过css定位</li>
 </ol>
 <p><code>driver.find_element_by_css_selector</code></p>
-<ol start="6">
+<ol>
 <li>通过xpath定位</li>
 </ol>
 <p><code>driver.find_element_by_xpath</code></p>
 <p>xpath简单语法</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">表达式</th>
-<th align="center">概述</th>
+<th style="text-align:center">表达式</th>
+<th style="text-align:center">概述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">//div</td>
-<td align="center">选取所有的div元素</td>
+<tbody>
+<tr>
+<td style="text-align:center">//div</td>
+<td style="text-align:center">选取所有的div元素</td>
 </tr>
 <tr>
-<td align="center">//div[@class=”blog-content-box”]</td>
-<td align="center">选取class为cblog-content-box的元素</td>
+<td style="text-align:center">//div[@class=”blog-content-box”]</td>
+<td style="text-align:center">选取class为cblog-content-box的元素</td>
 </tr>
 <tr>
-<td align="center">//div/link/@href</td>
-<td align="center">选取所有div标签下的link标签的链接</td>
+<td style="text-align:center">//div/link/@href</td>
+<td style="text-align:center">选取所有div标签下的link标签的链接</td>
 </tr>
 <tr>
-<td align="center">//div/h2/text()</td>
-<td align="center">选取 所有div标签下的h2标签之间的内容</td>
+<td style="text-align:center">//div/h2/text()</td>
+<td style="text-align:center">选取 所有div标签下的h2标签之间的内容</td>
 </tr>
 <tr>
-<td align="center">//div[1]/p</td>
-<td align="center">选取第一个div标签下的p标签的内容</td>
+<td style="text-align:center">//div[1]/p</td>
+<td style="text-align:center">选取第一个div标签下的p标签的内容</td>
 </tr>
 <tr>
-<td align="center">//div[1]/p[last()]</td>
-<td align="center">选取第一个div标签下的p标签的最后一个内容</td>
+<td style="text-align:center">//div[1]/p[last()]</td>
+<td style="text-align:center">选取第一个div标签下的p标签的最后一个内容</td>
 </tr>
 <tr>
-<td align="center">//div[@class^=”blog”]</td>
-<td align="center">选取所有以blog开头的div标签</td>
+<td style="text-align:center">//div[@class^=”blog”]</td>
+<td style="text-align:center">选取所有以blog开头的div标签</td>
 </tr>
 <tr>
-<td align="center">etree.HTML(html).xpath(‘count(//div/form)’)</td>
-<td align="center">计算所有的div标签下的form标签数量</td>
+<td style="text-align:center">etree.HTML(html).xpath(‘count(//div/form)’)</td>
+<td style="text-align:center">计算所有的div标签下的form标签数量</td>
 </tr>
-</tbody></table>
-<ol start="7">
+</tbody>
+</table>
+</div>
+<ol>
 <li>通过link定位</li>
 </ol>
 <p><code>driver.find_element_by_link_text()</code>取链接中的所有元素</p>
@@ -584,12 +590,12 @@
 <li>利用sleep延时，绝对延时</li>
 </ol>
 <p><code>time.sleep(秒数)</code></p>
-<ol start="2">
+<ol>
 <li>隐性延时</li>
 </ol>
 <p>最长是30秒，如果30秒内，资源全部加载完成，那么执行后续的代码，30秒内没有加载完成，也会继续执行后续代码。</p>
 <p>  <code>driver.implicitly_wait(秒数)</code></p>
-<ol start="3">
+<ol>
 <li>显性等待</li>
 </ol>
 <p>等待时长20秒，间隔0.5秒去查询一次目标元素是否加载完成，20秒内加载完成后，执行后续的代码，最长等待20秒，没有加载也会继续执行。</p>
@@ -599,132 +605,134 @@
 <p>忽略<code>driver.switch_to.alert.dismiss()</code></p>
 <p>发送文本<code>driver.switch_to.alert.send_keys(文本内容)</code></p>
 <p>获取文本内容<code>driver.switch_to.alert.text</code></p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#! /usr/bin/python3.8</span>
-<span class="token keyword">import</span> requests
-<span class="token keyword">import</span> sys
-<span class="token keyword">from</span> selenium <span class="token keyword">import</span> webdriver
-<span class="token keyword">import</span> time
-<span class="token keyword">from</span> lxml <span class="token keyword">import</span> etree
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><pre class=" language-lang-python"><code class="language-lang-python">#! /usr/bin/python3.8
+import requests
+import sys
+from selenium import webdriver
+import time
+from lxml import etree
 
 
-<span class="token keyword">class</span> <span class="token class-name">Table</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> number_id<span class="token punctuation">,</span> passwd<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>url <span class="token operator">=</span> <span class="token string">"学校官网地址"</span>
-        self<span class="token punctuation">.</span>number_id <span class="token operator">=</span> number_id
-        self<span class="token punctuation">.</span>passwd <span class="token operator">=</span> passwd
+class Table:
+    def __init__(self, number_id, passwd):
+        self.url = "学校官网地址"
+        self.number_id = number_id
+        self.passwd = passwd
 
-    <span class="token keyword">def</span> <span class="token function">simulate</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token comment" spellcheck="true"># 启动</span>
-        driver <span class="token operator">=</span> webdriver<span class="token punctuation">.</span>Chrome<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># 最大化</span>
-        driver<span class="token punctuation">.</span>maximize_window<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># 地址请求</span>
-        driver<span class="token punctuation">.</span>get<span class="token punctuation">(</span>self<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># 登录</span>
-        driver<span class="token punctuation">.</span>find_element_by_id<span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>send_keys<span class="token punctuation">(</span>self<span class="token punctuation">.</span>number_id<span class="token punctuation">)</span>
-        driver<span class="token punctuation">.</span>find_element_by_id<span class="token punctuation">(</span><span class="token string">"password"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>send_keys<span class="token punctuation">(</span>self<span class="token punctuation">.</span>passwd<span class="token punctuation">)</span>
-        driver<span class="token punctuation">.</span>find_element_by_class_name<span class="token punctuation">(</span><span class="token string">"btn_dl"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># 进入教务系统</span>
-        driver<span class="token punctuation">.</span>find_element_by_id<span class="token punctuation">(</span><span class="token string">"157889684646655577"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># 切换到最新的页面</span>
-        windows <span class="token operator">=</span> driver<span class="token punctuation">.</span>window_handles
-        driver<span class="token punctuation">.</span>switch_to<span class="token punctuation">.</span>window<span class="token punctuation">(</span>windows<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># 切换到测评页面</span>
-        driver<span class="token punctuation">.</span>find_element_by_xpath<span class="token punctuation">(</span>
-            <span class="token string">"/html/body/div[1]/div[1]/div[2]/ul/li[4]/a/span"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        driver<span class="token punctuation">.</span>find_element_by_xpath<span class="token punctuation">(</span>
-            <span class="token string">"/html/body/div[1]/div[1]/div[2]/ul/li[4]/ul/li[1]/a"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># 有frame，需要转换</span>
-        driver<span class="token punctuation">.</span>switch_to_frame<span class="token punctuation">(</span>driver<span class="token punctuation">.</span>find_element_by_tag_name<span class="token punctuation">(</span><span class="token string">"iframe"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># 计算有多少门课要测评</span>
-        html <span class="token operator">=</span> etree<span class="token punctuation">.</span>HTML<span class="token punctuation">(</span>driver<span class="token punctuation">.</span>page_source<span class="token punctuation">)</span>
-        size <span class="token operator">=</span> html<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span>
-            <span class="token string">'count(/html/body/form/div[3]/div/div[2]/div/div[1]/select/option)'</span><span class="token punctuation">)</span>
-        size <span class="token operator">=</span> int<span class="token punctuation">(</span>size<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># 利用js完成选项</span>
-        commond <span class="token operator">=</span> <span class="token string">"document.getElementById('{}').options[{}].selected = true;"</span>
-        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token comment" spellcheck="true"># 找到每一门课程有多少个评价</span>
-            time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-            html <span class="token operator">=</span> etree<span class="token punctuation">.</span>HTML<span class="token punctuation">(</span>driver<span class="token punctuation">.</span>page_source<span class="token punctuation">)</span>
-            id_lists <span class="token operator">=</span> html<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">"//td/select/@id"</span><span class="token punctuation">)</span>
-            <span class="token keyword">for</span> i <span class="token keyword">in</span> id_lists<span class="token punctuation">:</span>
-                <span class="token comment" spellcheck="true"># 防止评价重复</span>
-                <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token string">"DataGrid1_JS1_14"</span> <span class="token operator">or</span> i <span class="token operator">==</span> <span class="token string">"DataGrid1_JS2_14"</span><span class="token punctuation">:</span>
-                    end <span class="token operator">=</span> commond<span class="token punctuation">.</span>format<span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    end <span class="token operator">=</span> commond<span class="token punctuation">.</span>format<span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
-                driver<span class="token punctuation">.</span>implicitly_wait<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>
-                <span class="token comment" spellcheck="true"># time.sleep(1)</span>
-                driver<span class="token punctuation">.</span>execute_script<span class="token punctuation">(</span>end<span class="token punctuation">)</span>
-            <span class="token keyword">try</span><span class="token punctuation">:</span>
-                time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
-                driver<span class="token punctuation">.</span>find_element_by_name<span class="token punctuation">(</span><span class="token string">"Button1"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token punctuation">)</span>
-            <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
-                driver<span class="token punctuation">.</span>refresh<span class="token punctuation">(</span><span class="token punctuation">)</span>
-                time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
-                driver<span class="token punctuation">.</span>find_element_by_name<span class="token punctuation">(</span><span class="token string">"Button1"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token punctuation">)</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"success"</span><span class="token punctuation">)</span>
-        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-        driver<span class="token punctuation">.</span>switch_to<span class="token punctuation">.</span>alert<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-        driver<span class="token punctuation">.</span>find_element_by_name<span class="token punctuation">(</span><span class="token string">"Button2"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
-        driver<span class="token punctuation">.</span>quit<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"---end----"</span><span class="token punctuation">)</span>
+    def simulate(self):
+        # 启动
+        driver = webdriver.Chrome()
+        # 最大化
+        driver.maximize_window()
+        # 地址请求
+        driver.get(self.url)
+        # 登录
+        driver.find_element_by_id("username").send_keys(self.number_id)
+        driver.find_element_by_id("password").send_keys(self.passwd)
+        driver.find_element_by_class_name("btn_dl").click()
+        time.sleep(1)
+        # 进入教务系统
+        driver.find_element_by_id("157889684646655577").click()
+        # 切换到最新的页面
+        windows = driver.window_handles
+        driver.switch_to.window(windows[-1])
+        time.sleep(1)
+        # 切换到测评页面
+        driver.find_element_by_xpath(
+            "/html/body/div[1]/div[1]/div[2]/ul/li[4]/a/span").click()
+        driver.find_element_by_xpath(
+            "/html/body/div[1]/div[1]/div[2]/ul/li[4]/ul/li[1]/a").click()
+        time.sleep(1)
+        # 有frame，需要转换
+        driver.switch_to_frame(driver.find_element_by_tag_name("iframe"))
+        time.sleep(1)
+        # 计算有多少门课要测评
+        html = etree.HTML(driver.page_source)
+        size = html.xpath(
+            'count(/html/body/form/div[3]/div/div[2]/div/div[1]/select/option)')
+        size = int(size)
+        # 利用js完成选项
+        commond = "document.getElementById('{}').options[{}].selected = true;"
+        for j in range(size):
+            # 找到每一门课程有多少个评价
+            time.sleep(1)
+            html = etree.HTML(driver.page_source)
+            id_lists = html.xpath("//td/select/@id")
+            for i in id_lists:
+                # 防止评价重复
+                if i == "DataGrid1_JS1_14" or i == "DataGrid1_JS2_14":
+                    end = commond.format(i, 2)
+                else:
+                    end = commond.format(i, 1)
+                driver.implicitly_wait(7)
+                # time.sleep(1)
+                driver.execute_script(end)
+            try:
+                time.sleep(2)
+                driver.find_element_by_name("Button1").click()
+            except Exception as e:
+                driver.refresh()
+                time.sleep(2)
+                driver.find_element_by_name("Button1").click()
+            else:
+                print("success")
+        time.sleep(1)
+        driver.switch_to.alert.accept()
+        time.sleep(1)
+        driver.find_element_by_name("Button2").click()
+        time.sleep(5)
+        driver.quit()
+        print("---end----")
 
-    <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"---start----"</span><span class="token punctuation">)</span>
-        self<span class="token punctuation">.</span>simulate<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    def run(self):
+        print("---start----")
+        self.simulate()
 
 
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span> len<span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">:</span>
-        number_id <span class="token operator">=</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-        passwd <span class="token operator">=</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
-    <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"./文件名 学籍号 密码"</span><span class="token punctuation">)</span>
-        sys<span class="token punctuation">.</span>exit<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    table <span class="token operator">=</span> Table<span class="token punctuation">(</span>number_id<span class="token punctuation">,</span> passwd<span class="token punctuation">)</span>
-    table<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+if __name__ == "__main__":
+    if len(sys.argv) == 3:
+        number_id = sys.argv[1]
+        passwd = sys.argv[2]
+    else:
+        print("./文件名 学籍号 密码")
+        sys.exit()
+    table = Table(number_id, passwd)
+    table.run()
+</code></pre>
 <p>注：每个学校的官网不同，需要自己定位到元素操作。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>还是直接用js舒服，哈哈哈，js太强了。</p>
 <p>js代码：copy 龙哥</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">var</span> select <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"iframeautoheight"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>contentWindow<span class="token punctuation">.</span>document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'select'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> select<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">!=</span> select<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            select<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>options<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>selected <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            select<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>options<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>selected <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>select<span class="token punctuation">.</span>length<span class="token operator">></span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        select<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">.</span>options<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>selected <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">var</span> elements <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"iframeautoheight"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>contentWindow<span class="token punctuation">.</span>document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> elements<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>elements<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>value <span class="token operator">==</span> <span class="token string">"保  存"</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                elements<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-lang-javascript"><code class="language-lang-javascript">setInterval(function(){
+    var select = document.getElementById("iframeautoheight").contentWindow.document.getElementsByTagName('select');
+    for (var j = 1; j < select.length; j++) {
+        if (j != select.length - 1) {
+            select[j].options[1].selected = true;
+        } else {
+            select[j].options[2].selected = true;
+        }
+    }
+    if(select.length>16){
+        select[10].options[2].selected = true;
+    }
+    setTimeout(function() {
+        var elements = document.getElementById("iframeautoheight").contentWindow.document.getElementsByTagName('input');
+        for (var i = 0; i < elements.length; i++) {
+            if(elements[i].value == "保  存"){
+                elements[i].click();
+            }
+        }
+    }, 1000)
+},5000);
 
-<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">var</span> element <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"iframeautoheight"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>contentWindow<span class="token punctuation">.</span>document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> element<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>element<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>value <span class="token operator">==</span> <span class="token string">" 提  交 "</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            element<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">62000</span><span class="token punctuation">)</span></code></pre>
+setTimeout(function(){
+    var element = document.getElementById("iframeautoheight").contentWindow.document.getElementsByTagName('input');
+    for (var i = 0; i < element.length; i++) {
+        if(element[i].value == " 提  交 "){
+            element[i].click();
+        }
+    }
+},62000)
+</code></pre>
 <p>最后还搞了个html输入学籍号和密码，通过post发送给服务器，最后调用自动教学质量测评代码完成，没学过框架，代码写的很烂，就不贻笑大方了。</p>
 
             </div>
@@ -962,22 +970,26 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/23/linux/2020/linux-xian-cheng/">
+                <a href="/2020/06/23/linux/2020/linux-jin-cheng-xia/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Linux线程">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Linux进程下">
                         
-                        <span class="card-title">Linux线程</span>
+                        <span class="card-title">Linux进程下</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一. 线程pthread不是linux下默认的库，有可能需要安装。
-sudo apt-get install glibc-doc
-sudo apt-get install manpages-posix-dev
-通过man pthread_c
+                            一. 信号Ⅰ. 信号的基本概念信号
+信号产生
+
+按键产生，Ctrl + c、Ctrl + z；
+调用函数，kill、raise、abort；
+定时器，alarm、setitimer；
+命令产生，kill；
+硬件异常，段错误，浮点型错误，总线
                         
                     </div>
                     <div class="publish-info">
@@ -1257,7 +1269,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             

@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -472,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    384
+                    380
                 </div>
                 
 
@@ -495,29 +497,32 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>链表：</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">struct</span> ListNode <span class="token punctuation">{</span>
-     <span class="token keyword">int</span> val<span class="token punctuation">;</span>
-     <span class="token keyword">struct</span> ListNode <span class="token operator">*</span>next<span class="token punctuation">;</span>
- <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">struct ListNode {
+     int val;
+     struct ListNode *next;
+ };
+</code></pre>
 <p>快慢指针就是指指针每次移动的速度不一样，一般快指针每次移动两步，慢指针移动一步。</p>
 <p>既然快慢指针移动的速度不同，那么如果有环，就一定会相遇，无环，就不可能相遇（相当于两个人围着跑道跑步，同起点，如果跑道有环的话，只要速度不同，那么他们肯定会相遇~，如果跑道是直线的，那么他们的距离只会越来越远，不可能再相遇。）终止条件就是链表为空。</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">bool</span> <span class="token function">IsCycle</span><span class="token punctuation">(</span><span class="token keyword">struct</span> ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">struct</span> ListNode<span class="token operator">*</span> fast<span class="token punctuation">,</span>slow<span class="token punctuation">;</span>
-    fast <span class="token operator">=</span> head<span class="token punctuation">;</span>
-    slow <span class="token operator">=</span> head<span class="token punctuation">;</span>
-<span class="token keyword">while</span><span class="token punctuation">(</span>fast<span class="token operator">&amp;&amp;</span>fast<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    slow <span class="token operator">=</span> slow<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
-    fast <span class="token operator">=</span> fast<span class="token operator">-</span><span class="token operator">></span>next<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>fast <span class="token operator">==</span> slow<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">bool IsCycle(struct ListNode* head){
+    struct ListNode* fast,slow;
+    fast = head;
+    slow = head;
+while(fast&&fast->next){
+    slow = slow->next;
+    fast = fast->next->next;
+    if(fast == slow){
+        return true;
+        }
+    }
+    return false;
+}
+</code></pre>
 <p>判断环入口，分两步：</p>
 <p>1.判断有无环</p>
 <p>2.重置快指针，慢指针不变，使快慢指针每次都只移动一步，快慢指针再次相遇就是环入口</p>
 <p>如果不能理解可以在链表中画个环，用表格记录fast和slow<br><img src="https://img-blog.csdnimg.cn/20190829103542248.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzODI2MjEy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -525,7 +530,8 @@
 <th>slow</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>0</td>
 <td>0</td>
 </tr>
@@ -561,60 +567,39 @@
 <td>8</td>
 <td>8</td>
 </tr>
-<tr>
-<td>找入口：</td>
-<td></td>
-</tr>
-<tr>
-<td>fast</td>
-<td>slow</td>
-</tr>
-<tr>
-<td>—-</td>
-<td>—-</td>
-</tr>
-<tr>
-<td>0</td>
-<td>8</td>
-</tr>
-<tr>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td>好了，fast和slow相遇，入口就是1</td>
-<td></td>
-</tr>
-</tbody></table>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">struct</span> ListNode <span class="token operator">*</span><span class="token function">detectCycle</span><span class="token punctuation">(</span><span class="token keyword">struct</span> ListNode <span class="token operator">*</span>head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">struct</span> ListNode<span class="token operator">*</span> fast <span class="token operator">=</span> head<span class="token punctuation">;</span>
-    <span class="token keyword">struct</span> ListNode<span class="token operator">*</span> slow <span class="token operator">=</span> head<span class="token punctuation">;</span>
-    <span class="token keyword">bool</span> isCycle<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span>fast<span class="token operator">&amp;&amp;</span>fast<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        slow <span class="token operator">=</span> slow<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
-        fast <span class="token operator">=</span> fast<span class="token operator">-</span><span class="token operator">></span>next<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>fast<span class="token operator">==</span>slow<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            isCycle <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-            <span class="token keyword">break</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d\n"</span><span class="token punctuation">,</span>fast<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">,</span>slow<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>isCycle<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        fast <span class="token operator">=</span> head<span class="token punctuation">;</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>fast<span class="token operator">!=</span>slow<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            fast<span class="token operator">=</span>fast<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
-            slow<span class="token operator">=</span>slow<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
-            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d\n"</span><span class="token punctuation">,</span>fast<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">,</span>slow<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> fast<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">else</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+</tbody>
+</table>
+</div>
+<p>找入口：<br>| fast | slow |<br>| —— | —— |<br>| 0    | 8    |<br>| 1    | 1    |<br>好了，fast和slow相遇，入口就是1</p>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp">struct ListNode *detectCycle(struct ListNode *head) {
+    struct ListNode* fast = head;
+    struct ListNode* slow = head;
+    bool isCycle=false;
+    while(fast&&fast->next){
+        slow = slow->next;
+        fast = fast->next->next;
+        if(fast==slow){
+            isCycle = true;
+            break;
+        }
+    }
+    printf("%d %d\n",fast->val,slow->val);
+    if(isCycle){
+        fast = head;
+        while(fast!=slow){
+            fast=fast->next;
+            slow=slow->next;
+            printf("%d %d\n",fast->val,slow->val);
+        }
+        return fast;
+    }
+    else{
+        return 0;
+    }
+}
+</code></pre>
 <p>快慢指针用法很多，还要继续学习！</p>
-<p>  <valine></valine></p>
-
+  <valine></valine>
             </div>
             <hr/>
 
@@ -1148,7 +1133,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">67.2k</span>&nbsp;字
             
             
             
