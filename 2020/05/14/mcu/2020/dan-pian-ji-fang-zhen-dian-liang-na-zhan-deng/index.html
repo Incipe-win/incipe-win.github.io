@@ -1083,21 +1083,26 @@ DLoop:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/14/mcu/2020/dan-pian-ji-fang-zhen-zhi-shi-deng-kai-guan-kong-zhi-qi/">
+                <a href="/2020/05/14/mcu/2020/dan-pian-ji-fang-zhen-zhi-shi-deng-shu-ma-guan-de-zhong-duan-kong-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="单片机仿真指示灯开关控制器">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="单片机仿真指示灯数码管的中断控制">
                         
-                        <span class="card-title">单片机仿真指示灯开关控制器</span>
+                        <span class="card-title">单片机仿真指示灯数码管的中断控制</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            目标程序启动后， 8  只发光二极管先整体闪烁 3 次（即亮→暗→亮→暗→亮→暗，间隔时间以肉眼可观察到为准），然后根据开关状态控制对应发光二极管的亮灯状态，即开关闭合相应灯亮，开关断开相应灯灭，直至停止程序运行软件编程原理为：
+                            目标在编程软件的配合下，要求实现如下功能：
 
-8 只发
+程序启动后，D处于熄灯、LED1处于黑屏状态；单击K1，可使D亮灯状态反转一次；单击K2，可使LED1显示值加1，并按十六进制数显示，达到F后重新从1开始。
+
+所需芯片
+AT89C51
+CAP
+
                         
                     </div>
                     <div class="publish-info">
@@ -1327,60 +1332,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
     <footer class="page-footer bg-color">
-    
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="503838841"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
     
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
