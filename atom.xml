@@ -6,7 +6,7 @@
   <link href="https://incipe-win.github.io/atom.xml" rel="self"/>
   
   <link href="https://incipe-win.github.io/"/>
-  <updated>2020-10-04T15:56:15.442Z</updated>
+  <updated>2020-09-28T15:18:09.678Z</updated>
   <id>https://incipe-win.github.io/</id>
   
   <author>
@@ -18,14 +18,471 @@
   
   <entry>
     <title></title>
-    <link href="https://incipe-win.github.io/2020/10/26/nei-cun-fen-qu-mo-xing/"/>
-    <id>https://incipe-win.github.io/2020/10/26/nei-cun-fen-qu-mo-xing/</id>
-    <published>2020-10-26T02:38:41.084Z</published>
+    <link href="https://incipe-win.github.io/2020/10/26/qt/2020/qt-zhi-zuo-yi-ge-jian-yi-yin-le-bo-fang-qi/"/>
+    <id>https://incipe-win.github.io/2020/10/26/qt/2020/qt-zhi-zuo-yi-ge-jian-yi-yin-le-bo-fang-qi/</id>
+    <published>2020-10-26T02:50:28.396Z</published>
+    <updated>2020-09-28T15:18:09.678Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://incipe-win.github.io/2020/10/26/linux/2020/linux-shell-jiao-ben-bian-cheng/"/>
+    <id>https://incipe-win.github.io/2020/10/26/linux/2020/linux-shell-jiao-ben-bian-cheng/</id>
+    <published>2020-10-26T02:50:28.268Z</published>
+    <updated>2020-07-07T07:36:42.323Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://incipe-win.github.io/2020/10/26/linux/2020/lcd-yu-hong-mo-ping-zuo-biao-zhuan-huan/"/>
+    <id>https://incipe-win.github.io/2020/10/26/linux/2020/lcd-yu-hong-mo-ping-zuo-biao-zhuan-huan/</id>
+    <published>2020-10-26T02:50:28.267Z</published>
+    <updated>2020-09-23T14:51:16.839Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://incipe-win.github.io/2020/10/26/c/2020/nei-cun-fen-qu-mo-xing/"/>
+    <id>https://incipe-win.github.io/2020/10/26/c/2020/nei-cun-fen-qu-mo-xing/</id>
+    <published>2020-10-26T02:50:28.120Z</published>
     <updated>2020-10-04T15:56:15.442Z</updated>
     
     
     
     
+    
+  </entry>
+  
+  <entry>
+    <title>978. 最长湍流子数组</title>
+    <link href="https://incipe-win.github.io/2020/10/26/leetcode/2020/978.zui-chang-tuan-liu-zi-shu-zu/"/>
+    <id>https://incipe-win.github.io/2020/10/26/leetcode/2020/978.zui-chang-tuan-liu-zi-shu-zu/</id>
+    <published>2020-10-25T16:00:00.000Z</published>
+    <updated>2020-10-26T02:03:35.254Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Leetcode" scheme="https://incipe-win.github.io/categories/Leetcode/"/>
+    
+    
+    <category term="滑动窗口" scheme="https://incipe-win.github.io/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>56. 合并区间</title>
+    <link href="https://incipe-win.github.io/2020/10/22/leetcode/2020/56.he-bing-qu-jian/"/>
+    <id>https://incipe-win.github.io/2020/10/22/leetcode/2020/56.he-bing-qu-jian/</id>
+    <published>2020-10-21T16:00:00.000Z</published>
+    <updated>2020-10-22T14:33:54.125Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;给出一个区间的集合，请合并所有重叠的区间。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例</summary>
+        
+      
+    
+    
+    
+    <category term="Leetcode" scheme="https://incipe-win.github.io/categories/Leetcode/"/>
+    
+    
+    <category term="数组" scheme="https://incipe-win.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>763. 划分字母区间</title>
+    <link href="https://incipe-win.github.io/2020/10/22/leetcode/2020/763.hua-fen-zi-mu-qu-jian/"/>
+    <id>https://incipe-win.github.io/2020/10/22/leetcode/2020/763.hua-fen-zi-mu-qu-jian/</id>
+    <published>2020-10-21T16:00:00.000Z</published>
+    <updated>2020-10-22T12:51:45.141Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;字符串 &lt;code&gt;S&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="Leetcode" scheme="https://incipe-win.github.io/categories/Leetcode/"/>
+    
+    
+    <category term="贪心" scheme="https://incipe-win.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python爬取必应壁纸</title>
+    <link href="https://incipe-win.github.io/2020/10/13/python/2020/python-pa-qu-bi-ying-bi-zhi/"/>
+    <id>https://incipe-win.github.io/2020/10/13/python/2020/python-pa-qu-bi-ying-bi-zhi/</id>
+    <published>2020-10-12T16:00:00.000Z</published>
+    <updated>2020-10-21T10:42:54.401Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="博客" scheme="https://incipe-win.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="爬虫" scheme="https://incipe-win.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LCP 12. 小张刷题计划</title>
+    <link href="https://incipe-win.github.io/2020/10/02/leetcode/2020/lcp-12.xiao-zhang-shua-ti-ji-hua/"/>
+    <id>https://incipe-win.github.io/2020/10/02/leetcode/2020/lcp-12.xiao-zhang-shua-ti-ji-hua/</id>
+    <published>2020-10-01T16:00:00.000Z</published>
+    <updated>2020-10-02T13:55:00.293Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;为了提高自己的代码能力，小张制定了 LeetCode 刷题计划，他选中了 LeetCode 题库中的 n</summary>
+        
+      
+    
+    
+    
+    <category term="Leetcode" scheme="https://incipe-win.github.io/categories/Leetcode/"/>
+    
+    
+    <category term="中等" scheme="https://incipe-win.github.io/tags/%E4%B8%AD%E7%AD%89/"/>
+    
+    <category term="二分答案" scheme="https://incipe-win.github.io/tags/%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git常用命令</title>
+    <link href="https://incipe-win.github.io/2020/10/01/linux/2020/git-shi-yong-chao-xiang-xi/"/>
+    <id>https://incipe-win.github.io/2020/10/01/linux/2020/git-shi-yong-chao-xiang-xi/</id>
+    <published>2020-09-30T16:00:00.000Z</published>
+    <updated>2020-10-01T14:31:53.538Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;读完本文，你将了解git的常用操作。&lt;/p&gt;
+&lt;p&gt;注：本文不介绍git历史，也不介绍如何安装git，更不介绍如何使用github。&lt;/p&gt;
+&lt;p&gt;有需要的读者可以参考 &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://incipe-win.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://incipe-win.github.io/tags/Linux/"/>
+    
+    <category term="git" scheme="https://incipe-win.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决使用代理软件后win10自带应用无法联网的问题</title>
+    <link href="https://incipe-win.github.io/2020/09/29/software/2020/jie-jue-shi-yong-dai-li-ruan-jian-hou-win10-zi-dai-ying-yong-wu-fa-lian-wang-de-wen-ti/"/>
+    <id>https://incipe-win.github.io/2020/09/29/software/2020/jie-jue-shi-yong-dai-li-ruan-jian-hou-win10-zi-dai-ying-yong-wu-fa-lian-wang-de-wen-ti/</id>
+    <published>2020-09-28T16:00:00.000Z</published>
+    <updated>2020-09-29T14:56:47.458Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;方案1&quot;&gt;&lt;a href=&quot;#方案1&quot; class=&quot;headerlink&quot; title=&quot;方案1&quot;&gt;&lt;/a&gt;方案1&lt;/h2&gt;&lt;p&gt;使用clash for windows软件，里面有个 &lt;strong&gt;UWP</summary>
+        
+      
+    
+    
+    
+    <category term="软件使用" scheme="https://incipe-win.github.io/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/"/>
+    
+    
+    <category term="博客" scheme="https://incipe-win.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GEC6818音乐播放器制作</title>
+    <link href="https://incipe-win.github.io/2020/09/28/iot/2020/gec6818-yin-le-bo-fang-qi-zhi-zuo/"/>
+    <id>https://incipe-win.github.io/2020/09/28/iot/2020/gec6818-yin-le-bo-fang-qi-zhi-zuo/</id>
+    <published>2020-09-27T16:00:00.000Z</published>
+    <updated>2020-09-28T15:17:29.803Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h2&gt;&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
+    
+    
+    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu20.04安装arm-linux-gcc交叉编译器</title>
+    <link href="https://incipe-win.github.io/2020/09/28/iot/2020/ubuntu20.04-an-zhuang-arm-linux-gcc-jiao-cha-bian-yi-qi/"/>
+    <id>https://incipe-win.github.io/2020/09/28/iot/2020/ubuntu20.04-an-zhuang-arm-linux-gcc-jiao-cha-bian-yi-qi/</id>
+    <published>2020-09-27T16:00:00.000Z</published>
+    <updated>2020-09-28T15:17:56.440Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h2&gt;&lt;p&gt;本文安装的交叉编译器是 &lt;strong&gt;arm-linux-gcc4.4.3&lt;/strong&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
+    
+    
+    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>147. 对链表进行插入排序</title>
+    <link href="https://incipe-win.github.io/2020/09/24/leetcode/2020/147.dui-lian-biao-jin-xing-cha-ru-pai-xu/"/>
+    <id>https://incipe-win.github.io/2020/09/24/leetcode/2020/147.dui-lian-biao-jin-xing-cha-ru-pai-xu/</id>
+    <published>2020-09-23T16:00:00.000Z</published>
+    <updated>2020-09-25T11:27:09.805Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;对链表进行插入排序。&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="Leetcode" scheme="https://incipe-win.github.io/categories/Leetcode/"/>
+    
+    
+    <category term="链表" scheme="https://incipe-win.github.io/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PicGo+Typora+Gitee搭建本地博客图片环境</title>
+    <link href="https://incipe-win.github.io/2020/08/26/software/2020/picgo-typora-gitee-da-jian-ben-di-bo-ke-huan-jing/"/>
+    <id>https://incipe-win.github.io/2020/08/26/software/2020/picgo-typora-gitee-da-jian-ben-di-bo-ke-huan-jing/</id>
+    <published>2020-08-25T16:00:00.000Z</published>
+    <updated>2020-08-26T03:33:20.059Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="软件使用" scheme="https://incipe-win.github.io/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/"/>
+    
+    
+    <category term="博客" scheme="https://incipe-win.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>conda常用方法</title>
+    <link href="https://incipe-win.github.io/2020/08/24/python/2020/conda-shi-yong/"/>
+    <id>https://incipe-win.github.io/2020/08/24/python/2020/conda-shi-yong/</id>
+    <published>2020-08-23T16:00:00.000Z</published>
+    <updated>2020-08-24T12:38:04.683Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;参考我的这篇文章即可，&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="博客" scheme="https://incipe-win.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="Python" scheme="https://incipe-win.github.io/tags/Python/"/>
+    
+    <category term="Liunx" scheme="https://incipe-win.github.io/tags/Liunx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pandas入门</title>
+    <link href="https://incipe-win.github.io/2020/08/20/python/2020/pandas-ru-men/"/>
+    <id>https://incipe-win.github.io/2020/08/20/python/2020/pandas-ru-men/</id>
+    <published>2020-08-19T16:00:00.000Z</published>
+    <updated>2020-08-21T08:26:24.746Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;什么是pandas&quot;&gt;&lt;a href=&quot;#什么是pandas&quot; class=&quot;headerlink&quot; title=&quot;什么是pandas&quot;&gt;&lt;/a&gt;什么是pandas&lt;/h2&gt;&lt;p&gt;&lt;code&gt;pandas&lt;/code&gt; 是基于一种</summary>
+        
+      
+    
+    
+    
+    <category term="博客" scheme="https://incipe-win.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="数据分析" scheme="https://incipe-win.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu20.04安装Anaconda</title>
+    <link href="https://incipe-win.github.io/2020/08/16/linux/2020/ubuntu20.04-an-zhuang-anaconda/"/>
+    <id>https://incipe-win.github.io/2020/08/16/linux/2020/ubuntu20.04-an-zhuang-anaconda/</id>
+    <published>2020-08-15T16:00:00.000Z</published>
+    <updated>2020-08-17T08:06:53.475Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://repo.anaconda.com/archive/index.html&quot;&gt;官网&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://incipe-win.github.io/categories/Linux/"/>
+    
+    
+    <category term="虚拟环境" scheme="https://incipe-win.github.io/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PAT1009</title>
+    <link href="https://incipe-win.github.io/2020/08/16/pat-jia-zu/2020/pat1011/"/>
+    <id>https://incipe-win.github.io/2020/08/16/pat-jia-zu/2020/pat1011/</id>
+    <published>2020-08-15T16:00:00.000Z</published>
+    <updated>2020-08-16T12:58:31.264Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;With the 2010 FIFA World Cup running, football fans the</summary>
+        
+      
+    
+    
+    
+    <category term="博客" scheme="https://incipe-win.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="PAT" scheme="https://incipe-win.github.io/tags/PAT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>matplotlib使用</title>
+    <link href="https://incipe-win.github.io/2020/08/16/python/2020/matplotlib-shi-yong/"/>
+    <id>https://incipe-win.github.io/2020/08/16/python/2020/matplotlib-shi-yong/</id>
+    <published>2020-08-15T16:00:00.000Z</published>
+    <updated>2020-08-18T05:45:15.655Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;什么是matplotlib&quot;&gt;&lt;a href=&quot;#什么是matplotlib&quot; class=&quot;headerlink&quot; title=&quot;什么是matplotlib&quot;&gt;&lt;/a&gt;什么是matplotlib&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Matplotlib</summary>
+        
+      
+    
+    
+    
+    <category term="博客" scheme="https://incipe-win.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="数据分析" scheme="https://incipe-win.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
