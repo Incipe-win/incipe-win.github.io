@@ -702,26 +702,25 @@ sudo apt-get install manpages-posix-dev
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/05/13/linux/2020/mei-tian-yi-ge-linux-zhong-duan-ming-ling-ls-ming-ling-3/">
+                    <a href="/2020/05/13/linux/2020/mei-tian-yi-ge-linux-zhong-duan-ming-ling-ch-ming-ling-4/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="每天一个linux终端命令ls命令(3)">
+                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="每天一个linux终端命令ch命令(4)">
                             
-                            <span class="card-title">每天一个linux终端命令ls命令(3)</span>
+                            <span class="card-title">每天一个linux终端命令ch命令(4)</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                凡心所向，素履可往
-ls 即list,译为列举。
-ls 可带参数,也可不带参数。可带的参数很多,这里只列举最常用的几种,有特殊需求可使用man或者–help命令进行参考。
-man ls
-或者
-ls --help
-ls [-lha]
-参数介绍
+                                好读书，不求甚解；每有会意，便欣然忘食。 
+ch命令指的是 chgrp,chown,chmod 这一组命令! 因为分开缺少连贯性,所以凑一起了。
+
+chgrp 修改文件所属的用户组
+chown 修改文件的拥有者
+chmod 修改文件的属性
+
                             
                         </div>
                         <div class="publish-info">
@@ -804,26 +803,30 @@ ls [-lha]
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/05/13/linux/2020/ubuntu18.04-an-zhuang/">
+                    <a href="/2020/05/13/linux/2020/linux-jin-cheng-zhong/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Ubuntu18.04安装">
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Linux进程中">
                             
-                            <span class="card-title">Ubuntu18.04安装</span>
+                            <span class="card-title">Linux进程中</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                WSL就是Windows Subsystem for Linux（Windows系统的Linux子系统），因为依赖于win10，所以“子系统”会受到一些限制。
-使用方法：
-打开控制面板
+                                一. Linux进程间通信Ⅰ. 管道函数管道是有大小的，通过ulimit -a查看管道大小
+
+man 2 pipe
+#include &lt;unistd.h>
+int pipe(int pipefd[2]);
+
+参数
+
+文件描述符。
 
 
 
-
-按照提示重启就好了，要是没有这个选项，就说明系
                             
                         </div>
                         <div class="publish-info">
@@ -846,8 +849,8 @@ ls [-lha]
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                            <span class="chip bg-color">虚拟机</span>
+                        <a href="/tags/Linux/">
+                            <span class="chip bg-color">Linux</span>
                         </a>
                         
                     </div>
@@ -911,30 +914,26 @@ ls [-lha]
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/05/13/linux/2020/linux-jin-cheng-zhong/">
+                    <a href="/2020/05/13/linux/2020/ubuntu18.04-an-zhuang/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Linux进程中">
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Ubuntu18.04安装">
                             
-                            <span class="card-title">Linux进程中</span>
+                            <span class="card-title">Ubuntu18.04安装</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                一. Linux进程间通信Ⅰ. 管道函数管道是有大小的，通过ulimit -a查看管道大小
-
-man 2 pipe
-#include &lt;unistd.h>
-int pipe(int pipefd[2]);
-
-参数
-
-文件描述符。
+                                WSL就是Windows Subsystem for Linux（Windows系统的Linux子系统），因为依赖于win10，所以“子系统”会受到一些限制。
+使用方法：
+打开控制面板
 
 
 
+
+按照提示重启就好了，要是没有这个选项，就说明系
                             
                         </div>
                         <div class="publish-info">
@@ -957,8 +956,8 @@ int pipe(int pipefd[2]);
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/Linux/">
-                            <span class="chip bg-color">Linux</span>
+                        <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                            <span class="chip bg-color">虚拟机</span>
                         </a>
                         
                     </div>
