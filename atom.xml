@@ -6,7 +6,7 @@
   <link href="https://incipe-win.github.io/atom.xml" rel="self"/>
   
   <link href="https://incipe-win.github.io/"/>
-  <updated>2020-10-26T03:59:30.386Z</updated>
+  <updated>2020-10-26T12:12:27.333Z</updated>
   <id>https://incipe-win.github.io/</id>
   
   <author>
@@ -21,14 +21,15 @@
     <link href="https://incipe-win.github.io/2020/10/26/leetcode/2020/978.zui-chang-tuan-liu-zi-shu-zu/"/>
     <id>https://incipe-win.github.io/2020/10/26/leetcode/2020/978.zui-chang-tuan-liu-zi-shu-zu/</id>
     <published>2020-10-25T16:00:00.000Z</published>
-    <updated>2020-10-26T03:59:30.386Z</updated>
+    <updated>2020-10-26T12:12:27.333Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;当 A 的子数组 A[i], A[i+1], …, A[j]</summary>
         
       
     
@@ -357,32 +358,6 @@
   </entry>
   
   <entry>
-    <title>PAT1009</title>
-    <link href="https://incipe-win.github.io/2020/08/16/pat-jia-zu/2020/pat1011/"/>
-    <id>https://incipe-win.github.io/2020/08/16/pat-jia-zu/2020/pat1011/</id>
-    <published>2020-08-15T16:00:00.000Z</published>
-    <updated>2020-10-26T04:01:32.369Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;With the 2010 FIFA World Cup running, football fans the</summary>
-        
-      
-    
-    
-    
-    <category term="博客" scheme="https://incipe-win.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-    <category term="PAT" scheme="https://incipe-win.github.io/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Ubuntu20.04安装Anaconda</title>
     <link href="https://incipe-win.github.io/2020/08/16/linux/2020/ubuntu20.04-an-zhuang-anaconda/"/>
     <id>https://incipe-win.github.io/2020/08/16/linux/2020/ubuntu20.04-an-zhuang-anaconda/</id>
@@ -405,6 +380,32 @@
     
     
     <category term="虚拟环境" scheme="https://incipe-win.github.io/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PAT1009</title>
+    <link href="https://incipe-win.github.io/2020/08/16/pat-jia-zu/2020/pat1011/"/>
+    <id>https://incipe-win.github.io/2020/08/16/pat-jia-zu/2020/pat1011/</id>
+    <published>2020-08-15T16:00:00.000Z</published>
+    <updated>2020-10-26T04:01:32.369Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;With the 2010 FIFA World Cup running, football fans the</summary>
+        
+      
+    
+    
+    
+    <category term="博客" scheme="https://incipe-win.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="PAT" scheme="https://incipe-win.github.io/tags/PAT/"/>
     
   </entry>
   

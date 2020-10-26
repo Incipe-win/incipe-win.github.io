@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2
+                    281
                 </div>
                 
 
@@ -496,7 +496,35 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2>
+                <h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
+<p>当 A 的子数组 A[i], A[i+1], …, A[j] 满足下列条件时，我们称其为湍流子数组：</p>
+<p>若 i &lt;= k &lt; j，当 k 为奇数时， A[k] &gt; A[k+1]，且当 k 为偶数时，A[k] &lt; A[k+1]；</p>
+<p>或 若 i &lt;= k &lt; j，当 k 为偶数时，A[k] &gt; A[k+1] ，且当 k 为奇数时， A[k] &lt; A[k+1]。</p>
+<p>也就是说，如果比较符号在子数组中的每个相邻元素对之间翻转，则该子数组是湍流子数组。</p>
+<p>返回 A 的最大湍流子数组的长度。</p>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p>输入：[9,4,2,10,7,8,8,1,9]<br>输出：5<br>解释：(A[1] &gt; A[2] &lt; A[3] &gt; A[4] &lt; A[5])</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p>输入：[4,8,12,16]<br>输出：2</p>
+</blockquote>
+<p><strong>示例 3：</strong></p>
+<blockquote>
+<p>输入：[100]<br>输出：1</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ol>
+<li>$1 &lt;= A.length &lt;= 40000$</li>
+<li>$0 &lt;= A[i] &lt;= 10^9$</li>
+</ol>
+<p>来源：力扣（LeetCode）</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-turbulent-subarray">https://leetcode-cn.com/problems/longest-turbulent-subarray</a></p>
+<p>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+</blockquote>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这个题就是要我们找有波形的数组，比如</p>
+
             </div>
             <hr/>
 
@@ -1009,6 +1037,8 @@
                     <div class="summary block-with-text">
                         
                             原题
+当 A 的子数组 A[i], A[i+1], …, A[j] 满足下列条件时，我们称其为湍流子数组：
+若 i &lt;= k &lt; j，当 k 为奇数时， A[k] &gt; A[k+1]，且当 k 为偶数时，A[k] &lt; 
                         
                     </div>
                     <div class="publish-info">
@@ -1281,7 +1311,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                    order='random'
                    preload='auto'
                    volume='0.7'
-                   list-folded='true'
+                   list-folded='false'
         >
         </meting-js>
     </div>
@@ -1301,7 +1331,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81k</span>&nbsp;字
+                class="white-color">81.3k</span>&nbsp;字
             
             
             
