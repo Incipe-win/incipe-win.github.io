@@ -1179,23 +1179,25 @@ int x
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/11/c/2020/chu-xue-map-de-ge-chong-cao-zuo/">
+                <a href="/2020/05/11/c/2020/guan-yu-memset/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="初学map的各种操作">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="关于memset">
                         
-                        <span class="card-title">初学map的各种操作</span>
+                        <span class="card-title">关于memset</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            /*
- * @Author: incipe
- * @Date: 2019-09-22 23:14:53
- * @LastEditTime: 2019-10-21 21:35:58
- * @LastEditors: Please set La
+                            被不了解memset狠狠的坑了一把，难受。
+对于整型数组，若要是初始化为非0的值时应该使用for循环，字符型或0，用memset即可。
+例如：
+#include&lt;bits/stdc++.h>
+int main()
+{
+    int 
                         
                     </div>
                     <div class="publish-info">
@@ -1371,7 +1373,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">2020</span>
+            <span id="year">2019</span>
             <a href="/about" target="_blank">incipe</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
@@ -1407,9 +1409,9 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                     var days = hours * 24;
                     var years = days * 365;
                     var today = new Date();
-                    var startYear = "2020";
-                    var startMonth = "10";
-                    var startDate = "25";
+                    var startYear = "2019";
+                    var startMonth = "8";
+                    var startDate = "16";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
