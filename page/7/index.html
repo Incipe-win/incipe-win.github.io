@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Incipe&#39;s blog</title>
+    <title>incipe&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -33,7 +33,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Incipe's blog" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="incipe's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -46,7 +46,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Incipe&#39;s blog</span>
+                    <span class="logo-span">incipe&#39;s blog</span>
                 </a>
             </div>
             
@@ -145,7 +145,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Incipe&#39;s blog</div>
+        <div class="logo-name">incipe&#39;s blog</div>
         <div class="logo-desc">
             
             The story has just begun!
@@ -753,6 +753,60 @@ x (variants)
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-li-ji-shu-pan-ding/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="嵌入式Arm立即数判定">
+                            
+                            <span class="card-title">嵌入式Arm立即数判定</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                基础知识在ARM中，机器指令的格式大致有以下几种：
+
+立即寻址的方式
+
+立即寻址
+在立即寻址，操作数本身直接在指令中给出，取出指令也就获得了操作数，这个操作数也称为立即数。例子如下
+
+ADD R0, R1, #0xF      ;R0=R1
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-13
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/IOT/" class="post-category">
+                                    IOT
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/ARM/">
+                            <span class="chip bg-color">ARM</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-xue-xi-bi-ji-3/">
                         <div class="card-image">
                             
@@ -810,81 +864,31 @@ ARM指令集特点
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-li-ji-shu-pan-ding/">
+                    <a href="/2020/05/13/linux/2020/linux-jin-cheng-zhong/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="嵌入式Arm立即数判定">
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Linux进程中">
                             
-                            <span class="card-title">嵌入式Arm立即数判定</span>
+                            <span class="card-title">Linux进程中</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                基础知识在ARM中，机器指令的格式大致有以下几种：
+                                一. Linux进程间通信Ⅰ. 管道函数管道是有大小的，通过ulimit -a查看管道大小
 
-立即寻址的方式
+man 2 pipe
+#include &lt;unistd.h>
+int pipe(int pipefd[2]);
 
-立即寻址
-在立即寻址，操作数本身直接在指令中给出，取出指令也就获得了操作数，这个操作数也称为立即数。例子如下
+参数
 
-ADD R0, R1, #0xF      ;R0=R1
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-13
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/IOT/" class="post-category">
-                                    IOT
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/ARM/">
-                            <span class="chip bg-color">ARM</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/05/13/linux/2020/ubuntu18.04-an-zhuang/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Ubuntu18.04安装">
-                            
-                            <span class="card-title">Ubuntu18.04安装</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                WSL就是Windows Subsystem for Linux（Windows系统的Linux子系统），因为依赖于win10，所以“子系统”会受到一些限制。
-使用方法：
-打开控制面板
+文件描述符。
 
 
 
-
-按照提示重启就好了，要是没有这个选项，就说明系
                             
                         </div>
                         <div class="publish-info">
@@ -907,8 +911,8 @@ ADD R0, R1, #0xF      ;R0=R1
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                            <span class="chip bg-color">虚拟机</span>
+                        <a href="/tags/Linux/">
+                            <span class="chip bg-color">Linux</span>
                         </a>
                         
                     </div>
@@ -973,31 +977,27 @@ ADD R0, R1, #0xF      ;R0=R1
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/05/13/linux/2020/linux-jin-cheng-zhong/">
+                    <a href="/2020/05/13/linux/2020/ubuntu18.04-an-zhuang/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Linux进程中">
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Ubuntu18.04安装">
                             
-                            <span class="card-title">Linux进程中</span>
+                            <span class="card-title">Ubuntu18.04安装</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                一. Linux进程间通信Ⅰ. 管道函数管道是有大小的，通过ulimit -a查看管道大小
-
-man 2 pipe
-#include &lt;unistd.h>
-int pipe(int pipefd[2]);
-
-参数
-
-文件描述符。
+                                WSL就是Windows Subsystem for Linux（Windows系统的Linux子系统），因为依赖于win10，所以“子系统”会受到一些限制。
+使用方法：
+打开控制面板
 
 
 
+
+按照提示重启就好了，要是没有这个选项，就说明系
                             
                         </div>
                         <div class="publish-info">
@@ -1020,8 +1020,8 @@ int pipe(int pipefd[2]);
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/Linux/">
-                            <span class="chip bg-color">Linux</span>
+                        <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                            <span class="chip bg-color">虚拟机</span>
                         </a>
                         
                     </div>
