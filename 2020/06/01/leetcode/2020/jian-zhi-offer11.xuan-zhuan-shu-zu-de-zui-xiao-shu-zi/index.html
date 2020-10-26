@@ -474,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -517,8 +517,8 @@
 <h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>这道题还是有意思的，题目并没有说数组中不包含重复元素，那就是可能存在重复元素，加上这个题目就不那么简单了。</p>
 <p>我们定义 $left, right$ 指向 $numbers$ 的两端，$mid = left + (right - left) / 2$，现在我们用二分查找的主要的一个目标就是判断最小值在哪一个数组中。</p>
 <p>任何一个旋转数组，肯定会被 $mid$ 分成两个部分(这两个部分，有一部分是有序的，另一部分是无序的，或者这两部分都是有序的)。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/offer11-1.png" alt=""></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/offer11-2.png" alt=""></p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/offer11-1.png"></p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/offer11-2.png"></p>
 <p>我们怎么判断这这个旋转数组哪个部分有序呢？通过比较 $numbers[mid]$ 与 $numbers[right]$ 的大小来判断。</p>
 <ul>
 <li>如果 $numbers[mid] &lt; numbers[right]$， 说明 $mid$ 右边有序；</li>
@@ -538,137 +538,133 @@
 <p>如果 $numbers[mid] &lt; numbers[right]$ 说明右边有序，所以我们可以判断最小值肯定在 $[left, mid]$，因为 $mid$ 后面的元素肯定都比 $mid$ 大，但是，为什么不能说 $numbers[mid]$ 就是最小元素呢？如果我只搬0个元素到元素末尾，那样整个数组都是有序的，$mid$ 前面的元素肯定比 $mid$ 小。缩小范围 $right = mid$ </p>
 <p>如果 $numbers[mid] &gt; numbers[right]$ 说明左边有序，但是因为题目给的旋转数组的定义( <strong>把一个数组最开始的若干个元素搬到数组的末尾</strong> )，我们可以肯定最小元素在数组右边 $[mid + 1, right]$， $numbers[mid] &gt; numbers[right]$ 说明 $mid$ 不可能是最小元素。缩小范围 $left = mid + 1$ </p>
 </blockquote>
-<ol>
+<ol start="2">
 <li>我们为什么要把 $numbers[high]$ 和 $numbers[mid]$ 比较，而不是 $numbers[left]$ 和 $numbers[mid]$ 比较；</li>
 </ol>
 <blockquote>
 <p>如果我们用 $numbers[left]$ 和 $numbers[mid]$ 比较，会遇到多个情况。</p>
 <p>比如：$mid = 2, i = 0$，此时通过 $numbers[mid] &gt; numbers[i]$， 产生的数组就有 $[4, 5, 6, 2, 3]$ 和 $[2, 3, 4, 5, 6]$，都满足条件，就说明这两个数组都产生在 $mid = 2, i = 0$ 时，对不同数组，我们采取同一个方法，最终得到的结果肯定有一个是错的。</p>
 </blockquote>
-<ol>
+<ol start="3">
 <li>当 $numbers[mid] == numbers[right]$ 后我们应该怎么处理。</li>
 </ol>
 <blockquote>
-<p>当$numbers[mid] == numbers[right]$时，我们通过缩小判断范围来解决，即 $—right$</p>
+<p>当$numbers[mid] == numbers[right]$时，我们通过缩小判断范围来解决，即 $–right$</p>
 </blockquote>
 <p>参考 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/solution/mian-shi-ti-11-xuan-zhuan-shu-zu-de-zui-xiao-shu-3/">面试题11. 旋转数组的最小数字（二分法，清晰图解）</a></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/offer11-3.png" alt=""></p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/offer11-3.png"></p>
 <ul>
 <li>C++代码</li>
 </ul>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution {
-public:
-    int minArray(vector<int>& numbers) {
-        int size = numbers.size();
-        int left = 0, right = size - 1;
-        while (left < right) {
-            int mid = left + (right - left) / 2;
-            if (numbers[mid] < numbers[right]) {
-                right = mid;
-            } else if (numbers[mid] > numbers[right]) {
-                left = mid + 1;
-            } else {
-                --right;
-            }
-        }
-        return numbers[left];
-    }
-};
-// 这样写也是可以的~
-// class Solution {
-// public:
-//     int findMin(vector<int>& nums) {
-//         int size = nums.size();
-//         int left = 0, right = size - 1;
-//         int ans = INT_MAX;
-//         while (left <= right) {
-//             int mid = left + (right -left) / 2;
-//             if (nums[mid] < nums[right]) {
-//                 ans = min(ans, nums[mid]);
-//                 right = mid - 1;
-//             } else if (nums[mid] > nums[right]) {
-//                 left = mid + 1;
-//             } else {
-//                 --right;
-//             }
-//         }
-//         return min(ans, nums[left]);
-//     }
-// };
-</code></pre>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">minArray</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> numbers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> size <span class="token operator">=</span> numbers<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> right <span class="token operator">=</span> size <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> mid <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>numbers<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">&lt;</span> numbers<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                right <span class="token operator">=</span> mid<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>numbers<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">></span> numbers<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token operator">--</span>right<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> numbers<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 这样写也是可以的~</span>
+<span class="token comment" spellcheck="true">// class Solution {</span>
+<span class="token comment" spellcheck="true">// public:</span>
+<span class="token comment" spellcheck="true">//     int findMin(vector&lt;int>&amp; nums) {</span>
+<span class="token comment" spellcheck="true">//         int size = nums.size();</span>
+<span class="token comment" spellcheck="true">//         int left = 0, right = size - 1;</span>
+<span class="token comment" spellcheck="true">//         int ans = INT_MAX;</span>
+<span class="token comment" spellcheck="true">//         while (left &lt;= right) {</span>
+<span class="token comment" spellcheck="true">//             int mid = left + (right -left) / 2;</span>
+<span class="token comment" spellcheck="true">//             if (nums[mid] &lt; nums[right]) {</span>
+<span class="token comment" spellcheck="true">//                 ans = min(ans, nums[mid]);</span>
+<span class="token comment" spellcheck="true">//                 right = mid - 1;</span>
+<span class="token comment" spellcheck="true">//             } else if (nums[mid] > nums[right]) {</span>
+<span class="token comment" spellcheck="true">//                 left = mid + 1;</span>
+<span class="token comment" spellcheck="true">//             } else {</span>
+<span class="token comment" spellcheck="true">//                 --right;</span>
+<span class="token comment" spellcheck="true">//             }</span>
+<span class="token comment" spellcheck="true">//         }</span>
+<span class="token comment" spellcheck="true">//         return min(ans, nums[left]);</span>
+<span class="token comment" spellcheck="true">//     }</span>
+<span class="token comment" spellcheck="true">// };</span></code></pre>
 <ul>
 <li>python代码</li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python">class Solution:
-    def minArray(self, numbers: List[int]) -> int:
-        left, right = 0, len(numbers) - 1
-        while left < right:
-            mid = (left + right) // 2
-            if numbers[mid] < numbers[right]:
-                right = mid
-            elif numbers[mid] > numbers[right]:
-                left = mid + 1
-            else:
-                right -= 1
-        return numbers[left]
-</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">minArray</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> numbers<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+        left<span class="token punctuation">,</span> right <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>numbers<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
+            mid <span class="token operator">=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+            <span class="token keyword">if</span> numbers<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">&lt;</span> numbers<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                right <span class="token operator">=</span> mid
+            <span class="token keyword">elif</span> numbers<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">></span> numbers<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                right <span class="token operator">-=</span> <span class="token number">1</span>
+        <span class="token keyword">return</span> numbers<span class="token punctuation">[</span>left<span class="token punctuation">]</span></code></pre>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这个题还是比较难的，值得思考，初次遇到估计很难想到，细节太多了。</p>
 <h3 id="相似的题"><a href="#相似的题" class="headerlink" title="相似的题"></a>相似的题</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array/">33. 搜索旋转排序数组</a></p>
 <p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/">153. 寻找旋转排序数组中的最小值</a></p>
 <p>如果理解了怎么压缩边界，缩小范围，这两道题肯定就是很简单的了。这两道题都是数组中不包含重复元素的！！！</p>
-<ol>
+<ol start="33">
 <li>搜索旋转排序数组参考代码：</li>
 </ol>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution {
-public:
-    int search(vector<int>& nums, int target) {
-        int size = nums.size();
-        int left = 0, right = size - 1;
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            if (nums[mid] == target) {
-                return mid;
-            } else if (nums[mid] > nums[right]) {
-                // 说明左边有序，看看要查找的target在不在左边，因为是有序的，所以只要满足 nums[left] <= target < nums[mid]
-                // 就能确定target在左边了，否则，就不在左边，要去右边找。
-                if (nums[mid] > target && target >= nums[left]) {
-                    right = mid - 1;
-                } else {
-                    left = mid + 1;
-                }
-            } else {
-                // 说明右边有序，同左边有序，判断target在不在右边，在右边就在右边找，不在就在左边找。
-                if (nums[mid] < target && target <= nums[right]) {
-                    left = mid + 1;
-                } else {
-                    right = mid - 1;
-                }
-            }
-        }
-        return -1;
-    }
-};
-</code></pre>
-<ol>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">search</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> size <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> right <span class="token operator">=</span> size <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;=</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> mid <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">==</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> mid<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">></span> nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">// 说明左边有序，看看要查找的target在不在左边，因为是有序的，所以只要满足 nums[left] &lt;= target &lt; nums[mid]</span>
+                <span class="token comment" spellcheck="true">// 就能确定target在左边了，否则，就不在左边，要去右边找。</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">></span> target <span class="token operator">&amp;&amp;</span> target <span class="token operator">>=</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">// 说明右边有序，同左边有序，判断target在不在右边，在右边就在右边找，不在就在左边找。</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">&lt;</span> target <span class="token operator">&amp;&amp;</span> target <span class="token operator">&lt;=</span> nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<ol start="153">
 <li>寻找旋转排序数组中的最小值参考代码：</li>
 </ol>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution {
-public:
-    int findMin(vector<int>& nums) {
-        int size = nums.size();
-        int left = 0, right = size - 1;
-        while (left < right) {
-            int mid = left + (right - left) / 2;
-            if (nums[mid] < nums[right]) {
-                right = mid;
-            } else {
-                left = mid + 1;
-            }
-        }
-        return nums[left];
-    }
-};
-</code></pre>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">findMin</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> size <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> right <span class="token operator">=</span> size <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> mid <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">&lt;</span> nums<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                right <span class="token operator">=</span> mid<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 
             </div>
             <hr/>
@@ -1472,7 +1468,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

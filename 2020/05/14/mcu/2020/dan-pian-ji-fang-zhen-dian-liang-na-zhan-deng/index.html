@@ -511,27 +511,27 @@
 </ol>
 <h2 id="开始动手"><a href="#开始动手" class="headerlink" title="开始动手"></a>开始动手</h2><h3 id="AT89C51引脚"><a href="#AT89C51引脚" class="headerlink" title="AT89C51引脚"></a><strong>AT89C51</strong>引脚</h3><p>简单介绍下这次仿真需要用到的 <strong>AT89C51</strong> 的引脚，这次我们做仿真用到的引脚不多！</p>
 <h4 id="晶振引脚（XTAL1-XTAL2）"><a href="#晶振引脚（XTAL1-XTAL2）" class="headerlink" title="晶振引脚（XTAL1 + XTAL2）"></a>晶振引脚（<strong>XTAL1 + XTAL2</strong>）</h4><ul>
-<li><strong>XTAL1(Pin19)</strong> ：片内振荡电路的输入端</li>
-<li><strong>XTAL2(Pin20)</strong> ：片内振荡电路的输出端</li>
+<li> <strong>XTAL1(Pin19)</strong> ：片内振荡电路的输入端</li>
+<li> <strong>XTAL2(Pin20)</strong> ：片内振荡电路的输出端</li>
 </ul>
 <p>晶振电路：</p>
 <p><img src="https://imgkr.cn-bj.ufileos.com/5ce44b98-7a93-4e1f-8b3f-117c714f1906.png" alt="晶振电路"></p>
 <h4 id="控制引脚"><a href="#控制引脚" class="headerlink" title="控制引脚"></a>控制引脚</h4><ul>
-<li><strong>$\overline{EA}$(Pin31)</strong> ：程序存储器的内外部选通，接低电平从外部程序存储器读指令，如果接高电平则从内部程序存储器读指令。</li>
+<li> <strong>$\overline{EA}$(Pin31)</strong> ：程序存储器的内外部选通，接低电平从外部程序存储器读指令，如果接高电平则从内部程序存储器读指令。</li>
 </ul>
 <h4 id="可编程输入-输出引脚"><a href="#可编程输入-输出引脚" class="headerlink" title="可编程输入/输出引脚"></a>可编程输入/输出引脚</h4><ul>
 <li><strong>51</strong> 单片机有 <strong>4</strong> 组 <strong>8</strong> 位的可编程 <strong>I/O</strong> 口，分别为 <strong>P0、P1、P2、P3</strong> 口，每个口有 <strong>8</strong> 位（ <strong>8</strong> 根引脚），共 <strong>32</strong> 根。<ul>
 <li><strong>PO</strong> 口（ <strong>Pin39～Pin32</strong> ）： <strong>8</strong> 位双向 <strong>I/O</strong> 口线，名称为 <strong>P0.0～P0.7</strong> 。</li>
-<li><strong>P1</strong> 口（ <strong>Pin1～Pin8</strong> ）： <strong>8</strong> 位准双向I/O口线，名称为 <strong>P1.0～P1.7</strong> 。 </li>
-<li><strong>P2</strong> 口（ <strong>Pin21～Pin28</strong> ）：<strong>8</strong> 位准双向 <strong>I/O</strong> 口线，名称为 <strong>P2.0～P2.7</strong> 。</li>
-<li><strong>P3</strong> 口（ <strong>Pin10～Pin17</strong> ）：<strong>8</strong> 位准双向 <strong>I/O</strong> 口线，名称为 <strong>P3.0～P3.7</strong> 。</li>
+<li> <strong>P1</strong> 口（ <strong>Pin1～Pin8</strong> ）： <strong>8</strong> 位准双向I/O口线，名称为 <strong>P1.0～P1.7</strong> 。 </li>
+<li> <strong>P2</strong> 口（ <strong>Pin21～Pin28</strong> ）：<strong>8</strong> 位准双向 <strong>I/O</strong> 口线，名称为 <strong>P2.0～P2.7</strong> 。</li>
+<li> <strong>P3</strong> 口（ <strong>Pin10～Pin17</strong> ）：<strong>8</strong> 位准双向 <strong>I/O</strong> 口线，名称为 <strong>P3.0～P3.7</strong> 。</li>
 </ul>
 </li>
 </ul>
 <p>这就意味着 <strong>P1 ~ P3</strong> 都可以控制二极管！</p>
 <h3 id="电路图"><a href="#电路图" class="headerlink" title="电路图"></a>电路图</h3><p><img src="https://imgkr.cn-bj.ufileos.com/4b76c18b-c187-4406-a346-3b59e9c58905.png" alt="电路图"></p>
 <p>通过实验原理图，我们可以得出，发光二极管共阳极，所以P1.0 ~ P1.7口是低电平时才能点亮二极管。</p>
-<h3 id="汇编代码"><a href="#汇编代码" class="headerlink" title="汇编代码"></a>汇编代码</h3><pre class=" language-lang-assembly"><code class="language-lang-assembly">    ORG 0000H
+<h3 id="汇编代码"><a href="#汇编代码" class="headerlink" title="汇编代码"></a>汇编代码</h3><pre class=" language-assembly"><code class="language-assembly">    ORG 0000H
     LJMP    START                          
 
     ORG 0300H
@@ -554,12 +554,11 @@ DLoop:
     DJNZ R3,DLY2       
     DJNZ R2,DLY1        
     RET                 
-    END
-</code></pre>
+    END</code></pre>
 <p>怎么仿真可以参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43826212/article/details/103777319">如何用proteus仿真8086</a></p>
 <h2 id="提升"><a href="#提升" class="headerlink" title="提升"></a>提升</h2><p>原理图不难，程序不难，这是一个很简单的试验。</p>
 <p>我们把主要的目光放在延时子程序上，这个延时程序到底延时多久？这就需要我们计算了。</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">Delay:
+<pre class=" language-assembly"><code class="language-assembly">Delay:
     MOV R2,#10          ;执行1次, 单周期指令
 L1:
     MOV R3,#200         ;执行10次, 单周期指令
@@ -569,10 +568,9 @@ DLoop:
     DJNZ R3,DLY2        ;执行 2 * 200 * 10, 双周期指令
     DJNZ R2,DLY1        ;执行 2 * 10, 双周期指令
     RET                 ;双周期指令 2
-    ;总时间 1 + 10 + 200 * 10 + 2 * 248 * 200 * 10 + 2 * 200 * 10 + 2 * 10 + 2 = 998033us, 即延时1s
-</code></pre>
+    ;总时间 1 + 10 + 200 * 10 + 2 * 248 * 200 * 10 + 2 * 200 * 10 + 2 * 10 + 2 = 998033us, 即延时1s</code></pre>
 <p>首先我们需要知道 <strong>一个机器周期包括12个时钟周期</strong> ，那么<strong>1</strong>个机器周期是多长时间呢？</p>
-<p>如果一个 <strong>单片机工作于12M晶体震荡器，它的时钟周期是1/12（微秒）</strong> ，那么 <strong>它的一个机器周期是12 *（1/12）也就是1微秒。</strong> </p>
+<p>如果一个 <strong>单片机工作于12M晶体震荡器，它的时钟周期是1/12（微秒）</strong> ，那么 *<em>它的一个机器周期是12 <em>（1/12）也就是1微秒。</em></em> </p>
 <p>还有就是 在 <strong>MCS-51单片机的所有指令中，有一些完成得比较快，只要1个机器周期就行了，有一些完成得比较慢，得要2个机器周期，还有两条指令要4个机器周期才行。</strong> </p>
 <p>所以我们把每条指令执行的次数累加起来就得到了延时的时间了。</p>
 <p>更加具体的可以参考：<a target="_blank" rel="noopener" href="http://www.51hei.com/mcu/1247.html">单片机汇编延时程序的理解</a></p>
@@ -584,9 +582,9 @@ DLoop:
 <center>酒酣胸胆尚开张，鬓微霜，又何妨？持节云中，何日遣冯唐？<br>会挽雕弓如满月，西北望，射天狼。</center>
 
 
-
 </blockquote>
-<valine></valine>
+<p><valine></valine></p>
+
             </div>
             <hr/>
 
@@ -1136,26 +1134,28 @@ DLoop:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/14/mcu/2020/dan-pian-ji-fang-zhen-zhi-shi-deng-shu-ma-guan-de-zhong-duan-kong-zhi/">
+                <a href="/2020/05/14/mcu/2020/ru-he-yong-proteus-fang-zhen-8086/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="单片机仿真指示灯数码管的中断控制">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="如何用proteus仿真8086">
                         
-                        <span class="card-title">单片机仿真指示灯数码管的中断控制</span>
+                        <span class="card-title">如何用proteus仿真8086</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            目标在编程软件的配合下，要求实现如下功能：
-
-程序启动后，D处于熄灯、LED1处于黑屏状态；单击K1，可使D亮灯状态反转一次；单击K2，可使LED1显示值加1，并按十六进制数显示，达到F后重新从1开始。
-
-所需芯片
-AT89C51
-CAP
-
+                            岁月不饶人，我亦未曾饶过岁月。
+1.需要的工具proteus
+过低版本不可以仿真8086，请下载7.8版本及以上的
+下载地址(附教程)
+提取码：rh8j
+emu8086
+官网地址
+网盘地址
+提取码：j5qn
+2.编译汇编代码打开emu808
                         
                     </div>
                     <div class="publish-info">
@@ -1166,8 +1166,8 @@ CAP
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/IOT/" class="post-category">
-                                    IOT
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" class="post-category">
+                                    软件使用
                                 </a>
                             
                             
@@ -1177,8 +1177,8 @@ CAP
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/MCU/">
-                        <span class="chip bg-color">MCU</span>
+                    <a href="/tags/IOT/">
+                        <span class="chip bg-color">IOT</span>
                     </a>
                     
                 </div>
@@ -1392,7 +1392,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

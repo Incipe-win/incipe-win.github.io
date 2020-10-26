@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    520
+                    529
                 </div>
                 
 
@@ -499,7 +499,7 @@
                 <h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
 <p>给你 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。</p>
 <p>说明：你不能倾斜容器，且 n 的值至少为 2。</p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS8yY2Q1NTk5OC0yNjcwLTRmNTItOWYzNS02ZjlkNmQ3NzFiMTkucG5n?x-oss-process=image/format,png" alt=""></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS8yY2Q1NTk5OC0yNjcwLTRmNTItOWYzNS02ZjlkNmQ3NzFiMTkucG5n?x-oss-process=image/format,png"></p>
 <center>图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。</center>
 
 <p><strong>示例：</strong></p>
@@ -511,61 +511,59 @@
 </blockquote>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="暴力"><a href="#暴力" class="headerlink" title="暴力"></a>暴力</h3><p>这题貌似挺简单的🙋‍🙋‍🙋‍</p>
 <p>把所有容纳的水都求出来，取个最大值不就好了吗？</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution {
-public:
-  int maxArea(vector<int> &height) {
-    int size = height.size();
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+  <span class="token keyword">int</span> <span class="token function">maxArea</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>height<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> size <span class="token operator">=</span> height<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    int maxCapaticy = 0;
-    for (int i = 0; i < size; ++i) {
-      for (int j = i + 1; j < size; ++j) {
-        int length = j - i;
-        int high = min(height[i], height[j]);
-        int tmp = length * high;
-        if (tmp > maxCapaticy) {
-          maxCapaticy = tmp;
-        }
-      }
-    }
-    return maxCapaticy;
-  }
-};
-</code></pre>
+    <span class="token keyword">int</span> maxCapaticy <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> length <span class="token operator">=</span> j <span class="token operator">-</span> i<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> high <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>height<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> height<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> tmp <span class="token operator">=</span> length <span class="token operator">*</span> high<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>tmp <span class="token operator">></span> maxCapaticy<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          maxCapaticy <span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> maxCapaticy<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p>结果你知道的🤷，不过我记得之前是可以勉强过的（小声bb，哈哈）</p>
 <h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>这题很明显的双指针，在用了暴力法超时后，优化立马就想到了双指针👇</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution {
-public:
-  int maxArea(vector<int> &height) {
-    int size = height.size();
-    // 双指针low， high
-    int low = 0;
-    int high = size - 1;
-    // 最大容水量
-    int maxCapacity = 0;
-    while (low < high) {
-      int length = high - low;
-      int tmp;
-      if (height[low] > height[high]) {
-        tmp = height[high] * length;
-        --high;
-      } else {
-        tmp = height[low] * length;
-        ++low;
-      }
-      maxCapacity = max(tmp, maxCapacity);
-    }
-    return maxCapacity;
-  }
-};
-</code></pre>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+  <span class="token keyword">int</span> <span class="token function">maxArea</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>height<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> size <span class="token operator">=</span> height<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 双指针low， high</span>
+    <span class="token keyword">int</span> low <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> high <span class="token operator">=</span> size <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 最大容水量</span>
+    <span class="token keyword">int</span> maxCapacity <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>low <span class="token operator">&lt;</span> high<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> length <span class="token operator">=</span> high <span class="token operator">-</span> low<span class="token punctuation">;</span>
+      <span class="token keyword">int</span> tmp<span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>height<span class="token punctuation">[</span>low<span class="token punctuation">]</span> <span class="token operator">></span> height<span class="token punctuation">[</span>high<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        tmp <span class="token operator">=</span> height<span class="token punctuation">[</span>high<span class="token punctuation">]</span> <span class="token operator">*</span> length<span class="token punctuation">;</span>
+        <span class="token operator">--</span>high<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        tmp <span class="token operator">=</span> height<span class="token punctuation">[</span>low<span class="token punctuation">]</span> <span class="token operator">*</span> length<span class="token punctuation">;</span>
+        <span class="token operator">++</span>low<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      maxCapacity <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>tmp<span class="token punctuation">,</span> maxCapacity<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> maxCapacity<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p>自己做了个图解，第一次做，不喜勿喷🙅‍♀️，真是解题十分钟，画题几小时啊🆒</p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9hNDhlN2FmYS04MzZiLTQ0OGItYjRiMC1lNWQ5NDljMGI5M2EucG5n?x-oss-process=image/format,png" alt=""></p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9iYjJjMmUxNi03MDdlLTQxYWQtOGI0Ni00YzExYjkyZGFiMTIucG5n?x-oss-process=image/format,png" alt=""></p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS8zOTM5ZTZhOS1iZTAyLTRmOGItYTA0OC1lYTMxY2FjN2UxNTUucG5n?x-oss-process=image/format,png" alt=""></p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9lMTI4NDgzNi03NDMwLTQ5ODUtODUwZi03OWI0ZmUxMDE3MTcucG5n?x-oss-process=image/format,png" alt=""></p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9mZjAxY2JmYy0zYjc1LTQzYzktYjNkYi1kYjcxNzcxMDQzNzAucG5n?x-oss-process=image/format,png" alt=""></p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9hYzUyNWRjZC1kYmZkLTQ4N2QtOTJhYi03NmRmZjNiMjQ1YzQucG5n?x-oss-process=image/format,png" alt=""></p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS83ZGQzZmRjOS1mYWY1LTRmNTktOTg2Zi1jYjg2MDgyYjkzM2EucG5n?x-oss-process=image/format,png" alt=""></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9hNDhlN2FmYS04MzZiLTQ0OGItYjRiMC1lNWQ5NDljMGI5M2EucG5n?x-oss-process=image/format,png"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9iYjJjMmUxNi03MDdlLTQxYWQtOGI0Ni00YzExYjkyZGFiMTIucG5n?x-oss-process=image/format,png"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS8zOTM5ZTZhOS1iZTAyLTRmOGItYTA0OC1lYTMxY2FjN2UxNTUucG5n?x-oss-process=image/format,png"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9lMTI4NDgzNi03NDMwLTQ5ODUtODUwZi03OWI0ZmUxMDE3MTcucG5n?x-oss-process=image/format,png"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9mZjAxY2JmYy0zYjc1LTQzYzktYjNkYi1kYjcxNzcxMDQzNzAucG5n?x-oss-process=image/format,png"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9hYzUyNWRjZC1kYmZkLTQ4N2QtOTJhYi03NmRmZjNiMjQ1YzQucG5n?x-oss-process=image/format,png"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS83ZGQzZmRjOS1mYWY1LTRmNTktOTg2Zi1jYjg2MDgyYjkzM2EucG5n?x-oss-process=image/format,png"></p>
 <p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS85NmU5MDNlZC03NmUxLTQ5MjQtOGU5YS02OGEzNTBiY2U1NTEucG5n?x-oss-process=image/format,png" alt="img"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>第一次尝试了用 <strong>ppt</strong> 做动画，但是技术好像还没到家，就只能用图片展示了~👏👏👏</p>
 <p>有空还是要多尝试新事物。</p>
@@ -576,9 +574,9 @@ public:
 <center>草色烟光残照里，无言谁会凭阑意。</center>
 <center>拟把疏狂图一醉，对酒当歌，强乐还无味。</center>
 <center>衣带渐宽终不悔，为伊消得人憔悴。</center>
-
 </blockquote>
-<valine></valine>
+<p><valine></valine></p>
+
             </div>
             <hr/>
 
@@ -1077,60 +1075,6 @@ public:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/20/leetcode/2020/jian-zhi-offer-shu-zu-zhong-chong-fu-de-shu/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="剑指offer03. 数组中重复的数">
-                        
-                        <span class="card-title">剑指offer03. 数组中重复的数</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            原题
-找出数组中重复的数字。
-在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。
-示例 1：
-
-输入：[
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-20
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
-                                    剑指offer
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%AE%80%E5%8D%95/">
-                        <span class="chip bg-color">简单</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2020/05/16/leetcode/2020/102-er-cha-shu-de-ceng-ci-bian-li/">
                     <div class="card-image">
                         
@@ -1147,20 +1091,19 @@ public:
 世界以痛吻我，我却报之以歌
 --泰戈尔
 
-
 原题链接
 二叉树构造：
- /**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *   
+/**
+* Definition for a binary tree node.
+* struct TreeNode {
+*     int val;
+*     Tree
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-16
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-16
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1182,6 +1125,60 @@ public:
                     
                     <a href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%E9%81%8D%E5%8E%86/">
                         <span class="chip bg-color">广度优先搜索遍历</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/05/16/leetcode/2020/15-san-shu-zhi-he/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="15. 三数之和">
+                        
+                        <span class="card-title">15. 三数之和</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            原题
+给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。
+注意：答案中不可以包含重复的三元组。
+ 示例：
+
+给定数组 num
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Leetcode/" class="post-category">
+                                    Leetcode
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">
+                        <span class="chip bg-color">双指针</span>
                     </a>
                     
                 </div>
@@ -1395,7 +1392,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    101
+                    332
                 </div>
                 
 
@@ -498,65 +498,63 @@
             <div id="articleContent">
                 <p>高中学过的求大公约数的方法就是辗转相除法和更相减损术了。</p>
 <p>辗转相除法递归版</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">#include <iostream>
-using std::cin;
-using std::cout;
-using std::endl;
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cin<span class="token punctuation">;</span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cout<span class="token punctuation">;</span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
 
-int gcd(int a, int b) { return b == 0 ? a : gcd(b, a % b); }
+<span class="token keyword">int</span> <span class="token function">gcd</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> b <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> a <span class="token operator">:</span> <span class="token function">gcd</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> a <span class="token operator">%</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
 
-int main() {
-  int n, m;
-  cin >> n >> m;
-  cout << gcd(n, m) << endl;
-  return 0;
-}
-</code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">int</span> n<span class="token punctuation">,</span> m<span class="token punctuation">;</span>
+  cin <span class="token operator">>></span> n <span class="token operator">>></span> m<span class="token punctuation">;</span>
+  cout <span class="token operator">&lt;&lt;</span> <span class="token function">gcd</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> m<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>非递归</p>
-<pre class=" language-lang-c"><code class="language-lang-c">#include <iostream>
-using std::cin;
-using std::cout;
-using std::endl;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+using std<span class="token punctuation">:</span><span class="token punctuation">:</span>cin<span class="token punctuation">;</span>
+using std<span class="token punctuation">:</span><span class="token punctuation">:</span>cout<span class="token punctuation">;</span>
+using std<span class="token punctuation">:</span><span class="token punctuation">:</span>endl<span class="token punctuation">;</span>
 
-int gcd(int a, int b) {
-  int temp;
-  while (b > 0) {
-    temp = a % b;
-    a = b;
-    b = temp;
-  }
-  return a;
-}
+<span class="token keyword">int</span> <span class="token function">gcd</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">int</span> temp<span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>b <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    temp <span class="token operator">=</span> a <span class="token operator">%</span> b<span class="token punctuation">;</span>
+    a <span class="token operator">=</span> b<span class="token punctuation">;</span>
+    b <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> a<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-int main() {
-  int n, m;
-  cin >> n >> m;
-  cout << gcd(n, m) << endl;
-  return 0;
-}
-</code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">int</span> n<span class="token punctuation">,</span> m<span class="token punctuation">;</span>
+  cin <span class="token operator">>></span> n <span class="token operator">>></span> m<span class="token punctuation">;</span>
+  cout <span class="token operator">&lt;&lt;</span> <span class="token function">gcd</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> m<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>更相减损术</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">#include <iostream>
-using std::cin;
-using std::cout;
-using std::endl;
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cin<span class="token punctuation">;</span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cout<span class="token punctuation">;</span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
 
-int main() {
-  int a, b;
-  cin >> a >> b;
-  while (a != b) {
-    if (a > b) {
-      a -= b;
-    } else {
-      b -= a;
-    }
-  }
-  cout << a << endl;
-  return 0;
-}
-</code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">int</span> a<span class="token punctuation">,</span> b<span class="token punctuation">;</span>
+  cin <span class="token operator">>></span> a <span class="token operator">>></span> b<span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>a <span class="token operator">!=</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">></span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      a <span class="token operator">-</span><span class="token operator">=</span> b<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      b <span class="token operator">-</span><span class="token operator">=</span> a<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  cout <span class="token operator">&lt;&lt;</span> a <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>比较：<br>更相减损术和辗转相除法的主要区别在于前者所使用的运算是“减”，后者是“除”。从算法思想上看，两者并没有本质上的区别，但是在计算过程中，如果遇到一个数很大，另一个数比较小的情况，可能要进行很多次减法才能达到一次除法的效果，从而使得算法的时间复杂度退化为O(N)，其中N是原先的两个数中较大的一个。相比之下，辗转相除法的时间复杂度稳定于O(logN)。</p>
-  <valine></valine>
+<p>  <valine></valine></p>
+
             </div>
             <hr/>
 
@@ -1070,11 +1068,10 @@ int main() {
                             朴素检测一般我们判断某个区间中的的素数，都是直接循环遍历，进行判断。
 这样的话，时间复杂度就是 $O(n \sqrt{n})$ 
 代码如下:
-#include 
-#include 
+#include &lt;cmath>
+#include &lt;iostream>
 
-bool IsPrime(int n) {
-  int 
+bool 
                         
                     </div>
                     <div class="publish-info">
@@ -1127,8 +1124,7 @@ bool IsPrime(int n) {
  记录下二维vector的遍历（输出） 注：二维vector的赋值不能跟二维数组一样用scanf或者cin写入
  遍历（迭代器） 方法一
 void print() {
-  vector::iterator it;
- 
+ vector&lt;vector&lt;cha
                         
                     </div>
                     <div class="publish-info">
@@ -1365,7 +1361,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

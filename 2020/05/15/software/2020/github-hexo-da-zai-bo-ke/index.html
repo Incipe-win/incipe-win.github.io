@@ -474,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    518
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    5 分
                 </div>
                 
 
@@ -497,20 +497,20 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p><em>很久就想搞个自己的博客了，就从Github Pages练练手吧！</em></p>
-<h2 id="1-创建Github账户"><a href="#1-创建Github账户" class="headerlink" title="1. 创建Github账户"></a>1. 创建Github账户</h2><p><img src="F:\Repositories\cpp\md\_posts\images/2020-03-13_194655.png" alt=""></p>
-<p><img src="F:\Repositories\cpp\md\_posts\images/2020-03-13_194952.png" alt=""></p>
+<h2 id="1-创建Github账户"><a href="#1-创建Github账户" class="headerlink" title="1. 创建Github账户"></a>1. 创建Github账户</h2><p><img src="F:\Repositories\cpp\md_posts\images/2020-03-13_194655.png"></p>
+<p><img src="F:\Repositories\cpp\md_posts\images/2020-03-13_194952.png"></p>
 <p>接下来，直接通过 <strong>username.github.io</strong> 就可以打开Github Pages了！</p>
 <h2 id="2-安装Git"><a href="#2-安装Git" class="headerlink" title="2. 安装Git"></a>2. 安装Git</h2><p>这个就是一个软件的安装，不多讲了。</p>
 <p><strong><em>注：如果不需要用Hexo搭载静态博客框架的，直接在github上操作就好了！</em></strong></p>
 <p>在settings里面可以更改主题(是仓库里面的设置)</p>
-<p><img src="F:\Repositories\cpp\md\_posts\images/2020-03-13_195705.png" alt=""></p>
-<p><img src="F:\Repositories\cpp\md\_posts\images/2020-03-13_195835.png" alt=""></p>
+<p><img src="F:\Repositories\cpp\md_posts\images/2020-03-13_195705.png"></p>
+<p><img src="F:\Repositories\cpp\md_posts\images/2020-03-13_195835.png"></p>
 <p>点击②修改主题，接着点提交就好了，请注意①处的地址是你所期望的</p>
 <p><em>ps:有可能出现 <a target="_blank" rel="noopener" href="https://username.github.io/username.github.io">https://username.github.io/username.github.io</a> 这样的url</em></p>
 <p>Github还可以绑定自己购买的域名！</p>
 <p>配置<em>Github</em>的教程可以参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43826212/article/details/100023631">传送门</a></p>
 <p>接下来用Hexo搭载静态博客框架！</p>
-<h2 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3. 安装Hexo"></a>3. 安装Hexo</h2><h3 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo"></a>什么是Hexo</h3><p>Hexo是一款基于Node.js的静态博客框架。 Hexo 使用 <a href="https://link.zhihu.com/?target=http%3A//daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
+<h2 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3. 安装Hexo"></a>3. 安装Hexo</h2><h3 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo"></a>什么是Hexo</h3><p>Hexo是一款基于Node.js的静态博客框架。 Hexo 使用 <a href="https://link.zhihu.com/?target=http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页<a href="%5B%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0%5D(https://zhuanlan.zhihu.com/p/68625591)">^1</a></p>
 <p>安装Hexo之前，我们需要安装Node.js。Git上文已经安装好了。</p>
 <h3 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h3><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">官网传送门</a></p>
 <p>安装好后cmd输入 <strong>node -v</strong> 会出现node.js的版本号</p>
@@ -518,53 +518,45 @@
 <h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>在计算机本地创建一个文件夹，专门用来保存博客。</p>
 <p>比如在F盘创建一个study/blog</p>
 <p>右键该文件夹，输入</p>
-<pre class=" language-lang-javascript"><code class="language-lang-javascript">npm install hexo-cli -g
-</code></pre>
+<pre class=" language-javascript"><code class="language-javascript">npm install hexo<span class="token operator">-</span>cli <span class="token operator">-</span>g</code></pre>
 <p>有WARN没事的。</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">$ npm install hexo-cli -g
-C:\Users\theigrams\AppData\Roaming\npm\hexo -> C:\Users\theigrams\AppData\Roaming\npm\node_modules\hexo-cli\bin\hexo
-npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\hexo-cli\node_modules\fsevents):
-npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> hexo-cli -g
+C:\Users\theigrams\AppData\Roaming\npm\hexo -<span class="token operator">></span> C:\Users\theigrams\AppData\Roaming\npm\node_modules\hexo-cli\bin\hexo
+<span class="token function">npm</span> WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 <span class="token punctuation">(</span>node_modules\hexo-cli\node_modules\fsevents<span class="token punctuation">)</span>:
+<span class="token function">npm</span> WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform <span class="token keyword">for</span> fsevents@1.2.9: wanted <span class="token punctuation">{</span><span class="token string">"os"</span><span class="token keyword">:</span><span class="token string">"darwin"</span>,<span class="token string">"arch"</span><span class="token keyword">:</span><span class="token string">"any"</span><span class="token punctuation">}</span> <span class="token punctuation">(</span>current: <span class="token punctuation">{</span><span class="token string">"os"</span><span class="token keyword">:</span><span class="token string">"win32"</span>,<span class="token string">"arch"</span><span class="token keyword">:</span><span class="token string">"x64"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 
 + hexo-cli@2.0.0
-updated 1 package in 25.401s
-</code></pre>
+updated 1 package <span class="token keyword">in</span> 25.401s</code></pre>
 <p>这样子应该是安装成功了，不放心用</p>
-<pre class=" language-lang-javascript"><code class="language-lang-javascript">npm install hexo --save
-</code></pre>
+<pre class=" language-javascript"><code class="language-javascript">npm install hexo <span class="token operator">--</span>save</code></pre>
 <p>再来一次继续安装！</p>
 <p>最后输入</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo -v
-</code></pre>
-<p><img src="F:\Repositories\cpp\md\_posts\images/2020-03-13_201451.png" alt=""></p>
+<pre class=" language-bash"><code class="language-bash">hexo -v</code></pre>
+<p><img src="F:\Repositories\cpp\md_posts\images/2020-03-13_201451.png"></p>
 <p>有如下信息就说明安装成功！</p>
 <p>继续输入</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo init
-</code></pre>
+<pre class=" language-bash"><code class="language-bash">hexo init</code></pre>
 <p>会在blog文件夹下生成配置信息。</p>
 <p>接着输入 <strong>npm install</strong> 安装必备组件。</p>
 <p>如果报错:</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">npm WARN deprecated core-js@1.2.7: core-js@<2.6.8 is no longer maintained. Please, upgrade to core-js@3 or at least to actual version of core-js@2.
-npm ERR! Unexpected end of JSON input while parsing near '...":{"accepts":"~1.0.7"'
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> WARN deprecated core-js@1.2.7: core-js@<span class="token operator">&lt;</span>2.6.8 is no longer maintained. Please, upgrade to core-js@3 or at least to actual version of core-js@2.
+<span class="token function">npm</span> ERR<span class="token operator">!</span> Unexpected end of JSON input <span class="token keyword">while</span> parsing near <span class="token string">'...":{"accepts":"~1.0.7"'</span>
 
-npm ERR! A complete log of this run can be found in:
-npm ERR!     C:\Users\theigrams\AppData\Roaming\npm-cache\_logs\2019-06-08T12_56_37_486Z-debug.log
-</code></pre>
+<span class="token function">npm</span> ERR<span class="token operator">!</span> A complete log of this run can be found in:
+<span class="token function">npm</span> ERR<span class="token operator">!</span>     C:\Users\theigrams\AppData\Roaming\npm-cache\_logs\2019-06-08T12_56_37_486Z-debug.log</code></pre>
 <p>输入以下指令清除缓存</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">npm cache clean --force
-</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> cache clean --force</code></pre>
 <p>再输入 <strong>npm install</strong> ，有WARN没关系的。</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">npm WARN deprecated core-js@1.2.7: core-js@<2.6.8 is no longer maintained. Please, upgrade to core-js@3 or at least to actual version of core-js@2.
-npm notice created a lockfile as package-lock.json. You should commit this file.
-npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\fsevents):
-npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> WARN deprecated core-js@1.2.7: core-js@<span class="token operator">&lt;</span>2.6.8 is no longer maintained. Please, upgrade to core-js@3 or at least to actual version of core-js@2.
+<span class="token function">npm</span> notice created a lockfile as package-lock.json. You should commit this file.
+<span class="token function">npm</span> WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 <span class="token punctuation">(</span>node_modules\fsevents<span class="token punctuation">)</span>:
+<span class="token function">npm</span> WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform <span class="token keyword">for</span> fsevents@1.2.9: wanted <span class="token punctuation">{</span><span class="token string">"os"</span><span class="token keyword">:</span><span class="token string">"darwin"</span>,<span class="token string">"arch"</span><span class="token keyword">:</span><span class="token string">"any"</span><span class="token punctuation">}</span> <span class="token punctuation">(</span>current: <span class="token punctuation">{</span><span class="token string">"os"</span><span class="token keyword">:</span><span class="token string">"win32"</span>,<span class="token string">"arch"</span><span class="token keyword">:</span><span class="token string">"x64"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-added 420 packages from 506 contributors and audited 4697 packages in 58.891s
+added 420 packages from 506 contributors and audited 4697 packages <span class="token keyword">in</span> 58.891s
 found 2 low severity vulnerabilities
-  run `npm audit fix` to fix them, or `npm audit` for details
-</code></pre>
+  run <span class="token variable"><span class="token variable">`</span><span class="token function">npm</span> audit fix<span class="token variable">`</span></span> to fix them, or <span class="token variable"><span class="token variable">`</span><span class="token function">npm</span> audit<span class="token variable">`</span></span> <span class="token keyword">for</span> details</code></pre>
 <p>执行 <strong>hexo s</strong> 后</p>
-<p>打开链接<a href="https://link.zhihu.com/?target=http%3A//localhost%3A4000/">http://localhost:4000</a>，能看到网页就成功了！</p>
+<p>打开链接<a href="https://link.zhihu.com/?target=http://localhost:4000/">http://localhost:4000</a>，能看到网页就成功了！</p>
 <p>Github+Hexo静态博客框架搭建好了，接下来就进行博客初始配置了！</p>
 <h2 id="4-博客初始配置"><a href="#4-博客初始配置" class="headerlink" title="4. 博客初始配置"></a>4. 博客初始配置</h2><h4 id="配置Deployment"><a href="#配置Deployment" class="headerlink" title="配置Deployment"></a>配置Deployment</h4><p>首先要明确两个概念</p>
 <blockquote>
@@ -572,22 +564,19 @@ found 2 low severity vulnerabilities
 </blockquote>
 <p>打开 <strong>站点配置文件_config.yml</strong> </p>
 <p>定位最后一行，改为如下配置：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">deploy:
-  type: git
+<pre class=" language-bash"><code class="language-bash">deploy:
+  type: <span class="token function">git</span>
   repo: 你的仓库地址
-  branch: master
-</code></pre>
-<p><img src="F:\Repositories\cpp\md\_posts\images/2020-03-13_204815.png" alt=""></p>
+  branch: master</code></pre>
+<p><img src="F:\Repositories\cpp\md_posts\images/2020-03-13_204815.png"></p>
 <p>完成后保存，右键blog文件，选择 <strong>Git Bush Here</strong> </p>
 <p>执行执行以下指令来安装所需的插件：</p>
-<pre class=" language-lang-javascript"><code class="language-lang-javascript">npm install hexo-deployer-git --save
-</code></pre>
+<pre class=" language-javascript"><code class="language-javascript">npm install hexo<span class="token operator">-</span>deployer<span class="token operator">-</span>git <span class="token operator">--</span>save</code></pre>
 <p>有警告没关系！</p>
 <p>输入 <strong>hexo d</strong> </p>
 <p>打开 <strong>username.github.io</strong> 访问你的个人博客！</p>
 <h4 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h4><p>在Git窗口用命令：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo new post "article title"
-</code></pre>
+<pre class=" language-bash"><code class="language-bash">hexo new post <span class="token string">"article title"</span></code></pre>
 <p>或者直接在F:\study\blog\source_posts(这个就是本地博客的路径)建立.md文件即可。</p>
 <p>推荐几个markdown好用的编辑器</p>
 <p><a target="_blank" rel="noopener" href="https://mdnice.com/">mdnice</a></p>
@@ -600,28 +589,24 @@ found 2 low severity vulnerabilities
 <li>调试完毕后使用 <code>hexo deploy</code> 简写为 <code>hexo d</code>来部署到git服务器。</li>
 </ul>
 <h4 id="个性化修改"><a href="#个性化修改" class="headerlink" title="个性化修改"></a>个性化修改</h4><p>在站点配置文件修改即可！</p>
-<p><img src="F:\Repositories\cpp\md\_posts\images\2020-03-13_205915.png" alt=""></p>
+<p><img src="F:\Repositories\cpp\md_posts\images\2020-03-13_205915.png"></p>
 <h4 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h4><p>主题很多种，笔者用的是<a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next"> hexo-theme-next</a></p>
 <p>进入官网<a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/INSTALLATION.md">安装说明</a></p>
 <p>进行安装即可。</p>
 <p>然后将 <strong>站点</strong> 配置文件<code>_config.yml</code>中的<code>theme: landscape</code>修改为<code>theme: next</code></p>
 <p>再运行以下指令：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">hexo clean
+<pre class=" language-bash"><code class="language-bash">hexo clean
 hexo g
 hexo s
-hexo d
-</code></pre>
+hexo d</code></pre>
 <p>即可看到新主题。</p>
 <p>如果报错</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">Error: UNKNOWN: unknown error, stat 'F:\study\blog\themes\next\languages\default.yml'
-</code></pre>
+<pre class=" language-bash"><code class="language-bash">Error: UNKNOWN: unknown error, <span class="token function">stat</span> <span class="token string">'F:\study\blog\themes\next\languages\default.yml'</span></code></pre>
 <p>根据提示把default.yml删除即可解决问题</p>
 <p>最后，祝大家学习愉快！</p>
 <p><strong>才疏学浅，望雅正！</strong></p>
-<blockquote id="fn_1">
-<sup>1</sup>. <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/68625591">参考文章</a><a href="#reffn_1" title="Jump back to footnote [1] in the text."> ↩</a>
-</blockquote>
-<valine></valine>
+<p><valine></valine></p>
+
             </div>
             <hr/>
 
@@ -1426,7 +1411,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

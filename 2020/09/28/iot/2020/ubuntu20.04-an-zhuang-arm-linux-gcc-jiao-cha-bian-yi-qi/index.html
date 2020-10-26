@@ -501,10 +501,9 @@
 <p>喜欢网盘下载的朋友可以使用 [<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1bSNel0a13lJsn9fxOT7gZQ">https://pan.baidu.com/s/1bSNel0a13lJsn9fxOT7gZQ</a> 提取码: u3yd] 进行安装。</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>如果之前安装过旧版本的，可以考虑删除旧的版本在进行安装，如果不知道有没有安装过，就不管了。</p>
 <p>下载好后进入 <strong>Ubuntu20.04</strong>  进行解压。</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">tar -zxvf arm-linux-gcc-4.4.3-20100728.tar.gz
-</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">tar</span> -zxvf arm-linux-gcc-4.4.3-20100728.tar.gz</code></pre>
 <p>此时当前目录下解压没错误的话会多个 <strong>opt</strong> 文件夹， 大致目录结构如下：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">.
+<pre class=" language-bash"><code class="language-bash"><span class="token keyword">.</span>
 └── FriendlyARM
     └── toolschain
         └── 4.4.3
@@ -513,35 +512,29 @@
             ├── include  
             ├── lib  
             ├── libexec  
-            ├── share
-</code></pre>
+            ├── share</code></pre>
 <p>移动/复制 <strong>FriendlyARM</strong> 目录到 <code>/usr/local/bin/</code> 目录下：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">cd opt
-sudo mv FriendlyARM /usr/local/bin/
-</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> opt
+<span class="token function">sudo</span> <span class="token function">mv</span> FriendlyARM /usr/local/bin/</code></pre>
 <p>接下来添加环境变量即可。</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">vim ~/.zshrc
-# 如果用的bash就是.bashrc
-# 在文件末尾添加
-export PATH=$PATH:/usr/local/bin/FriendlyARM/toolschain/4.4.3/bin
-source ~/.zshrc
-</code></pre>
+<pre class=" language-bash"><code class="language-bash">vim ~/.zshrc
+<span class="token comment" spellcheck="true"># 如果用的bash就是.bashrc</span>
+<span class="token comment" spellcheck="true"># 在文件末尾添加</span>
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span>:/usr/local/bin/FriendlyARM/toolschain/4.4.3/bin
+<span class="token function">source</span> ~/.zshrc</code></pre>
 <p>测试是否安装成功：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">arm-linux-gcc -v
-# 如果出现如下信息即成功
+<pre class=" language-bash"><code class="language-bash">arm-linux-gcc -v
+<span class="token comment" spellcheck="true"># 如果出现如下信息即成功</span>
 Using built-in specs.
 Target: arm-none-linux-gnueabi
-Configured with: /opt/FriendlyARM/mini2440/build-toolschain/working/src/gcc-4.4.3/configure --build=i386-build_redhat-linux-gnu --host=i386-build_redhat-linux-gnu --target=arm-none-linux-gnueabi --prefix=/opt/FriendlyARM/toolschain/4.4.3 --with-sysroot=/opt/FriendlyARM/toolschain/4.4.3/arm-none-linux-gnueabi//sys-root --enable-languages=c,c++ --disable-multilib --with-arch=armv4t --with-cpu=arm920t --with-tune=arm920t --with-float=soft --with-pkgversion=ctng-1.6.1 --disable-sjlj-exceptions --enable-__cxa_atexit --with-gmp=/opt/FriendlyARM/toolschain/4.4.3 --with-mpfr=/opt/FriendlyARM/toolschain/4.4.3 --with-ppl=/opt/FriendlyARM/toolschain/4.4.3 --with-cloog=/opt/FriendlyARM/toolschain/4.4.3 --with-mpc=/opt/FriendlyARM/toolschain/4.4.3 --with-local-prefix=/opt/FriendlyARM/toolschain/4.4.3/arm-none-linux-gnueabi//sys-root --disable-nls --enable-threads=posix --enable-symvers=gnu --enable-c99 --enable-long-long --enable-target-optspace
+Configured with: /opt/FriendlyARM/mini2440/build-toolschain/working/src/gcc-4.4.3/configure --build<span class="token operator">=</span>i386-build_redhat-linux-gnu --host<span class="token operator">=</span>i386-build_redhat-linux-gnu --target<span class="token operator">=</span>arm-none-linux-gnueabi --prefix<span class="token operator">=</span>/opt/FriendlyARM/toolschain/4.4.3 --with-sysroot<span class="token operator">=</span>/opt/FriendlyARM/toolschain/4.4.3/arm-none-linux-gnueabi//sys-root --enable-languages<span class="token operator">=</span>c,c++ --disable-multilib --with-arch<span class="token operator">=</span>armv4t --with-cpu<span class="token operator">=</span>arm920t --with-tune<span class="token operator">=</span>arm920t --with-float<span class="token operator">=</span>soft --with-pkgversion<span class="token operator">=</span>ctng-1.6.1 --disable-sjlj-exceptions --enable-__cxa_atexit --with-gmp<span class="token operator">=</span>/opt/FriendlyARM/toolschain/4.4.3 --with-mpfr<span class="token operator">=</span>/opt/FriendlyARM/toolschain/4.4.3 --with-ppl<span class="token operator">=</span>/opt/FriendlyARM/toolschain/4.4.3 --with-cloog<span class="token operator">=</span>/opt/FriendlyARM/toolschain/4.4.3 --with-mpc<span class="token operator">=</span>/opt/FriendlyARM/toolschain/4.4.3 --with-local-prefix<span class="token operator">=</span>/opt/FriendlyARM/toolschain/4.4.3/arm-none-linux-gnueabi//sys-root --disable-nls --enable-threads<span class="token operator">=</span>posix --enable-symvers<span class="token operator">=</span>gnu --enable-c99 --enable-long-long --enable-target-optspace
 Thread model: posix
-gcc version 4.4.3 (ctng-1.6.1)
-</code></pre>
+gcc version 4.4.3 <span class="token punctuation">(</span>ctng-1.6.1<span class="token punctuation">)</span> </code></pre>
 <h2 id="安装出错解决办法"><a href="#安装出错解决办法" class="headerlink" title="安装出错解决办法"></a>安装出错解决办法</h2><p>输入 <code>arm-linux-gcc -v</code> 如果出现如下报错信息：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">arm-linux-gcc -v
-/FriendlyARM/toolschain/4.4.3/bin/arm-linux-gcc: 15: exec: /FriendlyARM/toolschain/4.4.3/bin/.arm-none-linux-gnueabi-gcc: not found
-</code></pre>
+<pre class=" language-bash"><code class="language-bash">arm-linux-gcc -v
+/FriendlyARM/toolschain/4.4.3/bin/arm-linux-gcc: 15: exec: /FriendlyARM/toolschain/4.4.3/bin/.arm-none-linux-gnueabi-gcc: not found</code></pre>
 <p>因为在64位Linux系统下无法兼容32位交叉编译器，解决办法：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">sudo apt-get install libc6-i386
-</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> libc6-i386</code></pre>
 <p>应该就没问题了。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>编译方法跟 <code>gcc</code> 一样的，可以参考我的这个博客，<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43826212/article/details/105973943">简简单单学会写makefile</a></p>
 <p>这个安装还是挺简单的。</p>
@@ -1351,7 +1344,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

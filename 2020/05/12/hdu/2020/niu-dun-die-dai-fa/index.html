@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    501
+                    560
                 </div>
                 
 
@@ -501,93 +501,91 @@
 <p>大家都知道，五次方程无根式解，但是用途却很多。</p>
 <p>而牛顿迭代法的出现正好解决了这个问题。</p>
 <p>牛顿迭代法就是不断求导数，请看下图：<br><img src="https://img-blog.csdnimg.cn/201908232007000.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzODI2MjEy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>大致推导：<br><img src="https://img-blog.csdnimg.cn/20190823201506861.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzODI2MjEy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>牛顿迭代法求方根：</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">int mySqrt(int x){
-    long r = x;
-    while(r * r > x)
-    {
-        r = (r + x / r) / 2;//迭代
-    }
-    return (int)r;
-}
-</code></pre>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">mySqrt</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">long</span> r <span class="token operator">=</span> x<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>r <span class="token operator">*</span> r <span class="token operator">></span> x<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        r <span class="token operator">=</span> <span class="token punctuation">(</span>r <span class="token operator">+</span> x <span class="token operator">/</span> r<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//迭代</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>r<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>雷神之锤III的源码</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">float Q_rsqrt( float number ) { 
-    long i; float x2, y; const float threehalfs = 1.5F;
-    x2 = number * 0.5F; 
-    y = number; 
-    i = * ( long * ) &y; // evil floating point bit level hacking 
-    i = 0x5f3759df - ( i >> 1 ); // what the fuck? 
-    y = * ( float * ) &i; 
-    y = y * ( threehalfs - ( x2 * y * y ) ); // 1st iteration 
-    // y = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, this can be removed
-    #ifndef Q3_VM #
-    ifdef __linux__ assert( !isnan(y) ); // bk010122 - FPE?
-    #endif
-    #endif return y; 
-}
-</code></pre>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">float</span> <span class="token function">Q_rsqrt</span><span class="token punctuation">(</span> <span class="token keyword">float</span> number <span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">long</span> i<span class="token punctuation">;</span> <span class="token keyword">float</span> x2<span class="token punctuation">,</span> y<span class="token punctuation">;</span> <span class="token keyword">const</span> <span class="token keyword">float</span> threehalfs <span class="token operator">=</span> <span class="token number">1.5F</span><span class="token punctuation">;</span>
+    x2 <span class="token operator">=</span> number <span class="token operator">*</span> <span class="token number">0.5F</span><span class="token punctuation">;</span> 
+    y <span class="token operator">=</span> number<span class="token punctuation">;</span> 
+    i <span class="token operator">=</span> <span class="token operator">*</span> <span class="token punctuation">(</span> <span class="token keyword">long</span> <span class="token operator">*</span> <span class="token punctuation">)</span> <span class="token operator">&amp;</span>y<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// evil floating point bit level hacking </span>
+    i <span class="token operator">=</span> <span class="token number">0x5f3759df</span> <span class="token operator">-</span> <span class="token punctuation">(</span> i <span class="token operator">>></span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// what the fuck? </span>
+    y <span class="token operator">=</span> <span class="token operator">*</span> <span class="token punctuation">(</span> <span class="token keyword">float</span> <span class="token operator">*</span> <span class="token punctuation">)</span> <span class="token operator">&amp;</span>i<span class="token punctuation">;</span> 
+    y <span class="token operator">=</span> y <span class="token operator">*</span> <span class="token punctuation">(</span> threehalfs <span class="token operator">-</span> <span class="token punctuation">(</span> x2 <span class="token operator">*</span> y <span class="token operator">*</span> y <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1st iteration </span>
+    <span class="token comment" spellcheck="true">// y = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, this can be removed</span>
+    <span class="token macro property">#<span class="token directive keyword">ifndef</span> Q3_VM #</span>
+    ifdef __linux__ <span class="token function">assert</span><span class="token punctuation">(</span> <span class="token operator">!</span><span class="token function">isnan</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// bk010122 - FPE?</span>
+    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+    <span class="token macro property">#<span class="token directive keyword">endif</span> return y; </span>
+<span class="token punctuation">}</span></code></pre>
 <p>参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ECJTUACM-873284962/p/6536576.html">https://www.cnblogs.com/ECJTUACM-873284962/p/6536576.html</a></p>
 <p>牛顿迭代法求方程的根没有固定的模板。</p>
 <p>需根据不同要求进行解答。</p>
 <p>可以看看hduoj 2199 </p>
-<p>题目的大概意思是：对于8 <em> x </em>x <em>x </em>x + 7 <em> x </em>x <em>x + 2 </em> x <em>x + 3 </em> x + 6 = y ，给定y，要在1~100范围内找到合适的x使得等式成立。</p>
+<p>题目的大概意思是：对于8 * x *x *x *x + 7 * x *x *x + 2 * x *x + 3 * x + 6 = y ，给定y，要在1~100范围内找到合适的x使得等式成立。</p>
 <p>可以用二分，也可以用牛顿迭代。</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">#include <bits/stdc++.h>
-//#include <iomanip>
-using std::cin;
-using std::cout;
-using std::endl;
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token comment" spellcheck="true">//#include &lt;iomanip></span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cin<span class="token punctuation">;</span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cout<span class="token punctuation">;</span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
 
-double y;
-const double EPS = 1e-6;
+<span class="token keyword">double</span> y<span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">double</span> EPS <span class="token operator">=</span> <span class="token number">1e-6</span><span class="token punctuation">;</span>
 
-//#define F(x) 8 * x *x *x *x + 7 * x *x *x + 2 * x *x + 3 * x + 6 - y
-//#define F1(x) 32 * x *x *x + 21 * x *x + 4 * x + 3
+<span class="token comment" spellcheck="true">//#define F(x) 8 * x *x *x *x + 7 * x *x *x + 2 * x *x + 3 * x + 6 - y</span>
+<span class="token comment" spellcheck="true">//#define F1(x) 32 * x *x *x + 21 * x *x + 4 * x + 3</span>
 
-#define F(x) 8 * x *x *x *x + 7 * x *x *x + 2 * x *x + 3 * x + 6 - y
-#define F1(x) 32 * x *x *x + 21 * x *x + 4 * x + 3
+<span class="token macro property">#<span class="token directive keyword">define</span> F(x) 8 * x *x *x *x + 7 * x *x *x + 2 * x *x + 3 * x + 6 - y</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> F1(x) 32 * x *x *x + 21 * x *x + 4 * x + 3</span>
 
-double Newton(double x) {
-  int k = 1;
-  while (fabs(F(x)) > EPS) {
-    x -= (F(x)) / (F1(x));
-    k++;
-    if (k > 30)
-      return -1;
-  }
-  return x;
-}
+<span class="token keyword">double</span> <span class="token function">Newton</span><span class="token punctuation">(</span><span class="token keyword">double</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">fabs</span><span class="token punctuation">(</span><span class="token function">F</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">></span> EPS<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    x <span class="token operator">-</span><span class="token operator">=</span> <span class="token punctuation">(</span><span class="token function">F</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token function">F1</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    k<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">></span> <span class="token number">30</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> x<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-int main() {
-  std::ios::sync_with_stdio(false);
-  cin.tie(0);
-  cout.tie(0);
-  cout << std::fixed;
-  int T;
-  cin >> T;
-  while (T--) {
-    cin >> y;
-    double z;
-    bool flag = false;
-    for (double i = 0.0; i < 100; i++) {
-      z = Newton(i);
-      if (z <= 100 && z >= 0) {
-        flag = true;
-        break;
-      }
-    }
-    if (flag==false) {
-      cout << "No solution!" << endl;
-    } else {
-      cout << std::setprecision(4) << z << endl;
-    }
-  }
-  return 0;
-}
-</code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  std<span class="token operator">::</span>ios<span class="token operator">::</span><span class="token function">sync_with_stdio</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  cin<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  cout<span class="token punctuation">.</span><span class="token function">tie</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  cout <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>fixed<span class="token punctuation">;</span>
+  <span class="token keyword">int</span> T<span class="token punctuation">;</span>
+  cin <span class="token operator">>></span> T<span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>T<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cin <span class="token operator">>></span> y<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> z<span class="token punctuation">;</span>
+    <span class="token keyword">bool</span> flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">double</span> i <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      z <span class="token operator">=</span> <span class="token function">Newton</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>z <span class="token operator">&lt;=</span> <span class="token number">100</span> <span class="token operator">&amp;&amp;</span> z <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>flag<span class="token operator">==</span><span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&lt;&lt;</span> <span class="token string">"No solution!"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      cout <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span><span class="token function">setprecision</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> z <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>更详细的请参考：</p>
 <p><a target="_blank" rel="noopener" href="https://www.matongxue.com/madocs/205/">https://www.matongxue.com/madocs/205/</a></p>
-  <valine></valine>
+<p>  <valine></valine></p>
+
             </div>
             <hr/>
 
@@ -1086,21 +1084,52 @@ int main() {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/12/hdu/2020/kuai-su-mi/">
+                <a href="/2020/05/12/hdu/2020/si-te-lin-gong-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="快速幂">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="斯特林公式">
                         
-                        <span class="card-title">快速幂</span>
+                        <span class="card-title">斯特林公式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一场梦，不怨也不恨，上了想象力的当。
-快速幂，顾名思义，快速幂就是快速算底数的n次幂。其时间复杂度为 O(log₂n)， 与朴素的O(n)相比效率有了极大的提高。
-讲白了，就是你知道了n的n次方，要你求n的2n次方，你还会循环2n次去求n的
+                            斯特林公式是用来估算阶乘的，n越大，结果越准确！
+斯特林公式：
+
+或更精确的：
+
+
+或：
+
+
+
+
+或：
+
+
+
+
+ ，
+
+
+或：
+
+
+
+，
+
+
+
+如果要计算N后得到的数字为几位数，则我们可以知道其位数等于lgN！+1；
+
+
+
+
+代码如下：
+#
                         
                     </div>
                     <div class="publish-info">
@@ -1152,11 +1181,10 @@ int main() {
                             朴素检测一般我们判断某个区间中的的素数，都是直接循环遍历，进行判断。
 这样的话，时间复杂度就是 $O(n \sqrt{n})$ 
 代码如下:
-#include 
-#include 
+#include &lt;cmath>
+#include &lt;iostream>
 
-bool IsPrime(int n) {
-  int 
+bool 
                         
                     </div>
                     <div class="publish-info">
@@ -1393,7 +1421,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

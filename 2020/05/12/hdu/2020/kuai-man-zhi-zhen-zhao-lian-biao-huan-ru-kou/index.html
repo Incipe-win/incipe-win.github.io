@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    380
+                    384
                 </div>
                 
 
@@ -497,32 +497,29 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>链表：</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">struct ListNode {
-     int val;
-     struct ListNode *next;
- };
-</code></pre>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">struct</span> ListNode <span class="token punctuation">{</span>
+     <span class="token keyword">int</span> val<span class="token punctuation">;</span>
+     <span class="token keyword">struct</span> ListNode <span class="token operator">*</span>next<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p>快慢指针就是指指针每次移动的速度不一样，一般快指针每次移动两步，慢指针移动一步。</p>
 <p>既然快慢指针移动的速度不同，那么如果有环，就一定会相遇，无环，就不可能相遇（相当于两个人围着跑道跑步，同起点，如果跑道有环的话，只要速度不同，那么他们肯定会相遇~，如果跑道是直线的，那么他们的距离只会越来越远，不可能再相遇。）终止条件就是链表为空。</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">bool IsCycle(struct ListNode* head){
-    struct ListNode* fast,slow;
-    fast = head;
-    slow = head;
-while(fast&&fast->next){
-    slow = slow->next;
-    fast = fast->next->next;
-    if(fast == slow){
-        return true;
-        }
-    }
-    return false;
-}
-</code></pre>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">bool</span> <span class="token function">IsCycle</span><span class="token punctuation">(</span><span class="token keyword">struct</span> ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> ListNode<span class="token operator">*</span> fast<span class="token punctuation">,</span>slow<span class="token punctuation">;</span>
+    fast <span class="token operator">=</span> head<span class="token punctuation">;</span>
+    slow <span class="token operator">=</span> head<span class="token punctuation">;</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span>fast<span class="token operator">&amp;&amp;</span>fast<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    slow <span class="token operator">=</span> slow<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+    fast <span class="token operator">=</span> fast<span class="token operator">-</span><span class="token operator">></span>next<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>fast <span class="token operator">==</span> slow<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>判断环入口，分两步：</p>
 <p>1.判断有无环</p>
 <p>2.重置快指针，慢指针不变，使快慢指针每次都只移动一步，快慢指针再次相遇就是环入口</p>
 <p>如果不能理解可以在链表中画个环，用表格记录fast和slow<br><img src="https://img-blog.csdnimg.cn/20190829103542248.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzODI2MjEy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -530,8 +527,7 @@ while(fast&&fast->next){
 <th>slow</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>0</td>
 <td>0</td>
 </tr>
@@ -567,39 +563,60 @@ while(fast&&fast->next){
 <td>8</td>
 <td>8</td>
 </tr>
-</tbody>
-</table>
-</div>
-<p>找入口：<br>| fast | slow |<br>| —— | —— |<br>| 0    | 8    |<br>| 1    | 1    |<br>好了，fast和slow相遇，入口就是1</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">struct ListNode *detectCycle(struct ListNode *head) {
-    struct ListNode* fast = head;
-    struct ListNode* slow = head;
-    bool isCycle=false;
-    while(fast&&fast->next){
-        slow = slow->next;
-        fast = fast->next->next;
-        if(fast==slow){
-            isCycle = true;
-            break;
-        }
-    }
-    printf("%d %d\n",fast->val,slow->val);
-    if(isCycle){
-        fast = head;
-        while(fast!=slow){
-            fast=fast->next;
-            slow=slow->next;
-            printf("%d %d\n",fast->val,slow->val);
-        }
-        return fast;
-    }
-    else{
-        return 0;
-    }
-}
-</code></pre>
+<tr>
+<td>找入口：</td>
+<td></td>
+</tr>
+<tr>
+<td>fast</td>
+<td>slow</td>
+</tr>
+<tr>
+<td>—-</td>
+<td>—-</td>
+</tr>
+<tr>
+<td>0</td>
+<td>8</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>好了，fast和slow相遇，入口就是1</td>
+<td></td>
+</tr>
+</tbody></table>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">struct</span> ListNode <span class="token operator">*</span><span class="token function">detectCycle</span><span class="token punctuation">(</span><span class="token keyword">struct</span> ListNode <span class="token operator">*</span>head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> ListNode<span class="token operator">*</span> fast <span class="token operator">=</span> head<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> ListNode<span class="token operator">*</span> slow <span class="token operator">=</span> head<span class="token punctuation">;</span>
+    <span class="token keyword">bool</span> isCycle<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>fast<span class="token operator">&amp;&amp;</span>fast<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        slow <span class="token operator">=</span> slow<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+        fast <span class="token operator">=</span> fast<span class="token operator">-</span><span class="token operator">></span>next<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>fast<span class="token operator">==</span>slow<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            isCycle <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d\n"</span><span class="token punctuation">,</span>fast<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">,</span>slow<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>isCycle<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        fast <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>fast<span class="token operator">!=</span>slow<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            fast<span class="token operator">=</span>fast<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            slow<span class="token operator">=</span>slow<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d\n"</span><span class="token punctuation">,</span>fast<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">,</span>slow<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> fast<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <p>快慢指针用法很多，还要继续学习！</p>
-  <valine></valine>
+<p>  <valine></valine></p>
+
             </div>
             <hr/>
 
@@ -1098,24 +1115,23 @@ while(fast&&fast->next){
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/12/hdu/2020/qu-mo-yun-suan-shen-ceng-ci-li-jie/">
+                <a href="/2020/05/12/hdu/2020/fan-zhuan-dan-lian-biao-fei-di-gui/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="取模运算(深层次理解)">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="反转单链表(非递归)">
                         
-                        <span class="card-title">取模运算(深层次理解)</span>
+                        <span class="card-title">反转单链表(非递归)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            之前一直觉得自己了解取模取余运算，知道最近看了C++ Primer，有这么一句话，
-
-当我们赋给无符号类型一个超过它表示范围的值时，结果是初始值对无符号类型表示数值总数取模后的余数
-
-才发现自己学知识真的止于皮毛。
-定义给定一个正整数p，任
+                            The world has kissed my soul with its pain, asking for its return in songs.
+链表定义：
+struct ListNode {
+         int val;
+  
                         
                     </div>
                     <div class="publish-info">
@@ -1126,8 +1142,8 @@ while(fast&&fast->next){
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2/" class="post-category">
-                                    博客
+                            <a href="/categories/Leetcode/" class="post-category">
+                                    Leetcode
                                 </a>
                             
                             
@@ -1137,8 +1153,8 @@ while(fast&&fast->next){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
-                        <span class="chip bg-color">数学</span>
+                    <a href="/tags/%E9%93%BE%E8%A1%A8/">
+                        <span class="chip bg-color">链表</span>
                     </a>
                     
                 </div>
@@ -1152,32 +1168,21 @@ while(fast&&fast->next){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/12/hdu/2020/si-te-lin-gong-shi/">
+                <a href="/2020/05/12/hdu/2020/kuai-su-mi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="斯特林公式">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="快速幂">
                         
-                        <span class="card-title">斯特林公式</span>
+                        <span class="card-title">快速幂</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            斯特林公式是用来估算阶乘的，n越大，结果越准确！
-斯特林公式：
-或更精确的：
-或：
-&lt;/div&gt;&lt;/section&gt;&lt;/div&gt;或：
-
-
-
- ，
-
-或：
-
-，
-如果要计算N后得到的数字为几位数，则我们可以
+                            一场梦，不怨也不恨，上了想象力的当。
+快速幂，顾名思义，快速幂就是快速算底数的n次幂。其时间复杂度为 O(log₂n)， 与朴素的O(n)相比效率有了极大的提高。
+讲白了，就是你知道了n的n次方，要你求n的2n次方，你还会循环2n次去求n的
                         
                     </div>
                     <div class="publish-info">
@@ -1414,7 +1419,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

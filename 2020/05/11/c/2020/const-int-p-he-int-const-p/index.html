@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    220
+                    226
                 </div>
                 
 
@@ -498,21 +498,21 @@
             <div id="articleContent">
                 <p>主要讲下这两者的区别及用法！<br><br><strong>高能区</strong></p>
 <blockquote>
-<p>const int<em> p 和 int const</em> p是完全等价的！<br>const int<em> const p 和 int const const</em> p 是完全等价的！</p>
+<p>const int* p 和 int const* p是完全等价的！<br>const int* const p 和 int const const* p 是完全等价的！</p>
 </blockquote>
 <p>下面举几个例子来分析：</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">int x = 100, y = 100;
-const int* p = &x;
-int* const m = &y;
-p = &y;                //正确的，但是不要忘记&符号，因为此时的p代表的是地址！
-*p = 10;            //错误！*p是常量！
-*m = 100;            //正确，此时不要加&，因为此时的*x指的是x这个地址存放的变量！
-m = &y;                //错误！x是常量
-//如果是const int* const p;那么既不能修改*p也不能修改p
-</code></pre>
-<p>看看这些变量的关系！<br>| 变量名 | 存储地址 | 存储内容 |<br>| ——— | ———— | ———— |<br>| x      | &amp;x       | 100      |<br>| p      | &amp;p       | &amp;x       |<br>| m      | &amp;p       | &amp;x       |</p>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span><span class="token operator">*</span> p <span class="token operator">=</span> <span class="token operator">&amp;</span>x<span class="token punctuation">;</span>
+<span class="token keyword">int</span><span class="token operator">*</span> <span class="token keyword">const</span> m <span class="token operator">=</span> <span class="token operator">&amp;</span>y<span class="token punctuation">;</span>
+p <span class="token operator">=</span> <span class="token operator">&amp;</span>y<span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">//正确的，但是不要忘记&amp;符号，因为此时的p代表的是地址！</span>
+<span class="token operator">*</span>p <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">//错误！*p是常量！</span>
+<span class="token operator">*</span>m <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">//正确，此时不要加&amp;，因为此时的*x指的是x这个地址存放的变量！</span>
+m <span class="token operator">=</span> <span class="token operator">&amp;</span>y<span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">//错误！x是常量</span>
+<span class="token comment" spellcheck="true">//如果是const int* const p;那么既不能修改*p也不能修改p</span></code></pre>
+<p>看看这些变量的关系！<br>| 变量名 | 存储地址 | 存储内容 |<br>| —— | ——– | ——– |<br>| x      | &amp;x       | 100      |<br>| p      | &amp;p       | &amp;x       |<br>| m      | &amp;p       | &amp;x       |</p>
 <p><em>从本质了解指针，可以学下汇编，或者读读《C和指针》这本书！</em><br><br>才疏学浅，望雅正！</p>
-  <valine></valine>
+<p>  <valine></valine></p>
+
             </div>
             <hr/>
 
@@ -1011,23 +1011,23 @@ m = &y;                //错误！x是常量
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/11/c/2020/wan-neng-tou-bao-han-de-tou-wen-jian/">
+                <a href="/2020/05/11/c/2020/c-er-wei-vector-shi-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="万能头包含的头文件">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="C++二维vector使用">
                         
-                        <span class="card-title">万能头包含的头文件</span>
+                        <span class="card-title">C++二维vector使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            // C++ includes used for precompiling -*- C++ -*-
-
-// Copyright (C) 2003-2018 Free Software Foundation, Inc.
-//
-// This 
+                            你再不来，我要下雪了。
+ 记录下二维vector的遍历（输出） 注：二维vector的赋值不能跟二维数组一样用scanf或者cin写入
+ 遍历（迭代器） 方法一
+void print() {
+ vector&lt;vector&lt;cha
                         
                     </div>
                     <div class="publish-info">
@@ -1064,26 +1064,23 @@ m = &y;                //错误！x是常量
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/11/c/2020/guan-yu-memset/">
+                <a href="/2020/05/11/c/2020/wan-neng-tou-bao-han-de-tou-wen-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="关于memset">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="万能头包含的头文件">
                         
-                        <span class="card-title">关于memset</span>
+                        <span class="card-title">万能头包含的头文件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            被不了解memset狠狠的坑了一把，难受。
-对于整型数组，若要是初始化为非0的值时应该使用for循环，字符型或0，用memset即可。
-例如：
-#include
-int main()
-{
-    int s[100];
-    memset
+                            // C++ includes used for precompiling -*- C++ -*-
+
+// Copyright (C) 2003-2018 Free Software Foundation, Inc.
+//
+// This 
                         
                     </div>
                     <div class="publish-info">
@@ -1320,7 +1317,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

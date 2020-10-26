@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    429
+                    462
                 </div>
                 
 
@@ -544,7 +544,7 @@
 </li>
 </ol>
 <h3 id="数据处理指令-Data-Processing-Instructions"><a href="#数据处理指令-Data-Processing-Instructions" class="headerlink" title="数据处理指令(Data Processing Instructions)"></a>数据处理指令(Data Processing Instructions)</h3><ul>
-<li><strong>Syntax: \<opcode(指令)>{\<cond(指令执行条件)>}{S(状态位)} <rd(目的地址)>, <n(源数据)>{, \<opcode2>}</opcode2></n(源数据)></rd(目的地址)></cond(指令执行条件)></opcode(指令)></strong> </li>
+<li> <strong>Syntax: &lt;opcode(指令)&gt;{&lt;cond(指令执行条件)&gt;}{S(状态位)} &lt;Rd(目的地址)&gt;, &lt;N(源数据)&gt;{, &lt;opcode2&gt;}</strong> </li>
 <li>&lt;&gt;括号内是必须的，{}括号内的是可选的</li>
 </ul>
 <h4 id="MOV"><a href="#MOV" class="headerlink" title="MOV"></a>MOV</h4><ul>
@@ -552,28 +552,25 @@
 <li>MVN move the NOT of the 32-bit value into a register Rd = ~N</li>
 </ul>
 <p>Example1：</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">MOV R5, #5
+<pre class=" language-assembly"><code class="language-assembly">MOV R5, #5
 MOV R7, #8
-MOV R7, R5    ;let R7 = R5
-</code></pre>
-<pre class=" language-lang-assem"><code class="language-lang-assem">MVN R1, #0xFF    ;R1 = 0xFFFFFFFF00
+MOV R7, R5    ;let R7 = R5</code></pre>
+<pre class=" language-assem"><code class="language-assem">MVN R1, #0xFF    ;R1 = 0xFFFFFFFF00
 ;0xFF转化为二进制
 ;0000 0000 0000 0000 0000 0000 1111 1111
 ;取反得到
 ;1111 1111 1111 1111 1111 1111 0000 0000
-;即0xFFFFFF00
-</code></pre>
-<h4 id="带有-的指令"><a href="#带有-的指令" class="headerlink" title="带有{, \的指令"></a>带有{, \<opcode2>的指令</opcode2></h4><p>Example2：</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">MOV R5, #5
+;即0xFFFFFF00</code></pre>
+<h4 id="带有-lt-opcode2-gt-的指令"><a href="#带有-lt-opcode2-gt-的指令" class="headerlink" title="带有{, <opcode2>的指令"></a>带有{, &lt;opcode2&gt;的指令</h4><p>Example2：</p>
+<pre class=" language-assembly"><code class="language-assembly">MOV R5, #5
 MOV R7, #8
 MOV R7, R5, LSL #2    ;let R7 = R5 * 4 = (R5 << 2)
 ;LSL左移指令
-;左移一位×2,右移一位÷2
-</code></pre>
+;左移一位×2,右移一位÷2</code></pre>
 <h4 id="带有-S-的指令"><a href="#带有-S-的指令" class="headerlink" title="带有{S}的指令"></a>带有{S}的指令</h4><p>Example3：</p>
 <p>请回顾下CPSR的格式</p>
 <p><img src="https://i.loli.net/2020/03/18/ypGErWXQstfHBSi.png" alt="当前程序状态寄存器"></p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">CPSR = nzcvqiFt_USER
+<pre class=" language-assembly"><code class="language-assembly">CPSR = nzcvqiFt_USER
 R0 = 0X00000000
 R1 = 0X80000004
 MOVS R0, R1, LSL #1
@@ -583,111 +580,102 @@ MOVS R0, R1, LSL #1
 ;R0 = R1 << 2
 ;把R1左移两位值赋给R0
 ;即R0 = 0x00000008
-;R1 = 0x80000004
-</code></pre>
+;R1 = 0x80000004</code></pre>
 <h3 id="算术运算指令-Arithmetic-Instructions"><a href="#算术运算指令-Arithmetic-Instructions" class="headerlink" title="算术运算指令(Arithmetic Instructions)"></a>算术运算指令(Arithmetic Instructions)</h3><ul>
 <li>算术指令实现32位有符号和无符号值的加减运算</li>
-<li><strong>Syntax: \<instruction>{\<cond>}{S} Rd, Rn, N</cond></instruction></strong> </li>
+<li> <strong>Syntax: &lt;instruction&gt;{&lt;cond&gt;}{S} Rd, Rn, N</strong> </li>
 </ul>
 <h4 id="SUB"><a href="#SUB" class="headerlink" title="SUB"></a>SUB</h4><p>Example1：</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">R0 = 0x00000000
+<pre class=" language-assembly"><code class="language-assembly">R0 = 0x00000000
 R1 = 0x00000002
 R2 = 0x00000001
 SUB R0, R1, R2
 ;结果
-;R0 = R1 - R2 = 0x00000001
-</code></pre>
+;R0 = R1 - R2 = 0x00000001</code></pre>
 <h4 id="RSB"><a href="#RSB" class="headerlink" title="RSB"></a>RSB</h4><p>Example2：</p>
 <ul>
 <li>反向减法，交换减数与被减数的位置</li>
 </ul>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">R0 = 0X00000000
+<pre class=" language-assembly"><code class="language-assembly">R0 = 0X00000000
 R1 = 0X00000077
 RSB R0, R1, #0
 ;结果
 ;R0 = 0x0 - R1
 ;即R0 = -R1 = 0xFFFFFF89
-;-R1就是R1的补码
-</code></pre>
+;-R1就是R1的补码</code></pre>
 <h4 id="带有-S-的指令-1"><a href="#带有-S-的指令-1" class="headerlink" title="带有{S}的指令"></a>带有{S}的指令</h4><p>Example3：</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">CPSR = nzcvqiFt_USER
+<pre class=" language-assembly"><code class="language-assembly">CPSR = nzcvqiFt_USER
 R1 = 0X00000001
 SUBS R1, R1, #1
 ;结果
 ;CPSR = nZCvqiFt_USER
-;R1 = 0X00000000
-</code></pre>
-<h4 id="带有-的指令-1"><a href="#带有-的指令-1" class="headerlink" title="带有{, \的指令"></a>带有{, \<opcode2>的指令</opcode2></h4><p>Example4：</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">R0 = 0X00000000
+;R1 = 0X00000000</code></pre>
+<h4 id="带有-lt-opcode2-gt-的指令-1"><a href="#带有-lt-opcode2-gt-的指令-1" class="headerlink" title="带有{, <opcode2>的指令"></a>带有{, &lt;opcode2&gt;的指令</h4><p>Example4：</p>
+<pre class=" language-assembly"><code class="language-assembly">R0 = 0X00000000
 R1 = 0X00000005
 ADD R0, R1, R1, LSL #1
 ;R0 = R1 + R1 << 1
 ;结果
 ;R0 = 0x0000000f
-;R1 = 0x00000005
-</code></pre>
+;R1 = 0x00000005</code></pre>
 <h3 id="逻辑指令-Logical-Instructions"><a href="#逻辑指令-Logical-Instructions" class="headerlink" title="逻辑指令(Logical Instructions)"></a>逻辑指令(Logical Instructions)</h3><ul>
 <li>逻辑指令对两个源寄存器执行按位的逻辑操作</li>
-<li><strong>\<syntax>: \<instruction> {\<cond>}{S} Rd, Rn, N</cond></instruction></syntax></strong> </li>
+<li> <strong>&lt;Syntax&gt;: &lt;instruction&gt; {&lt;cond&gt;}{S} Rd, Rn, N</strong> </li>
 </ul>
 <h4 id="ORR"><a href="#ORR" class="headerlink" title="ORR"></a>ORR</h4><p>Example1：</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">R0 = 0X00000000
+<pre class=" language-assembly"><code class="language-assembly">R0 = 0X00000000
 R1 = 0X02040608
 R2 = 0X10305070
 ORR R0, R1, R2
 ;R0 = R1 OR R2
 ;或,有1为1,无1为0
-;R0 = 0x12345678
-</code></pre>
-<pre><code>#### BIC(位清除指令)
-</code></pre><p>Example2：</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">R1 = 0B1111    ;二进制
+;R0 = 0x12345678</code></pre>
+<pre><code>#### BIC(位清除指令)</code></pre>
+<p>Example2：</p>
+<pre class=" language-assembly"><code class="language-assembly">R1 = 0B1111    ;二进制
 R2 = 0B0101
 BIC R0, R1, R2
 ;相当于R0 = R1 AND (NOT)R2
 ;结果
 ;R0 = 0B1010
 ;(NOT)R2 = 1010
-;1010 AND 1111 = 1010
-</code></pre>
+;1010 AND 1111 = 1010</code></pre>
 <h3 id="比较指令-Comparison-Instructions"><a href="#比较指令-Comparison-Instructions" class="headerlink" title="比较指令(Comparison Instructions)"></a>比较指令(Comparison Instructions)</h3><ul>
 <li>比较指令用于比较或测试具有32位值的寄存器。它们根据结果更新cpsr标志位，但不影响其他寄存器</li>
 <li>S后缀对于更新标志的比较指令来说是不必要的</li>
-<li><strong>Syntax: \<instruction>{\<cond>} Rn, N</cond></instruction></strong> </li>
+<li> <strong>Syntax: &lt;instruction&gt;{&lt;cond&gt;} Rn, N</strong> </li>
 </ul>
 <h4 id="CMP"><a href="#CMP" class="headerlink" title="CMP"></a>CMP</h4><p>Example1：</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">CPSR = nzcvqiFt_USER
+<pre class=" language-assembly"><code class="language-assembly">CPSR = nzcvqiFt_USER
 R0 = 4
 R9 = 4
 CMP R0, R9
 ;结果
 ;CPSR = nZcvqiFt_USER
-;更新了Z标志位
-</code></pre>
+;更新了Z标志位</code></pre>
 <h3 id="乘法指令-Multiply-Instructions"><a href="#乘法指令-Multiply-Instructions" class="headerlink" title="乘法指令(Multiply Instructions)"></a>乘法指令(Multiply Instructions)</h3><ul>
 <li>乘法指令将一对寄存器的内容相乘，并根据指令将结果累积到另一个寄存器中。长乘法累积到一对表示64位值的寄存器上。最后的结果放在一个目的寄存器或一对寄存器中</li>
 <li>Syntax<ul>
-<li><strong>MLA{\<cond>}{S} Rd, Rm, Rs, Rn</cond></strong></li>
-<li><strong>MUL{\<cond>}{S}Rd, Rm, Rs</cond></strong></li>
-<li><strong>MLA: Rd = (Rm * Rs) + Rn</strong></li>
-<li><strong>MUL: Rd = Rm * Rs</strong></li>
-<li><strong>\<instruction>{\<cond>}{S} RdLo, RdHi, Rm, Rs</cond></instruction></strong></li>
-<li><strong>SMLAL: [RdHi, RdLo] = [RdHi, RdLo] + (Rm * Rs)</strong></li>
+<li><strong>MLA{&lt;cond&gt;}{S} Rd, Rm, Rs, Rn</strong></li>
+<li><strong>MUL{&lt;cond&gt;}{S}Rd, Rm, Rs</strong></li>
+<li>*<em>MLA: Rd = (Rm * Rs) + Rn*</em></li>
+<li>*<em>MUL: Rd = Rm * Rs*</em></li>
+<li><strong>&lt;instruction&gt;{&lt;cond&gt;}{S} RdLo, RdHi, Rm, Rs</strong></li>
+<li>*<em>SMLAL: [RdHi, RdLo] = [RdHi, RdLo] + (Rm * Rs)*</em></li>
 </ul>
 </li>
 </ul>
 <h4 id="MUL"><a href="#MUL" class="headerlink" title="MUL"></a>MUL</h4><p>Example1：</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">R0 = 0X00000000
+<pre class=" language-assembly"><code class="language-assembly">R0 = 0X00000000
 R1 = 0X00000002
 R2 = 0X00000002
 MUL R0, R1, R2    ;R0 = R1 * R2
 ;结果
 ;R0 = 0x00000004
 ;R1 = 0x00000002
-;R2 = 0x00000002
-</code></pre>
+;R2 = 0x00000002</code></pre>
 <h4 id="UMULL-无符号长乘法"><a href="#UMULL-无符号长乘法" class="headerlink" title="UMULL(无符号长乘法)"></a>UMULL(无符号长乘法)</h4><p>Example2：</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">R0 = 0X00000000;
+<pre class=" language-assembly"><code class="language-assembly">R0 = 0X00000000;
 R1 = 0X00000000;
 R2 = 0XF0000002;
 R3 = 0X00000002;
@@ -696,44 +684,40 @@ UMULL R0, R1, R2, R3    ;[R1, R0] = R2 * R3
 ;R0 = 0xE0000004 = RdLo
 ;R1 = 0x00000001 = RdHi
 ;R2 * R3用32-bit肯定溢出是个64-bit的数，用R0保存低32-bit，R1保存高32-bit
-;R2 * R3的结果为 0x00000001E0000004(注意这是十六进制乘法,直接用左移更方便)
-</code></pre>
+;R2 * R3的结果为 0x00000001E0000004(注意这是十六进制乘法,直接用左移更方便)</code></pre>
 <h3 id="分支指令-Branch-Instructions"><a href="#分支指令-Branch-Instructions" class="headerlink" title="分支指令(Branch Instructions)"></a>分支指令(Branch Instructions)</h3><ul>
 <li>分支指令改变执行流，或用于调用例程。这种类型的指令允许程序有子例程、if-then-else结构和循环</li>
 <li>Syntax<ul>
-<li><strong>B{\<cond>} label</cond></strong></li>
-<li><strong>BL{\<cond>} label</cond></strong></li>
-<li><strong>BX{\<cond> Rm</cond></strong></li>
-<li><strong>BLX{\<cond>} label | Rm</cond></strong></li>
+<li><strong>B{&lt;cond&gt;} label</strong></li>
+<li><strong>BL{&lt;cond&gt;} label</strong></li>
+<li><strong>BX{&lt;cond&gt; Rm</strong></li>
+<li><strong>BLX{&lt;cond&gt;} label | Rm</strong></li>
 </ul>
 </li>
 </ul>
 <h4 id="B"><a href="#B" class="headerlink" title="B"></a>B</h4><p>Example1：</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">    B forward
+<pre class=" language-assembly"><code class="language-assembly">    B forward
     ADD R1, R2, #4
     ADD R0, R6, #2
     ADD R3, R7, #4
 forward
-    SUB R1, R2, #4
-</code></pre>
+    SUB R1, R2, #4</code></pre>
 <p>Example2：</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">backward
+<pre class=" language-assembly"><code class="language-assembly">backward
     ADD R1, R2, #4
     SUB R1, R2, #4
     ADD R4, R6, R7
-    B backward
-</code></pre>
+    B backward</code></pre>
 <h4 id="BL"><a href="#BL" class="headerlink" title="BL"></a>BL</h4><ul>
 <li>BL指令先将下一条指令的地址拷贝到LR链接寄存器中，然后跳转到指定地址运行程序</li>
 </ul>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">BL subroutine    ;LR -> 下一条指令, 即CMP R1, #5
+<pre class=" language-assembly"><code class="language-assembly">BL subroutine    ;LR -> 下一条指令, 即CMP R1, #5
 CMP R1, #5        ;比较R1, R5
 MOVEQ R1, #0    ;if(R1 == 5)then R1 = 0
 ...
 subroutine
 <subroutine code>
-MOV PC, LR        ;return by moving pc = lr
-</code></pre>
+MOV PC, LR        ;return by moving pc = lr</code></pre>
 <h3 id="Load-Store指令-Load-Store-Instructions"><a href="#Load-Store指令-Load-Store-Instructions" class="headerlink" title="Load/Store指令(Load-Store Instructions)"></a>Load/Store指令(Load-Store Instructions)</h3><ul>
 <li><strong>Load/Store指令用于寄存器和内存间数据的传送</strong></li>
 <li><strong>Load 用于把内存中的数据装载到寄存器中</strong></li>
@@ -744,53 +728,48 @@ MOV PC, LR        ;return by moving pc = lr
 <li>用于将单个数据项移入或移出寄存器</li>
 <li>支持的数据类型包括有符号的和无符号的字(32位)、半字(16位)和字节</li>
 <li>Syntax<ul>
-<li><strong>\<ldr|str>{\<cond>}{B} Rd, addressing1</cond></ldr|str></strong></li>
-<li><strong>LDR{\<cond>}SB|H|SH Rd, addressing2</cond></strong></li>
-<li><strong>STR{\<cond>}H Rd, addressing2</cond></strong></li>
+<li><strong>&lt;LDR|STR&gt;{&lt;cond&gt;}{B} Rd, addressing1</strong></li>
+<li><strong>LDR{&lt;cond&gt;}SB|H|SH Rd, addressing2</strong></li>
+<li><strong>STR{&lt;cond&gt;}H Rd, addressing2</strong></li>
 </ul>
 </li>
 </ul>
 <p>Example1：</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">LDR R0, [R1]    ;= LDR R0, [R1, #0]
+<pre class=" language-assembly"><code class="language-assembly">LDR R0, [R1]    ;= LDR R0, [R1, #0]
 ;
 ;
-STR R0, [R1]    ;= STR R0, [R1, #0]
-</code></pre>
-<h4 id="单寄存器负载存储寻址模式-Single-Register-Load-Store-Addressing-Modes"><a href="#单寄存器负载存储寻址模式-Single-Register-Load-Store-Addressing-Modes" class="headerlink" title="单寄存器负载存储寻址模式(Single-Register Load-Store Addressing Modes)"></a>单寄存器负载存储寻址模式(Single-Register Load-Store Addressing Modes)</h4><div class="table-container">
-<table>
+STR R0, [R1]    ;= STR R0, [R1, #0]</code></pre>
+<h4 id="单寄存器负载存储寻址模式-Single-Register-Load-Store-Addressing-Modes"><a href="#单寄存器负载存储寻址模式-Single-Register-Load-Store-Addressing-Modes" class="headerlink" title="单寄存器负载存储寻址模式(Single-Register Load-Store Addressing Modes)"></a>单寄存器负载存储寻址模式(Single-Register Load-Store Addressing Modes)</h4><table>
 <thead>
 <tr>
-<th style="text-align:center">Index method</th>
-<th style="text-align:center">Data</th>
-<th style="text-align:center">Base address register</th>
-<th style="text-align:center">Example</th>
+<th align="center">Index method</th>
+<th align="center">Data</th>
+<th align="center">Base address register</th>
+<th align="center">Example</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">Preindex with writeback(前项索引+写回)</td>
-<td style="text-align:center">mem[base + offset]</td>
-<td style="text-align:center">base + offset</td>
-<td style="text-align:center">LDR R0, [R1, #4]!</td>
+<tbody><tr>
+<td align="center">Preindex with writeback(前项索引+写回)</td>
+<td align="center">mem[base + offset]</td>
+<td align="center">base + offset</td>
+<td align="center">LDR R0, [R1, #4]!</td>
 </tr>
 <tr>
-<td style="text-align:center">Preindex</td>
-<td style="text-align:center">mem[base + offset]</td>
-<td style="text-align:center">not updated</td>
-<td style="text-align:center">LDR R0, [R1, #4]</td>
+<td align="center">Preindex</td>
+<td align="center">mem[base + offset]</td>
+<td align="center">not updated</td>
+<td align="center">LDR R0, [R1, #4]</td>
 </tr>
 <tr>
-<td style="text-align:center">Postindex(后项索引)</td>
-<td style="text-align:center">mem[base]</td>
-<td style="text-align:center">base + offset</td>
-<td style="text-align:center">LDR R0, [R1], #4</td>
+<td align="center">Postindex(后项索引)</td>
+<td align="center">mem[base]</td>
+<td align="center">base + offset</td>
+<td align="center">LDR R0, [R1], #4</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>前项索引和后项索引指的是，先访问还是后访问，写回表示写入寄存器。</p>
 <p>Example2：</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">R0 = 0x00000000
+<pre class=" language-assembly"><code class="language-assembly">R0 = 0x00000000
 R1 = 0X00090000
 mem32[0x00009000] = 0x01010101
 mem32[0x00009004] = 0x02020202
@@ -805,60 +784,55 @@ LDR R0, [R1], #4
 ;R1 = 0x00009000
 ;Postindexing
 ;R0 = 0x01010101
-;R1 = 0x00009004
-</code></pre>
+;R1 = 0x00009004</code></pre>
 <h4 id="多个寄存器传输-Multiple-Register-Transfer"><a href="#多个寄存器传输-Multiple-Register-Transfer" class="headerlink" title="多个寄存器传输(Multiple-Register Transfer)"></a>多个寄存器传输(Multiple-Register Transfer)</h4><ul>
 <li>Load-store多个寄存器传输指令可以用一条指令在内存和处理器之间传输多个寄存器</li>
 <li>Syntax<ul>
-<li><strong>\<ldm|stm>{\<cond>}\<addressing mode=""> Rn{!}, \<register>{^}</register></addressing></cond></ldm|stm></strong></li>
+<li><strong>&lt;LDM|STM&gt;{&lt;cond&gt;}&lt;addressing mode&gt; Rn{!}, &lt;register&gt;{^}</strong></li>
 </ul>
 </li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:center">Addressing mode</th>
-<th style="text-align:center">Description</th>
-<th style="text-align:center">Start address</th>
-<th style="text-align:center">End address</th>
-<th style="text-align:center">Rn!</th>
+<th align="center">Addressing mode</th>
+<th align="center">Description</th>
+<th align="center">Start address</th>
+<th align="center">End address</th>
+<th align="center">Rn!</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">IA</td>
-<td style="text-align:center">increment(增加) after</td>
-<td style="text-align:center">Rn</td>
-<td style="text-align:center">Rn + 4 * N - 4</td>
-<td style="text-align:center">Rn + 4 * N</td>
+<tbody><tr>
+<td align="center">IA</td>
+<td align="center">increment(增加) after</td>
+<td align="center">Rn</td>
+<td align="center">Rn + 4 * N - 4</td>
+<td align="center">Rn + 4 * N</td>
 </tr>
 <tr>
-<td style="text-align:center">IB</td>
-<td style="text-align:center">increment before</td>
-<td style="text-align:center">Rn + 4</td>
-<td style="text-align:center">Rn + 4 * N</td>
-<td style="text-align:center">Rn + 4 * N</td>
+<td align="center">IB</td>
+<td align="center">increment before</td>
+<td align="center">Rn + 4</td>
+<td align="center">Rn + 4 * N</td>
+<td align="center">Rn + 4 * N</td>
 </tr>
 <tr>
-<td style="text-align:center">DA</td>
-<td style="text-align:center">decrement(减少) after</td>
-<td style="text-align:center">Rn - 4 * N + 4</td>
-<td style="text-align:center">Rn</td>
-<td style="text-align:center">Rn - 4 * N</td>
+<td align="center">DA</td>
+<td align="center">decrement(减少) after</td>
+<td align="center">Rn - 4 * N + 4</td>
+<td align="center">Rn</td>
+<td align="center">Rn - 4 * N</td>
 </tr>
 <tr>
-<td style="text-align:center">DB</td>
-<td style="text-align:center">decrement before</td>
-<td style="text-align:center">Rn - 4 * N</td>
-<td style="text-align:center">Rn - 4</td>
-<td style="text-align:center">Rn - 4 * N</td>
+<td align="center">DB</td>
+<td align="center">decrement before</td>
+<td align="center">Rn - 4 * N</td>
+<td align="center">Rn - 4</td>
+<td align="center">Rn - 4 * N</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>Example3：</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">mem32[0x80018] = 0x03
+<pre class=" language-assembly"><code class="language-assembly">mem32[0x80018] = 0x03
 mem32[0x80014] = 0x02
 mem32[0x80010] = 0x01
 R0 = 0X00080010
@@ -870,11 +844,10 @@ LDMIA R0!, {R1-R3}    ;不是R1减去R3,是R1到R3中间的寄存器
 ;R0 = 0x0008001c
 ;R1 = 0x00000001
 ;R2 = 0x00000002
-;R3 = 0x00000003
-</code></pre>
+;R3 = 0x00000003</code></pre>
 <p>Example4：</p>
 <p><img src="https://i.loli.net/2020/03/19/rdCbxORFeEc7Jy5.png" alt="地址图"></p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">;R9 points to start of source data
+<pre class=" language-assembly"><code class="language-assembly">;R9 points to start of source data
 ;R10 points to start of destination data
 ;R11 points to end of the source
 loop
@@ -882,84 +855,77 @@ loop
     STMIA R10!, {R0-R7}
     CMP R9, R11
     BNE loop
-;这段代码的把R9~R11寄存器的内容添加到内存
-</code></pre>
-<div class="table-container">
+;这段代码的把R9~R11寄存器的内容添加到内存</code></pre>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">Addressing mode</th>
-<th style="text-align:center">Description</th>
-<th style="text-align:center">Pop</th>
-<th style="text-align:center">= LDM</th>
-<th style="text-align:center">Push</th>
-<th style="text-align:center">=  STM</th>
+<th align="center">Addressing mode</th>
+<th align="center">Description</th>
+<th align="center">Pop</th>
+<th align="center">= LDM</th>
+<th align="center">Push</th>
+<th align="center">=  STM</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">FA</td>
-<td style="text-align:center">full ascending(满增)</td>
-<td style="text-align:center">LDMFA</td>
-<td style="text-align:center">LDMDA</td>
-<td style="text-align:center">STMFA</td>
-<td style="text-align:center">STMIB</td>
+<tbody><tr>
+<td align="center">FA</td>
+<td align="center">full ascending(满增)</td>
+<td align="center">LDMFA</td>
+<td align="center">LDMDA</td>
+<td align="center">STMFA</td>
+<td align="center">STMIB</td>
 </tr>
 <tr>
-<td style="text-align:center">FD</td>
-<td style="text-align:center">full descending(满减)</td>
-<td style="text-align:center">LDMFD</td>
-<td style="text-align:center">LDMIA</td>
-<td style="text-align:center">STMIA</td>
-<td style="text-align:center">STMDB</td>
+<td align="center">FD</td>
+<td align="center">full descending(满减)</td>
+<td align="center">LDMFD</td>
+<td align="center">LDMIA</td>
+<td align="center">STMIA</td>
+<td align="center">STMDB</td>
 </tr>
 <tr>
-<td style="text-align:center">EA</td>
-<td style="text-align:center">empty ascending</td>
-<td style="text-align:center">LDMEA</td>
-<td style="text-align:center">LDMDB</td>
-<td style="text-align:center">STMEA</td>
-<td style="text-align:center">STMIA</td>
+<td align="center">EA</td>
+<td align="center">empty ascending</td>
+<td align="center">LDMEA</td>
+<td align="center">LDMDB</td>
+<td align="center">STMEA</td>
+<td align="center">STMIA</td>
 </tr>
 <tr>
-<td style="text-align:center">ED</td>
-<td style="text-align:center">empty descending</td>
-<td style="text-align:center">LDMED</td>
-<td style="text-align:center">LDMIB</td>
-<td style="text-align:center">STMED</td>
-<td style="text-align:center">STMDA</td>
+<td align="center">ED</td>
+<td align="center">empty descending</td>
+<td align="center">LDMED</td>
+<td align="center">LDMIB</td>
+<td align="center">STMED</td>
+<td align="center">STMDA</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>Example5：</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">R1 = 0x00000002
+<pre class=" language-assembly"><code class="language-assembly">R1 = 0x00000002
 R4 = 0x00000003
 SP = 0x00080014
 STMFD SP!, {R1, R4}
 ;结果
 ;R1 = Ox00000002
 ;R4 = 0x00000003
-;SP = 0x0008000C
-</code></pre>
+;SP = 0x0008000C</code></pre>
 <p>Example6：</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">R1 = 0x00000002
+<pre class=" language-assembly"><code class="language-assembly">R1 = 0x00000002
 R4 = 0x00000003
 SP = 0x00080010
 STMED SP!, {R1, R4}
 ;结果
 ;R1 = 0x00000002
 ;R4 = 0x00000003
-;SP = 0x00080008
-</code></pre>
+;SP = 0x00080008</code></pre>
 <h3 id="交换指令-Swap-Instructions"><a href="#交换指令-Swap-Instructions" class="headerlink" title="交换指令(Swap Instructions)"></a>交换指令(Swap Instructions)</h3><ul>
 <li>Syntax<ul>
-<li><strong>SWP{B}{\<cond>} Rd, Rm, [Rn]</cond></strong></li>
+<li><strong>SWP{B}{&lt;cond&gt;} Rd, Rm, [Rn]</strong></li>
 </ul>
 </li>
 </ul>
 <p>Example1：</p>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">mem32[0x9000] = 0x12345678
+<pre class=" language-assembly"><code class="language-assembly">mem32[0x9000] = 0x12345678
 R0 = 0x00000000
 R1 = 0x11112222
 R2 = 0x00009000
@@ -968,8 +934,7 @@ SWP R0, R1, [R2]
 mem32[0x9000] = 0x11112222
 R0 = 0x12345678
 R1 = 0x11112222
-R2 = 0x00009000
-</code></pre>
+R2 = 0x00009000</code></pre>
 <h3 id="软中断指令-Software-Interrupt-Instruction"><a href="#软中断指令-Software-Interrupt-Instruction" class="headerlink" title="软中断指令(Software Interrupt Instruction)"></a>软中断指令(Software Interrupt Instruction)</h3><ul>
 <li><p>Syntax</p>
 <ul>
@@ -981,7 +946,8 @@ R2 = 0x00009000
 </ul>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>ARM指令很多，不是一时半会可以记住的，代码敲的多了就有感觉了。想深度学习还是要多看书！</p>
 <p><strong>才疏学浅，望雅正！</strong></p>
-<valine></valine>
+<p><valine></valine></p>
+
             </div>
             <hr/>
 
@@ -1480,32 +1446,26 @@ R2 = 0x00009000
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-xue-xi-bi-ji-1/">
+                <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-li-ji-shu-pan-ding/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="嵌入式学习笔记(1)">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="嵌入式Arm立即数判定">
                         
-                        <span class="card-title">嵌入式学习笔记(1)</span>
+                        <span class="card-title">嵌入式Arm立即数判定</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            计算机系统(Computer System)
-个人计算机(Personal Computer)
-服务器(Server)
-嵌入式系统(Embedded System)
+                            基础知识在ARM中，机器指令的格式大致有以下几种：
 
-对比
+立即寻址的方式
 
+立即寻址
+在立即寻址，操作数本身直接在指令中给出，取出指令也就获得了操作数，这个操作数也称为立即数。例子如下
 
-
-
-
-Server
-Personal Computer
-Emb
+ADD R0, R1, #0xF      ;R0=R1
                         
                     </div>
                     <div class="publish-info">
@@ -1542,40 +1502,27 @@ Emb
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-xue-xi-bi-ji-2/">
+                <a href="/2020/05/13/linux/2020/makefile-jian-dan-shi-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="嵌入式学习笔记(2)">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Makefile简单使用">
                         
-                        <span class="card-title">嵌入式学习笔记(2)</span>
+                        <span class="card-title">Makefile简单使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ARM体系ARM：Advanced RISC Machine
-ARM命名规则
+                            一. 题外话1.1 c/cc编译流程以 main.cpp 为例：
 
+1.2 gcc编译参数( 部分)除了前面的 -E -S -c 以外
 
-
-ARMv
-n
-variants
-x (variants)
-
-
-
-
-固定字符，即ARM Version
-指令集版本号
-变种
-排除x后指定的变种
-
-
-
-
-常见的
+-o 指定输出的文件名；
+-Wall 启用所有警告；
+-w 不产生任何警告；
+-g 生成调试信息；
+-
                         
                     </div>
                     <div class="publish-info">
@@ -1586,8 +1533,8 @@ x (variants)
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/IOT/" class="post-category">
-                                    IOT
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
@@ -1597,8 +1544,8 @@ x (variants)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ARM/">
-                        <span class="chip bg-color">ARM</span>
+                    <a href="/tags/Makefile/">
+                        <span class="chip bg-color">Makefile</span>
                     </a>
                     
                 </div>
@@ -1812,7 +1759,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

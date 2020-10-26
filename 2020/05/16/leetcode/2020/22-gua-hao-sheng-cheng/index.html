@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    650
+                    660
                 </div>
                 
 
@@ -506,51 +506,49 @@
 <p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/generate-parentheses">https://leetcode-cn.com/problems/generate-parentheses</a></p>
 </blockquote>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>我们看下当<strong>n = 3</strong>时的二叉树结构</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/20200409124356384.png" alt=""></p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/20200409124356384.png"></p>
 <p>由此二叉树结构图我们可以得知的信息：</p>
 <ul>
 <li>当<strong>左括号小于n</strong>时：<ul>
-<li>先产生<strong>左分支(左括号小于n)</strong>；</li>
-<li><strong>左分支(左括号小于n)且当前左分支已经产生</strong>这两个条件不满足时，产生<strong>右分支(左括号大于右括号)</strong>；</li>
-<li>当产生<strong>左分支条件(左括号小于n)</strong>和<strong>右分支条件(左括号大于右括号)</strong>不满足时，回溯到可以继续产生分支的节点。</li>
+<li>先产生**左分支(左括号小于n)**；</li>
+<li><strong>左分支(左括号小于n)且当前左分支已经产生</strong>这两个条件不满足时，产生**右分支(左括号大于右括号)**；</li>
+<li>当产生<strong>左分支条件(左括号小于n)**和</strong>右分支条件(左括号大于右括号)**不满足时，回溯到可以继续产生分支的节点。</li>
 </ul>
 </li>
 <li>结束寻找的条件是左括号个数等于<strong>n</strong>并且右括号个数等于<strong>n</strong></li>
 </ul>
 <p>思路就是不断搜索，显然跟二叉树的<strong>深度遍历</strong>有点像。</p>
-<p><strong>深度遍历</strong>一般用递归，显然我们已经分析出了递归结束的条件<strong><em>(左括号个数等于n并且右括号个数等于n)</em></strong></p>
-<pre class=" language-lang-c++"><code class="language-lang-c++">if (左括号个数 == n && 右括号个数 == n) {
+<p><strong>深度遍历</strong>一般用递归，显然我们已经分析出了递归结束的条件**<em>(左括号个数等于n并且右括号个数等于n)**</em></p>
+<pre class=" language-c++"><code class="language-c++">if (左括号个数 == n && 右括号个数 == n) {
     vec.emplace_back(当前满足条件的括号匹配);
     return;
-}
-</code></pre>
+}</code></pre>
 <p>由此可得知，我们的递归函数需要的变量<strong>左括号个数left</strong>，<strong>右括号个数right</strong>，题目给的<strong>n</strong>，保存<strong>当前满足条件的括号匹配str</strong>，还有一个<strong>返回给测评机的字符串向量vec</strong>。</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution {
-public:
-  vector<string> generateParenthesis(int n) {
-    vector<string> vec;
-    if (n == 0) {
-      return vec;
-    }
-    recursion(vec, "", 0, 0, n);
-    return vec;
-  }
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+  vector<span class="token operator">&lt;</span>string<span class="token operator">></span> <span class="token function">generateParenthesis</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    vector<span class="token operator">&lt;</span>string<span class="token operator">></span> vec<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> vec<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">recursion</span><span class="token punctuation">(</span>vec<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> vec<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  void recursion(vector<string> &vec, string str, int left, int right, int n) {
-    //递归结束条件
-    if (left == n && right == n) {
-      vec.emplace_back(str);
-      return;
-    }
-    if (left < n) {
-      recursion(vec, str + "(", left + 1, right, n);
-    }
-    if (left > right) {
-      recursion(vec, str + ")", left, right + 1, n);
-    }
-  }
-};
-</code></pre>
+  <span class="token keyword">void</span> <span class="token function">recursion</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>string<span class="token operator">></span> <span class="token operator">&amp;</span>vec<span class="token punctuation">,</span> string str<span class="token punctuation">,</span> <span class="token keyword">int</span> left<span class="token punctuation">,</span> <span class="token keyword">int</span> right<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//递归结束条件</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>left <span class="token operator">==</span> n <span class="token operator">&amp;&amp;</span> right <span class="token operator">==</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      vec<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">recursion</span><span class="token punctuation">(</span>vec<span class="token punctuation">,</span> str <span class="token operator">+</span> <span class="token string">"("</span><span class="token punctuation">,</span> left <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> right<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>left <span class="token operator">></span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">recursion</span><span class="token punctuation">(</span>vec<span class="token punctuation">,</span> str <span class="token operator">+</span> <span class="token string">")"</span><span class="token punctuation">,</span> left<span class="token punctuation">,</span> right <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p>因为，最开始的时候<strong>左括号和右括号都没有，所以传0进去，满足要求的括号匹配也没有，传空字符串就好了</strong>。</p>
 <p>深搜题：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/permutations/">全排列</a></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以后遇到，类似 <strong><em><code>所有可能，全排列……</code></em></strong> 这种题，首先要想到的是递归！</p>
@@ -564,9 +562,9 @@ public:
 <center>何处望神州？满眼风光北固楼。千古兴亡多少事？悠悠。不尽长江滚滚流。</center>
 
 <center>年少万兜鍪，坐断东南战未休。天下英雄谁敌手？曹刘。生子当如孙仲谋。</center>
-
 </blockquote>
-<valine></valine>
+<p><valine></valine></p>
+
             </div>
             <hr/>
 
@@ -1376,7 +1374,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

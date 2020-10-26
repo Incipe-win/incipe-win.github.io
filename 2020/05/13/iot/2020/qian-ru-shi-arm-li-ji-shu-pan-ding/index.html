@@ -503,9 +503,8 @@
 <h2 id="立即寻址"><a href="#立即寻址" class="headerlink" title="立即寻址"></a>立即寻址</h2><ul>
 <li>在立即寻址，操作数本身直接在指令中给出，取出指令也就获得了操作数，这个操作数也称为立即数。例子如下</li>
 </ul>
-<pre class=" language-lang-assembly"><code class="language-lang-assembly">ADD R0, R1, #0xF      ;R0=R1+15
-MOV R0, #0x55       ;R0=0x55
-</code></pre>
+<pre class=" language-assembly"><code class="language-assembly">ADD R0, R1, #0xF      ;R0=R1+15
+MOV R0, #0x55       ;R0=0x55 </code></pre>
 <p>在这两个例子中0xF和0x55就是立即数。(立即数要以#开头)</p>
 <h2 id="抛出问题"><a href="#抛出问题" class="headerlink" title="抛出问题"></a>抛出问题</h2><ul>
 <li>我们知道因为ARM指令长度是32-bit的，所以立即数不可能还有32-bit。</li>
@@ -579,7 +578,8 @@ MOV R0, #0x55       ;R0=0x55
 </ul>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>适合自己的方法才是最好了，真正理解了才能叫懂了！</p>
 <p><strong>才疏学浅，望雅正！</strong></p>
-<valine></valine>
+<p><valine></valine></p>
+
             </div>
             <hr/>
 
@@ -1094,12 +1094,10 @@ MOV R0, #0x55       ;R0=0x55
 ARM命名规则
 
 
-
 ARMv
 n
 variants
 x (variants)
-
 
 
 
@@ -1109,9 +1107,7 @@ x (variants)
 排除x后指定的变种
 
 
-
-
-常见的
+常见的vari
                         
                     </div>
                     <div class="publish-info">
@@ -1148,27 +1144,29 @@ x (variants)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/13/linux/2020/makefile-jian-dan-shi-yong/">
+                <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-xue-xi-bi-ji-3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Makefile简单使用">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="嵌入式学习笔记(3)">
                         
-                        <span class="card-title">Makefile简单使用</span>
+                        <span class="card-title">嵌入式学习笔记(3)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一. 题外话1.1 c/cc编译流程以 main.cpp 为例：
+                            ARM指令集精简指令集设计理念(The  RISC design philosophy)
+设计原则(Design rules)
+指令”短小精悍”
+应用流水线技术设计
+大量采用寄存器
+Load/Store存储结构
 
-1.2 gcc编译参数( 部分)除了前面的 -E -S -c 以外
 
--o 指定输出的文件名；
--Wall 启用所有警告；
--w 不产生任何警告；
--g 生成调试信息；
--
+
+ARM指令集特点
+所有
                         
                     </div>
                     <div class="publish-info">
@@ -1179,8 +1177,8 @@ x (variants)
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
+                            <a href="/categories/IOT/" class="post-category">
+                                    IOT
                                 </a>
                             
                             
@@ -1190,8 +1188,8 @@ x (variants)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Makefile/">
-                        <span class="chip bg-color">Makefile</span>
+                    <a href="/tags/ARM/">
+                        <span class="chip bg-color">ARM</span>
                     </a>
                     
                 </div>
@@ -1405,7 +1403,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

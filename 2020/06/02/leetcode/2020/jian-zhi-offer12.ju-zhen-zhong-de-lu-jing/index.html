@@ -474,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    537
+                    753
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -520,9 +520,9 @@
 <p>来源：力扣（LeetCode）</p>
 <p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof">https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof</a></p>
 </blockquote>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>此题第一感觉就是 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/深度优先搜索/5224976?fromtitle=深度优先遍历&amp;fromid=9796166">深度优先遍历</a> </p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>此题第一感觉就是 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/5224976?fromtitle=%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86&amp;fromid=9796166">深度优先遍历</a> </p>
 <p>深度优先搜索就要递归的去找所有可能的情况。</p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9iNDBkZjA4Yy0wMzhlLTQ3MjItODI2MS05ZGU0OThmZWFmM2QuZ2lm" alt=""></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9iNDBkZjA4Yy0wMzhlLTQ3MjItODI2MS05ZGU0OThmZWFmM2QuZ2lm"></p>
 <h3 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h3><ul>
 <li>结束条件<ul>
 <li>当递归的层数等于word的长度时，递归结束。</li>
@@ -540,76 +540,74 @@
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ul>
 <li>C++代码</li>
 </ul>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution {
-private:
-  // 本身、上下左右五个方向，
-  int mvDistance[5][2] = {{0, 0}, {-1, 0}, {1, 0}, {0, 1}, {0, -1}};
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+  <span class="token comment" spellcheck="true">// 本身、上下左右五个方向，</span>
+  <span class="token keyword">int</span> mvDistance<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-public:
-  bool exist(vector<vector<char>> &board, string word) {
-    int rows = board.size(), cols = board[0].size();
-    for (int i = 0; i < rows; ++i) {
-      for (int j = 0; j < cols; ++j) {
-        // 开始搜索
-        if (dfs(i, j, board, 0, word)) {
-          return true;
-        }
-      }
-    }
-    return false;
-  }
+<span class="token keyword">public</span><span class="token operator">:</span>
+  <span class="token keyword">bool</span> <span class="token function">exist</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">>></span> <span class="token operator">&amp;</span>board<span class="token punctuation">,</span> string word<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> rows <span class="token operator">=</span> board<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> cols <span class="token operator">=</span> board<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> rows<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> cols<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 开始搜索</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">dfs</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> board<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> word<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  bool dfs(int x, int y, vector<vector<char>> &board, int cnt, string &word) {
-    // 搜索完毕返回
-    if (cnt == word.size()) {
-      return true;
-    }
-    for (int i = 0; i < 5; ++i) {
-      int mx = x + mvDistance[i][0], my = y + mvDistance[i][1];
-      // 判断当前位置有没有越界和是否被访问过
-      if (0 <= mx && mx < board.size() && 0 <= my && my < board[0].size() && board[mx][my] != '*') {
-        // 如果当前位置满足条件
-        if (word[cnt] == board[mx][my]) {
-          // 标记已经搜索
-          board[mx][my] = '*';
-          // 继续搜索
-          if (dfs(mx, my, board, cnt + 1, word)) {
-            return true;
-          }
-          // 递归返回
-          board[mx][my] = word[cnt];
-        }
-      }
-    }
-    return false;
-  }
-};
-</code></pre>
+  <span class="token keyword">bool</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">>></span> <span class="token operator">&amp;</span>board<span class="token punctuation">,</span> <span class="token keyword">int</span> cnt<span class="token punctuation">,</span> string <span class="token operator">&amp;</span>word<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 搜索完毕返回</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>cnt <span class="token operator">==</span> word<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> mx <span class="token operator">=</span> x <span class="token operator">+</span> mvDistance<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> my <span class="token operator">=</span> y <span class="token operator">+</span> mvDistance<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">// 判断当前位置有没有越界和是否被访问过</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">&lt;=</span> mx <span class="token operator">&amp;&amp;</span> mx <span class="token operator">&lt;</span> board<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> my <span class="token operator">&amp;&amp;</span> my <span class="token operator">&lt;</span> board<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> board<span class="token punctuation">[</span>mx<span class="token punctuation">]</span><span class="token punctuation">[</span>my<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">'*'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 如果当前位置满足条件</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>word<span class="token punctuation">[</span>cnt<span class="token punctuation">]</span> <span class="token operator">==</span> board<span class="token punctuation">[</span>mx<span class="token punctuation">]</span><span class="token punctuation">[</span>my<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment" spellcheck="true">// 标记已经搜索</span>
+          board<span class="token punctuation">[</span>mx<span class="token punctuation">]</span><span class="token punctuation">[</span>my<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'*'</span><span class="token punctuation">;</span>
+          <span class="token comment" spellcheck="true">// 继续搜索</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">dfs</span><span class="token punctuation">(</span>mx<span class="token punctuation">,</span> my<span class="token punctuation">,</span> board<span class="token punctuation">,</span> cnt <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> word<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+          <span class="token comment" spellcheck="true">// 递归返回</span>
+          board<span class="token punctuation">[</span>mx<span class="token punctuation">]</span><span class="token punctuation">[</span>my<span class="token punctuation">]</span> <span class="token operator">=</span> word<span class="token punctuation">[</span>cnt<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <ul>
 <li>python代码</li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python">class Solution:
-    def exist(self, board: List[List[str]], word: str) -> bool:
-        mvDistance = [[0, 0], [-1, 0], [1, 0], [0, 1], [0, -1]]
-        def dfs(x, y, board, cnt, word):
-            if cnt == len(word):
-                return True
-            for i in range(5):
-                mx, my = x + mvDistance[i][0], y + mvDistance[i][1]
-                if 0 <= mx and mx < len(board) and 0 <= my and my < len(board[0]) and board[mx][my] != '*':
-                    if word[cnt] == board[mx][my]:
-                        board[mx][my] = '*'
-                        if dfs(mx, my, board, cnt + 1, word):
-                            return True
-                        board[mx][my] = word[cnt]
-            return False
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">exist</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> board<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>str<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> word<span class="token punctuation">:</span> str<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> bool<span class="token punctuation">:</span>
+        mvDistance <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> board<span class="token punctuation">,</span> cnt<span class="token punctuation">,</span> word<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> cnt <span class="token operator">==</span> len<span class="token punctuation">(</span>word<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">True</span>
+            <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                mx<span class="token punctuation">,</span> my <span class="token operator">=</span> x <span class="token operator">+</span> mvDistance<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> y <span class="token operator">+</span> mvDistance<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+                <span class="token keyword">if</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> mx <span class="token operator">and</span> mx <span class="token operator">&lt;</span> len<span class="token punctuation">(</span>board<span class="token punctuation">)</span> <span class="token operator">and</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> my <span class="token operator">and</span> my <span class="token operator">&lt;</span> len<span class="token punctuation">(</span>board<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">and</span> board<span class="token punctuation">[</span>mx<span class="token punctuation">]</span><span class="token punctuation">[</span>my<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">'*'</span><span class="token punctuation">:</span>
+                    <span class="token keyword">if</span> word<span class="token punctuation">[</span>cnt<span class="token punctuation">]</span> <span class="token operator">==</span> board<span class="token punctuation">[</span>mx<span class="token punctuation">]</span><span class="token punctuation">[</span>my<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                        board<span class="token punctuation">[</span>mx<span class="token punctuation">]</span><span class="token punctuation">[</span>my<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'*'</span>
+                        <span class="token keyword">if</span> dfs<span class="token punctuation">(</span>mx<span class="token punctuation">,</span> my<span class="token punctuation">,</span> board<span class="token punctuation">,</span> cnt <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> word<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                            <span class="token keyword">return</span> <span class="token boolean">True</span>
+                        board<span class="token punctuation">[</span>mx<span class="token punctuation">]</span><span class="token punctuation">[</span>my<span class="token punctuation">]</span> <span class="token operator">=</span> word<span class="token punctuation">[</span>cnt<span class="token punctuation">]</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span>
 
-        for i in range(len(board)):
-            for j in range(len(board[0])):
-                if dfs(i, j, board, 0, word):
-                    return True
-        return False
-</code></pre>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>board<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>board<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> dfs<span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> board<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> word<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    <span class="token keyword">return</span> <span class="token boolean">True</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span></code></pre>
 
             </div>
             <hr/>
@@ -1415,7 +1413,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    65
+                    329
                 </div>
                 
 
@@ -499,53 +499,54 @@
                 <p>被不了解memset狠狠的坑了一把，难受。</p>
 <p>对于整型数组，若要是初始化为非0的值时应该使用for循环，<br>字符型或0，用memset即可。</p>
 <p>例如：</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">#include<bits/stdc++.h>
-int main()
-{
-    int s[100];
-    memset(s,1,sizeof(s));
-    for(int i=0;i<100;i++)
-        std::cout<<s[i]<<" ";
-    return 0;
-}
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> s<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token function">memset</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">100</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+        std<span class="token operator">::</span>cout<span class="token operator">&lt;&lt;</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>这样子是达不到预期效果的，因为memset函数的作用是把一整块内存区域全部填充为某个特定的值，填充的时候是一个字节一个字节进行填充的。<br>参考：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/melody_1016/article/details/83479778">https://blog.csdn.net/melody_1016/article/details/83479778</a><br><br><a target="_blank" rel="noopener" href="http://www.cplusplus.com/reference/cstring/memset/">http://www.cplusplus.com/reference/cstring/memset/</a></p>
 <p>对于字符型：</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">#include<bits/stdc++.h>
-int main()
-{
-    char s[100];
-    memset(s,'1',sizeof(s)/sizeof(s[0]));
-    for(int i=0;i<100;i++)
-        std::cout<<s[i]<<" ";
-    return 0;
-}
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> s<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token function">memset</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span><span class="token string">'1'</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">/</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">100</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+        std<span class="token operator">::</span>cout<span class="token operator">&lt;&lt;</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>用memset是可以的。<br>初始化数组还可以用C++的fill或者fill_n</p>
 <p>fill:</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">#include<bits/stdc++.h>
-int main()
-{
-    int s[100];
-    std::fill(s,s+100,11111);
-    for(int i=0;i<100;i++)
-        std::cout<<s[i]<<" ";
-    return 0;
-}
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> s<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    std<span class="token operator">::</span><span class="token function">fill</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span>s<span class="token operator">+</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">11111</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">100</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+        std<span class="token operator">::</span>cout<span class="token operator">&lt;&lt;</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>fill_n:</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">#include<bits/stdc++.h>
-int main()
-{
-    int s[100];
-    std::fill_n(s,100,11111);//第一个是数组名，第二个是个数，第三个是填充值
-    for(int i=0;i<100;i++)
-        std::cout<<s[i]<<" ";
-    return 0;
-}
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> s<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    std<span class="token operator">::</span><span class="token function">fill_n</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">11111</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//第一个是数组名，第二个是个数，第三个是填充值</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">100</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+        std<span class="token operator">::</span>cout<span class="token operator">&lt;&lt;</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token string">" "</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>详情请参考：<br><br><a target="_blank" rel="noopener" href="http://www.cplusplus.com/reference/algorithm/fill_n/?kw=fill_n">http://www.cplusplus.com/reference/algorithm/fill_n/?kw=fill_n</a><br><a target="_blank" rel="noopener" href="http://www.cplusplus.com/reference/algorithm/fill/?kw=fill">http://www.cplusplus.com/reference/algorithm/fill/?kw=fill</a></p>
-  <valine></valine>
+<p>  <valine></valine></p>
+
             </div>
             <hr/>
 
@@ -1044,24 +1045,23 @@ int main()
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/11/c/2020/const-int-p-he-int-const-p/">
+                <a href="/2020/05/11/c/2020/chu-xue-map-de-ge-chong-cao-zuo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="const int p 和 int const p">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="初学map的各种操作">
                         
-                        <span class="card-title">const int p 和 int const p</span>
+                        <span class="card-title">初学map的各种操作</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            主要讲下这两者的区别及用法！高能区
-
-const int p 和 int const p是完全等价的！const int const p 和 int const const p 是完全等价的！
-
-下面举几个例子来分析：
-int x = 10
+                            /*
+ * @Author: incipe
+ * @Date: 2019-09-22 23:14:53
+ * @LastEditTime: 2019-10-21 21:35:58
+ * @LastEditors: Please set La
                         
                     </div>
                     <div class="publish-info">
@@ -1098,23 +1098,23 @@ int x = 10
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/11/c/2020/chu-xue-map-de-ge-chong-cao-zuo/">
+                <a href="/2020/05/11/c/2020/ge-chong-er-cha-shu-di-gui/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="初学map的各种操作">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="各种二叉树（递归）">
                         
-                        <span class="card-title">初学map的各种操作</span>
+                        <span class="card-title">各种二叉树（递归）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            /*
- * @Author: incipe
- * @Date: 2019-09-22 23:14:53
- * @LastEditTime: 2019-10-21 21:35:58
- * @LastEditors: Please set La
+                            为了方便粘贴，就没有放多文件编译。感谢leetcode的题库！要实现归并二叉树，自己要稍微更改下代码：
+#include&lt;bits/stdc++.h>
+using std::cin;
+using std::cout;
+using st
                         
                     </div>
                     <div class="publish-info">
@@ -1351,7 +1351,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

@@ -474,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    793
+                    880
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -505,15 +505,16 @@
 <p>返回如下的二叉树：</p>
 <blockquote>
 <p>​    3</p>
-<p>   / \<br>  9  20<br>    /  \<br>   15   7</p>
+<p>   / <br>  9  20<br>    /  <br>   15   7</p>
 </blockquote>
 <p><strong>限制：</strong></p>
 <p>0 &lt;= 节点个数 &lt;= 5000</p>
 <p>来源：力扣（LeetCode）<br><br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/">https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/</a></p>
 </blockquote>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="Ⅰ-先回顾下二叉树的遍历"><a href="#Ⅰ-先回顾下二叉树的遍历" class="headerlink" title="Ⅰ. 先回顾下二叉树的遍历"></a>Ⅰ. 先回顾下二叉树的遍历</h3><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9lMzdiNWJmMS0wNTYzLTQ2MzYtOWExYy04YTIxMTI1NTFkZGUucG5n?x-oss-process=image/format,png" alt=""></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="Ⅰ-先回顾下二叉树的遍历"><a href="#Ⅰ-先回顾下二叉树的遍历" class="headerlink" title="Ⅰ. 先回顾下二叉树的遍历"></a>Ⅰ. 先回顾下二叉树的遍历</h3><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9lMzdiNWJmMS0wNTYzLTQ2MzYtOWExYy04YTIxMTI1NTFkZGUucG5n?x-oss-process=image/format,png"></p>
 <ul>
-<li>前序遍历：根左右<ul>
+<li><p>前序遍历：根左右</p>
+<ul>
 <li>$3-&gt;9-&gt;20$</li>
 <li>$9-&gt;1-&gt;4$</li>
 <li>$20-&gt;15-&gt;7$</li>
@@ -553,16 +554,17 @@
 <li>递归构建当前层的根节点的左子树和右子树。</li>
 </ol>
 </li>
-<li>返回值<ul>
+<li><p>返回值</p>
+<ul>
 <li>返回当前层构建的二叉树</li>
 </ul>
 </li>
 </ul>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9jOTk3MjU0Mi0zNzdmLTQ3MDEtODU4Ni0zM2EyNzc4MzdlOTMuZ2lm" alt=""></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9jOTk3MjU0Mi0zNzdmLTQ3MDEtODU4Ni0zM2EyNzc4MzdlOTMuZ2lm"></p>
 <h3 id="Ⅲ-代码"><a href="#Ⅲ-代码" class="headerlink" title="Ⅲ. 代码"></a>Ⅲ. 代码</h3><ul>
 <li>C++代码</li>
 </ul>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">/**
+<pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
  * Definition for a binary tree node.
  * struct TreeNode {
  *     int val;
@@ -570,64 +572,62 @@
  *     TreeNode *right;
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
- */
-class Solution {
-public:
-    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
-        return recursive(preorder, 0, preorder.size() - 1, inorder, 0, inorder.size() - 1);
-    }
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    TreeNode<span class="token operator">*</span> <span class="token function">buildTree</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> preorder<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> inorder<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">recursive</span><span class="token punctuation">(</span>preorder<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> preorder<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> inorder<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> inorder<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    TreeNode *recursive(vector<int> &preorder, int preorder_left, int preorder_right, vector<int> &inorder, int inorder_left, int inorder_right) {
-        // prerder_left先序遍历的左边界，preorder_right先序遍历的右边界，inorder_left中序遍历的左边界，inorder_right中序遍历的右边界
-        if (preorder_left > preorder_right || inorder_left > inorder_right) {
-            return nullptr;
-        }
-        // 先序遍历的第一个节点就是根节点
-        int root = preorder[preorder_left];
-        // 我们要找到中序遍历的根节点
-        int mid = 0;
-        for (int i = inorder_left; i <= inorder_right; ++i) {
-            if (inorder[i] == root) {
-                mid = i;
-                break;
-            }
-        }
-        // 构造二叉树
-        auto ans = new TreeNode(root);
-        // 左子树，preorder_left + 1先序遍历左子树的左边界， preorder_left + mid - inorder_left先序遍历的左子树的右边界， inorder_left中序遍历左子树左边界，mid-1中序遍历左子树右边界
-        ans->left = recursive(preorder, preorder_left + 1, preorder_left + mid - inorder_left, inorder, inorder_left, mid - 1);
-        // 右子树，preorder_left + mid - inorder_left + 1先序遍历右子树左边界， preorder_right先序遍历右子树右边界， mid+1中序遍历右子树左边界， inorder_right中序遍历右子树右边界
-        ans->right = recursive(preorder, preorder_left + mid - inorder_left + 1, preorder_right, inorder, mid + 1, inorder_right);
-        return ans;
-    }
-};
-</code></pre>
+    TreeNode <span class="token operator">*</span><span class="token function">recursive</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>preorder<span class="token punctuation">,</span> <span class="token keyword">int</span> preorder_left<span class="token punctuation">,</span> <span class="token keyword">int</span> preorder_right<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>inorder<span class="token punctuation">,</span> <span class="token keyword">int</span> inorder_left<span class="token punctuation">,</span> <span class="token keyword">int</span> inorder_right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// prerder_left先序遍历的左边界，preorder_right先序遍历的右边界，inorder_left中序遍历的左边界，inorder_right中序遍历的右边界</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>preorder_left <span class="token operator">></span> preorder_right <span class="token operator">||</span> inorder_left <span class="token operator">></span> inorder_right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// 先序遍历的第一个节点就是根节点</span>
+        <span class="token keyword">int</span> root <span class="token operator">=</span> preorder<span class="token punctuation">[</span>preorder_left<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 我们要找到中序遍历的根节点</span>
+        <span class="token keyword">int</span> mid <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> inorder_left<span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> inorder_right<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>inorder<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                mid <span class="token operator">=</span> i<span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// 构造二叉树</span>
+        <span class="token keyword">auto</span> ans <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">TreeNode</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 左子树，preorder_left + 1先序遍历左子树的左边界， preorder_left + mid - inorder_left先序遍历的左子树的右边界， inorder_left中序遍历左子树左边界，mid-1中序遍历左子树右边界</span>
+        ans<span class="token operator">-</span><span class="token operator">></span>left <span class="token operator">=</span> <span class="token function">recursive</span><span class="token punctuation">(</span>preorder<span class="token punctuation">,</span> preorder_left <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> preorder_left <span class="token operator">+</span> mid <span class="token operator">-</span> inorder_left<span class="token punctuation">,</span> inorder<span class="token punctuation">,</span> inorder_left<span class="token punctuation">,</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 右子树，preorder_left + mid - inorder_left + 1先序遍历右子树左边界， preorder_right先序遍历右子树右边界， mid+1中序遍历右子树左边界， inorder_right中序遍历右子树右边界</span>
+        ans<span class="token operator">-</span><span class="token operator">></span>right <span class="token operator">=</span> <span class="token function">recursive</span><span class="token punctuation">(</span>preorder<span class="token punctuation">,</span> preorder_left <span class="token operator">+</span> mid <span class="token operator">-</span> inorder_left <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> preorder_right<span class="token punctuation">,</span> inorder<span class="token punctuation">,</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> inorder_right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <ul>
 <li>python代码</li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python"># Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+<span class="token comment" spellcheck="true"># class TreeNode:</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
+<span class="token comment" spellcheck="true">#         self.val = x</span>
+<span class="token comment" spellcheck="true">#         self.left = None</span>
+<span class="token comment" spellcheck="true">#         self.right = None</span>
 
-class Solution:
-    def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
-        def recursive(preorder, preorder_left, preorder_right, inorder, inorder_left, inorder_right):
-            if preorder_left > preorder_right or inorder_left > inorder_right:
-                return None
-            root = preorder[preorder_left]
-            for i in range(inorder_left, inorder_right + 1, 1):
-                if inorder[i] == root:
-                    mid = i
-                    break
-            ans = TreeNode(root)
-            ans.left = recursive(preorder, preorder_left + 1, preorder_left + mid - inorder_left, inorder, inorder_left, mid - 1)
-            ans.right = recursive(preorder, preorder_left + mid - inorder_left + 1, preorder_right, inorder, mid + 1, inorder_right)
-            return ans
-        return recursive(preorder, 0, len(preorder) - 1, inorder, 0, len(inorder) - 1)
-</code></pre>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">buildTree</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> preorder<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">,</span> inorder<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> TreeNode<span class="token punctuation">:</span>
+        <span class="token keyword">def</span> <span class="token function">recursive</span><span class="token punctuation">(</span>preorder<span class="token punctuation">,</span> preorder_left<span class="token punctuation">,</span> preorder_right<span class="token punctuation">,</span> inorder<span class="token punctuation">,</span> inorder_left<span class="token punctuation">,</span> inorder_right<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> preorder_left <span class="token operator">></span> preorder_right <span class="token operator">or</span> inorder_left <span class="token operator">></span> inorder_right<span class="token punctuation">:</span>
+                <span class="token keyword">return</span> None
+            root <span class="token operator">=</span> preorder<span class="token punctuation">[</span>preorder_left<span class="token punctuation">]</span>
+            <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>inorder_left<span class="token punctuation">,</span> inorder_right <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> inorder<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> root<span class="token punctuation">:</span>
+                    mid <span class="token operator">=</span> i
+                    <span class="token keyword">break</span>
+            ans <span class="token operator">=</span> TreeNode<span class="token punctuation">(</span>root<span class="token punctuation">)</span>
+            ans<span class="token punctuation">.</span>left <span class="token operator">=</span> recursive<span class="token punctuation">(</span>preorder<span class="token punctuation">,</span> preorder_left <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> preorder_left <span class="token operator">+</span> mid <span class="token operator">-</span> inorder_left<span class="token punctuation">,</span> inorder<span class="token punctuation">,</span> inorder_left<span class="token punctuation">,</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+            ans<span class="token punctuation">.</span>right <span class="token operator">=</span> recursive<span class="token punctuation">(</span>preorder<span class="token punctuation">,</span> preorder_left <span class="token operator">+</span> mid <span class="token operator">-</span> inorder_left <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> preorder_right<span class="token punctuation">,</span> inorder<span class="token punctuation">,</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> inorder_right<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> ans
+        <span class="token keyword">return</span> recursive<span class="token punctuation">(</span>preorder<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>preorder<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> inorder<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>inorder<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span></code></pre>
 
             </div>
             <hr/>
@@ -1437,7 +1437,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    81
+                    138
                 </div>
                 
 
@@ -499,31 +499,30 @@
                 <p><strong><em>你再不来，我要下雪了。</em></strong></p>
 <p> 记录下二维vector的遍历（输出）<br> <em>注：二维vector的赋值不能跟二维数组一样用scanf或者cin写入</em></p>
 <p> <strong><font color="#0099ff">遍历（迭代器）</font></strong><br> <em>方法一</em></p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">void print() {
-  vector<vector<char>>::iterator it;
-  vector<char>::iterator iter;
-  vector<char> ch;
-  for(it = res.begin(); it != res.end(); ++it) {
-    ch = *it;
-    for (iter = ch.begin(); iter != ch.end(); ++iter) {
-      cout << *iter << " ";
-    }
-  }
-  cout << endl;
-}
-</code></pre>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">>></span><span class="token operator">::</span>iterator it<span class="token punctuation">;</span>
+ vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span><span class="token operator">::</span>iterator iter<span class="token punctuation">;</span>
+ vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span> ch<span class="token punctuation">;</span>
+ <span class="token keyword">for</span><span class="token punctuation">(</span>it <span class="token operator">=</span> res<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it <span class="token operator">!=</span> res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>it<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   ch <span class="token operator">=</span> <span class="token operator">*</span>it<span class="token punctuation">;</span>
+   <span class="token keyword">for</span> <span class="token punctuation">(</span>iter <span class="token operator">=</span> ch<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> iter <span class="token operator">!=</span> ch<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>iter<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     cout <span class="token operator">&lt;&lt;</span> <span class="token operator">*</span>iter <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+ cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p> <em>方法二</em></p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp"> void print() {
-  for (int i = 0; i < res.size(); ++i) {
-      for (int j = 0; j < res[0].size(); ++j) {
-          cout << res[i][j] << " ";
-      }
-  }
-  cout << endl;
-}
-</code></pre>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> res<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         cout <span class="token operator">&lt;&lt;</span> res<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+ cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p> <strong><em>才疏学浅，望雅正！</em></strong></p>
-  <valine></valine>
+<p>  <valine></valine></p>
+
             </div>
             <hr/>
 
@@ -1036,12 +1035,12 @@
                         
                             高中学过的求大公约数的方法就是辗转相除法和更相减损术了。
 辗转相除法递归版
-#include 
+#include &lt;iostream>
 using std::cin;
 using std::cout;
 using std::endl;
 
-int gcd(int a, int b)
+int gcd(
                         
                     </div>
                     <div class="publish-info">
@@ -1078,23 +1077,24 @@ int gcd(int a, int b)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/11/c/2020/wan-neng-tou-bao-han-de-tou-wen-jian/">
+                <a href="/2020/05/11/c/2020/const-int-p-he-int-const-p/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="万能头包含的头文件">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="const int p 和 int const p">
                         
-                        <span class="card-title">万能头包含的头文件</span>
+                        <span class="card-title">const int p 和 int const p</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            // C++ includes used for precompiling -*- C++ -*-
+                            主要讲下这两者的区别及用法！高能区
 
-// Copyright (C) 2003-2018 Free Software Foundation, Inc.
-//
-// This 
+const int* p 和 int const* p是完全等价的！const int* const p 和 int const const* p 是完全等价的！
+
+下面举几个例子来分析：
+int x 
                         
                     </div>
                     <div class="publish-info">
@@ -1331,7 +1331,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

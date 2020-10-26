@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    211
+                    227
                 </div>
                 
 
@@ -501,35 +501,35 @@
 <p>讲白了，就是你知道了n的n次方，要你求n的2n次方，你还会循环2n次去求n的2n次方吗？显然只要计算n的n次方乘以n的n次方就行了。</p>
 <p>那么，时间复杂度就由原来的O(n)降为了现在的O(logn)了。<br>大大优化了性能。</p>
 <p>代码如下，位运算可用可不用！</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">#include <bits/stdc++.h>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;bits/stdc++.h></span></span>
 
-using namespace std;
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
-// 快速模幂计算函数
-long long PowerFast(long long a, int n) {
-  long long res = 1;
-  while (n) {
-    if (n & 1) { // n % 2 == 1
-      res *= a;
-    }
-    a *= a;
-    n >>= 1; // n/2
-  }
-  return res;
-}
+<span class="token comment" spellcheck="true">// 快速模幂计算函数</span>
+<span class="token keyword">long</span> <span class="token keyword">long</span> <span class="token function">PowerFast</span><span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token keyword">long</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">long</span> <span class="token keyword">long</span> res <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&amp;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// n % 2 == 1</span>
+      res <span class="token operator">*</span><span class="token operator">=</span> a<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    a <span class="token operator">*</span><span class="token operator">=</span> a<span class="token punctuation">;</span>
+    n <span class="token operator">>>=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// n/2</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-int main() {
-  int n;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">int</span> n<span class="token punctuation">;</span>
 
-  cin >> n;
+  cin <span class="token operator">>></span> n<span class="token punctuation">;</span>
 
-  cout << PowerFast(n, n) << endl;
+  cout <span class="token operator">&lt;&lt;</span> <span class="token function">PowerFast</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> n<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
 
-  return 0;
-}
-</code></pre>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p><strong>才疏学浅，望雅正！</strong></p>
-  <valine></valine>
+<p>  <valine></valine></p>
+
             </div>
             <hr/>
 
@@ -1028,6 +1028,61 @@ int main() {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2020/05/12/hdu/2020/kuai-man-zhi-zhen-zhao-lian-biao-huan-ru-kou/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="快慢指针找链表环入口">
+                        
+                        <span class="card-title">快慢指针找链表环入口</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            链表：
+struct ListNode {
+     int val;
+     struct ListNode *next;
+ };
+快慢指针就是指指针每次移动的速度不一样，一般快指针每次移动两步，慢指针移动一步。
+既然快慢指针移动的速度
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-12
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Leetcode/" class="post-category">
+                                    Leetcode
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%93%BE%E8%A1%A8/">
+                        <span class="chip bg-color">链表</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2020/05/12/hdu/2020/si-te-lin-gong-shi/">
                     <div class="card-image">
                         
@@ -1042,68 +1097,38 @@ int main() {
                         
                             斯特林公式是用来估算阶乘的，n越大，结果越准确！
 斯特林公式：
+
 或更精确的：
+
+
 或：
-&lt;/div&gt;&lt;/section&gt;&lt;/div&gt;或：
+
+
+
+
+或：
+
 
 
 
  ，
 
+
 或：
 
+
+
 ，
-如果要计算N后得到的数字为几位数，则我们可以
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-12
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2/" class="post-category">
-                                    博客
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%B0%E5%AD%A6/">
-                        <span class="chip bg-color">数学</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/05/12/hdu/2020/niu-dun-die-dai-fa/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="牛顿迭代法">
-                        
-                        <span class="card-title">牛顿迭代法</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            牛顿迭代法（Newton’s method）又称为牛顿-拉夫逊（拉弗森）方法（Newton-Raphson method），它是牛顿在17世纪提出的一种在实数域和复数域上近似求解方程的方法。
-当然，牛顿迭代法也是已知已知的实现求方根最快的方
+
+
+
+如果要计算N后得到的数字为几位数，则我们可以知道其位数等于lgN！+1；
+
+
+
+
+代码如下：
+#
                         
                     </div>
                     <div class="publish-info">
@@ -1340,7 +1365,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

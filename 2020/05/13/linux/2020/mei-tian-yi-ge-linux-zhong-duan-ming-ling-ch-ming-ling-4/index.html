@@ -504,11 +504,10 @@
 <li><strong>chmod</strong> 修改文件的属性</li>
 </ul>
 <p>chgrp和chown用法基本一致。</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">chgrp [-R] dirname/filename ...
-chown [-R] 账号名称 文件或目录
-chown [-R] 账号名称:用户组名称 文件或目录
-chmod [-R] xyz 文件或者目录
-</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">chgrp</span> <span class="token punctuation">[</span>-R<span class="token punctuation">]</span> dirname/filename <span class="token punctuation">..</span>.
+<span class="token function">chown</span> <span class="token punctuation">[</span>-R<span class="token punctuation">]</span> 账号名称 文件或目录
+<span class="token function">chown</span> <span class="token punctuation">[</span>-R<span class="token punctuation">]</span> 账号名称:用户组名称 文件或目录
+<span class="token function">chmod</span> <span class="token punctuation">[</span>-R<span class="token punctuation">]</span> xyz 文件或者目录</code></pre>
 <p>-R进行递归(recursive)修改,即连同子目录下的所有文件,目录都更新成为这个用户组(用户)，简言之,就是修改目录内所有文件。</p>
 <p><img src="https://img-blog.csdnimg.cn/20200224134116955.png" alt="在这里插入图片描述"> <img src="https://img-blog.csdnimg.cn/20200224133722573.png" alt="在这里插入图片描述"> <img src="https://img-blog.csdnimg.cn/2020022413385138.png" alt="在这里插入图片描述"> </p>
 <p><em>用户组信息在  <strong>/etc/group</strong> 下。</em>   <em>用户信息在  <strong>/home</strong> 下,或者到  <strong>/etc/passwd</strong> 也可以查看。</em> </p>
@@ -523,27 +522,24 @@ chmod [-R] xyz 文件或者目录
 <p>例如，我们要把1.py权限修改为【-rwxrwxrwx】 </p>
 <p><img src="https://img-blog.csdnimg.cn/20200224140054988.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzODI2MjEy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"> </p>
 <p><strong>chmod</strong>还有如下使用方法：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:center">chmod<br></th>
-<th style="text-align:center">u<br> g <br>  o <br>  a <br></th>
-<th style="text-align:center">+(加入)<br> -(移除)<br> =(设置) <br></th>
-<th style="text-align:center">r<br>   w <br>   x <br></th>
-<th style="text-align:center">文件或目录</th>
+<th align="center">chmod<br></th>
+<th align="center">u<br> g <br>  o <br>  a <br></th>
+<th align="center">+(加入)<br> -(移除)<br> =(设置) <br></th>
+<th align="center">r<br>   w <br>   x <br></th>
+<th align="center">文件或目录</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <ul>
 <li>u(user)用户权限</li>
 <li>g(group)组成员权限</li>
@@ -552,7 +548,8 @@ chmod [-R] xyz 文件或者目录
 </ul>
 <p>每天一个linux终端命令,积少成多,希望大家越来越优秀!</p>
 <p><strong>才疏学浅，望雅正！</strong></p>
-<valine></valine>
+<p><valine></valine></p>
+
             </div>
             <hr/>
 
@@ -1105,27 +1102,21 @@ chmod [-R] xyz 文件或者目录
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/13/linux/2020/mei-tian-yi-ge-linux-zhong-duan-ming-ling-ls-ming-ling-3/">
+                <a href="/2020/05/13/linux/2020/mei-tian-yi-ge-linux-zhong-duan-ming-ling-shutdown-ming-ling-2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="每天一个linux终端命令ls命令(3)">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="每天一个linux终端命令shutdown命令(2)">
                         
-                        <span class="card-title">每天一个linux终端命令ls命令(3)</span>
+                        <span class="card-title">每天一个linux终端命令shutdown命令(2)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            凡心所向，素履可往
-ls 即list,译为列举。
-ls 可带参数,也可不带参数。可带的参数很多,这里只列举最常用的几种,有特殊需求可使用man或者—help命令进行参考。
-man ls
-或者
-ls --help
-ls [-lha]
-
-参数介
+                            我不树敌,敌自树
+shutdown中文就是关机的意思。
+由于linux的关机和重新启动操作是很重大的系统操作,所以一般只有root(超级用户)才能执行,不过在一些linux发行版中,我们可以使用sudo增加用户权限来执行这些需要root身份
                         
                     </div>
                     <div class="publish-info">
@@ -1362,7 +1353,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

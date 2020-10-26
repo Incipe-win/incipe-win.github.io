@@ -510,38 +510,34 @@
 <li>如果32位的二进制地址以110开头，就是C类地址。</li>
 </ul>
 <p>三类网络地址范围</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:center">地址类</th>
-<th style="text-align:center">二进制地址前几位值</th>
-<th style="text-align:center">点分十进制地址中的第一个字段</th>
-<th style="text-align:center">排除地址</th>
+<th align="center">地址类</th>
+<th align="center">二进制地址前几位值</th>
+<th align="center">点分十进制地址中的第一个字段</th>
+<th align="center">排除地址</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">A</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0~127</td>
-<td style="text-align:center">10.0.0.0~10.255.255.255 <br>127.0.0.0~127.255.255.255</td>
+<tbody><tr>
+<td align="center">A</td>
+<td align="center">0</td>
+<td align="center">0~127</td>
+<td align="center">10.0.0.0<del>10.255.255.255 <br>127.0.0.0</del>127.255.255.255</td>
 </tr>
 <tr>
-<td style="text-align:center">B</td>
-<td style="text-align:center">10</td>
-<td style="text-align:center">128~191</td>
-<td style="text-align:center">172.16.0.0~172.31.255.255</td>
+<td align="center">B</td>
+<td align="center">10</td>
+<td align="center">128~191</td>
+<td align="center">172.16.0.0~172.31.255.255</td>
 </tr>
 <tr>
-<td style="text-align:center">C</td>
-<td style="text-align:center">110</td>
-<td style="text-align:center">192~223</td>
-<td style="text-align:center">192.168.0.0~192.169.255.255</td>
+<td align="center">C</td>
+<td align="center">110</td>
+<td align="center">192~223</td>
+<td align="center">192.168.0.0~192.169.255.255</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>此外，还有特殊用途的D类和E类地址</p>
 <ul>
 <li>D类IP地址，前4位总是1110，对应于十进制的224~239，一般用于多点广播。</li>
@@ -562,8 +558,8 @@
 <ul>
 <li><p>知名端口，是众所周知的端口号，范围从0到1023，如果一个程序需要使用知名端口需要有root权限。</p>
 <pre><code>80端口分配给HTTP服务
-21端口分配给FTP服务
-</code></pre></li>
+21端口分配给FTP服务</code></pre>
+</li>
 <li><p>动态端口，范围是从1024到65535，动态分配是指当一个系统程序或应用程序程序需要网络通信时，它向主机申请一个端口，主机从可用的端口号中分配一个供它使用。</p>
 </li>
 </ul>
@@ -1463,7 +1459,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

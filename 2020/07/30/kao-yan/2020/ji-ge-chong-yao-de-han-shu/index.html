@@ -478,7 +478,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    333
+                    344
                 </div>
                 
 
@@ -500,14 +500,26 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="几个重要的函数"><a href="#几个重要的函数" class="headerlink" title="几个重要的函数"></a>几个重要的函数</h2><h3 id="Ⅰ-绝对值函数"><a href="#Ⅰ-绝对值函数" class="headerlink" title="Ⅰ. 绝对值函数"></a>Ⅰ. 绝对值函数</h3><script type="math/tex; mode=display">f(x)=\left|x\right| = \left\{ \begin{aligned} -x, x < 0 \\ x, x \geq 0 \end{aligned} \right. = \left\{ \begin{aligned} -x, x < 0 \\ 0, x = 0 \\ -x, x < 0 \end{aligned} \right.</script><p>连续不一定可导，可导一定连续。</p>
-<h3 id="Ⅱ-最值函数"><a href="#Ⅱ-最值函数" class="headerlink" title="Ⅱ. 最值函数"></a>Ⅱ. 最值函数</h3><script type="math/tex; mode=display">U = \max \left\{f(x), g(x)\}\right.\\ V = \min\left\{f(x), g(x)\}\right.</script><p>展开得到：</p>
-<script type="math/tex; mode=display">U = \frac{f(x) + g(x) + \left \vert f(x) - g(x) \right\vert}{2} \\ V = \frac{f(x) + g(x) - \left \vert f(x) - g(x) \right\vert}{2}</script><p>可以推出：</p>
-<script type="math/tex; mode=display">U + V = f(x) + g(x) \\ U - V = f(x) - g(x) \\ U \cdot V = f(x) \cdot g(x)</script><h3 id="Ⅲ-符号函数"><a href="#Ⅲ-符号函数" class="headerlink" title="Ⅲ. 符号函数"></a>Ⅲ. 符号函数</h3><script type="math/tex; mode=display">f(x) = sgn \ x = \left \{ \begin{aligned} -1, x < 0 \\ 0, x = 0 \\ 1, x > 0 \end{aligned}\right.</script><h3 id="Ⅳ-取整函数"><a href="#Ⅳ-取整函数" class="headerlink" title="Ⅳ. 取整函数"></a>Ⅳ. 取整函数</h3><script type="math/tex; mode=display">f(x) = \left \lfloor x \right \rfloor</script><p>不超过x的最大整数。</p>
+                <h2 id="几个重要的函数"><a href="#几个重要的函数" class="headerlink" title="几个重要的函数"></a>几个重要的函数</h2><h3 id="Ⅰ-绝对值函数"><a href="#Ⅰ-绝对值函数" class="headerlink" title="Ⅰ. 绝对值函数"></a>Ⅰ. 绝对值函数</h3><p>$$ f(x)=\left|x\right| = \left{ \begin{aligned} -x, x &lt; 0 \ x, x \geq 0 \end{aligned} \right. = \left{ \begin{aligned} -x, x &lt; 0 \ 0, x = 0 \ -x, x &lt; 0 \end{aligned} \right.$$</p>
+<p>连续不一定可导，可导一定连续。</p>
+<h3 id="Ⅱ-最值函数"><a href="#Ⅱ-最值函数" class="headerlink" title="Ⅱ. 最值函数"></a>Ⅱ. 最值函数</h3><p>$$U = \max \left{f(x), g(x)}\right.\ V = \min\left{f(x), g(x)}\right.$$</p>
+<p>展开得到：</p>
+<p>$$U = \frac{f(x) + g(x) + \left \vert f(x) - g(x) \right\vert}{2} \ V = \frac{f(x) + g(x) - \left \vert f(x) - g(x) \right\vert}{2}$$</p>
 <p>可以推出：</p>
-<script type="math/tex; mode=display">x - 1 < \left \lfloor x\right \rfloor \leq x \\ \left \lfloor x + n\right \rfloor = \left \lfloor x \right \rfloor + n, n是整数</script><h3 id="Ⅴ-分段函数"><a href="#Ⅴ-分段函数" class="headerlink" title="Ⅴ. 分段函数"></a>Ⅴ. 分段函数</h3><script type="math/tex; mode=display">f(x) = \left \{ \begin{aligned} f(x), x \leq x_0 \\ g(x), x > x_0 \end{aligned}\right.</script><p>或</p>
-<script type="math/tex; mode=display">f(x) = \left \{ \begin{aligned} f(x), x < x_0 \\ a, x = x_0 \\ g(x), x > x_0\end{aligned} \right.</script><h3 id="Ⅵ-狄利克雷函数"><a href="#Ⅵ-狄利克雷函数" class="headerlink" title="Ⅵ. 狄利克雷函数"></a>Ⅵ. 狄利克雷函数</h3><script type="math/tex; mode=display">D(x) = \left \{ \begin{aligned} 1 , x \in \mathbb{Q} \\ 0 , x \in \mathbb{Q}^\complement \end{aligned} \right. ,\qquad \mathbb{Q}表示有理数, \mathbb{Q}^\complement表示有理数的补集</script><h3 id="Ⅶ-幂指函数"><a href="#Ⅶ-幂指函数" class="headerlink" title="Ⅶ. 幂指函数"></a>Ⅶ. 幂指函数</h3><script type="math/tex; mode=display">f(x) = u(x)^{v(x)}, u(x) > 0, 且u(x) \neq 1</script><p>可以推出：</p>
-<script type="math/tex; mode=display">u(x)^{v(x)} = e^{v(x) \cdot \ln u(x)}</script><p> 用于幂指函数求导。</p>
+<p>$$U + V = f(x) + g(x) \ U - V = f(x) - g(x) \ U \cdot V = f(x) \cdot g(x)$$</p>
+<h3 id="Ⅲ-符号函数"><a href="#Ⅲ-符号函数" class="headerlink" title="Ⅲ. 符号函数"></a>Ⅲ. 符号函数</h3><p> $$f(x) = sgn \ x = \left { \begin{aligned} -1, x &lt; 0 \ 0, x = 0 \ 1, x &gt; 0 \end{aligned}\right.$$</p>
+<h3 id="Ⅳ-取整函数"><a href="#Ⅳ-取整函数" class="headerlink" title="Ⅳ. 取整函数"></a>Ⅳ. 取整函数</h3><p>$$f(x) = \left \lfloor x \right \rfloor$$</p>
+<p>不超过x的最大整数。</p>
+<p>可以推出：</p>
+<p>$$x - 1 &lt; \left \lfloor x\right \rfloor \leq x \ \left \lfloor x + n\right \rfloor = \left \lfloor x \right \rfloor + n, n是整数$$</p>
+<h3 id="Ⅴ-分段函数"><a href="#Ⅴ-分段函数" class="headerlink" title="Ⅴ. 分段函数"></a>Ⅴ. 分段函数</h3><p>$$f(x) = \left { \begin{aligned} f(x), x \leq x_0 \ g(x), x &gt; x_0 \end{aligned}\right.$$</p>
+<p>或</p>
+<p>$$f(x) = \left { \begin{aligned} f(x), x &lt; x_0 \ a, x = x_0 \ g(x), x &gt; x_0\end{aligned} \right.$$</p>
+<h3 id="Ⅵ-狄利克雷函数"><a href="#Ⅵ-狄利克雷函数" class="headerlink" title="Ⅵ. 狄利克雷函数"></a>Ⅵ. 狄利克雷函数</h3><p>$$D(x) = \left { \begin{aligned} 1 , x \in \mathbb{Q} \ 0 , x \in \mathbb{Q}^\complement \end{aligned} \right. ,\qquad \mathbb{Q}表示有理数, \mathbb{Q}^\complement表示有理数的补集$$</p>
+<h3 id="Ⅶ-幂指函数"><a href="#Ⅶ-幂指函数" class="headerlink" title="Ⅶ. 幂指函数"></a>Ⅶ. 幂指函数</h3><p>$$f(x) = u(x)^{v(x)}, u(x) &gt; 0, 且u(x) \neq 1$$</p>
+<p>可以推出：</p>
+<p>$$u(x)^{v(x)} = e^{v(x) \cdot \ln u(x)}$$</p>
+<p> 用于幂指函数求导。</p>
 
             </div>
             <hr/>
@@ -1312,7 +1324,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

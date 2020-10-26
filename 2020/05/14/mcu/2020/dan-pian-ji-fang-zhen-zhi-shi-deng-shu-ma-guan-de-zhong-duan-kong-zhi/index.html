@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    393
+                    396
                 </div>
                 
 
@@ -508,11 +508,11 @@
 <li><strong>LED-RED</strong> </li>
 <li><strong>RES</strong></li>
 <li><strong>BUTTON</strong></li>
-<li><strong>RESPACK-8</strong></li>
+<li> <strong>RESPACK-8</strong></li>
 </ol>
 <h2 id="开始动手"><a href="#开始动手" class="headerlink" title="开始动手"></a>开始动手</h2><h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><p><img src="https://imgkr.cn-bj.ufileos.com/7fcb3e84-a887-41c0-8e5a-42c81a6253c8.png" alt="流程图"></p>
 <h3 id="仿真图"><a href="#仿真图" class="headerlink" title="仿真图"></a>仿真图</h3><p><img src="https://imgkr.cn-bj.ufileos.com/7dc3fbe3-4497-470a-a6fd-19c08cefbcec.png" alt="仿真图"></p>
-<h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><h4 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h4><pre class=" language-lang-assembly"><code class="language-lang-assembly">    ORG     0000H
+<h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><h4 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h4><pre class=" language-assembly"><code class="language-assembly">    ORG     0000H
     LJMP    START
     ORG     0003H
     LJMP    INT_0
@@ -565,46 +565,42 @@ CONTINUE:
 
 TABLE: 
     DB 3FH, 06H, 5BH, 4FH, 66H, 6DH, 7DH, 07H, 7FH, 6FH, 77H, 7CH, 58H, 5EH, 79H, 71H
-END
-</code></pre>
-<h4 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h4><pre class=" language-lang-c"><code class="language-lang-c">#include <reg51.h>
+END</code></pre>
+<h4 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h4><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;reg51.h></span></span>
 
-unsigned char led_mod[] = {0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07,
-                           0x7f, 0x6f, 0x77, 0x7c, 0x58, 0x5e, 0x79, 0x71};
-unsigned char count = 0;
-sbit P0_4 = P0 ^ 4;
+<span class="token keyword">unsigned</span> <span class="token keyword">char</span> led_mod<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0x3f</span><span class="token punctuation">,</span> <span class="token number">0x06</span><span class="token punctuation">,</span> <span class="token number">0x5b</span><span class="token punctuation">,</span> <span class="token number">0x4f</span><span class="token punctuation">,</span> <span class="token number">0x66</span><span class="token punctuation">,</span> <span class="token number">0x6d</span><span class="token punctuation">,</span> <span class="token number">0x7d</span><span class="token punctuation">,</span> <span class="token number">0x07</span><span class="token punctuation">,</span>
+                           <span class="token number">0x7f</span><span class="token punctuation">,</span> <span class="token number">0x6f</span><span class="token punctuation">,</span> <span class="token number">0x77</span><span class="token punctuation">,</span> <span class="token number">0x7c</span><span class="token punctuation">,</span> <span class="token number">0x58</span><span class="token punctuation">,</span> <span class="token number">0x5e</span><span class="token punctuation">,</span> <span class="token number">0x79</span><span class="token punctuation">,</span> <span class="token number">0x71</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">unsigned</span> <span class="token keyword">char</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+sbit P0_4 <span class="token operator">=</span> P0 <span class="token operator">^</span> <span class="token number">4</span><span class="token punctuation">;</span>
 
-void INT_0SRV() interrupt 0 { P0_4 = ~P0_4; }
+<span class="token keyword">void</span> <span class="token function">INT_0SRV</span><span class="token punctuation">(</span><span class="token punctuation">)</span> interrupt <span class="token number">0</span> <span class="token punctuation">{</span> P0_4 <span class="token operator">=</span> <span class="token operator">~</span>P0_4<span class="token punctuation">;</span> <span class="token punctuation">}</span>
 
-void INT_1SRV() interrupt 2 {
-  count++;
-  if (count == 16)
-    count = 1;
-  P2 = led_mod[count];
-}
-void main(void) {
-  P2 = 0x00;
-  P0_4 = 0x01;
-  EA = 1;
-  EX0 = 1;
-  EX1 = 1;
-  IT1 = 1;
-  IT0 = 1;
-  while (1) {
-        ;
-    }
-}
-</code></pre>
+<span class="token keyword">void</span> <span class="token function">INT_1SRV</span><span class="token punctuation">(</span><span class="token punctuation">)</span> interrupt <span class="token number">2</span> <span class="token punctuation">{</span>
+  count<span class="token operator">++</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>count <span class="token operator">==</span> <span class="token number">16</span><span class="token punctuation">)</span>
+    count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  P2 <span class="token operator">=</span> led_mod<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  P2 <span class="token operator">=</span> <span class="token number">0x00</span><span class="token punctuation">;</span>
+  P0_4 <span class="token operator">=</span> <span class="token number">0x01</span><span class="token punctuation">;</span>
+  EA <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  EX0 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  EX1 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  IT1 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  IT0 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="仿真结果"><a href="#仿真结果" class="headerlink" title="仿真结果"></a>仿真结果</h2><p><img src="https://imgkr.cn-bj.ufileos.com/c6efcfac-a008-4240-854f-f804d5b9d6a2.gif" alt="仿真结果"></p>
 <h2 id="诗情画意"><a href="#诗情画意" class="headerlink" title="诗情画意"></a>诗情画意</h2><blockquote>
 <center>登飞来峰</center>
 <center>王安石</center>
 <center>飞来山上千寻塔，闻说鸡鸣见日升。</center>
 <center>不畏浮云遮望眼，自缘身在最高层。</center>
-
 </blockquote>
-<valine></valine>
-
+<p><valine></valine></p>
 
             </div>
             <hr/>
@@ -1104,33 +1100,80 @@ void main(void) {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/14/mcu/2020/dan-pian-ji-fang-zhen-dian-liang-na-zhan-deng/">
+                <a href="/2020/05/15/software/2020/jie-jue-bi-ji-ben-lian-jie-wifi-ti-shi-wu-fa-lian-jie-zhe-ge-wang-luo-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="单片机仿真循环点亮那盏灯">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="解决笔记本连接wifi提示无法连接这个网络问题">
                         
-                        <span class="card-title">单片机仿真循环点亮那盏灯</span>
+                        <span class="card-title">解决笔记本连接wifi提示无法连接这个网络问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            目标学单片机课程也有一段时间了，今天亲自动手做个超级 easy 的仿真试验，通过 keil + proteus 来点亮发光二极管。
-所需软件及芯片
-keil
-proteus
-AT89C51
-CAP
-CAP-ELEC 
-CRYSTAL
-LED
+                            这几天被这个该死的折腾的死去活来，网上找了好多教程，试过之后感觉都没用（其实很多还是有用的，讲的跟自己做的貌似不太一样）小声逼逼QAQ
+首先，很大概率上不是电脑硬件坏了。
+基本上都是驱动问题。
+win10自带的疑难杂症估计也解决不了。
+重置
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-14
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-15
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" class="post-category">
+                                    软件使用
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                        <span class="chip bg-color">博客</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/05/14/mcu/2020/dan-pian-ji-fang-zhen-zhi-shi-deng-kai-guan-kong-zhi-qi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="单片机仿真指示灯开关控制器">
+                        
+                        <span class="card-title">单片机仿真指示灯开关控制器</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            目标程序启动后， 8  只发光二极管先整体闪烁 3 次（即亮→暗→亮→暗→亮→暗，间隔时间以肉眼可观察到为准），然后根据开关状态控制对应发光二极管的亮灯状态，即开关闭合相应灯亮，开关断开相应灯灭，直至停止程序运行软件编程原理为：
+
+8 只发
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1148,64 +1191,6 @@ LED
                     
                     <a href="/tags/MCU/">
                         <span class="chip bg-color">MCU</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/05/14/mcu/2020/ru-he-yong-proteus-fang-zhen-8086/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="如何用proteus仿真8086">
-                        
-                        <span class="card-title">如何用proteus仿真8086</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            岁月不饶人，我亦未曾饶过岁月。
-1.需要的工具proteus
-过低版本不可以仿真8086，请下载7.8版本及以上的
-下载地址(附教程)
-提取码：rh8j
-emu8086
-官网地址
-网盘地址
-提取码：j5qn
-2.编译汇编代码打开emu808
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-14
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" class="post-category">
-                                    软件使用
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/IOT/">
-                        <span class="chip bg-color">IOT</span>
                     </a>
                     
                 </div>
@@ -1419,7 +1404,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

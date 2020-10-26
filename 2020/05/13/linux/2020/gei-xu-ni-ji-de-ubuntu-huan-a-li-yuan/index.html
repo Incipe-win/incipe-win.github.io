@@ -503,26 +503,26 @@
 <p>然后把里面的东西全删除，</p>
 <p>我们来到</p>
 <p>找到Ubuntu，把里面内容换成如下：</p>
-<pre class=" language-lang-c"><code class="language-lang-c">deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+<pre class=" language-c"><code class="language-c">deb http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>ubuntu<span class="token operator">/</span> bionic main restricted universe multiverse
+deb<span class="token operator">-</span>src http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>ubuntu<span class="token operator">/</span> bionic main restricted universe multiverse
 
-deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>ubuntu<span class="token operator">/</span> bionic<span class="token operator">-</span>security main restricted universe multiverse
+deb<span class="token operator">-</span>src http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>ubuntu<span class="token operator">/</span> bionic<span class="token operator">-</span>security main restricted universe multiverse
 
-deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>ubuntu<span class="token operator">/</span> bionic<span class="token operator">-</span>updates main restricted universe multiverse
+deb<span class="token operator">-</span>src http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>ubuntu<span class="token operator">/</span> bionic<span class="token operator">-</span>updates main restricted universe multiverse
 
-deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>ubuntu<span class="token operator">/</span> bionic<span class="token operator">-</span>proposed main restricted universe multiverse
+deb<span class="token operator">-</span>src http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>ubuntu<span class="token operator">/</span> bionic<span class="token operator">-</span>proposed main restricted universe multiverse
 
-deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
-</code></pre>
+deb http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>ubuntu<span class="token operator">/</span> bionic<span class="token operator">-</span>backports main restricted universe multiverse
+deb<span class="token operator">-</span>src http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>ubuntu<span class="token operator">/</span> bionic<span class="token operator">-</span>backports main restricted universe multiverse</code></pre>
 <p>然后</p>
 <pre><code>sudo apt-get update
-sudo apt-get upgrade
-</code></pre><p>就OK了。</p>
-<valine></valine>
+sudo apt-get upgrade</code></pre>
+<p>就OK了。</p>
+<p><valine></valine></p>
+
             </div>
             <hr/>
 
@@ -1021,21 +1021,21 @@ sudo apt-get upgrade
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/13/linux/2020/mei-tian-yi-ge-linux-zhong-duan-ming-ling-shutdown-ming-ling-2/">
+                <a href="/2020/05/13/linux/2020/mei-tian-yi-ge-linux-zhong-duan-ming-ling-man-ming-ling/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="每天一个linux终端命令shutdown命令(2)">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="每天一个linux终端命令man命令">
                         
-                        <span class="card-title">每天一个linux终端命令shutdown命令(2)</span>
+                        <span class="card-title">每天一个linux终端命令man命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             我不树敌,敌自树
-shutdown中文就是关机的意思。
-由于linux的关机和重新启动操作是很重大的系统操作,所以一般只有root(超级用户)才能执行,不过在一些linux发行版中,我们可以使用sudo增加用户权限来执行这些需要root身份
+shutdown 中文就是关机的意思。
+由于linux的关机和重新启动操作是很重大的系统操作,所以一般只有 root ( 超级用户 )才能执行,不过在一些linux发行版中,我们可以使用sudo增加用户权限来执行这些需要 
                         
                     </div>
                     <div class="publish-info">
@@ -1086,9 +1086,9 @@ shutdown中文就是关机的意思。
                         
                             讲在前面的话不建议大家用虚拟机ubuntu18.04LTS安装Tinyos，很多坑。
 弄了好久，最后编译还各种无法解决的错误，还望各位不吝赐教！
-Vmware下载)
+Vmware下载
 推荐系统Debain
-准备环境1. 搭建java环境Ubuntu(Debi
+准备环境1. 搭建java环境Ubuntu(Debia
                         
                     </div>
                     <div class="publish-info">
@@ -1325,7 +1325,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

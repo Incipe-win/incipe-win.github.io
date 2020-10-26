@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    738
+                    740
                 </div>
                 
 
@@ -504,111 +504,108 @@
 <p>示例：</p>
 <blockquote>
 <pre><code>输入：(7 -&gt; 2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
-输出：7 -&gt; 8 -&gt; 0 -&gt; 7
-</code></pre></blockquote>
+输出：7 -&gt; 8 -&gt; 0 -&gt; 7</code></pre>
+</blockquote>
 </blockquote>
 <h2 id="思路及解法"><a href="#思路及解法" class="headerlink" title="思路及解法"></a>思路及解法</h2><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这个题跟<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/add-two-numbers/">2. 两数相加</a>基本一样。</p>
 <p>一个是正着算，另一个是倒着算。</p>
 <p>那么我们只要把这两个链表翻转就好了！</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class=" language-lang-cpp"><code class="language-lang-cpp">/**
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
  *     ListNode *next;
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
- */
-class Solution {
-public:
-  ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
-    l1 = reverse(l1);
-    l2 = reverse(l2);
-    int carry = 0;
-    ListNode *ans = nullptr;
-    while (l1 != nullptr || l2 != nullptr || carry != 0) {
-      int a = (l1 != nullptr) ? l1->val : 0;
-      int b = (l2 != nullptr) ? l2->val : 0;
-      int sum = a + b + carry;
-      carry = sum / 10;
-      sum %= 10;
-      auto cur = new ListNode(sum);
-      cur->next = ans;
-      ans = cur;
-      if (l1 != nullptr) {
-        l1 = l1->next;
-      }
-      if (l2 != nullptr) {
-        l2 = l2->next;
-      }
-    }
-    return ans;
-  }
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+  ListNode <span class="token operator">*</span><span class="token function">addTwoNumbers</span><span class="token punctuation">(</span>ListNode <span class="token operator">*</span>l1<span class="token punctuation">,</span> ListNode <span class="token operator">*</span>l2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    l1 <span class="token operator">=</span> <span class="token function">reverse</span><span class="token punctuation">(</span>l1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    l2 <span class="token operator">=</span> <span class="token function">reverse</span><span class="token punctuation">(</span>l2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> carry <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    ListNode <span class="token operator">*</span>ans <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>l1 <span class="token operator">!=</span> <span class="token keyword">nullptr</span> <span class="token operator">||</span> l2 <span class="token operator">!=</span> <span class="token keyword">nullptr</span> <span class="token operator">||</span> carry <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token punctuation">(</span>l1 <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token operator">?</span> l1<span class="token operator">-</span><span class="token operator">></span>val <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token punctuation">(</span>l2 <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token operator">?</span> l2<span class="token operator">-</span><span class="token operator">></span>val <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">int</span> sum <span class="token operator">=</span> a <span class="token operator">+</span> b <span class="token operator">+</span> carry<span class="token punctuation">;</span>
+      carry <span class="token operator">=</span> sum <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">;</span>
+      sum <span class="token operator">%</span><span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+      <span class="token keyword">auto</span> cur <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">ListNode</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      cur<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> ans<span class="token punctuation">;</span>
+      ans <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>l1 <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        l1 <span class="token operator">=</span> l1<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>l2 <span class="token operator">!=</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        l2 <span class="token operator">=</span> l2<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  ListNode *reverse(ListNode *head) {
-    ListNode *node = nullptr;
-    while (head) {
-      ListNode *cur = head->next; //保存head->next结点信息
-      head->next = node;          //反转指向
-      node = head;                //后移node
-      head = cur;                 //后移head
-    }
-    return node;
-  }
-};
-</code></pre>
+  ListNode <span class="token operator">*</span><span class="token function">reverse</span><span class="token punctuation">(</span>ListNode <span class="token operator">*</span>head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ListNode <span class="token operator">*</span>node <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      ListNode <span class="token operator">*</span>cur <span class="token operator">=</span> head<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//保存head->next结点信息</span>
+      head<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> node<span class="token punctuation">;</span>          <span class="token comment" spellcheck="true">//反转指向</span>
+      node <span class="token operator">=</span> head<span class="token punctuation">;</span>                <span class="token comment" spellcheck="true">//后移node</span>
+      head <span class="token operator">=</span> cur<span class="token punctuation">;</span>                 <span class="token comment" spellcheck="true">//后移head</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> node<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p>个人觉得最难的是这几行代码，初次写代码也是不易想到的。</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">      auto cur = new ListNode(sum);
-      cur->next = ans;
-      ans = cur;
-</code></pre>
+<pre class=" language-cpp"><code class="language-cpp">      <span class="token keyword">auto</span> cur <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">ListNode</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      cur<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> ans<span class="token punctuation">;</span>
+      ans <span class="token operator">=</span> cur<span class="token punctuation">;</span></code></pre>
 <p>注意：这里的 <strong><em>new ListNode(sum)</em></strong> 不是指开辟一个大小为 <strong>sum</strong> 的链表！</p>
 <hr>
 <p><strong><em>new ListNode(sum)</em></strong>不仅仅为对象 <strong>ListNode</strong>在堆上分配了空间， 而且还调用了  <strong>ListNode</strong> 的默认拷贝构造函数，生成了这个对象。</p>
 <p>而 <strong><em>new List Node[sum]</em></strong> 仅仅分配了空间。</p>
 <hr>
 <p>题目要求不翻转链表，那么我们用栈来实现即可！</p>
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><pre class=" language-lang-cpp"><code class="language-lang-cpp">/**
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
  *     ListNode *next;
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
- */
-class Solution {
-public:
-  ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
-    stack<int> s1, s2;
-    while (l1) {
-      s1.push(l1->val);
-      l1 = l1->next;
-    }
-    while (l2) {
-      s2.push(l2->val);
-      l2 = l2->next;
-    }
-    int carry = 0;
-    ListNode *ans = nullptr;
-    while (!s1.empty() || !s2.empty() || carry != 0) {
-      int a = (!s1.empty()) ? s1.top() : 0;
-      int b = (!s2.empty()) ? s2.top() : 0;
-      int sum = a + b + carry;
-      carry = sum / 10;
-      sum %= 10;
-      auto cur = new ListNode(sum);
-      cur->next = ans;
-      ans = cur;
-      if (!s1.empty()) {
-        s1.pop();
-      }
-      if (!s2.empty()) {
-        s2.pop();
-      }
-    }
-    return ans;
-  }
-};
-</code></pre>
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+  ListNode <span class="token operator">*</span><span class="token function">addTwoNumbers</span><span class="token punctuation">(</span>ListNode <span class="token operator">*</span>l1<span class="token punctuation">,</span> ListNode <span class="token operator">*</span>l2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    stack<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> s1<span class="token punctuation">,</span> s2<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>l1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      s1<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>l1<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      l1 <span class="token operator">=</span> l1<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>l2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      s2<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>l2<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      l2 <span class="token operator">=</span> l2<span class="token operator">-</span><span class="token operator">></span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">int</span> carry <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    ListNode <span class="token operator">*</span>ans <span class="token operator">=</span> <span class="token keyword">nullptr</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>s1<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token operator">!</span>s2<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> carry <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">!</span>s1<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">?</span> s1<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">!</span>s2<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">?</span> s2<span class="token punctuation">.</span><span class="token function">top</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token keyword">int</span> sum <span class="token operator">=</span> a <span class="token operator">+</span> b <span class="token operator">+</span> carry<span class="token punctuation">;</span>
+      carry <span class="token operator">=</span> sum <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">;</span>
+      sum <span class="token operator">%</span><span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+      <span class="token keyword">auto</span> cur <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">ListNode</span><span class="token punctuation">(</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      cur<span class="token operator">-</span><span class="token operator">></span>next <span class="token operator">=</span> ans<span class="token punctuation">;</span>
+      ans <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>s1<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        s1<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>s2<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        s2<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>许多的链表题目都可以用递归来实现。</p>
 <p>何时使用递归(笔者的一点点看法)</p>
 <ol>
@@ -622,17 +619,18 @@ public:
 
 <center>刘禹锡</center>
 
-<p></p><center>山不在高，有仙则名。</center> <p></p>
-<p></p><center>水不在深，有龙则灵。</center> <p></p>
-<p></p><center>斯是陋室，唯吾德馨。</center><p></p>
-<p></p><center>苔痕上阶绿，草色入帘青。</center><p></p>
-<p></p><center>谈笑有鸿儒，往来无白丁。</center><p></p>
-<p></p><center>可以调素琴，阅金经。</center><p></p>
-<p></p><center>无丝竹之乱耳，无案牍之劳形。</center><p></p>
-<p></p><center>南阳诸葛庐，西蜀子云亭。</center><p></p>
-<p></p><center>孔子云：何陋之有？<p></p>
+<center>山不在高，有仙则名。</center> 
+<center>水不在深，有龙则灵。</center> 
+<center>斯是陋室，唯吾德馨。</center>
+<center>苔痕上阶绿，草色入帘青。</center>
+<center>谈笑有鸿儒，往来无白丁。</center>
+<center>可以调素琴，阅金经。</center>
+<center>无丝竹之乱耳，无案牍之劳形。</center>
+<center>南阳诸葛庐，西蜀子云亭。</center>
+<center>孔子云：何陋之有？
 </center></blockquote>
-<valine></valine>
+<p><valine></valine></p>
+
             </div>
             <hr/>
 
@@ -1443,7 +1441,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    441
+                    454
                 </div>
                 
 
@@ -503,17 +503,17 @@
 <p>输入: [1,2,3,null,5,null,4]</p>
 <p>输出: [1, 3, 4]</p>
 <p>解释:</p>
-<p>1            &lt;—-</p>
+<p>1            &lt;—</p>
 <p>/   \</p>
-<p>2     3         &lt;—-</p>
+<p>2     3         &lt;—</p>
 <p>\     \</p>
-<p>5     4       &lt;—-</p>
+<p>5     4       &lt;—</p>
 </blockquote>
 <p>来源：力扣（LeetCode）<br><br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-right-side-view">https://leetcode-cn.com/problems/binary-tree-right-side-view</a></p>
 </blockquote>
 <h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><p>二叉树题目，个人感觉要么 <strong>dfs</strong> ，要么 <strong>bfs</strong>。</p>
 <p><strong>dfs</strong> 就是前序遍历，后序遍历，中序遍历，<strong>bfs</strong> 就是层次遍历。</p>
-<h3 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h3><pre class=" language-lang-cpp"><code class="language-lang-cpp">/**
+<h3 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
  * Definition for a binary tree node.
  * struct TreeNode {
  *     int val;
@@ -521,31 +521,30 @@
  *     TreeNode *right;
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
- */
-class Solution {
-public:
-  vector<int> rightSideView(TreeNode *root) {
-    vector<int> ans;
-    if (root == nullptr) {
-      return ans;
-    }
-    dfs(root, ans, 0);
-    return ans;
-  }
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+  vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">rightSideView</span><span class="token punctuation">(</span>TreeNode <span class="token operator">*</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> ans<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> ans<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  void dfs(TreeNode *root, vector<int> &ans, int high) {
-    if (root == nullptr) {
-      return;
-    }
-    if (high == ans.size()) {
-      ans.emplace_back(root->val);
-    }
-    dfs(root->right, ans, high + 1);
-    dfs(root->left, ans, high + 1);
-  }
-};
-</code></pre>
-<h3 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h3><pre class=" language-lang-cpp"><code class="language-lang-cpp">/**
+  <span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span>TreeNode <span class="token operator">*</span>root<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">&amp;</span>ans<span class="token punctuation">,</span> <span class="token keyword">int</span> high<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>high <span class="token operator">==</span> ans<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      ans<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">,</span> ans<span class="token punctuation">,</span> high <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">,</span> ans<span class="token punctuation">,</span> high <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<h3 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
  * Definition for a binary tree node.
  * struct TreeNode {
  *     int val;
@@ -553,35 +552,34 @@ public:
  *     TreeNode *right;
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
- */
-class Solution {
-public:
-  vector<int> rightSideView(TreeNode *root) {
-    vector<int> ans;
-    if (!root) {
-      return ans;
-    }
-    queue<TreeNode *> que;
-    que.push(root);
-    while (!que.empty()) {
-      int size = que.size();
-      TreeNode *node = que.front();
-      ans.emplace_back(node->val);
-      while (size--) {
-        TreeNode *temp = que.front();
-        que.pop();
-        if (temp->right) {
-          que.push(temp->right);
-        }
-        if (temp->left) {
-          que.push(temp->left);
-        }
-      }
-    }
-    return ans;
-  }
-};
-</code></pre>
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+  vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">rightSideView</span><span class="token punctuation">(</span>TreeNode <span class="token operator">*</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> ans<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    queue<span class="token operator">&lt;</span>TreeNode <span class="token operator">*</span><span class="token operator">></span> que<span class="token punctuation">;</span>
+    que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>que<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> size <span class="token operator">=</span> que<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      TreeNode <span class="token operator">*</span>node <span class="token operator">=</span> que<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      ans<span class="token punctuation">.</span><span class="token function">emplace_back</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">while</span> <span class="token punctuation">(</span>size<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        TreeNode <span class="token operator">*</span>temp <span class="token operator">=</span> que<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        que<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>temp<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>temp<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>temp<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>temp<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p><strong>BFS</strong> 貌似都是套路步骤。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>还是要多刷题，刷多了很多都可以直接套板子。</p>
 <h2 id="诗情画意"><a href="#诗情画意" class="headerlink" title="诗情画意"></a>诗情画意</h2><blockquote>
@@ -589,9 +587,9 @@ public:
 <center>周敦颐</center>
 <center>水陆草木之花，可爱者盛蕃。晋陶渊明独爱菊；自李唐来，世人甚爱牡丹；予独爱莲之出淤泥而不染，濯清涟而不妖，中通外直，不蔓不枝，香远益清，亭亭净植，可远观而不可亵玩焉。</center>
 <center>予谓菊，花之隐逸者也；牡丹，花之富贵者也；莲，花之君子者也。噫！菊之爱，陶后鲜有闻；莲之爱，同予者何人？牡丹之爱，宜乎众矣。</center>
-
 </blockquote>
-<valine></valine>
+<p><valine></valine></p>
+
             </div>
             <hr/>
 
@@ -1398,7 +1396,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

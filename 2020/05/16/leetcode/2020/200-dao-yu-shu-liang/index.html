@@ -474,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    377
+                    527
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -524,54 +524,53 @@
 </blockquote>
 <h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><p>我估摸着扣哥还是放水了吧~</p>
 <p>这怕是每个人入门 <strong>dfs</strong> 的题目了吧？</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">//可以寻找的方向，左右上下
-int mvDistance[4][2] = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
+<pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">//可以寻找的方向，左右上下</span>
+<span class="token keyword">int</span> mvDistance<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-class Solution {
-public:
-  int numIslands(vector<vector<char>> &grid) {
-    int res = 0;
-    int rows = grid.size(); // grid的行
-    if (rows == 0) {
-      return res;
-    }
-    int cols = grid[0].size(); // grid的列
-    for (int i = 0; i < rows; ++i) {
-      for (int j = 0; j < cols; ++j) {
-        // 从1开始找
-        if (grid[i][j] == '1') {
-          dfs(i, j, grid, rows, cols);
-          // 把所有的1都找完了，说明找到了一块连着的1，就要加1
-          ++res;
-        }
-      }
-    }
-    return res;
-  }
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+  <span class="token keyword">int</span> <span class="token function">numIslands</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">>></span> <span class="token operator">&amp;</span>grid<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> rows <span class="token operator">=</span> grid<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// grid的行</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>rows <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">int</span> cols <span class="token operator">=</span> grid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// grid的列</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> rows<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> cols<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 从1开始找</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'1'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">dfs</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> grid<span class="token punctuation">,</span> rows<span class="token punctuation">,</span> cols<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token comment" spellcheck="true">// 把所有的1都找完了，说明找到了一块连着的1，就要加1</span>
+          <span class="token operator">++</span>res<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 
-  void dfs(int x, int y, vector<vector<char>> &grid, int rows, int cols) {
-    // 这个1我已经用过了，以后我不能再用了。
-    grid[x][y] = '0';
-    for (int i = 0; i < 4; ++i) {
-      //左右上下移动
-      int mx = x + mvDistance[i][0], my = y + mvDistance[i][1];
-      //如果左右上下有满足条件的1，就从当前1作为起点开始找
-      if (0 <= mx && mx < rows && 0 <= my && my < cols && grid[mx][my] == '1') {
-        dfs(mx, my, grid, rows, cols);
-      }
-    }
-  }
-};
-</code></pre>
+  <span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">>></span> <span class="token operator">&amp;</span>grid<span class="token punctuation">,</span> <span class="token keyword">int</span> rows<span class="token punctuation">,</span> <span class="token keyword">int</span> cols<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 这个1我已经用过了，以后我不能再用了。</span>
+    grid<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">//左右上下移动</span>
+      <span class="token keyword">int</span> mx <span class="token operator">=</span> x <span class="token operator">+</span> mvDistance<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> my <span class="token operator">=</span> y <span class="token operator">+</span> mvDistance<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">//如果左右上下有满足条件的1，就从当前1作为起点开始找</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">&lt;=</span> mx <span class="token operator">&amp;&amp;</span> mx <span class="token operator">&lt;</span> rows <span class="token operator">&amp;&amp;</span> <span class="token number">0</span> <span class="token operator">&lt;=</span> my <span class="token operator">&amp;&amp;</span> my <span class="token operator">&lt;</span> cols <span class="token operator">&amp;&amp;</span> grid<span class="token punctuation">[</span>mx<span class="token punctuation">]</span><span class="token punctuation">[</span>my<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'1'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>mx<span class="token punctuation">,</span> my<span class="token punctuation">,</span> grid<span class="token punctuation">,</span> rows<span class="token punctuation">,</span> cols<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>还是要多刷题，曾几何时，这种题我看都不敢看，虽然现在也还是很菜，但至少我敢看题目了。</p>
 <h2 id="诗情画意"><a href="#诗情画意" class="headerlink" title="诗情画意"></a>诗情画意</h2><blockquote>
 <center>蝶恋花</center>
 <center>晏殊</center>
 <center>槛菊愁烟兰泣露，罗慕轻寒，燕子双飞去。明月不谙离恨苦，斜光到晓穿朱户。</center>
 <center>昨夜西风凋碧树，独上高楼，望尽天涯路。欲寄彩笺兼尺素，山长水阔知何处？</center>
-
 </blockquote>
-<valine></valine>
+<p><valine></valine></p>
+
             </div>
             <hr/>
 
@@ -1377,7 +1376,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

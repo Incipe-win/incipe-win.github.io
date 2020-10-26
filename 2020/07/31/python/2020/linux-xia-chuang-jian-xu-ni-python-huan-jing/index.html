@@ -501,32 +501,25 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="为什么需要虚拟环境"><a href="#为什么需要虚拟环境" class="headerlink" title="为什么需要虚拟环境"></a>为什么需要虚拟环境</h2><p>简单来讲，就是因为不同的项目可能需要不同的python package。但是，往往安装了最新版本的package会覆盖掉原来的，导致原有的项目因为package不同而无法正常工作。最常用的一个办法就是使用 <strong>virtualenv</strong> 创建虚拟环境，虚拟环境允许我们重新安装package而不影响系统全局的python解释器的package。 我们可以创建多个虚拟环境，维护不同package版本的项目。</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre class=" language-lang-bash"><code class="language-lang-bash">sudo pip3 install virtualenv # 安装虚拟环境
-</code></pre>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pip3 <span class="token function">install</span> virtualenv <span class="token comment" spellcheck="true"># 安装虚拟环境</span></code></pre>
 <p> 安装了  <code>virtualenv</code> 之后就可以创建虚拟环境了，但是命令有点复杂，我们通过安装扩展包来简化操作。</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">sudo pip3 install virtualenvwrapper # 安装虚拟环境扩展包
-</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pip3 <span class="token function">install</span> virtualenvwrapper <span class="token comment" spellcheck="true"># 安装虚拟环境扩展包</span></code></pre>
 <h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>配置虚拟环境存放位置。</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">vim ~/.zshrc # 我使用的是zshrc，使用的bash改成bashrc
-# 在最后面添加
-export WORKON_HOME = $HOME/.virtualenv    # 新增环境变量WORKON_HOME
-source /usr/local/bin/virtualenvwrapper.sh # 使virtualenvwrapper命令生效
-</code></pre>
+<pre class=" language-bash"><code class="language-bash">vim ~/.zshrc <span class="token comment" spellcheck="true"># 我使用的是zshrc，使用的bash改成bashrc</span>
+<span class="token comment" spellcheck="true"># 在最后面添加</span>
+<span class="token function">export</span> WORKON_HOME <span class="token operator">=</span> <span class="token variable">$HOME</span>/.virtualenv    <span class="token comment" spellcheck="true"># 新增环境变量WORKON_HOME</span>
+<span class="token function">source</span> /usr/local/bin/virtualenvwrapper.sh <span class="token comment" spellcheck="true"># 使virtualenvwrapper命令生效</span></code></pre>
 <p> 退出 <code>~/.zshrc</code></p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">source ~/.zshrc # 使zshrc命令立即生效
-</code></pre>
-<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><pre class=" language-lang-bash"><code class="language-lang-bash">mkvirtualenv 虚拟环境名字 # 创建的使用的是python2的版本
-mkvirtualenv -p python3 虚拟环境名字 # 创建的是python3版本
-</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> ~/.zshrc <span class="token comment" spellcheck="true"># 使zshrc命令立即生效</span></code></pre>
+<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><pre class=" language-bash"><code class="language-bash">mkvirtualenv 虚拟环境名字 <span class="token comment" spellcheck="true"># 创建的使用的是python2的版本</span>
+mkvirtualenv -p python3 虚拟环境名字 <span class="token comment" spellcheck="true"># 创建的是python3版本</span></code></pre>
 <p>创建的虚拟环境可以到我们设置的 <code>~/.virtualenv</code> 目录下找到。</p>
-<h3 id="进入-退出虚拟环境工作"><a href="#进入-退出虚拟环境工作" class="headerlink" title="进入/退出虚拟环境工作"></a>进入/退出虚拟环境工作</h3><pre class=" language-lang-bash"><code class="language-lang-bash"># 进入虚拟环境
+<h3 id="进入-退出虚拟环境工作"><a href="#进入-退出虚拟环境工作" class="headerlink" title="进入/退出虚拟环境工作"></a>进入/退出虚拟环境工作</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 进入虚拟环境</span>
 workon 虚拟环境名
-# 退出当前虚拟环境
+<span class="token comment" spellcheck="true"># 退出当前虚拟环境</span>
 deactivate
-workon + 按两次tab键，显示当前所有的虚拟环境
-</code></pre>
-<h3 id="删除虚拟环境"><a href="#删除虚拟环境" class="headerlink" title="删除虚拟环境"></a>删除虚拟环境</h3><pre class=" language-lang-bash"><code class="language-lang-bash">rmvirtualenv 虚拟环境名
-</code></pre>
+workon + 按两次tab键，显示当前所有的虚拟环境</code></pre>
+<h3 id="删除虚拟环境"><a href="#删除虚拟环境" class="headerlink" title="删除虚拟环境"></a>删除虚拟环境</h3><pre class=" language-bash"><code class="language-bash">rmvirtualenv 虚拟环境名</code></pre>
 <h2 id="如何查看package包"><a href="#如何查看package包" class="headerlink" title="如何查看package包"></a>如何查看package包</h2><p>我们可以使用命令 <code>pip list</code> 或者 <code>pip freeze</code> 来显示当前python里面安装了哪些包。</p>
 <p>真实环境里面，package一般放在 <code>/usr/local/lib/</code> 路径下。</p>
 <p>虚拟环境，package就在 <code>~/.virtualenv/虚拟环境名/lib</code>   路径下。</p>
@@ -1048,7 +1041,7 @@ workon + 按两次tab键，显示当前所有的虚拟环境
                     <div class="summary block-with-text">
                         
                             原题
-Calculate a+b and output the sum in standard format — that is, the digits must be separated into groups of three by c
+Calculate a+b and output the sum in standard format – that is, the digits must be separated into groups of three by c
                         
                     </div>
                     <div class="publish-info">
@@ -1101,12 +1094,10 @@ Calculate a+b and output the sum in standard format — that is, the digits must
 位运算位运算符号
 
 
-
 符号
 c/cpp
 python
 含义
-
 
 
 
@@ -1116,7 +1107,7 @@ a &amp; b
 1 &amp; 1 = 1, 1 &amp; 0 = 0, 同1为1, 有0为0
 
 
-按
+按位或
                         
                     </div>
                     <div class="publish-info">
@@ -1353,7 +1344,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

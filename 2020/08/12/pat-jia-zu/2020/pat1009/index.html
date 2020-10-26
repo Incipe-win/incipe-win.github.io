@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    346
+                    396
                 </div>
                 
 
@@ -510,66 +510,65 @@
 </blockquote>
 </blockquote>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这就是多项式的乘法，翻译请看 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43826212/article/details/107752511">PAT1002</a></p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><pre class=" language-lang-cpp"><code class="language-lang-cpp">#include <algorithm>
-#include <cmath>
-#include <iostream>
-#include <map>
-#include <set>
-#include <string>
-#include <unordered_map>
-#include <unordered_set>
-#include <vector>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;algorithm></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cmath></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;map></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;set></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unordered_map></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unordered_set></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
 
-using namespace std;
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
-int main() {
-  // exp是指数, coe是系数
-  int n, m, exp;
-  float coe;
-  map<int, float> mp1;
-  map<int, float> mp2;
-  cin >> n;
-  for (int i = 0; i < n; ++i) {
-    cin >> exp >> coe;
-    mp1[exp] = coe;
-  }
-  cin >> m;
-  for (int i = 0; i < m; ++i) {
-    cin >> exp >> coe;
-    mp2[exp] = coe;
-  }
-  map<int, float, greater<int>> mp;
-  map<int, float>::iterator it1;
-  map<int, float>::iterator it2;
-  for (it1 = mp1.begin(); it1 != mp1.end(); ++it1) {
-    for (it2 = mp2.begin(); it2 != mp2.end(); ++it2) {
-      int exp = it1->first + it2->first;
-      float coe = it1->second * it2->second;
-      if (mp[exp] == 0) {
-        mp[exp] = coe;
-      } else {
-        mp[exp] += coe;
-      }
-    }
-  }
-  map<int, float, greater<int>>::iterator it;
-  int ans = 0;
-  for (it = mp.begin(); it != mp.end(); ++it) {
-    if (fabs(it->second - 0.0) < 0.000001) {
-      ++ans;
-    }
-  }
-  cout << ans;
-  for (it = mp.begin(); it != mp.end(); ++it) {
-    if (fabs(it->second - 0.0) < 0.000001) {
-      continue;
-    }
-    printf(" %d %.1f", it->first, it->second);
-  }
-  cout << endl;
-  return 0;
-}
-</code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// exp是指数, coe是系数</span>
+  <span class="token keyword">int</span> n<span class="token punctuation">,</span> m<span class="token punctuation">,</span> exp<span class="token punctuation">;</span>
+  <span class="token keyword">float</span> coe<span class="token punctuation">;</span>
+  map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">float</span><span class="token operator">></span> mp1<span class="token punctuation">;</span>
+  map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">float</span><span class="token operator">></span> mp2<span class="token punctuation">;</span>
+  cin <span class="token operator">>></span> n<span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cin <span class="token operator">>></span> exp <span class="token operator">>></span> coe<span class="token punctuation">;</span>
+    mp1<span class="token punctuation">[</span>exp<span class="token punctuation">]</span> <span class="token operator">=</span> coe<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  cin <span class="token operator">>></span> m<span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cin <span class="token operator">>></span> exp <span class="token operator">>></span> coe<span class="token punctuation">;</span>
+    mp2<span class="token punctuation">[</span>exp<span class="token punctuation">]</span> <span class="token operator">=</span> coe<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">float</span><span class="token punctuation">,</span> greater<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> mp<span class="token punctuation">;</span>
+  map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">float</span><span class="token operator">></span><span class="token operator">::</span>iterator it1<span class="token punctuation">;</span>
+  map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">float</span><span class="token operator">></span><span class="token operator">::</span>iterator it2<span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>it1 <span class="token operator">=</span> mp1<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it1 <span class="token operator">!=</span> mp1<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>it1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>it2 <span class="token operator">=</span> mp2<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it2 <span class="token operator">!=</span> mp2<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>it2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">int</span> exp <span class="token operator">=</span> it1<span class="token operator">-</span><span class="token operator">></span>first <span class="token operator">+</span> it2<span class="token operator">-</span><span class="token operator">></span>first<span class="token punctuation">;</span>
+      <span class="token keyword">float</span> coe <span class="token operator">=</span> it1<span class="token operator">-</span><span class="token operator">></span>second <span class="token operator">*</span> it2<span class="token operator">-</span><span class="token operator">></span>second<span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>mp<span class="token punctuation">[</span>exp<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        mp<span class="token punctuation">[</span>exp<span class="token punctuation">]</span> <span class="token operator">=</span> coe<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        mp<span class="token punctuation">[</span>exp<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> coe<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token keyword">float</span><span class="token punctuation">,</span> greater<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">::</span>iterator it<span class="token punctuation">;</span>
+  <span class="token keyword">int</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>it <span class="token operator">=</span> mp<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it <span class="token operator">!=</span> mp<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>it<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">fabs</span><span class="token punctuation">(</span>it<span class="token operator">-</span><span class="token operator">></span>second <span class="token operator">-</span> <span class="token number">0.0</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0.000001</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token operator">++</span>ans<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  cout <span class="token operator">&lt;&lt;</span> ans<span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>it <span class="token operator">=</span> mp<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> it <span class="token operator">!=</span> mp<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>it<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">fabs</span><span class="token punctuation">(</span>it<span class="token operator">-</span><span class="token operator">></span>second <span class="token operator">-</span> <span class="token number">0.0</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0.000001</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">continue</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" %d %.1f"</span><span class="token punctuation">,</span> it<span class="token operator">-</span><span class="token operator">></span>first<span class="token punctuation">,</span> it<span class="token operator">-</span><span class="token operator">></span>second<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr/>
@@ -1372,7 +1371,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

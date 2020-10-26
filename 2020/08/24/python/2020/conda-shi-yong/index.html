@@ -501,38 +501,28 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>参考我的这篇文章即可，<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43826212/article/details/108058020">Ubuntu20.04安装Anaconda</a></p>
-<h2 id="常见用法"><a href="#常见用法" class="headerlink" title="常见用法"></a>常见用法</h2><h3 id="Ⅰ-创建虚拟环境"><a href="#Ⅰ-创建虚拟环境" class="headerlink" title="Ⅰ. 创建虚拟环境"></a>Ⅰ. 创建虚拟环境</h3><pre class=" language-lang-bash"><code class="language-lang-bash">conda create --name name python=3.8
-</code></pre>
+<h2 id="常见用法"><a href="#常见用法" class="headerlink" title="常见用法"></a>常见用法</h2><h3 id="Ⅰ-创建虚拟环境"><a href="#Ⅰ-创建虚拟环境" class="headerlink" title="Ⅰ. 创建虚拟环境"></a>Ⅰ. 创建虚拟环境</h3><pre class=" language-bash"><code class="language-bash">conda create --name name python<span class="token operator">=</span>3.8</code></pre>
 <p><code>name</code> 就是你要创建的虚拟环境的名字，<code>python</code> 指定版本后，就会自动寻找这个版本的最新版本。</p>
-<h3 id="Ⅱ-激活环境"><a href="#Ⅱ-激活环境" class="headerlink" title="Ⅱ. 激活环境"></a>Ⅱ. 激活环境</h3><pre class=" language-lang-bash"><code class="language-lang-bash">activate name # windows
-source activate name # linux
-</code></pre>
+<h3 id="Ⅱ-激活环境"><a href="#Ⅱ-激活环境" class="headerlink" title="Ⅱ. 激活环境"></a>Ⅱ. 激活环境</h3><pre class=" language-bash"><code class="language-bash">activate name <span class="token comment" spellcheck="true"># windows</span>
+<span class="token function">source</span> activate name <span class="token comment" spellcheck="true"># linux</span></code></pre>
 <p>如果 <code>source activate name</code> 失效，说明找不到 <code>activate</code> 这个命令了。</p>
 <p>如下信息：</p>
 <p><code>source: no such file or directory: activate</code></p>
 <p>事实上，最新版的 <code>conda</code> 也会给你个警告，说这个方法已经被禁用了。</p>
 <p>使用 <code>conda activate name</code> 即可。</p>
-<h3 id="Ⅲ-退出虚拟环境"><a href="#Ⅲ-退出虚拟环境" class="headerlink" title="Ⅲ. 退出虚拟环境"></a>Ⅲ. 退出虚拟环境</h3><pre class=" language-lang-bash"><code class="language-lang-bash">conda deactivate name
-</code></pre>
-<h3 id="Ⅳ-删除虚拟环境"><a href="#Ⅳ-删除虚拟环境" class="headerlink" title="Ⅳ. 删除虚拟环境"></a>Ⅳ. 删除虚拟环境</h3><pre class=" language-lang-python"><code class="language-lang-python">conda remove --name name --all
-</code></pre>
-<h3 id="Ⅴ-查看所有的虚拟环境"><a href="#Ⅴ-查看所有的虚拟环境" class="headerlink" title="Ⅴ. 查看所有的虚拟环境"></a>Ⅴ. 查看所有的虚拟环境</h3><pre class=" language-lang-bash"><code class="language-lang-bash">conda info -e
-</code></pre>
-<h2 id="conda包管理"><a href="#conda包管理" class="headerlink" title="conda包管理"></a>conda包管理</h2><h3 id="Ⅰ-安装包"><a href="#Ⅰ-安装包" class="headerlink" title="Ⅰ. 安装包"></a>Ⅰ. 安装包</h3><pre class=" language-lang-bash"><code class="language-lang-bash">conda install 包名
-</code></pre>
-<h3 id="Ⅱ-查看已经安装的包"><a href="#Ⅱ-查看已经安装的包" class="headerlink" title="Ⅱ. 查看已经安装的包"></a>Ⅱ. 查看已经安装的包</h3><pre class=" language-lang-bash"><code class="language-lang-bash">conda list
-</code></pre>
-<h3 id="Ⅲ-更新"><a href="#Ⅲ-更新" class="headerlink" title="Ⅲ. 更新"></a>Ⅲ. 更新</h3><pre class=" language-lang-bash"><code class="language-lang-bash">conda update conda
-conda update anaconda
-</code></pre>
-<h3 id="Ⅳ-删除包"><a href="#Ⅳ-删除包" class="headerlink" title="Ⅳ.  删除包"></a>Ⅳ.  删除包</h3><pre class=" language-lang-bash"><code class="language-lang-bash">conda uninstall 包名
-</code></pre>
+<h3 id="Ⅲ-退出虚拟环境"><a href="#Ⅲ-退出虚拟环境" class="headerlink" title="Ⅲ. 退出虚拟环境"></a>Ⅲ. 退出虚拟环境</h3><pre class=" language-bash"><code class="language-bash">conda deactivate name</code></pre>
+<h3 id="Ⅳ-删除虚拟环境"><a href="#Ⅳ-删除虚拟环境" class="headerlink" title="Ⅳ. 删除虚拟环境"></a>Ⅳ. 删除虚拟环境</h3><pre class=" language-python"><code class="language-python">conda remove <span class="token operator">-</span><span class="token operator">-</span>name name <span class="token operator">-</span><span class="token operator">-</span>all</code></pre>
+<h3 id="Ⅴ-查看所有的虚拟环境"><a href="#Ⅴ-查看所有的虚拟环境" class="headerlink" title="Ⅴ. 查看所有的虚拟环境"></a>Ⅴ. 查看所有的虚拟环境</h3><pre class=" language-bash"><code class="language-bash">conda info -e</code></pre>
+<h2 id="conda包管理"><a href="#conda包管理" class="headerlink" title="conda包管理"></a>conda包管理</h2><h3 id="Ⅰ-安装包"><a href="#Ⅰ-安装包" class="headerlink" title="Ⅰ. 安装包"></a>Ⅰ. 安装包</h3><pre class=" language-bash"><code class="language-bash">conda <span class="token function">install</span> 包名</code></pre>
+<h3 id="Ⅱ-查看已经安装的包"><a href="#Ⅱ-查看已经安装的包" class="headerlink" title="Ⅱ. 查看已经安装的包"></a>Ⅱ. 查看已经安装的包</h3><pre class=" language-bash"><code class="language-bash">conda list</code></pre>
+<h3 id="Ⅲ-更新"><a href="#Ⅲ-更新" class="headerlink" title="Ⅲ. 更新"></a>Ⅲ. 更新</h3><pre class=" language-bash"><code class="language-bash">conda update conda
+conda update anaconda</code></pre>
+<h3 id="Ⅳ-删除包"><a href="#Ⅳ-删除包" class="headerlink" title="Ⅳ.  删除包"></a>Ⅳ.  删除包</h3><pre class=" language-bash"><code class="language-bash">conda uninstall 包名</code></pre>
 <h2 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h2><p><code>anaconda</code> 服务器在国外，下载包的速度会超级慢，改成清华源，速度会有质的改善。</p>
 <p>执行如下命令：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ 
+<pre class=" language-bash"><code class="language-bash">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ 
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ 
-conda config --set show_channel_urls yes
-</code></pre>
+conda config --set show_channel_urls <span class="token function">yes</span></code></pre>
 
             </div>
             <hr/>
@@ -1111,10 +1101,10 @@ conda config --set show_channel_urls yes
 使用Ⅰ. 数据结构
 
 
-
 维数
 名称
 描述
+
 
 
                         
@@ -1353,7 +1343,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

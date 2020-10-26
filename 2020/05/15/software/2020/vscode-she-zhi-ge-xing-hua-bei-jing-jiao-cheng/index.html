@@ -500,27 +500,26 @@
 <p>如果没有安装好C++编译环境可以参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43826212/article/details/99955837">Visual Studio Code配置C/C++环境(win10)</a></p>
 <h2 id="1-搜索插件background"><a href="#1-搜索插件background" class="headerlink" title="1.搜索插件background"></a>1.搜索插件background</h2><p>安装好了以后会出现插件破损的提示，别理，设置为不再提醒。</p>
 <h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h2><p>打开全局配置，添加如下内容：</p>
-<pre class=" language-lang-json"><code class="language-lang-json">"background.enabled": true,
-"background.useDefault": false,
+<pre class=" language-json"><code class="language-json"><span class="token property">"background.enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token property">"background.useDefault"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
 //是否使用默认图片
-"background.customImages": [
-    "file://D:/2345Downloads/png/Live.png",
-    "file://D:/2345Downloads/png/Live2D1.png",
-    "file://D:/2345Downloads/png/Live2D2.png",
-    //"file://D:/2345Downloads/png/1.jpg",//图片路径
-],
-"background.style": {
-    "content": "''",
-    "pointer-events": "none",
-    "position": "absolute",
-    "z-index": "99999",
-    "width": "100%",
-    "height": "100%",
-    "background-position": "100% 100%",
-    "background-repeat": "no-repeat",
-    "opacity": 0.35
-}
-</code></pre>
+<span class="token property">"background.customImages"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"file://D:/2345Downloads/png/Live.png"</span><span class="token punctuation">,</span>
+    <span class="token string">"file://D:/2345Downloads/png/Live2D1.png"</span><span class="token punctuation">,</span>
+    <span class="token string">"file://D:/2345Downloads/png/Live2D2.png"</span><span class="token punctuation">,</span>
+    //<span class="token string">"file://D:/2345Downloads/png/1.jpg"</span><span class="token punctuation">,</span>//图片路径
+<span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token property">"background.style"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"content"</span><span class="token operator">:</span> <span class="token string">"''"</span><span class="token punctuation">,</span>
+    <span class="token property">"pointer-events"</span><span class="token operator">:</span> <span class="token string">"none"</span><span class="token punctuation">,</span>
+    <span class="token property">"position"</span><span class="token operator">:</span> <span class="token string">"absolute"</span><span class="token punctuation">,</span>
+    <span class="token property">"z-index"</span><span class="token operator">:</span> <span class="token string">"99999"</span><span class="token punctuation">,</span>
+    <span class="token property">"width"</span><span class="token operator">:</span> <span class="token string">"100%"</span><span class="token punctuation">,</span>
+    <span class="token property">"height"</span><span class="token operator">:</span> <span class="token string">"100%"</span><span class="token punctuation">,</span>
+    <span class="token property">"background-position"</span><span class="token operator">:</span> <span class="token string">"100% 100%"</span><span class="token punctuation">,</span>
+    <span class="token property">"background-repeat"</span><span class="token operator">:</span> <span class="token string">"no-repeat"</span><span class="token punctuation">,</span>
+    <span class="token property">"opacity"</span><span class="token operator">:</span> <span class="token number">0.35</span>
+<span class="token punctuation">}</span></code></pre>
 <p>然后就好了。上张图：</p>
 <p><img src="https://img-blog.csdnimg.cn/2019082114544836.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzODI2MjEy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
@@ -1022,24 +1021,22 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/15/software/2020/visual-studio-code-pei-zhi-cc-huan-jing/">
+                <a href="/2020/05/15/software/2020/visual-studio-2019-she-zhi-zi-ding-yi-bei-jing-ji-te-xiao-cha-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Visual Studio Code配置C/C++环境(win10)">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Visual Studio 2019设置自定义背景及特效插件">
                         
-                        <span class="card-title">Visual Studio Code配置C/C++环境(win10)</span>
+                        <span class="card-title">Visual Studio 2019设置自定义背景及特效插件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Ⅰ. 安装编辑器Vscodevscode 选择适合自己系统的版本。
-
-
-
-Ⅱ. 安装编译器mingw64在 windows 下安装 mingw64 编译器有点麻烦，不过，我都准备好了，直接下载直接使用就好了。
-链接: https://pan
+                            1.安装插件：Background（ClaudiaIDE）
+Color Theme Editor for Visual Studio 2019
+路径：【工具】-&gt;【扩展和更新】-&gt;【联机】
+2.设置：【工具】-&gt;【选项】-
                         
                     </div>
                     <div class="publish-info">
@@ -1327,7 +1324,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    464
+                    465
                 </div>
                 
 
@@ -503,70 +503,68 @@
 <h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>必应官网好像无法使用 <strong>Ctrl + U</strong> 查看源代码和 <strong>Ctrl + Shift + I或者F12</strong> 打开控制台。</p>
 <p>通过 <strong>Fiddler</strong> 进行抓包。</p>
 <p>发现就这两个请求</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/20201013233758.png" alt=""></p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/20201013233758.png"></p>
 <p>那么可以肯定，图片的 <strong>url</strong> 肯定就在网页源代码里面。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201013234416095.png" alt=""></p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201013234416095.png"></p>
 <p>我们可以在源代码中看到我们想要的图片 <strong>url</strong></p>
 <p>通过正则进行抓取即可。</p>
-<pre class=" language-lang-python"><code class="language-lang-python">import requests
-import threading
-import json
-import re
-from pprint import pprint
-import time
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+<span class="token keyword">import</span> threading
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> re
+<span class="token keyword">from</span> pprint <span class="token keyword">import</span> pprint
+<span class="token keyword">import</span> time
 
 
-class Bing:
-    def __init__(self):
-        self.url = "https://bing.ioliu.cn/?p={}"
-        self.headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36"}
+<span class="token keyword">class</span> <span class="token class-name">Bing</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>url <span class="token operator">=</span> <span class="token string">"https://bing.ioliu.cn/?p={}"</span>
+        self<span class="token punctuation">.</span>headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">"User-Agent"</span><span class="token punctuation">:</span> <span class="token string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36"</span><span class="token punctuation">}</span>
 
-    def parse_url(self, url):
-        print("*" * 20)
-        response = requests.get(url, headers=self.headers)
-        return response.content
+    <span class="token keyword">def</span> <span class="token function">parse_url</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> url<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"*"</span> <span class="token operator">*</span> <span class="token number">20</span><span class="token punctuation">)</span>
+        response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>self<span class="token punctuation">.</span>headers<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> response<span class="token punctuation">.</span>content
 
-    def regular_img_name(self, img_url):
-        ret = re.findall(
-            r"http://h.\.ioliu.cn/bing/(.*?)\.(.*?)$", img_url, re.M | re.S)
-        print(ret)
-        return ret
+    <span class="token keyword">def</span> <span class="token function">regular_img_name</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> img_url<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        ret <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>
+            r<span class="token string">"http://h.\.ioliu.cn/bing/(.*?)\.(.*?)$"</span><span class="token punctuation">,</span> img_url<span class="token punctuation">,</span> re<span class="token punctuation">.</span>M <span class="token operator">|</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> ret
 
-    def download_imgs(self, img_list):
-        for url in img_list:
-            img = self.parse_url(url)
-            time.sleep(1)
-            print(url)
-            strs = self.regular_img_name(url)
-            with open("./bing/{}.{}".format(strs[0][0], strs[0][1]), "wb") as f:
-                f.write(img)
-            print("{} success".format(url))
+    <span class="token keyword">def</span> <span class="token function">download_imgs</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> img_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> url <span class="token keyword">in</span> img_list<span class="token punctuation">:</span>
+            img <span class="token operator">=</span> self<span class="token punctuation">.</span>parse_url<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+            time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+            strs <span class="token operator">=</span> self<span class="token punctuation">.</span>regular_img_name<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+            <span class="token keyword">with</span> open<span class="token punctuation">(</span><span class="token string">"./bing/{}.{}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>strs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> strs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"wb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+                f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>img<span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{} success"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-    def regular_img_url(self, html_str):
-        ret = re.findall(r".*?pic=(.*?)\?imageslim.*?", html_str, re.M | re.S)
-        return ret
+    <span class="token keyword">def</span> <span class="token function">regular_img_url</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> html_str<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        ret <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">".*?pic=(.*?)\?imageslim.*?"</span><span class="token punctuation">,</span> html_str<span class="token punctuation">,</span> re<span class="token punctuation">.</span>M <span class="token operator">|</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> ret
 
-    def run(self):
-        for i in range(1, 10):
-            url = self.url.format(i)
-            html_str = self.parse_url(url).decode()
-            img_list = self.regular_img_url(html_str)
-            print(img_list)
-            self.download_imgs(img_list)
+    <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            url <span class="token operator">=</span> self<span class="token punctuation">.</span>url<span class="token punctuation">.</span>format<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+            html_str <span class="token operator">=</span> self<span class="token punctuation">.</span>parse_url<span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            img_list <span class="token operator">=</span> self<span class="token punctuation">.</span>regular_img_url<span class="token punctuation">(</span>html_str<span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>img_list<span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>download_imgs<span class="token punctuation">(</span>img_list<span class="token punctuation">)</span>
 
 
-if __name__ == "__main__":
-    bing = Bing()
-    bing.run()
-</code></pre>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    bing <span class="token operator">=</span> Bing<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    bing<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 <p>可以改进为多线程爬虫版本~</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201021183614746.png" alt=""></p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201021183614746.png"></p>
 <p>注意：跑代码之前要在当前代码路径建立一个叫 <strong>bing</strong> 的文件夹~</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>写完代码后发现：</p>
 <p>必应壁纸好像提供了官方接口的~</p>
-<pre class=" language-lang-html"><code class="language-lang-html">http://cn.bing.com/HPImageArchive.aspx?idx=0&n=1
-</code></pre>
+<pre class=" language-html"><code class="language-html">http://cn.bing.com/HPImageArchive.aspx?idx=0&amp;n=1</code></pre>
 <p>只要在解析出的 <strong>url</strong> 前面加上 <code>http://www.bing.com</code> 就好了。</p>
 <p>网络爬虫的代码不一定一直可用， 代码要根据实际情况进行更改，不可一概论之！</p>
 
@@ -1378,7 +1376,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

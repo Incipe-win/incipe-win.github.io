@@ -474,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    461
+                    944
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -497,114 +497,99 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>本文主要讲使用位运算的一些技巧。</p>
-<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><h3 id="位运算符号"><a href="#位运算符号" class="headerlink" title="位运算符号"></a>位运算符号</h3><div class="table-container">
+<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><h3 id="位运算符号"><a href="#位运算符号" class="headerlink" title="位运算符号"></a>位运算符号</h3><table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">c/cpp</th>
+<th align="center">python</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">按位与</td>
+<td align="center">a &amp; b</td>
+<td align="center">a &amp; b</td>
+<td align="center">1 &amp; 1 = 1, 1 &amp; 0 = 0, 同1为1, 有0为0</td>
+</tr>
+<tr>
+<td align="center">按位或</td>
+<td align="center">a | b</td>
+<td align="center">a | b</td>
+<td align="center">1 | 1 = 1, 1 | 0 =  1, 有1为1, 同0为0</td>
+</tr>
+<tr>
+<td align="center">按位异或</td>
+<td align="center">a ^ b</td>
+<td align="center">a ^ b</td>
+<td align="center">1 ^ 1 = 0, 1 ^ 0  = 1, 相同位不同为1, 相同为0</td>
+</tr>
+<tr>
+<td align="center">按位取反</td>
+<td align="center">~a</td>
+<td align="center">~b</td>
+<td align="center">~1 = 0, ~0 = 1</td>
+</tr>
+<tr>
+<td align="center">左移</td>
+<td align="center">a &lt;&lt; b</td>
+<td align="center">a &lt;&lt; b</td>
+<td align="center">把a转化为二进制后向左移b位, 高位丢弃, 低位补零</td>
+</tr>
+<tr>
+<td align="center">右移</td>
+<td align="center">a &gt;&gt; b</td>
+<td align="center">a &gt;&gt; b</td>
+<td align="center">把a转化为二进制后向右移b位, 去掉后b位</td>
+</tr>
+</tbody></table>
+<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>在c/cpp中优先级(只有位运算的优先级) <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7">运算符优先级</a></p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">符号</th>
-<th style="text-align:center">c/cpp</th>
-<th style="text-align:center">python</th>
-<th style="text-align:center">含义</th>
+<th align="center">1</th>
+<th align="center">~</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">按位与</td>
-<td style="text-align:center">a &amp; b</td>
-<td style="text-align:center">a &amp; b</td>
-<td style="text-align:center">1 &amp; 1 = 1, 1 &amp; 0 = 0, 同1为1, 有0为0</td>
+<tbody><tr>
+<td align="center">2</td>
+<td align="center">&lt;&lt;、&gt;&gt;</td>
 </tr>
 <tr>
-<td style="text-align:center">按位或</td>
-<td style="text-align:center">a \</td>
-<td style="text-align:center">b</td>
-<td style="text-align:center">a \</td>
-<td>b</td>
-<td>1 \</td>
-<td>1 = 1, 1 \</td>
-<td>0 =  1, 有1为1, 同0为0</td>
+<td align="center">3</td>
+<td align="center">&amp;</td>
 </tr>
 <tr>
-<td style="text-align:center">按位异或</td>
-<td style="text-align:center">a ^ b</td>
-<td style="text-align:center">a ^ b</td>
-<td style="text-align:center">1 ^ 1 = 0, 1 ^ 0  = 1, 相同位不同为1, 相同为0</td>
+<td align="center">4</td>
+<td align="center">^</td>
 </tr>
 <tr>
-<td style="text-align:center">按位取反</td>
-<td style="text-align:center">~a</td>
-<td style="text-align:center">~b</td>
-<td style="text-align:center">~1 = 0, ~0 = 1</td>
+<td align="center">5</td>
+<td align="center">|</td>
 </tr>
 <tr>
-<td style="text-align:center">左移</td>
-<td style="text-align:center">a &lt;&lt; b</td>
-<td style="text-align:center">a &lt;&lt; b</td>
-<td style="text-align:center">把a转化为二进制后向左移b位, 高位丢弃, 低位补零</td>
+<td align="center">6</td>
+<td align="center">&amp;=、^=、|=、&lt;&lt;=、&gt;&gt;=</td>
 </tr>
-<tr>
-<td style="text-align:center">右移</td>
-<td style="text-align:center">a &gt;&gt; b</td>
-<td style="text-align:center">a &gt;&gt; b</td>
-<td style="text-align:center">把a转化为二进制后向右移b位, 去掉后b位</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>在c/cpp中优先级(只有位运算的优先级) <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/运算符优先级">运算符优先级</a></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">1</th>
-<th style="text-align:center">~</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">&lt;&lt;、&gt;&gt;</td>
-</tr>
-<tr>
-<td style="text-align:center">3</td>
-<td style="text-align:center">&amp;</td>
-</tr>
-<tr>
-<td style="text-align:center">4</td>
-<td style="text-align:center">^</td>
-</tr>
-<tr>
-<td style="text-align:center">5</td>
-<td style="text-align:center">\</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:center">6</td>
-<td style="text-align:center">&amp;=、^=、\</td>
-<td>=、&lt;&lt;=、&gt;&gt;=</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="奇技淫巧"><a href="#奇技淫巧" class="headerlink" title="奇技淫巧"></a>奇技淫巧</h3><h4 id="按位与"><a href="#按位与" class="headerlink" title="按位与"></a>按位与</h4><pre class=" language-lang-cpp"><code class="language-lang-cpp">/*
-判断奇偶, n & 1 
-if (n & 1) {
+</tbody></table>
+<h3 id="奇技淫巧"><a href="#奇技淫巧" class="headerlink" title="奇技淫巧"></a>奇技淫巧</h3><h4 id="按位与"><a href="#按位与" class="headerlink" title="按位与"></a>按位与</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*
+判断奇偶, n &amp; 1 
+if (n &amp; 1) {
     odd(奇数);
 } else {
     even(偶数);
 }
-清空最低位的1 ---> n & (n - 1)
-n & (n - 1)还可以判断一个数是不是2的幂
+清空最低位的1 ---> n &amp; (n - 1)
+n &amp; (n - 1)还可以判断一个数是不是2的幂
 bool isPowerOfTwo(int n) {
-    return n > 0 ? (n & (n - 1)) == 0 : false;
+    return n > 0 ? (n &amp; (n - 1)) == 0 : false;
 }
-得到最低位的1 ---> n & -n
-n & ~n = 0
-*/
-</code></pre>
+得到最低位的1 ---> n &amp; -n
+n &amp; ~n = 0
+*/</span></code></pre>
 <p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/power-of-two/">231. 2的幂</a></p>
 <p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/number-of-1-bits/">191. 位1的个数</a> 汉明重量</p>
-<h4 id="按位异或"><a href="#按位异或" class="headerlink" title="按位异或"></a>按位异或</h4><pre class=" language-lang-cpp"><code class="language-lang-cpp">/*
+<h4 id="按位异或"><a href="#按位异或" class="headerlink" title="按位异或"></a>按位异或</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*
 x ^ 0 = x;
 x ^ 1 = -x;
 x ^ (~x) = 1;
@@ -613,27 +598,25 @@ x ^ x = 0;
 a ^= b;
 b ^= a;
 a ^= b;
-一个字符异或上(1 << 5)即32, 可以实现大小写转换(即大写变小写,小写变大写)
+一个字符异或上(1 &lt;&lt; 5)即32, 可以实现大小写转换(即大写变小写,小写变大写)
 char ch = 'a'; // ch = 'A'
-a ^= (1 << 5)
-cout << "a = " << a << endl;
+a ^= (1 &lt;&lt; 5)
+cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; endl;
 >>> a = 'A' // 'a'
-*/
-</code></pre>
+*/</span></code></pre>
 <p>解释下其中几个</p>
 <p><code>x ^ ~0 = ~x</code></p>
 <p>相当于x的每一位都异或了1，那原本是1的位都变成了0，原本是0的位都变成了1。</p>
 <p><code>x ^ ~x = ~0</code></p>
 <p>x与~x的每一位肯定不相同，所以异或出来就是1。</p>
 <p><code>a ^= b; b ^= a; a ^= b;</code></p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">/*
+<pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*
 a ^= b ---> a = a ^ b;
 b ^= a ---> b = b ^ (a ^ b) = b ^ b ^ a = 0 ^ a = a;
 a ^= b ---> a = (a ^ b) ^ a = a ^ a ^ b = 0 ^ b = b;
-*/
-</code></pre>
+*/</span></code></pre>
 <p>根据异或的性质容易得知，<code>奇数个1异或为1， 偶数个1异或为0</code></p>
-<p>推广 —-&gt; <code>奇数个相同的数异或为这个数，偶数个相同的数异或为0</code></p>
+<p>推广 —&gt; <code>奇数个相同的数异或为这个数，偶数个相同的数异或为0</code></p>
 <blockquote>
 <p>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
 <p>说明：</p>
@@ -652,38 +635,34 @@ a ^= b ---> a = (a ^ b) ^ a = a ^ a ^ b = 0 ^ b = b;
 <p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/single-number">https://leetcode-cn.com/problems/single-number</a></p>
 </blockquote>
 <p>我们知道出现了偶数次的数字，最后肯定会抵消掉，<code>2 ^ 2 = 0</code>， 而奇数次的肯定会保留。</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution {
-public:
-    int singleNumber(vector<int>& nums) {
-        int ans = 0;
-        for (auto &num : nums) {
-            ans ^= num;
-        }
-        return ans;
-    }
-};
-</code></pre>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">singleNumber</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> <span class="token operator">&amp;</span>num <span class="token operator">:</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            ans <span class="token operator">^</span><span class="token operator">=</span> num<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/single-number-ii/">137. 只出现一次的数字 II</a></p>
 <p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/single-number-iii/">260. 只出现一次的数字 III</a></p>
-<h4 id="左移"><a href="#左移" class="headerlink" title="左移"></a>左移</h4><pre class=" language-lang-cpp"><code class="language-lang-cpp">/*
+<h4 id="左移"><a href="#左移" class="headerlink" title="左移"></a>左移</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*
 一个数左移一位×2，左移n位×2的n次方
-*/
-</code></pre>
-<h4 id="右移"><a href="#右移" class="headerlink" title="右移"></a>右移</h4><pre class=" language-lang-cpp"><code class="language-lang-cpp">/*
+*/</span></code></pre>
+<h4 id="右移"><a href="#右移" class="headerlink" title="右移"></a>右移</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*
 一个数字右移一位÷2，右移n位÷2的n次方
 取中间值 int mid = (left + right) >> 1
-*/
-</code></pre>
-<h4 id="混合起来的一些技巧"><a href="#混合起来的一些技巧" class="headerlink" title="混合起来的一些技巧"></a>混合起来的一些技巧</h4><pre class=" language-lang-cpp"><code class="language-lang-cpp">/*
-将x最右边的n位清0, x & (~0 << n)
-获取x的第n值, (x >> n) && 1
-获取x的第n位的幂值, x & (1 << (n - 1))
-仅将第n位置为1, x | (1 << n)
-仅将第n位置为0, x & (~(1 << n))
-将x最高位至第n位(含)清0, x & ((1 << n) - 1)
-将第n位至第0位(含)清0, x & (~((1 << (n + 1)) - 1))
-*/
-</code></pre>
+*/</span></code></pre>
+<h4 id="混合起来的一些技巧"><a href="#混合起来的一些技巧" class="headerlink" title="混合起来的一些技巧"></a>混合起来的一些技巧</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*
+将x最右边的n位清0, x &amp; (~0 &lt;&lt; n)
+获取x的第n值, (x >> n) &amp;&amp; 1
+获取x的第n位的幂值, x &amp; (1 &lt;&lt; (n - 1))
+仅将第n位置为1, x | (1 &lt;&lt; n)
+仅将第n位置为0, x &amp; (~(1 &lt;&lt; n))
+将x最高位至第n位(含)清0, x &amp; ((1 &lt;&lt; n) - 1)
+将第n位至第0位(含)清0, x &amp; (~((1 &lt;&lt; (n + 1)) - 1))
+*/</span></code></pre>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>位运算用好了还是挺强的，<strong>面试还挺喜欢出的</strong> ，老规矩，熟能生巧。</p>
 <p>更多奇技淫巧可以参考 <a target="_blank" rel="noopener" href="https://blog.csdn.net/zmazon/article/details/8262185">优秀程序员不得不知道的20个位运算技巧</a></p>
 
@@ -1487,7 +1466,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

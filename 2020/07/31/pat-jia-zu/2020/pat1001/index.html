@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    207
+                    220
                 </div>
                 
 
@@ -497,7 +497,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
-<p>Calculate <em>a</em>+<em>b</em> and output the sum in standard format — that is, the digits must be separated into groups of three by commas (unless there are less than four digits).</p>
+<p>Calculate <em>a</em>+<em>b</em> and output the sum in standard format – that is, the digits must be separated into groups of three by commas (unless there are less than four digits).</p>
 <h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case contains a pair of integers <em>a</em> and <em>b</em> where −106≤<em>a</em>,<em>b</em>≤106. The numbers are separated by a space.</p>
 <h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, you should output the sum of <em>a</em> and <em>b</em> in one line. The sum must be written in the standard format.</p>
 <h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><blockquote>
@@ -510,36 +510,35 @@
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这个题难倒是不难， 就是感觉题目没讲清楚，有点坑。</p>
 <p>题意：输入两个数，计算和，从个位开始，每三位输出一个 <code>","</code> 。</p>
 <p>代码：</p>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">#include <algorithm>
-#include <iostream>
-#include <string>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;algorithm></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string></span></span>
 
-using namespace std;
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
-int main() {
-  int a, b;
-  cin >> a >> b;
-  int c = a + b;
-  if (c < 0) {
-    cout << "-";
-    c = -c;
-  }
-  string temp = to_string(c);
-  int size = temp.size();
-  int cnt = 0;
-  string str = "";
-  for (int i = size - 1; i >= 0; --i) {
-    if (cnt == 3) {
-      cnt = 0;
-      str = "," + str;
-    }
-    ++cnt;
-    str = temp[i] + str;
-  }
-  cout << str << endl;
-  return 0;
-}
-</code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">int</span> a<span class="token punctuation">,</span> b<span class="token punctuation">;</span>
+  cin <span class="token operator">>></span> a <span class="token operator">>></span> b<span class="token punctuation">;</span>
+  <span class="token keyword">int</span> c <span class="token operator">=</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"-"</span><span class="token punctuation">;</span>
+    c <span class="token operator">=</span> <span class="token operator">-</span>c<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  string temp <span class="token operator">=</span> <span class="token function">to_string</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">int</span> size <span class="token operator">=</span> temp<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  string str <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> size <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token operator">--</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>cnt <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      str <span class="token operator">=</span> <span class="token string">","</span> <span class="token operator">+</span> str<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token operator">++</span>cnt<span class="token punctuation">;</span>
+    str <span class="token operator">=</span> temp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> str<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  cout <span class="token operator">&lt;&lt;</span> str <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr/>
@@ -1343,7 +1342,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

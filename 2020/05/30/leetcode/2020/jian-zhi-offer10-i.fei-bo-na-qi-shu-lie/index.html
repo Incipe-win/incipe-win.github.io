@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    583
+                    613
                 </div>
                 
 
@@ -518,100 +518,95 @@
 <p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof">https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof</a></p>
 </blockquote>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="Ⅰ-斐波那契数列"><a href="#Ⅰ-斐波那契数列" class="headerlink" title="Ⅰ. 斐波那契数列"></a>Ⅰ. 斐波那契数列</h3><ul>
-<li><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/斐波那契数列">斐波那契数列</a>定义 $f(n + 1) = f(n) + f(n - 1)$</li>
+<li><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97">斐波那契数列</a>定义 $f(n + 1) = f(n) + f(n - 1)$</li>
 </ul>
 <h3 id="Ⅱ-题目分析"><a href="#Ⅱ-题目分析" class="headerlink" title="Ⅱ. 题目分析"></a>Ⅱ. 题目分析</h3><p>此题一般都当作动态规划(Dynamic programming)入门题。</p>
 <h4 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h4><p>我们可以直接用递归来解此题， 应该会超时。</p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS84MjU2ZmQwZi0yMzRiLTQwNjYtYmY1Mi1hNmRmODZkMDU0OWEucG5n?x-oss-process=image/format,png" alt=""></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS84MjU2ZmQwZi0yMzRiLTQwNjYtYmY1Mi1hNmRmODZkMDU0OWEucG5n?x-oss-process=image/format,png"></p>
 <p>我们看到，每一次递归都产生了大量的重复计算值，而这些值理论上我们只要计算一次。</p>
 <p>时间复杂度$O(2^n)$，空间复杂度$O(n)$</p>
 <h4 id="记忆保存"><a href="#记忆保存" class="headerlink" title="记忆保存"></a>记忆保存</h4><p>我们用一个数组保存，计算过的每个值，遇到了直接用就好了。</p>
 <ul>
 <li>c++代码</li>
 </ul>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution {
-private:
-  long long vec[102];
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+  <span class="token keyword">long</span> <span class="token keyword">long</span> vec<span class="token punctuation">[</span><span class="token number">102</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-public:
-  Solution() { fill_n(vec, 102, -1); }
-  int fib(int n) {
-    if (n == 0) {
-      return 0;
-    }
-    if (n == 1 || n == 2) {
-      return 1;
-    }
-    if (vec[n] != -1) {
-      return vec[n];
-    }
-    vec[n] = (fib(n - 1) + fib(n - 2)) %  1000000007;
-    return vec[n];
-  }
-};
-</code></pre>
+<span class="token keyword">public</span><span class="token operator">:</span>
+  <span class="token function">Solution</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">fill_n</span><span class="token punctuation">(</span>vec<span class="token punctuation">,</span> <span class="token number">102</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+  <span class="token keyword">int</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">||</span> n <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>vec<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> vec<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    vec<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token function">fib</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">fib</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span>  <span class="token number">1000000007</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> vec<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <h4 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h4><p>我们以斐波那契数列性质$f(n + 1) = f(n) + f(n - 1)$为转移方程，写出代码即可。</p>
 <ul>
 <li>c++代码</li>
 </ul>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution {
-public:
-    int fib(int n) {
-        vector<int> vec(n + 2);
-        vec[0] = 0; 
-        vec[1] = 1;
-        for (int i = 2; i <= n; ++i) {
-            vec[i] = vec[i - 1] + vec[i - 2];
-            vec[i] %= 1000000007;
-        }
-        return vec[n];
-    }
-};
-</code></pre>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">vec</span><span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vec<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+        vec<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            vec<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> vec<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> vec<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            vec<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">%</span><span class="token operator">=</span> <span class="token number">1000000007</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> vec<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <ul>
 <li>python代码</li>
 </ul>
-<pre class=" language-lang-python"><code class="language-lang-python">class Solution:
-    def fib(self, n: int) -> int:
-        vec = [-1 for i in range(n + 2)]
-        vec[0] = 0
-        vec[1] = 1
-        for i in range(2, n + 1):
-            vec[i] = vec[i - 1] + vec[i - 2]
-            vec[i] %= 1000000007
-        return vec[n]
-</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">fib</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+        vec <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        vec<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+        vec<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            vec<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> vec<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> vec<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span>
+            vec<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">%=</span> <span class="token number">1000000007</span>
+        <span class="token keyword">return</span> vec<span class="token punctuation">[</span>n<span class="token punctuation">]</span></code></pre>
 <p>记忆保存和DP时间复杂度和空间复杂度都是$O(n)$</p>
 <h2 id="Ⅲ-优化"><a href="#Ⅲ-优化" class="headerlink" title="Ⅲ. 优化"></a>Ⅲ. 优化</h2><p>我们可不可以把空间复杂度优化成$O(1)$</p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS80M2Q2YTNiMy01OWMyLTQ2YWEtYTY1OC1mMzU4OWM1ODQ5YTQuZ2lm" alt=""></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS80M2Q2YTNiMy01OWMyLTQ2YWEtYTY1OC1mMzU4OWM1ODQ5YTQuZ2lm"></p>
 <p>因为C++可能会导致溢出，所以我们要找个变量。</p>
 <ul>
 <li>c++代码</li>
 </ul>
-<pre class=" language-lang-cpp"><code class="language-lang-cpp">class Solution {
-public:
-    int fib(int n) {
-        int a = 0, b = 1;
-        for (int i = 0; i < n; ++i) {
-            int sum = (a + b) % 1000000007;
-            a = b;
-            b = sum;
-        }
-        return a;
-    }
-};
-</code></pre>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">1000000007</span><span class="token punctuation">;</span>
+            a <span class="token operator">=</span> b<span class="token punctuation">;</span>
+            b <span class="token operator">=</span> sum<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> a<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <ul>
 <li>python代码</li>
 </ul>
 <p>python整型数字没有限制，取决于计算机内存，应该可以理解为无限大。</p>
-<pre class=" language-lang-python"><code class="language-lang-python">class Solution:
-    def fib(self, n: int) -> int:
-        a, b = 0, 1
-        for _ in range(n):
-            a, b = b, a + b
-        return a % 1000000007
-</code></pre>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">fib</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> n<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
+        a<span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span>
+        <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            a<span class="token punctuation">,</span> b <span class="token operator">=</span> b<span class="token punctuation">,</span> a <span class="token operator">+</span> b
+        <span class="token keyword">return</span> a <span class="token operator">%</span> <span class="token number">1000000007</span></code></pre>
 
             </div>
             <hr/>
@@ -1416,7 +1411,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             

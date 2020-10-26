@@ -523,7 +523,7 @@
 </ul>
 </li>
 <li>通过 <strong>ar</strong> 工具将目标文件打包成 <strong>.a</strong> 静态库文件<ul>
-<li><strong>ar -crv libstaticmain.a main.o </strong></li>
+<li>**ar -crv libstaticmain.a main.o **</li>
 </ul>
 </li>
 </ul>
@@ -548,46 +548,42 @@
 </ul>
 <p>详细解释可以参考 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/skynet/p/3372855.html">C++静态库与动态库</a></p>
 <h2 id="二-makefile格式"><a href="#二-makefile格式" class="headerlink" title="二. makefile格式"></a>二. makefile格式</h2><blockquote>
-<pre class=" language-lang-bash"><code class="language-lang-bash"><target> : <prerequisites> 
-[tab]  <commands>
-</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>target<span class="token operator">></span> <span class="token keyword">:</span> <span class="token operator">&lt;</span>prerequisites<span class="token operator">></span> 
+<span class="token punctuation">[</span>tab<span class="token punctuation">]</span>  <span class="token operator">&lt;</span>commands<span class="token operator">></span></code></pre>
 </blockquote>
 <p><strong>target</strong> 目标，  <strong>prerequisites</strong>  条件， <strong>commands</strong> 命令 。</p>
 <p>目标不能省略，条件和命令都可以省略。</p>
 <h3 id="2-1-目标"><a href="#2-1-目标" class="headerlink" title="2.1 目标"></a>2.1 目标</h3><p>目标通常是文件名，表明 <strong>make</strong> 要构建的对象。目标可以有多个，中间用空格分开。</p>
 <p>为了防止目标和文件名冲突，产生了伪目标( <strong>phony target</strong> )</p>
 <p>比如：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">clean:
-    rm -r *.o
-</code></pre>
+<pre class=" language-bash"><code class="language-bash">clean:
+    <span class="token function">rm</span> -r *.o</code></pre>
 <p>如果当前路径下有个叫 <strong>clean</strong> 的文件，那么使用 <strong>make clean</strong> 就无法生效了。</p>
 <p>这时添加伪目标即可解决。</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">.PHONY : clean
-</code></pre>
+<pre class=" language-bash"><code class="language-bash">.PHONY <span class="token keyword">:</span> clean</code></pre>
 <p>伪目标可以有多个，中间用空格隔开。</p>
 <p><strong>make</strong> 没有指定目标，默认执行第一个。</p>
 <h3 id="2-2-条件"><a href="#2-2-条件" class="headerlink" title="2.2 条件"></a>2.2 条件</h3><p>前置条件通常是一组文件名，之间用空格分隔。它指定了”目标”是否重新构建的判断标准：只要有一个前置文件不存在，或者有过更新（前置文件的 <strong>last-modification</strong> 时间戳比目标的时间戳新），”目标”就需要重新构建。</p>
 <h3 id="2-3-命令"><a href="#2-3-命令" class="headerlink" title="2.3 命令"></a>2.3 命令</h3><p>命令（ <strong>commands</strong> ）表示如何更新目标文件，由一行或多行的Shell命令组成。它是构建”目标”的具体指令，它的运行结果通常就是生成目标文件。</p>
-<h2 id="三-两种常用的makefile书写方式"><a href="#三-两种常用的makefile书写方式" class="headerlink" title="三. 两种常用的makefile书写方式"></a>三. 两种常用的makefile书写方式</h2><h3 id="3-1-编译多文件"><a href="#3-1-编译多文件" class="headerlink" title="3.1 编译多文件"></a>3.1 编译多文件</h3><pre class=" language-lang-bash"><code class="language-lang-bash">all : app
+<h2 id="三-两种常用的makefile书写方式"><a href="#三-两种常用的makefile书写方式" class="headerlink" title="三. 两种常用的makefile书写方式"></a>三. 两种常用的makefile书写方式</h2><h3 id="3-1-编译多文件"><a href="#3-1-编译多文件" class="headerlink" title="3.1 编译多文件"></a>3.1 编译多文件</h3><pre class=" language-bash"><code class="language-bash">all <span class="token keyword">:</span> app
 
-cc = g++
-include = ../Include
+cc <span class="token operator">=</span> g++
+include <span class="token operator">=</span> <span class="token punctuation">..</span>/Include
 
-.PHONY : clean all
+.PHONY <span class="token keyword">:</span> clean all
 
-src = $(wildcard *.cc)
-obj = $(patsubst %.cc, %.o, $(src))
+src <span class="token operator">=</span> <span class="token variable"><span class="token variable">$(</span>wildcard *.cc<span class="token variable">)</span></span>
+obj <span class="token operator">=</span> <span class="token variable"><span class="token variable">$(</span>patsubst %.cc, %.o, <span class="token punctuation">$(</span>src<span class="token variable">)</span></span><span class="token punctuation">)</span>
 
-app : $(obj)
-    $(cc) -o app -I $(include) $(obj)
+app <span class="token keyword">:</span> <span class="token variable"><span class="token variable">$(</span>obj<span class="token variable">)</span></span>
+    <span class="token variable"><span class="token variable">$(</span>cc<span class="token variable">)</span></span> -o app -I <span class="token variable"><span class="token variable">$(</span>include<span class="token variable">)</span></span> <span class="token variable"><span class="token variable">$(</span>obj<span class="token variable">)</span></span>
 
-%.o : %.cc
-    $(cc) -c $< -I $(include) -o $@
+%.o <span class="token keyword">:</span> %.cc
+    <span class="token variable"><span class="token variable">$(</span>cc<span class="token variable">)</span></span> -c $<span class="token operator">&lt;</span> -I <span class="token variable"><span class="token variable">$(</span>include<span class="token variable">)</span></span> -o <span class="token variable">$@</span>
 
 clean:
-    rm -f *.o
-    rm -f app
-</code></pre>
+    <span class="token function">rm</span> -f *.o
+    <span class="token function">rm</span> -f app</code></pre>
 <p>这里的 <strong>wildcard</strong> 是 <strong>makefile</strong> 的内置函数，找出所有的 <strong>.cc</strong> 文件，赋值给变量 <strong>src</strong> 。</p>
 <p><strong>patsubst</strong> 函数用于模式匹配的替换，它需要 <strong>3</strong> 个参数：第一个是一个需要匹配的式样，第二个表示用什么来替换它，第三个是一个需要被处理的由空格分隔的字列。</p>
 <p> <strong>%.o : %.cc</strong> 用到了 <strong>makefile</strong> 的模式匹配</p>
@@ -616,29 +612,28 @@ clean:
 </li>
 </ul>
 <p>更多可以参考 <a target="_blank" rel="noopener" href="https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html">10.5.3 Automatic Variables</a></p>
-<h3 id="3-2-生成多个可执行文件"><a href="#3-2-生成多个可执行文件" class="headerlink" title="3.2 生成多个可执行文件"></a>3.2 生成多个可执行文件</h3><pre class=" language-lang-bash"><code class="language-lang-bash">all : hello world
+<h3 id="3-2-生成多个可执行文件"><a href="#3-2-生成多个可执行文件" class="headerlink" title="3.2 生成多个可执行文件"></a>3.2 生成多个可执行文件</h3><pre class=" language-bash"><code class="language-bash">all <span class="token keyword">:</span> hello world
 
-cc = g++
-include = ../Include
+cc <span class="token operator">=</span> g++
+include <span class="token operator">=</span> <span class="token punctuation">..</span>/Include
 
-.PHONY : all clean
+.PHONY <span class="token keyword">:</span> all clean
 
-hello : hello.o
-    $(cc) -o hello -I $(include) hello.o
+hello <span class="token keyword">:</span> hello.o
+    <span class="token variable"><span class="token variable">$(</span>cc<span class="token variable">)</span></span> -o hello -I <span class="token variable"><span class="token variable">$(</span>include<span class="token variable">)</span></span> hello.o
 
-world : world.o
-    $(cc) -o world -I $(include) world.o
+world <span class="token keyword">:</span> world.o
+    <span class="token variable"><span class="token variable">$(</span>cc<span class="token variable">)</span></span> -o world -I <span class="token variable"><span class="token variable">$(</span>include<span class="token variable">)</span></span> world.o
 
-hello.o : hello.cc
-    $(cc) -c hello.cc -I $(include)
+hello.o <span class="token keyword">:</span> hello.cc
+    <span class="token variable"><span class="token variable">$(</span>cc<span class="token variable">)</span></span> -c hello.cc -I <span class="token variable"><span class="token variable">$(</span>include<span class="token variable">)</span></span>
 
-world.o : world.cc
-    $(cc) -c world.cc -I $(include)
+world.o <span class="token keyword">:</span> world.cc
+    <span class="token variable"><span class="token variable">$(</span>cc<span class="token variable">)</span></span> -c world.cc -I <span class="token variable"><span class="token variable">$(</span>include<span class="token variable">)</span></span>
 
-clean :
-    rm -f *.o
-    rm -f hello world
-</code></pre>
+clean <span class="token keyword">:</span>
+    <span class="token function">rm</span> -f *.o
+    <span class="token function">rm</span> -f hello world</code></pre>
 <p>更详细可参考 <a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2015/02/make.html">Make 命令教程</a></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>学会 <strong>makefile</strong> 对以后的编程还是有很大帮助的，可以大大提高自己编写代码的效率。</p>
 <blockquote>
@@ -658,7 +653,6 @@ clean :
 <center>锦瑟华年谁与度？月台花榭，锁窗朱户，只有春知处。</center>
 <center>碧云冉冉蘅皋暮，彩笔新题断肠句。</center>
 <center>试问闲愁都几许？一川烟草，满城风絮，梅子黄时雨。</center>
-
 </blockquote>
 
             </div>
@@ -1159,26 +1153,29 @@ clean :
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-li-ji-shu-pan-ding/">
+                <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-xue-xi-bi-ji-3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="嵌入式Arm立即数判定">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="嵌入式学习笔记(3)">
                         
-                        <span class="card-title">嵌入式Arm立即数判定</span>
+                        <span class="card-title">嵌入式学习笔记(3)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            基础知识在ARM中，机器指令的格式大致有以下几种：
+                            ARM指令集精简指令集设计理念(The  RISC design philosophy)
+设计原则(Design rules)
+指令”短小精悍”
+应用流水线技术设计
+大量采用寄存器
+Load/Store存储结构
 
-立即寻址的方式
 
-立即寻址
-在立即寻址，操作数本身直接在指令中给出，取出指令也就获得了操作数，这个操作数也称为立即数。例子如下
 
-ADD R0, R1, #0xF      ;R0=R1
+ARM指令集特点
+所有
                         
                     </div>
                     <div class="publish-info">
@@ -1215,26 +1212,30 @@ ADD R0, R1, #0xF      ;R0=R1
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/13/linux/2020/ubuntu18.04-an-zhuang/">
+                <a href="/2020/05/13/linux/2020/linux-jin-cheng-zhong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Ubuntu18.04安装">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Linux进程中">
                         
-                        <span class="card-title">Ubuntu18.04安装</span>
+                        <span class="card-title">Linux进程中</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            WSL就是Windows Subsystem for Linux（Windows系统的Linux子系统），因为依赖于win10，所以“子系统”会受到一些限制。
-使用方法：
-打开控制面板
+                            一. Linux进程间通信Ⅰ. 管道函数管道是有大小的，通过ulimit -a查看管道大小
+
+man 2 pipe
+#include &lt;unistd.h>
+int pipe(int pipefd[2]);
+
+参数
+
+文件描述符。
 
 
 
-
-按照提示重启就好了，要是没有这个选项，就说明系
                         
                     </div>
                     <div class="publish-info">
@@ -1256,8 +1257,8 @@ ADD R0, R1, #0xF      ;R0=R1
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                        <span class="chip bg-color">虚拟机</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -1471,7 +1472,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">67.2k</span>&nbsp;字
+                class="white-color">81k</span>&nbsp;字
             
             
             
