@@ -6,7 +6,7 @@
   <link href="https://incipe-win.github.io/atom.xml" rel="self"/>
   
   <link href="https://incipe-win.github.io/"/>
-  <updated>2020-10-26T12:18:38.901Z</updated>
+  <updated>2020-10-26T12:43:22.638Z</updated>
   <id>https://incipe-win.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://incipe-win.github.io/2020/10/26/leetcode/2020/978.zui-chang-tuan-liu-zi-shu-zu/"/>
     <id>https://incipe-win.github.io/2020/10/26/leetcode/2020/978.zui-chang-tuan-liu-zi-shu-zu/</id>
     <published>2020-10-25T16:00:00.000Z</published>
-    <updated>2020-10-26T12:18:38.901Z</updated>
+    <updated>2020-10-26T12:43:22.638Z</updated>
     
     
       
@@ -514,11 +514,11 @@
   </entry>
   
   <entry>
-    <title>PAT1006</title>
-    <link href="https://incipe-win.github.io/2020/08/10/pat-jia-zu/2020/pat1006/"/>
-    <id>https://incipe-win.github.io/2020/08/10/pat-jia-zu/2020/pat1006/</id>
+    <title>PAT1007</title>
+    <link href="https://incipe-win.github.io/2020/08/10/pat-jia-zu/2020/pat1007/"/>
+    <id>https://incipe-win.github.io/2020/08/10/pat-jia-zu/2020/pat1007/</id>
     <published>2020-08-09T16:00:00.000Z</published>
-    <updated>2020-10-26T04:01:20.959Z</updated>
+    <updated>2020-10-26T04:01:23.549Z</updated>
     
     
       
@@ -526,7 +526,7 @@
         
         
     <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;At the beginning of every day, the first person who</summary>
+&lt;p&gt;Given a sequence of &lt;em&gt;K&lt;/em&gt; integers { &lt;em&gt;N&lt;/em&gt;1,</summary>
         
       
     
