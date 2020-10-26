@@ -1125,25 +1125,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/11/c/2020/guan-yu-memset/">
+                <a href="/2020/05/11/c/2020/const-int-p-he-int-const-p/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="关于memset">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="const int p 和 int const p">
                         
-                        <span class="card-title">关于memset</span>
+                        <span class="card-title">const int p 和 int const p</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            被不了解memset狠狠的坑了一把，难受。
-对于整型数组，若要是初始化为非0的值时应该使用for循环，字符型或0，用memset即可。
-例如：
-#include&lt;bits/stdc++.h>
-int main()
-{
-    int 
+                            主要讲下这两者的区别及用法！高能区
+
+const int* p 和 int const* p是完全等价的！const int* const p 和 int const const* p 是完全等价的！
+
+下面举几个例子来分析：
+int x 
                         
                     </div>
                     <div class="publish-info">
@@ -1180,23 +1179,25 @@ int main()
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/11/c/2020/chu-xue-map-de-ge-chong-cao-zuo/">
+                <a href="/2020/05/11/c/2020/guan-yu-memset/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="初学map的各种操作">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="关于memset">
                         
-                        <span class="card-title">初学map的各种操作</span>
+                        <span class="card-title">关于memset</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            /*
- * @Author: incipe
- * @Date: 2019-09-22 23:14:53
- * @LastEditTime: 2019-10-21 21:35:58
- * @LastEditors: Please set La
+                            被不了解memset狠狠的坑了一把，难受。
+对于整型数组，若要是初始化为非0的值时应该使用for循环，字符型或0，用memset即可。
+例如：
+#include&lt;bits/stdc++.h>
+int main()
+{
+    int 
                         
                     </div>
                     <div class="publish-info">
@@ -1413,7 +1414,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                    order='random'
                    preload='auto'
                    volume='0.7'
-                   list-folded='false'
+                   list-folded='true'
         >
         </meting-js>
     </div>
