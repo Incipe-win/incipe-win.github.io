@@ -357,32 +357,6 @@
   </entry>
   
   <entry>
-    <title>PAT1009</title>
-    <link href="https://incipe-win.github.io/2020/08/16/pat-jia-zu/2020/pat1011/"/>
-    <id>https://incipe-win.github.io/2020/08/16/pat-jia-zu/2020/pat1011/</id>
-    <published>2020-08-15T16:00:00.000Z</published>
-    <updated>2020-10-26T04:01:32.369Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;With the 2010 FIFA World Cup running, football fans the</summary>
-        
-      
-    
-    
-    
-    <category term="博客" scheme="https://incipe-win.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-    <category term="PAT" scheme="https://incipe-win.github.io/tags/PAT/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Ubuntu20.04安装Anaconda</title>
     <link href="https://incipe-win.github.io/2020/08/16/linux/2020/ubuntu20.04-an-zhuang-anaconda/"/>
     <id>https://incipe-win.github.io/2020/08/16/linux/2020/ubuntu20.04-an-zhuang-anaconda/</id>
@@ -457,6 +431,32 @@
     
     
     <category term="数据分析" scheme="https://incipe-win.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PAT1009</title>
+    <link href="https://incipe-win.github.io/2020/08/16/pat-jia-zu/2020/pat1011/"/>
+    <id>https://incipe-win.github.io/2020/08/16/pat-jia-zu/2020/pat1011/</id>
+    <published>2020-08-15T16:00:00.000Z</published>
+    <updated>2020-10-26T04:01:32.369Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;With the 2010 FIFA World Cup running, football fans the</summary>
+        
+      
+    
+    
+    
+    <category term="博客" scheme="https://incipe-win.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="PAT" scheme="https://incipe-win.github.io/tags/PAT/"/>
     
   </entry>
   
