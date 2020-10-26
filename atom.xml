@@ -203,18 +203,18 @@
   </entry>
   
   <entry>
-    <title>GEC6818音乐播放器制作</title>
-    <link href="https://incipe-win.github.io/2020/09/28/iot/2020/gec6818-yin-le-bo-fang-qi-zhi-zuo/"/>
-    <id>https://incipe-win.github.io/2020/09/28/iot/2020/gec6818-yin-le-bo-fang-qi-zhi-zuo/</id>
+    <title>Ubuntu20.04安装arm-linux-gcc交叉编译器</title>
+    <link href="https://incipe-win.github.io/2020/09/28/iot/2020/ubuntu20.04-an-zhuang-arm-linux-gcc-jiao-cha-bian-yi-qi/"/>
+    <id>https://incipe-win.github.io/2020/09/28/iot/2020/ubuntu20.04-an-zhuang-arm-linux-gcc-jiao-cha-bian-yi-qi/</id>
     <published>2020-09-27T16:00:00.000Z</published>
-    <updated>2020-10-26T03:56:58.286Z</updated>
+    <updated>2020-10-26T03:57:17.695Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h2&gt;&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;h2 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h2&gt;&lt;p&gt;本文安装的交叉编译器是 &lt;strong&gt;arm-linux-gcc4.4.3&lt;/strong&gt;</summary>
         
       
     
@@ -228,18 +228,18 @@
   </entry>
   
   <entry>
-    <title>Ubuntu20.04安装arm-linux-gcc交叉编译器</title>
-    <link href="https://incipe-win.github.io/2020/09/28/iot/2020/ubuntu20.04-an-zhuang-arm-linux-gcc-jiao-cha-bian-yi-qi/"/>
-    <id>https://incipe-win.github.io/2020/09/28/iot/2020/ubuntu20.04-an-zhuang-arm-linux-gcc-jiao-cha-bian-yi-qi/</id>
+    <title>GEC6818音乐播放器制作</title>
+    <link href="https://incipe-win.github.io/2020/09/28/iot/2020/gec6818-yin-le-bo-fang-qi-zhi-zuo/"/>
+    <id>https://incipe-win.github.io/2020/09/28/iot/2020/gec6818-yin-le-bo-fang-qi-zhi-zuo/</id>
     <published>2020-09-27T16:00:00.000Z</published>
-    <updated>2020-10-26T03:57:17.695Z</updated>
+    <updated>2020-10-26T03:56:58.286Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h2&gt;&lt;p&gt;本文安装的交叉编译器是 &lt;strong&gt;arm-linux-gcc4.4.3&lt;/strong&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h2&gt;&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span</summary>
         
       
     
@@ -513,11 +513,11 @@
   </entry>
   
   <entry>
-    <title>PAT1007</title>
-    <link href="https://incipe-win.github.io/2020/08/10/pat-jia-zu/2020/pat1007/"/>
-    <id>https://incipe-win.github.io/2020/08/10/pat-jia-zu/2020/pat1007/</id>
+    <title>PAT1006</title>
+    <link href="https://incipe-win.github.io/2020/08/10/pat-jia-zu/2020/pat1006/"/>
+    <id>https://incipe-win.github.io/2020/08/10/pat-jia-zu/2020/pat1006/</id>
     <published>2020-08-09T16:00:00.000Z</published>
-    <updated>2020-10-26T04:01:23.549Z</updated>
+    <updated>2020-10-26T04:01:20.959Z</updated>
     
     
       
@@ -525,7 +525,7 @@
         
         
     <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;Given a sequence of &lt;em&gt;K&lt;/em&gt; integers { &lt;em&gt;N&lt;/em&gt;1,</summary>
+&lt;p&gt;At the beginning of every day, the first person who</summary>
         
       
     
