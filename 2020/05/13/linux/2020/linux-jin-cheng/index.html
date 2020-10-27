@@ -1453,26 +1453,30 @@ int execlp<span class="token punctuation">(</span>const char *file, const char *
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/13/linux/2020/ubuntu18.04-an-zhuang/">
+                <a href="/2020/05/13/linux/2020/linux-jin-cheng-zhong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Ubuntu18.04安装">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Linux进程中">
                         
-                        <span class="card-title">Ubuntu18.04安装</span>
+                        <span class="card-title">Linux进程中</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            WSL就是Windows Subsystem for Linux（Windows系统的Linux子系统），因为依赖于win10，所以“子系统”会受到一些限制。
-使用方法：
-打开控制面板
+                            一. Linux进程间通信Ⅰ. 管道函数管道是有大小的，通过ulimit -a查看管道大小
+
+man 2 pipe
+#include &lt;unistd.h>
+int pipe(int pipefd[2]);
+
+参数
+
+文件描述符。
 
 
 
-
-按照提示重启就好了，要是没有这个选项，就说明系
                         
                     </div>
                     <div class="publish-info">
@@ -1494,8 +1498,8 @@ int execlp<span class="token punctuation">(</span>const char *file, const char *
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                        <span class="chip bg-color">虚拟机</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -1509,25 +1513,24 @@ int execlp<span class="token punctuation">(</span>const char *file, const char *
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/13/linux/2020/mei-tian-yi-ge-linux-zhong-duan-ming-ling-ch-ming-ling-4/">
+                <a href="/2020/05/13/linux/2020/li-yong-masm-gong-ju-he-docbox-zai-win10-shang-jin-xing-hui-bian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="每天一个linux终端命令ch命令(4)">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="利用masm工具和DOCBOX在win10上进行汇编">
                         
-                        <span class="card-title">每天一个linux终端命令ch命令(4)</span>
+                        <span class="card-title">利用masm工具和DOCBOX在win10上进行汇编</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            好读书，不求甚解；每有会意，便欣然忘食。 
-ch命令指的是 chgrp,chown,chmod 这一组命令! 因为分开缺少连贯性,所以凑一起了。
-
-chgrp 修改文件所属的用户组
-chown 修改文件的拥有者
-chmod 修改文件的属性
-
+                            windows XP直接用cmd就可以了，win10用户也可也在虚拟机上装个XP进行汇编！
+接下来介绍利用masm工具和DOCBOX在win10上进行汇编
+1.DOCBOX下载地址MASM32下载地址
+官网
+网盘地址
+链接：https://
                         
                     </div>
                     <div class="publish-info">
@@ -1538,8 +1541,8 @@ chmod 修改文件的属性
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
+                            <a href="/categories/%E6%B1%87%E7%BC%96/" class="post-category">
+                                    汇编
                                 </a>
                             
                             
@@ -1549,8 +1552,8 @@ chmod 修改文件的属性
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux%E5%91%BD%E4%BB%A4/">
-                        <span class="chip bg-color">Linux命令</span>
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                        <span class="chip bg-color">博客</span>
                     </a>
                     
                 </div>
@@ -1710,7 +1713,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">82.7k</span>&nbsp;字
+                class="white-color">83.5k</span>&nbsp;字
             
             
             
