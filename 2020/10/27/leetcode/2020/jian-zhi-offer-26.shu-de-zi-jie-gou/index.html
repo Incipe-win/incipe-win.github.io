@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="剑指Offer14- I. 剪绳子, C/C++, Python, Linux, Machine Learning, Embedded">
+    <meta name="keywords" content="剑指 Offer 26. 树的子结构, C/C++, Python, Linux, Machine Learning, Embedded">
     <meta name="description" content="The story has just begun!">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>剑指Offer14- I. 剪绳子 | incipe</title>
+    <title>剑指 Offer 26. 树的子结构 | incipe</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">剑指Offer14- I. 剪绳子</h1>
+                    <h1 class="description center-align post-title">剑指 Offer 26. 树的子结构</h1>
                 </div>
             </div>
         </div>
@@ -435,8 +435,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%B8%AD%E7%AD%89/">
-                                <span class="chip bg-color">中等</span>
+                            <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                                <span class="chip bg-color">二叉树</span>
                             </a>
                         
                     </div>
@@ -447,8 +447,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%89%91%E6%8C%87offer/" class="post-category">
-                                剑指offer
+                            <a href="/categories/Leetcode/" class="post-category">
+                                Leetcode
                             </a>
                         
                     </div>
@@ -460,28 +460,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-30
+                    2020-10-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-26
+                    2020-10-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    539
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -496,7 +496,98 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
+<p>输入两棵二叉树A和B，判断B是不是A的子结构。(约定空树不是任意一个树的子结构)</p>
+<p>B是A的子结构， 即 A中有出现和B相同的结构和节点值。</p>
+<p>例如:</p>
+<p>给定的树 A:</p>
+<p>  3<br>/   \</p>
+<p>4   5</p>
+<p>/   \</p>
+<p>1   2<br>给定的树 B：</p>
+<p>4 </p>
+<p>/</p>
+<p>1<br>返回 true，因为 B 与 A 的一个子树拥有相同的结构和节点值。</p>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p>输入：A = [1,2,3], B = [3,1]<br>输出：false</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p>输入：A = [3,4,5,1,2], B = [4,1]<br>输出：true</p>
+</blockquote>
+<p><strong>限制：</strong></p>
+<ul>
+<li>0 &lt;= 节点个数 &lt;= 10000</li>
+</ul>
+<p>来源：力扣（LeetCode）</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof">https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof</a></p>
+<p>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>依次比较 <code>A, B</code> <code>A-&gt;left, B</code> <code>A-&gt;right, B</code> 是否相等，只要满足其中一个，就说明 <code>B</code> 是 <code>A</code> 的子结构。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ul>
+<li>C++代码</li>
+</ul>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+    <span class="token keyword">bool</span> <span class="token function">dfs</span><span class="token punctuation">(</span>TreeNode <span class="token operator">*</span><span class="token operator">&amp;</span>A<span class="token punctuation">,</span> TreeNode <span class="token operator">*</span><span class="token operator">&amp;</span>B<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 这里要先判B是不是为空</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>B <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// 只有B不为空，A为空的情况才返回false</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>A <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>A<span class="token operator">-</span><span class="token operator">></span>val <span class="token operator">!=</span> B<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// 因为能执行到这里的语句都是满足A->val == B->val的，所有我们继续比较A—>left, B->left和A->right, B->right即可。</span>
+        <span class="token keyword">return</span> <span class="token function">dfs</span><span class="token punctuation">(</span>A<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">,</span> B<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">dfs</span><span class="token punctuation">(</span>A<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">,</span> B<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">bool</span> <span class="token function">isSubStructure</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> A<span class="token punctuation">,</span> TreeNode<span class="token operator">*</span> B<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>A <span class="token operator">==</span> <span class="token keyword">nullptr</span> <span class="token operator">||</span> B <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// 判断B是不是A的子结构，B是不是A的左子树的子结构，B是不是A的右子树的子结构</span>
+        <span class="token keyword">return</span> <span class="token function">dfs</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span> B<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token function">isSubStructure</span><span class="token punctuation">(</span>A<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">,</span> B<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token function">isSubStructure</span><span class="token punctuation">(</span>A<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">,</span> B<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<ul>
+<li>Python代码</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Definition for a binary tree node.</span>
+<span class="token comment" spellcheck="true"># class TreeNode:</span>
+<span class="token comment" spellcheck="true">#     def __init__(self, x):</span>
+<span class="token comment" spellcheck="true">#         self.val = x</span>
+<span class="token comment" spellcheck="true">#         self.left = None</span>
+<span class="token comment" spellcheck="true">#         self.right = None</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">isSubStructure</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> A<span class="token punctuation">:</span> TreeNode<span class="token punctuation">,</span> B<span class="token punctuation">:</span> TreeNode<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> bool<span class="token punctuation">:</span>
+        <span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span> B<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token operator">not</span> B<span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">True</span>
+            <span class="token keyword">if</span> <span class="token operator">not</span> A<span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">False</span>
+            <span class="token keyword">return</span> A<span class="token punctuation">.</span>val <span class="token operator">==</span> B<span class="token punctuation">.</span>val <span class="token operator">and</span> dfs<span class="token punctuation">(</span>A<span class="token punctuation">.</span>left<span class="token punctuation">,</span> B<span class="token punctuation">.</span>left<span class="token punctuation">)</span> <span class="token operator">and</span> dfs<span class="token punctuation">(</span>A<span class="token punctuation">.</span>right<span class="token punctuation">,</span> B<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+
+        <span class="token keyword">if</span> <span class="token operator">not</span> A <span class="token operator">or</span> <span class="token operator">not</span> B<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span>
+        <span class="token keyword">return</span> dfs<span class="token punctuation">(</span>A<span class="token punctuation">,</span> B<span class="token punctuation">)</span> <span class="token operator">or</span> self<span class="token punctuation">.</span>isSubStructure<span class="token punctuation">(</span>A<span class="token punctuation">.</span>left<span class="token punctuation">,</span> B<span class="token punctuation">)</span> <span class="token operator">or</span> self<span class="token punctuation">.</span>isSubStructure<span class="token punctuation">(</span>A<span class="token punctuation">.</span>right<span class="token punctuation">,</span> B<span class="token punctuation">)</span></code></pre>
+<p>时间复杂度 $O(NM)$ ：$M, N$ 分别表示 $B, A$ 树的节点数。</p>
+<p>空间复杂度 $O(N)$</p>
+
             </div>
             <hr/>
 
@@ -521,7 +612,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://incipe-win.github.io/2020/07/30/leetcode/2020/jian-zhi-offer14-i.jian-sheng-zi/">https://incipe-win.github.io/2020/07/30/leetcode/2020/jian-zhi-offer14-i.jian-sheng-zi/</a>
+                    <a href="https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/">https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -559,8 +650,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%B8%AD%E7%AD%89/">
-                                    <span class="chip bg-color">中等</span>
+                                <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                                    <span class="chip bg-color">二叉树</span>
                                 </a>
                             
                         </div>
@@ -991,63 +1082,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/30/c/2020/wei-yun-suan/">
+                <a href="/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="位运算">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="剑指 Offer 26. 树的子结构">
                         
-                        <span class="card-title">位运算</span>
+                        <span class="card-title">剑指 Offer 26. 树的子结构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文主要讲使用位运算的一些技巧。
-位运算位运算符号
-
-
-符号
-c/cpp
-python
-含义
-
-
-
-按位与
-a &amp; b
-a &amp; b
-1 &amp; 1 = 1, 1 &amp; 0 = 0, 同1为1, 有0为0
-
-
-按位或
+                            输入两棵二叉树A和B，判断B是不是A的子结构。(约定空树不是任意一个树的子结构)
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2/" class="post-category">
-                                    博客
+                            <a href="/categories/Leetcode/" class="post-category">
+                                    Leetcode
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/">
-                        <span class="chip bg-color">位运算</span>
+                    <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                        <span class="chip bg-color">二叉树</span>
                     </a>
                     
                 </div>
@@ -1061,31 +1137,31 @@ a &amp; b
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/30/kao-yan/2020/ji-ge-chong-yao-de-han-shu/">
+                <a href="/2020/10/27/leetcode/2020/jian-zhi-offer-28.dui-cheng-de-er-cha-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="几个重要的函数">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="剑指 Offer 28. 对称的二叉树">
                         
-                        <span class="card-title">几个重要的函数</span>
+                        <span class="card-title">剑指 Offer 28. 对称的二叉树</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            几个重要的函数Ⅰ. 绝对值函数$$ f(x)=\left|x\right| = \left{ \begin{aligned} -x, x &lt; 0 \ x, x \geq 0 \end{aligned} \right. = \left{
+                            请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2/" class="post-category">
-                                    博客
+                            <a href="/categories/Leetcode/" class="post-category">
+                                    Leetcode
                                 </a>
                             
                             
@@ -1095,12 +1171,8 @@ a &amp; b
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%80%83%E7%A0%94/">
-                        <span class="chip bg-color">考研</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%87%BD%E6%95%B0/">
-                        <span class="chip bg-color">函数</span>
+                    <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                        <span class="chip bg-color">二叉树</span>
                     </a>
                     
                 </div>
@@ -1260,7 +1332,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">81.7k</span>&nbsp;字
+                class="white-color">82.7k</span>&nbsp;字
             
             
             
