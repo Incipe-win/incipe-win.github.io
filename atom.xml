@@ -6,7 +6,7 @@
   <link href="https://incipe-win.github.io/atom.xml" rel="self"/>
   
   <link href="https://incipe-win.github.io/"/>
-  <updated>2020-10-27T01:01:41.462Z</updated>
+  <updated>2020-10-27T16:11:58.803Z</updated>
   <id>https://incipe-win.github.io/</id>
   
   <author>
@@ -17,29 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>剑指 Offer 26. 树的子结构</title>
-    <link href="https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/"/>
-    <id>https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/</id>
+    <title>jetson nano刷机</title>
+    <link href="https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/"/>
+    <id>https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/</id>
     <published>2020-10-26T16:00:00.000Z</published>
-    <updated>2020-10-27T01:01:41.462Z</updated>
+    <updated>2020-10-27T16:11:58.803Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;输入两棵二叉树A和B，判断B是不是A的子结构。(约定空树不是任意一个树的子结构)&lt;/p&gt;
-&lt;p&gt;B是A的子结构，</summary>
+    <summary type="html">&lt;h2 id=&quot;Ⅰ-需要准备的材料&quot;&gt;&lt;a href=&quot;#Ⅰ-需要准备的材料&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 需要准备的材料&quot;&gt;&lt;/a&gt;Ⅰ. 需要准备的材料&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Jetson nano&lt;/strong&gt;</summary>
         
       
     
     
     
-    <category term="Leetcode" scheme="https://incipe-win.github.io/categories/Leetcode/"/>
+    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
     
     
-    <category term="二叉树" scheme="https://incipe-win.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
     
   </entry>
   
@@ -69,28 +68,29 @@
   </entry>
   
   <entry>
-    <title>jetson nano刷机</title>
-    <link href="https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/"/>
-    <id>https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/</id>
+    <title>剑指 Offer 26. 树的子结构</title>
+    <link href="https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/"/>
+    <id>https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/</id>
     <published>2020-10-26T16:00:00.000Z</published>
-    <updated>2020-10-27T16:09:50.460Z</updated>
+    <updated>2020-10-27T01:01:41.462Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;Ⅰ-需要准备的材料&quot;&gt;&lt;a href=&quot;#Ⅰ-需要准备的材料&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 需要准备的材料&quot;&gt;&lt;/a&gt;Ⅰ. 需要准备的材料&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Jetson nano&lt;/strong&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;输入两棵二叉树A和B，判断B是不是A的子结构。(约定空树不是任意一个树的子结构)&lt;/p&gt;
+&lt;p&gt;B是A的子结构，</summary>
         
       
     
     
     
-    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
+    <category term="Leetcode" scheme="https://incipe-win.github.io/categories/Leetcode/"/>
     
     
-    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
+    <category term="二叉树" scheme="https://incipe-win.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
   </entry>
   
