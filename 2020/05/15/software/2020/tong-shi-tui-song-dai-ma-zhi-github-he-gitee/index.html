@@ -31,9 +31,9 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
-
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1067,23 +1067,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/15/software/2020/mingw-w64-an-zhuang/">
+                <a href="/2020/05/15/software/2020/dian-nao-wang-qia-shi-fou-zhi-chi-5ghz-pin-duan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="mingw-w64安装">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="电脑网卡是否支持5Ghz频段">
                         
-                        <span class="card-title">mingw-w64安装</span>
+                        <span class="card-title">电脑网卡是否支持5Ghz频段</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Ⅰ. 离线安装如果在线安装的话，可能不会成功。
-可以直接去 sourcegorge 下载离线包
-也可以用百度网盘下载：
-链接: https://pan.baidu.com/s/1-MhgLjwG0xHtFtyNy-M_Fg
-提取码: 3ia
+                            win + r 键入
+netsh wlan show drivers
+
+可查看网卡支持的无线电类型
+
+1）802.11b、802.11g只支持2.4GHz2）802.11a、802.11ac支持5GHz3）802.11n 采用了多重输入/输
                         
                     </div>
                     <div class="publish-info">
@@ -1120,24 +1121,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/15/software/2020/an-zhuang-burpsuite-pro/">
+                <a href="/2020/05/15/software/2020/wan-mei-jie-jue-wamp-de-mysql-he-mysql-chong-tu-wen-ti-ji-wamp-wu-fa-da-kai-localhost-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="安装BurpSuite_Pro">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="完美解决wamp的MySQL和MySQL冲突问题及wamp无法打开localhost问题">
                         
-                        <span class="card-title">安装BurpSuite_Pro</span>
+                        <span class="card-title">完美解决wamp的MySQL和MySQL冲突问题及wamp无法打开localhost问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            如果是jdk最新版的环境，建议用用BurpSuiteV1.6破解版，授权日期到2099-12-3。
-下载地址
-提取码：q6yd 
-否则，请参考以下步骤安装最新版burp！
-首先安装java环境，还要有jre（ 很重要 ）
-下载burp-lo
+                            当我们使用wamp时，如果系统之前已经安装了MySQL，会发现wamp的MySQL和原来的MySQL只有一个可以使用，原因就是因为端口冲突。可能还会经常遇到的一个问题，就是安装了wamp后无法打开localhost，原因也是因为端口冲突。下
                         
                     </div>
                     <div class="publish-info">
@@ -1320,7 +1316,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">83.5k</span>&nbsp;字
+                class="white-color">84.5k</span>&nbsp;字
             
             
             
