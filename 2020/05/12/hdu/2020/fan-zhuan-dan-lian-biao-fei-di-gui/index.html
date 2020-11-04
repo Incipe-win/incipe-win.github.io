@@ -1037,22 +1037,27 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/12/hdu/2020/ru-men-shen-sou-di-gui/">
+                <a href="/2020/05/12/hdu/2020/hdu2037-jin-nian-shu-jia-bu-ac/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="入门深搜(递归)">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="hdu2037今年暑假不AC">
                         
-                        <span class="card-title">入门深搜(递归)</span>
+                        <span class="card-title">hdu2037今年暑假不AC</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            所谓无底深渊，下去，也是前程万里
-入门深搜，以hdu1241为例进行讲解！
-题目的意思大概是有一块油田，要你求有多少个不同的石油储藏（如果每个油袋是上下左右，对角相邻的，那么说这是一个石油储藏，*代表没有油袋，@代表有油袋）
-典型的深搜算法
+                            所谓贪心，只是人的一种本能反应
+原题链接
+#include &lt;algorithm>
+#include &lt;iostream>
+using std::cin;
+using std::cout;
+using std::endl;
+
+/
                         
                     </div>
                     <div class="publish-info">
@@ -1074,8 +1079,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%E9%81%8D%E5%8E%86/">
-                        <span class="chip bg-color">深度优先搜索遍历</span>
+                    <a href="/tags/%E8%B4%AA%E5%BF%83/">
+                        <span class="chip bg-color">贪心</span>
                     </a>
                     
                 </div>
@@ -1142,6 +1147,43 @@
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: incipe<br />'
+            + '文章作者: incipe<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->

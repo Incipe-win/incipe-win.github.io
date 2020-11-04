@@ -1060,24 +1060,23 @@ win10自带的疑难杂症估计也解决不了。
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/15/software/2020/jie-jue-shou-ji-lian-jie-shang-wifi-ke-yi-shang-wang-dian-nao-bu-shang-bu-liao-wang-de-wen-ti/">
+                <a href="/2020/05/15/software/2020/mingw-w64-an-zhuang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="解决笔记本连接wifi提示无法连接这个网络问题">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="mingw-w64安装">
                         
-                        <span class="card-title">解决笔记本连接wifi提示无法连接这个网络问题</span>
+                        <span class="card-title">mingw-w64安装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            问题一般家里的  路由器  开启了 DHCP 动态分配 IP 功能，由于无法分配 IP 就可能导致电脑无法上网，只需要让电脑重新获取 IP 即可。
-可解决的情况
-电脑成功连上 WIFI；
-电脑右下角 WIFI 显示 此wifi不能上网。
-
-
+                            Ⅰ. 离线安装如果在线安装的话，可能不会成功。
+可以直接去 sourcegorge 下载离线包
+也可以用百度网盘下载：
+链接: https://pan.baidu.com/s/1-MhgLjwG0xHtFtyNy-M_Fg
+提取码: 3ia
                         
                     </div>
                     <div class="publish-info">
@@ -1113,6 +1112,43 @@ win10自带的疑难杂症估计也解决不了。
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: incipe<br />'
+            + '文章作者: incipe<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->

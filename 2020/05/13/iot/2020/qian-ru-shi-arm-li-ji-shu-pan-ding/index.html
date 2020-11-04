@@ -1078,36 +1078,29 @@ MOV R0, #0x55       ;R0=0x55 </code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-xue-xi-bi-ji-2/">
+                <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-xue-xi-bi-ji-3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="嵌入式学习笔记(2)">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="嵌入式学习笔记(3)">
                         
-                        <span class="card-title">嵌入式学习笔记(2)</span>
+                        <span class="card-title">嵌入式学习笔记(3)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ARM体系ARM：Advanced RISC Machine
-ARM命名规则
-
-
-ARMv
-n
-variants
-x (variants)
+                            ARM指令集精简指令集设计理念(The  RISC design philosophy)
+设计原则(Design rules)
+指令”短小精悍”
+应用流水线技术设计
+大量采用寄存器
+Load/Store存储结构
 
 
 
-固定字符，即ARM Version
-指令集版本号
-变种
-排除x后指定的变种
-
-
-常见的vari
+ARM指令集特点
+所有
                         
                     </div>
                     <div class="publish-info">
@@ -1204,6 +1197,43 @@ Embe
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: incipe<br />'
+            + '文章作者: incipe<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->

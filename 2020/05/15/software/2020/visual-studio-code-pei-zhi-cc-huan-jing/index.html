@@ -1235,23 +1235,21 @@ int main() {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/15/software/2020/github-hexo-da-zai-bo-ke/">
+                <a href="/2020/05/15/software/2020/settings-sync-shi-yong-she-zhi-qin-ce-you-xiao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Github+Hexo搭载博客">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Settings Sync使用设置(亲测有效)">
                         
-                        <span class="card-title">Github+Hexo搭载博客</span>
+                        <span class="card-title">Settings Sync使用设置(亲测有效)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            很久就想搞个自己的博客了，就从Github Pages练练手吧！
-1. 创建Github账户
-
-接下来，直接通过 username.github.io 就可以打开Github Pages了！
-2. 安装Git这个就是一个软件的安装，不多讲了
+                            会当凌绝顶，一览众山小
+网上看了很多关于Sync的教程，感觉好像已经过时了，可读性不高，按照步骤也设置不好，结合自己的理解，和对他人的参考，在这里插入代码片写了个简单实用的教程！
+1.首先安装Seetings Sync安装完毕后，打开Syn
                         
                     </div>
                     <div class="publish-info">
@@ -1288,21 +1286,24 @@ int main() {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/15/software/2020/settings-sync-shi-yong-she-zhi-qin-ce-you-xiao/">
+                <a href="/2020/05/15/software/2020/an-zhuang-burpsuite-pro/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Settings Sync使用设置(亲测有效)">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="安装BurpSuite_Pro">
                         
-                        <span class="card-title">Settings Sync使用设置(亲测有效)</span>
+                        <span class="card-title">安装BurpSuite_Pro</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            会当凌绝顶，一览众山小
-网上看了很多关于Sync的教程，感觉好像已经过时了，可读性不高，按照步骤也设置不好，结合自己的理解，和对他人的参考，在这里插入代码片写了个简单实用的教程！
-1.首先安装Seetings Sync安装完毕后，打开Syn
+                            如果是jdk最新版的环境，建议用用BurpSuiteV1.6破解版，授权日期到2099-12-3。
+下载地址
+提取码：q6yd 
+否则，请参考以下步骤安装最新版burp！
+首先安装java环境，还要有jre（ 很重要 ）
+下载burp-lo
                         
                     </div>
                     <div class="publish-info">
@@ -1338,6 +1339,43 @@ int main() {
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: incipe<br />'
+            + '文章作者: incipe<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->

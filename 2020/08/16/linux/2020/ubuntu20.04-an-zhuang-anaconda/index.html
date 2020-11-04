@@ -1010,33 +1010,33 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/08/16/python/2020/ke-xue-ji-suan-numpy/">
+                <a href="/2020/08/20/python/2020/pandas-ru-men/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="科学计算Numpy">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="pandas入门">
                         
-                        <span class="card-title">科学计算Numpy</span>
+                        <span class="card-title">pandas入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            什么是Numpy
-NumPy 是一个运行速度非常快的数学库，主要用于数组计算，包含：
-
-一个强大的N维数组对象 ndarray
-广播功能函数
-整合 C/C++/Fortran 代码的工具
-线性代数、傅里叶变换、随机数生成等功能
+                            什么是pandaspandas 是基于一种 NumPy 的一种工具。NumPy 只能处理数值型的数据，但是 pandas 除了处理数值之外，还可以处理其它类型的数据。比如，字符串，时间序列等。
+使用Ⅰ. 数据结构
 
 
-使用Ⅰ.
+维数
+名称
+描述
+
+
+
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-20
                         </span>
                         <span class="publish-author">
                             
@@ -1068,35 +1068,32 @@ NumPy 是一个运行速度非常快的数学库，主要用于数组计算，�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/08/13/linux/2020/wang-luo-mo-xing/">
+                <a href="/2020/08/16/pat-jia-zu/2020/pat1011/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="网络模型">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="PAT1009">
                         
-                        <span class="card-title">网络模型</span>
+                        <span class="card-title">PAT1009</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            IP地址简单来讲，IP地址就是用来在网络中标记一台电脑的。在本地局域网是唯一的。
-IP地址分类每个IP地址由网络地址和主机地址组成。
-
-A类IP地址，IP地址前8为表示网络ID，后24位表示主机ID。
-B类IP地址，IP地址前16位表示网络
+                            原题
+With the 2010 FIFA World Cup running, football fans the world over were becoming increasingly excited as the best pla
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
+                            <a href="/categories/%E5%8D%9A%E5%AE%A2/" class="post-category">
+                                    博客
                                 </a>
                             
                             
@@ -1106,8 +1103,8 @@ B类IP地址，IP地址前16位表示网络
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/web/">
-                        <span class="chip bg-color">web</span>
+                    <a href="/tags/PAT/">
+                        <span class="chip bg-color">PAT</span>
                     </a>
                     
                 </div>
@@ -1120,6 +1117,43 @@ B类IP地址，IP地址前16位表示网络
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: incipe<br />'
+            + '文章作者: incipe<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->

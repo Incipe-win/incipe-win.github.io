@@ -1227,23 +1227,23 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/11/c/2020/chu-xue-map-de-ge-chong-cao-zuo/">
+                <a href="/2020/05/11/c/2020/wan-neng-tou-bao-han-de-tou-wen-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="初学map的各种操作">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="万能头包含的头文件">
                         
-                        <span class="card-title">初学map的各种操作</span>
+                        <span class="card-title">万能头包含的头文件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            /*
- * @Author: incipe
- * @Date: 2019-09-22 23:14:53
- * @LastEditTime: 2019-10-21 21:35:58
- * @LastEditors: Please set La
+                            // C++ includes used for precompiling -*- C++ -*-
+
+// Copyright (C) 2003-2018 Free Software Foundation, Inc.
+//
+// This 
                         
                     </div>
                     <div class="publish-info">
@@ -1277,26 +1277,26 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/11/c/2020/ge-chong-er-cha-shu-di-gui/">
+                <a href="/2020/05/11/c/2020/chu-xue-map-de-ge-chong-cao-zuo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="各种二叉树（递归）">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="初学map的各种操作">
                         
-                        <span class="card-title">各种二叉树（递归）</span>
+                        <span class="card-title">初学map的各种操作</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            为了方便粘贴，就没有放多文件编译。感谢leetcode的题库！要实现归并二叉树，自己要稍微更改下代码：
-#include&lt;bits/stdc++.h>
-using std::cin;
-using std::cout;
-using st
+                            /*
+ * @Author: incipe
+ * @Date: 2019-09-22 23:14:53
+ * @LastEditTime: 2019-10-21 21:35:58
+ * @LastEditors: Please set La
                         
                     </div>
                     <div class="publish-info">
@@ -1315,7 +1315,6 @@ using st
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1333,6 +1332,43 @@ using st
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: incipe<br />'
+            + '文章作者: incipe<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->

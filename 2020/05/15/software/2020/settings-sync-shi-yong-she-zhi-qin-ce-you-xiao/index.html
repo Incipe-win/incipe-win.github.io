@@ -1016,24 +1016,23 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/15/software/2020/visual-studio-code-pei-zhi-cc-huan-jing/">
+                <a href="/2020/05/15/software/2020/github-hexo-da-zai-bo-ke/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Visual Studio Code配置C/C++环境(win10)">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Github+Hexo搭载博客">
                         
-                        <span class="card-title">Visual Studio Code配置C/C++环境(win10)</span>
+                        <span class="card-title">Github+Hexo搭载博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Ⅰ. 安装编辑器Vscodevscode 选择适合自己系统的版本。
+                            很久就想搞个自己的博客了，就从Github Pages练练手吧！
+1. 创建Github账户
 
-
-
-Ⅱ. 安装编译器mingw64在 windows 下安装 mingw64 编译器有点麻烦，不过，我都准备好了，直接下载直接使用就好了。
-链接: https://pan
+接下来，直接通过 username.github.io 就可以打开Github Pages了！
+2. 安装Git这个就是一个软件的安装，不多讲了
                         
                     </div>
                     <div class="publish-info">
@@ -1070,22 +1069,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/15/software/2020/visual-studio-2019-she-zhi-zi-ding-yi-bei-jing-ji-te-xiao-cha-jian/">
+                <a href="/2020/05/15/software/2020/visual-studio-code-pei-zhi-cc-huan-jing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Visual Studio 2019设置自定义背景及特效插件">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Visual Studio Code配置C/C++环境(win10)">
                         
-                        <span class="card-title">Visual Studio 2019设置自定义背景及特效插件</span>
+                        <span class="card-title">Visual Studio Code配置C/C++环境(win10)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.安装插件：Background（ClaudiaIDE）
-Color Theme Editor for Visual Studio 2019
-路径：【工具】-&gt;【扩展和更新】-&gt;【联机】
-2.设置：【工具】-&gt;【选项】-
+                            Ⅰ. 安装编辑器Vscodevscode 选择适合自己系统的版本。
+
+
+
+Ⅱ. 安装编译器mingw64在 windows 下安装 mingw64 编译器有点麻烦，不过，我都准备好了，直接下载直接使用就好了。
+链接: https://pan
                         
                     </div>
                     <div class="publish-info">
@@ -1121,6 +1122,43 @@ Color Theme Editor for Visual Studio 2019
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: incipe<br />'
+            + '文章作者: incipe<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->
