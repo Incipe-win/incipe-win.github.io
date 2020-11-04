@@ -94,32 +94,6 @@
   </entry>
   
   <entry>
-    <title>jetson nano刷机</title>
-    <link href="https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/"/>
-    <id>https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/</id>
-    <published>2020-10-26T16:00:00.000Z</published>
-    <updated>2020-10-27T16:11:58.803Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Ⅰ-需要准备的材料&quot;&gt;&lt;a href=&quot;#Ⅰ-需要准备的材料&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 需要准备的材料&quot;&gt;&lt;/a&gt;Ⅰ. 需要准备的材料&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Jetson nano&lt;/strong&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
-    
-    
-    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
-    
-  </entry>
-  
-  <entry>
     <title>剑指 Offer 26. 树的子结构</title>
     <link href="https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/"/>
     <id>https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/</id>
@@ -168,6 +142,32 @@
     
     
     <category term="二叉树" scheme="https://incipe-win.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jetson nano刷机</title>
+    <link href="https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/"/>
+    <id>https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/</id>
+    <published>2020-10-26T16:00:00.000Z</published>
+    <updated>2020-10-27T16:11:58.803Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Ⅰ-需要准备的材料&quot;&gt;&lt;a href=&quot;#Ⅰ-需要准备的材料&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 需要准备的材料&quot;&gt;&lt;/a&gt;Ⅰ. 需要准备的材料&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Jetson nano&lt;/strong&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
+    
+    
+    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
     
   </entry>
   
