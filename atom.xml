@@ -6,7 +6,7 @@
   <link href="https://incipe-win.github.io/atom.xml" rel="self"/>
   
   <link href="https://incipe-win.github.io/"/>
-  <updated>2020-11-09T04:21:15.152Z</updated>
+  <updated>2020-11-09T13:27:29.871Z</updated>
   <id>https://incipe-win.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://incipe-win.github.io/2020/11/08/linux/2020/jxarm9-2410-3-shi-yan-san/"/>
     <id>https://incipe-win.github.io/2020/11/08/linux/2020/jxarm9-2410-3-shi-yan-san/</id>
     <published>2020-11-07T16:00:00.000Z</published>
-    <updated>2020-11-09T04:21:15.152Z</updated>
+    <updated>2020-11-09T13:27:29.871Z</updated>
     
     
       
@@ -124,28 +124,27 @@
   </entry>
   
   <entry>
-    <title>jetson nano刷机</title>
-    <link href="https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/"/>
-    <id>https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/</id>
+    <title>剑指 Offer 28. 对称的二叉树</title>
+    <link href="https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-28.dui-cheng-de-er-cha-shu/"/>
+    <id>https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-28.dui-cheng-de-er-cha-shu/</id>
     <published>2020-10-26T16:00:00.000Z</published>
-    <updated>2020-10-27T16:11:58.803Z</updated>
+    <updated>2020-10-27T01:07:13.330Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;Ⅰ-需要准备的材料&quot;&gt;&lt;a href=&quot;#Ⅰ-需要准备的材料&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 需要准备的材料&quot;&gt;&lt;/a&gt;Ⅰ. 需要准备的材料&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Jetson nano&lt;/strong&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
-    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
+    <category term="Leetcode" scheme="https://incipe-win.github.io/categories/Leetcode/"/>
     
     
-    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
+    <category term="二叉树" scheme="https://incipe-win.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
   </entry>
   
@@ -177,27 +176,28 @@
   </entry>
   
   <entry>
-    <title>剑指 Offer 28. 对称的二叉树</title>
-    <link href="https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-28.dui-cheng-de-er-cha-shu/"/>
-    <id>https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-28.dui-cheng-de-er-cha-shu/</id>
+    <title>jetson nano刷机</title>
+    <link href="https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/"/>
+    <id>https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/</id>
     <published>2020-10-26T16:00:00.000Z</published>
-    <updated>2020-10-27T01:07:13.330Z</updated>
+    <updated>2020-10-27T16:11:58.803Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;Ⅰ-需要准备的材料&quot;&gt;&lt;a href=&quot;#Ⅰ-需要准备的材料&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 需要准备的材料&quot;&gt;&lt;/a&gt;Ⅰ. 需要准备的材料&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Jetson nano&lt;/strong&gt;</summary>
         
       
     
     
     
-    <category term="Leetcode" scheme="https://incipe-win.github.io/categories/Leetcode/"/>
+    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
     
     
-    <category term="二叉树" scheme="https://incipe-win.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
     
   </entry>
   
@@ -389,18 +389,18 @@
   </entry>
   
   <entry>
-    <title>GEC6818音乐播放器制作</title>
-    <link href="https://incipe-win.github.io/2020/09/28/iot/2020/gec6818-yin-le-bo-fang-qi-zhi-zuo/"/>
-    <id>https://incipe-win.github.io/2020/09/28/iot/2020/gec6818-yin-le-bo-fang-qi-zhi-zuo/</id>
+    <title>Ubuntu20.04安装arm-linux-gcc交叉编译器</title>
+    <link href="https://incipe-win.github.io/2020/09/28/iot/2020/ubuntu20.04-an-zhuang-arm-linux-gcc-jiao-cha-bian-yi-qi/"/>
+    <id>https://incipe-win.github.io/2020/09/28/iot/2020/ubuntu20.04-an-zhuang-arm-linux-gcc-jiao-cha-bian-yi-qi/</id>
     <published>2020-09-27T16:00:00.000Z</published>
-    <updated>2020-10-26T03:56:58.286Z</updated>
+    <updated>2020-10-26T03:57:17.695Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h2&gt;&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span</summary>
+    <summary type="html">&lt;h2 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h2&gt;&lt;p&gt;本文安装的交叉编译器是 &lt;strong&gt;arm-linux-gcc4.4.3&lt;/strong&gt;</summary>
         
       
     
@@ -414,18 +414,18 @@
   </entry>
   
   <entry>
-    <title>Ubuntu20.04安装arm-linux-gcc交叉编译器</title>
-    <link href="https://incipe-win.github.io/2020/09/28/iot/2020/ubuntu20.04-an-zhuang-arm-linux-gcc-jiao-cha-bian-yi-qi/"/>
-    <id>https://incipe-win.github.io/2020/09/28/iot/2020/ubuntu20.04-an-zhuang-arm-linux-gcc-jiao-cha-bian-yi-qi/</id>
+    <title>GEC6818音乐播放器制作</title>
+    <link href="https://incipe-win.github.io/2020/09/28/iot/2020/gec6818-yin-le-bo-fang-qi-zhi-zuo/"/>
+    <id>https://incipe-win.github.io/2020/09/28/iot/2020/gec6818-yin-le-bo-fang-qi-zhi-zuo/</id>
     <published>2020-09-27T16:00:00.000Z</published>
-    <updated>2020-10-26T03:57:17.695Z</updated>
+    <updated>2020-10-26T03:56:58.286Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h2&gt;&lt;p&gt;本文安装的交叉编译器是 &lt;strong&gt;arm-linux-gcc4.4.3&lt;/strong&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h2&gt;&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span</summary>
         
       
     

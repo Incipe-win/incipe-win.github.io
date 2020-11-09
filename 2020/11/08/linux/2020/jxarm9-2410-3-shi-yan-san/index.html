@@ -481,7 +481,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    12 分
                 </div>
                 
 
@@ -516,7 +516,7 @@
 <span class="token function">make</span> <span class="token function">install</span></code></pre>
 <p>如果没有出现任何报错信息，说明资源安装成功了，安装默认路径 <code>/usr/local/lib</code> 如果有 <code>minigui/res</code> 这个目录，资源文件安装成功。</p>
 <h3 id="2-编译安装-libminigui"><a href="#2-编译安装-libminigui" class="headerlink" title="2.  编译安装 libminigui"></a>2.  编译安装 libminigui</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /home/minigui
-<span class="token function">tar</span> -zxvf libminigui-1.6.10
+<span class="token function">tar</span> -zxvf libminigui-1.6.10.tar.gz
 <span class="token function">cd</span> libminigui-1.6.10
 ./configure    <span class="token comment" spellcheck="true"># 默认安装即可</span></code></pre>
 <p>这里留意下终端信息：</p>
@@ -529,7 +529,7 @@
 <h3 id="3-修改配置文件"><a href="#3-修改配置文件" class="headerlink" title="3. 修改配置文件"></a>3. 修改配置文件</h3><p>如果程序当前路径有 <code>MiniGUI.cfg</code> 这个文件，就会使用当前路径下的这个文件，如果没有，回到默认路径 <code>/usr/local/etc</code> 目录下寻找这个文件。</p>
 <p>我们更改 <code>MiniGUI.cfg</code> 文件如下：</p>
 <p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201108125516131.png"></p>
-<p>红色圈圈的表示我注释掉的内容，红色圈圈的就是添加的内容。</p>
+<p>红色圈圈的表示我注释掉的内容（不用管），红色圈圈的就是添加的内容（自己手动添加进去即可）。</p>
 <p>注：在添加这个 <code>defaultmode</code> 的时候，我们不要手打，直接 <code>Shift + v</code> 复制一行，<code>p</code> 粘贴，或者直接在原有的基础上改，因为这个 <code>×</code> 符号貌似打不出来。</p>
 <h3 id="4-添加库进-etc-ld-so-conf"><a href="#4-添加库进-etc-ld-so-conf" class="headerlink" title="4. 添加库进 /etc/ld.so.conf"></a>4. 添加库进 /etc/ld.so.conf</h3><p>只有把刚刚的动态库，添加到这个里面，才能找的到。</p>
 <p>当然，也还有其他办法，可以参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43826212/article/details/105973943?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160481152619195264760431%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&amp;request_id=160481152619195264760431&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_v2~rank_blog_default-4-105973943.pc_v2_rank_blog_default&amp;utm_term=make&amp;spm=1018.2118.3001.4450">简简单单学会写makefile</a></p>
@@ -1583,7 +1583,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">87.3k</span>&nbsp;字
+                class="white-color">87.4k</span>&nbsp;字
             
             
             
