@@ -1,0 +1,1754 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="JXARM9-2410-3实验三, C/C++, Python, Linux, Machine Learning, Embedded">
+    <meta name="description" content="The story has just begun!">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>JXARM9-2410-3实验三 | incipe</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">incipe</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">incipe</div>
+        <div class="logo-desc">
+            
+            The story has just begun!
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/Incipe-win" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/Incipe-win" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">JXARM9-2410-3实验三</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/ARM/">
+                                <span class="chip bg-color">ARM</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/IOT/" class="post-category">
+                                IOT
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-11-08
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-11-09
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>本次实验分两步走：</p>
+<ol>
+<li>先在虚拟机上编译安装好 <code>minigui</code> 能够在虚拟机上看到实验现象（显示Hello World）。</li>
+<li>移植到开发板上，在开发板上可以看到实验现象。</li>
+</ol>
+<h2 id="Ⅰ-虚拟机安装-minigui"><a href="#Ⅰ-虚拟机安装-minigui" class="headerlink" title="Ⅰ. 虚拟机安装 minigui"></a>Ⅰ. 虚拟机安装 minigui</h2><p>如果安装 <code>red hat</code> 的时候选的是 <code>everything</code> 的话，是不需要安装这几个库 <code>zlib, png, jpeg, ttf</code> 只有移植到开发板上才需要。</p>
+<p>所以在虚拟机上我们只需要以下三个包就可以了。</p>
+<ul>
+<li><code>libminigui</code></li>
+<li><code>minigui-res</code></li>
+<li><code>qvfb</code></li>
+<li><code>mde-1.6.10</code> 例子程序</li>
+<li><code>mg-samples-1.6.10</code> 例子程序</li>
+</ul>
+<h3 id="1-安装资源"><a href="#1-安装资源" class="headerlink" title="1. 安装资源"></a>1. 安装资源</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /home/minigui
+<span class="token function">tar</span> -zxvf minigui-res-1.6.10.tar.gz
+<span class="token function">cd</span> minigui-res-1.6.10
+<span class="token function">make</span> <span class="token function">install</span></code></pre>
+<p>如果没有出现任何报错信息，说明资源安装成功了，安装默认路径 <code>/usr/local/lib</code> 如果有 <code>minigui/res</code> 这个目录，资源文件安装成功。</p>
+<h3 id="2-编译安装-libminigui"><a href="#2-编译安装-libminigui" class="headerlink" title="2.  编译安装 libminigui"></a>2.  编译安装 libminigui</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /home/minigui
+<span class="token function">tar</span> -zxvf libminigui-1.6.10
+<span class="token function">cd</span> libminigui-1.6.10
+./configure    <span class="token comment" spellcheck="true"># 默认安装即可</span></code></pre>
+<p>这里留意下终端信息：</p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201108124532605.png"></p>
+<p>红框框内的后面的字必须是 <code>yes</code> 不然后面程序会有问题的。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+<span class="token comment" spellcheck="true"># 等待安装完毕即可</span></code></pre>
+<p>现在 <code>minigui</code> 已经全部安装成功了，可以去 <code>/usr/local/lib</code> 目录下检查下是不是有一堆 <code>.so</code> 的动态库。</p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201108124921350.png"></p>
+<h3 id="3-修改配置文件"><a href="#3-修改配置文件" class="headerlink" title="3. 修改配置文件"></a>3. 修改配置文件</h3><p>如果程序当前路径有 <code>MiniGUI.cfg</code> 这个文件，就会使用当前路径下的这个文件，如果没有，回到默认路径 <code>/usr/local/etc</code> 目录下寻找这个文件。</p>
+<p>我们更改 <code>MiniGUI.cfg</code> 文件如下：</p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201108125516131.png"></p>
+<p>红色圈圈的表示我注释掉的内容，红色圈圈的就是添加的内容。</p>
+<p>注：在添加这个 <code>defaultmode</code> 的时候，我们不要手打，直接 <code>Shift + v</code> 复制一行，<code>p</code> 粘贴，或者直接在原有的基础上改，因为这个 <code>×</code> 符号貌似打不出来。</p>
+<h3 id="4-添加库进-etc-ld-so-conf"><a href="#4-添加库进-etc-ld-so-conf" class="headerlink" title="4. 添加库进 /etc/ld.so.conf"></a>4. 添加库进 /etc/ld.so.conf</h3><p>只有把刚刚的动态库，添加到这个里面，才能找的到。</p>
+<p>当然，也还有其他办法，可以参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43826212/article/details/105973943?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160481152619195264760431%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&amp;request_id=160481152619195264760431&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_v2~rank_blog_default-4-105973943.pc_v2_rank_blog_default&amp;utm_term=make&amp;spm=1018.2118.3001.4450">简简单单学会写makefile</a></p>
+<pre class=" language-bash"><code class="language-bash">vim /etc/ld.so.conf
+<span class="token comment" spellcheck="true"># 按G跳到最后一行，O在一行插入 插入如下内容</span>
+/usr/local/lib</code></pre>
+<h3 id="5-安装-qvfb"><a href="#5-安装-qvfb" class="headerlink" title="5. 安装 qvfb"></a>5. 安装 qvfb</h3><p>即 <code>qt virtual framebuffer</code> 是为QT提供的一个虚拟framebuffer的应用程序，实现对qt的应用程序提供一个模拟的嵌入式设备，可直接看到程序在“实际”设备中的运行情况。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /home/minigui
+<span class="token function">tar</span> -zxvf qvfb-1.1.tar.gz
+<span class="token function">cd</span> qvfb-1.1
+./configure
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span></code></pre>
+<p>如果报错，说明少了包，google搜索下就好了。</p>
+<p>到目前为止，<code>red hat</code> 上的 <code>minigui</code> 已经安装完成了。</p>
+<h3 id="6-测试"><a href="#6-测试" class="headerlink" title="6. 测试"></a>6. 测试</h3><p>跑一个扫雷程序测试下。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /home/minigui
+<span class="token function">tar</span> -zxvf mde-1.6.10.tar.gz
+<span class="token function">cd</span> mde-1.6.10
+./configure
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span></code></pre>
+<p>启动 <code>qvfb</code> 一定要先启动 <code>qvfb</code> ！</p>
+<pre class=" language-bash"><code class="language-bash">qvfb <span class="token operator">&amp;</span>
+<span class="token comment" spellcheck="true"># 不占用终端</span></code></pre>
+<p>这个时候会弹出一个窗口，点击 <code>File-&gt;configure</code> 设置窗口大小，即刚刚在 <code>MiniGUI.cfg</code> 设置的 <code>800×600</code> 色深为 16位。</p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201108131432522.png"></p>
+<p>接下来把这个窗口拉小一点，不然看不到保存的按钮。</p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201108131630357.png"></p>
+<p>点击 OK 即可。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> bomb
+./bomb</code></pre>
+<p>然后打开 <code>qvfb</code> 即可看到扫雷程序了。</p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201108133743083.png"></p>
+<p>至此，虚拟机上的 <code>minigui</code> 可以正常运行了，如果虚拟机上可以正常运行，那么移植到开发板上也基本上没什么问题的。</p>
+<h2 id="Ⅱ-移植minigui"><a href="#Ⅱ-移植minigui" class="headerlink" title="Ⅱ. 移植minigui"></a>Ⅱ. 移植minigui</h2><p>需要的包如下：</p>
+<ul>
+<li><code>libminigui</code></li>
+<li><code>minigui-res</code></li>
+<li><code>qvfb</code></li>
+<li><code>mde-1.6.10</code> 例子程序</li>
+<li><code>mg-samples-1.6.10</code> 例子程序</li>
+<li><code>zlib</code> 库</li>
+<li><code>png</code> 库</li>
+<li><code> jpeg</code> 库</li>
+<li><code>libttf</code> 库</li>
+</ul>
+<p>交叉编译器就不介绍怎么安装了，这里用的是 <code>cross-2.95.3</code> 可以参考 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43826212/article/details/108858626">安装交叉编译器</a> 原理都是一样的。</p>
+<h3 id="1-安装-zlib-库"><a href="#1-安装-zlib-库" class="headerlink" title="1. 安装 zlib 库"></a>1. 安装 zlib 库</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /home/migigui
+<span class="token function">tar</span> -zxvf zlib-1.2.2.tar.gz
+<span class="token function">cd</span> zlib-1.2.2</code></pre>
+<p><code>zlib</code> 库的 <code>configure</code> 不支持交叉编译选项。采取“曲线救国”策略。</p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201109111138383.png"></p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /usr/bin
+<span class="token function">mv</span> gcc gcc_back
+<span class="token function">ln</span> -s /usr/local/arm/2.95.3/bin/arm-linux-gcc ./gcc
+<span class="token function">mv</span> ld ld_back
+<span class="token function">ln</span> -s /usr/local/arm/2.95.3/bin/arm-linux-ld ./ld</code></pre>
+<p>切换回 <code>zlib</code> 目录</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /home/minigui/zlib-1.2.2
+./configure --prefix<span class="token operator">=</span>/usr/local/arm/2.95.3/arm-linux/ --shared
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span></code></pre>
+<p>这里会看到用 <code>gcc</code> 编译库，没事，因为之前我们把 <code>gcc</code> 改成 <code>arm-linux-gcc</code> 的软连接了。</p>
+<p>去 <code>/usr/local/arm/2.95.3/arm-linux/</code> 目录下查看下有没有 <code>zlib</code> 的库。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /usr/local/arm/2.95.3/arm-linux/
+<span class="token function">find</span> <span class="token keyword">.</span> -name *zlib*
+<span class="token comment" spellcheck="true"># ./include/zlib.h</span>
+<span class="token comment" spellcheck="true"># ./share/man/man3/zlib.3</span>
+<span class="token function">find</span> <span class="token keyword">.</span> -name *libz*
+<span class="token comment" spellcheck="true"># ./lib/libz.so.1.2.2</span>
+<span class="token comment" spellcheck="true"># ./lib/libz.so</span>
+<span class="token comment" spellcheck="true"># ./lib/libz.so.1</span></code></pre>
+<p> 有这几个确定就没问题了，利用 <code>file</code> 查看下是不是ARM平台的。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">file</span> ./lib/libz.so.1.2.2 
+<span class="token comment" spellcheck="true"># ./lib/libz.so.1.2.2: ELF 32-bit LSB shared object, ARM, version 1 (ARM), not stripped</span></code></pre>
+<p>现在把 <code>gcc</code> <code>ld</code> 改回去。</p>
+<p>先删除软连接，再改名。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /usr/bin
+<span class="token function">ls</span> -lrt gcc
+<span class="token comment" spellcheck="true"># lrwxrwxrwx    1 root     root           39 11Ղ  8 05:40 gcc -> /usr/local/arm/2.95.3/bin/arm-linux-gcc</span>
+<span class="token function">rm</span> -rf gcc
+<span class="token function">mv</span> gcc_back gcc
+
+<span class="token function">ls</span> -lrt ld
+<span class="token comment" spellcheck="true"># lrwxrwxrwx    1 root     root           38 11Ղ  8 05:40 ld -> /usr/local/arm/2.95.3/bin/arm-linux-ld</span>
+<span class="token function">rm</span> -rf ld
+<span class="token function">mv</span> ld_back ld</code></pre>
+<p>看下是否成功。</p>
+<pre class=" language-bash"><code class="language-bash">gcc -v
+Configured with: <span class="token punctuation">..</span>/configure --prefix<span class="token operator">=</span>/usr --mandir<span class="token operator">=</span>/usr/share/man --infodir<span class="token operator">=</span>/usr/share/info --enable-shared --enable-threads<span class="token operator">=</span>posix --disable-checking --with-system-zlib --enable-__cxa_atexit --host<span class="token operator">=</span>i386-redhat-linux
+Thread model: posix
+gcc version 3.2.2 20030222 <span class="token punctuation">(</span>Red Hat Linux 3.2.2-5<span class="token punctuation">)</span>
+ld -v
+GNU ld version 2.13.90.0.18 20030206</code></pre>
+<p>到这里，<code>zlib</code> 库就编译安装成功了。</p>
+<h3 id="2-安装-png-库"><a href="#2-安装-png-库" class="headerlink" title="2. 安装 png 库"></a>2. 安装 png 库</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /home/migigui
+<span class="token function">tar</span> -zxvf libpng-1.0.69.tar.gz
+<span class="token function">cd</span> libpng-1.0.69
+CC<span class="token operator">=</span>/usr/local/arm/2.95.3/bin/arm-linux-gcc ./configure --prefix<span class="token operator">=</span>/usr/local/arm/2.95.3/arm-linux/ --build<span class="token operator">=</span>i386-linux --host<span class="token operator">=</span>arm-unknown-linux --target<span class="token operator">=</span>arm-unknown-linux
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span></code></pre>
+<p>如果报错，请先安装 <code>zlib</code> 库。</p>
+<p>去检查下是否安装成功。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /usr/local/arm/2.95.3/arm-linux/
+<span class="token function">find</span> <span class="token keyword">.</span> -name *png*
+./include/libpng10
+./include/libpng10/png.h
+./include/libpng10/pngconf.h
+./include/png.h
+./include/pngconf.h
+./bin/libpng10-config
+./bin/libpng-config
+./lib/libpng10.so.0.69.0
+./lib/libpng10.so.0
+./lib/libpng10.so
+./lib/libpng10.la
+./lib/libpng.so.2.69.0
+./lib/libpng.so.2
+./lib/libpng.so
+./lib/libpng.la
+./lib/libpng10.a
+./lib/libpng.a
+./lib/pkgconfig/libpng10.pc
+./lib/pkgconfig/libpng.pc
+./share/man/man3/libpng.3
+./share/man/man3/libpngpf.3 
+./share/man/man5/png.5</code></pre>
+<p>查看是不是ARM平台的库。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">file</span> ./lib/libpng10.so.0.69.0 
+./lib/libpng10.so.0.69.0: ELF 32-bit LSB shared object, ARM, version 1 <span class="token punctuation">(</span>ARM<span class="token punctuation">)</span>, not stripped</code></pre>
+<p>到这里 <code>png</code> 库就安装成功了。</p>
+<h3 id="3-安装-jpeg-库"><a href="#3-安装-jpeg-库" class="headerlink" title="3. 安装 jpeg 库"></a>3. 安装 jpeg 库</h3><p>这个版本的 <code>jpeg</code> 库没有提供 <code>libtool</code> 库，所以要先编译 <code>libtool</code> 库。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /home/minigui
+<span class="token function">tar</span> -zxvf libtool-2.4.tar.gz
+<span class="token function">cd</span> libtool-2.4
+./configure CC<span class="token operator">=</span>arm-linux-gcc --build<span class="token operator">=</span>i386-linux --host<span class="token operator">=</span>arm-linux --prefix<span class="token operator">=</span><span class="token variable">$PWD</span>/_install 
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span></code></pre>
+<p>现在把 <code>_install/bin</code> 的内容复制到 <code>ljpeg-6b</code> 目录下。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> <span class="token punctuation">..</span>
+<span class="token function">tar</span> -zxvf jpegsrc.v6b.tar.gz
+<span class="token function">cd</span> jpeg-6b
+<span class="token function">mv</span> <span class="token punctuation">..</span>/libtool-2.4/_install/bin/* <span class="token keyword">.</span>
+<span class="token comment" spellcheck="true"># 需要自己手动创建一个目录，不然会报错</span>
+<span class="token function">mkdir</span> –p /usr/local/arm/2.95.3/arm-linux/man/man1
+./configure --prefix<span class="token operator">=</span>/usr/local/arm/2.95.3/arm-linux/ CC<span class="token operator">=</span>arm-linux-gcc --enable-shared --enable-static
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span></code></pre>
+<p> 检查是否安装成功。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /usr/local/arm/2.95.3/arm-linux/
+<span class="token function">find</span> <span class="token keyword">.</span> -name *jpeg*
+./include/jpeglib.h
+./bin/cjpeg
+./bin/djpeg
+./bin/jpegtran
+./lib/libjpeg.so.62.0.0
+./lib/libjpeg.so.62
+./lib/libjpeg.so
+./lib/libjpeg.la
+./lib/libjpeg.a
+./man/man1/cjpeg.1
+./man/man1/djpeg.1
+./man/man1/jpegtran.1</code></pre>
+<p>查看是不是ARM平台的。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">file</span> ./lib/libjpeg.so.62.0.0 
+./lib/libjpeg.so.62.0.0: ELF 32-bit LSB shared object, ARM, version 1 <span class="token punctuation">(</span>ARM<span class="token punctuation">)</span>, not stripped</code></pre>
+<p>到这里，<code>jpeg</code> 库也安装成功了。</p>
+<h3 id="4-安装-libttf-库"><a href="#4-安装-libttf-库" class="headerlink" title="4. 安装 libttf 库"></a>4. 安装 libttf 库</h3><p><code>minigui</code> 只支持1.3.1的 <code>ttf</code> 库，这个库最麻烦。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /home/minigui
+<span class="token function">tar</span> -zxvf freetype-1.3.1.tar.gz
+<span class="token function">mkdir</span> -p libttf/extend
+<span class="token function">cp</span> freetype-1.3.1/lib/* freetype-1.3.1/lib/arch/ansi/* libttf/
+<span class="token comment" spellcheck="true"># 这里不用加-r，有几个不需要用</span>
+<span class="token function">cp</span> freetype-1.3.1/lib/extend/* libttf/extend
+<span class="token function">cd</span> libttf
+arm-linux-gcc -c -fPIC -O2 freetype.c
+arm-linux-gcc -c -fPIC -O2 -I./ extend/*.c
+arm-linux-gcc --shared -o libttf.so *.o
+<span class="token function">mkdir</span> –p /usr/local/arm/2.95.3/arm-linux/include/freetype1/freetype
+<span class="token function">cp</span> *.h extend/*.h /usr/local/arm/2.95.3/arm-linux/include/freetype1/freetype</code></pre>
+<p>到这里，<code>libttf</code> 库也安装成功了。</p>
+<h3 id="5-安装libminigui-1-6-10"><a href="#5-安装libminigui-1-6-10" class="headerlink" title="5. 安装libminigui-1.6.10"></a>5. 安装libminigui-1.6.10</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /home/minigui
+<span class="token function">cd</span> libminigui-1.6.10
+CC<span class="token operator">=</span>/usr/local/arm/2.95.3/bin/arm-linux-gcc ./configure --prefix<span class="token operator">=</span>/usr/local/arm/2.95.3/arm-linux/ --build<span class="token operator">=</span>i386-linux --host<span class="token operator">=</span>arm-unknown-linux --target<span class="token operator">=</span>arm-unknown-linux
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span></code></pre>
+<p>到这里，<code>libminigui-1.6.10</code> 就安装成功了。</p>
+<h3 id="6-安装资源"><a href="#6-安装资源" class="headerlink" title="6. 安装资源"></a>6. 安装资源</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /home/minigui
+<span class="token function">cd</span> minigui-res-1.6.10
+vim config.linux
+<span class="token comment" spellcheck="true"># /cc 查找cc改为/usr/local/arm/2.95.3/bin/arm-linux-gcc</span>
+<span class="token comment" spellcheck="true"># /prefix 查找prefix改为/usr/local/arm/2.95.3/arm-linux</span>
+<span class="token function">make</span> <span class="token function">install</span></code></pre>
+<p>资源也安装成功了。</p>
+<h3 id="7-测试"><a href="#7-测试" class="headerlink" title="7. 测试"></a>7. 测试</h3><p>试试能不能成功编译代码。</p>
+<p><code>helloworld.c</code> 代码</p>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;minigui/common.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;minigui/minigui.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;minigui/gdi.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;minigui/window.h></span></span>
+
+<span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">HelloWinProc</span> <span class="token punctuation">(</span>HWND hWnd<span class="token punctuation">,</span> <span class="token keyword">int</span> message<span class="token punctuation">,</span> WPARAM wParam<span class="token punctuation">,</span> LPARAM lParam<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    HDC hdc<span class="token punctuation">;</span>
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>message<span class="token punctuation">)</span> 
+    <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> MSG_PAINT<span class="token operator">:</span>
+            hdc <span class="token operator">=</span> <span class="token function">BeginPaint</span> <span class="token punctuation">(</span>hWnd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">TextOut</span> <span class="token punctuation">(</span>hdc<span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">,</span> <span class="token string">"Hello world!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">EndPaint</span> <span class="token punctuation">(</span>hWnd<span class="token punctuation">,</span> hdc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> MSG_CLOSE<span class="token operator">:</span>
+            <span class="token function">DestroyMainWindow</span> <span class="token punctuation">(</span>hWnd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">PostQuitMessage</span> <span class="token punctuation">(</span>hWnd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>        
+    <span class="token keyword">return</span> <span class="token function">DefaultMainWinProc</span> <span class="token punctuation">(</span>hWnd<span class="token punctuation">,</span> message<span class="token punctuation">,</span> wParam<span class="token punctuation">,</span> lParam<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">MiniGUIMain</span> <span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    MSG Msg<span class="token punctuation">;</span>
+    HWND hMainWnd<span class="token punctuation">;</span>
+    MAINWINCREATE CreateInfo<span class="token punctuation">;</span>
+
+    <span class="token macro property">#<span class="token directive keyword">ifdef</span> _MGRM_PROCESSES</span>
+    <span class="token function">JoinLayer</span> <span class="token punctuation">(</span>NAME_DEF_LAYER <span class="token punctuation">,</span> <span class="token string">"helloworld"</span> <span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+    CreateInfo<span class="token punctuation">.</span>dwStyle <span class="token operator">=</span> WS_VISIBLE <span class="token operator">|</span> WS_BORDER <span class="token operator">|</span> WS_CAPTION<span class="token punctuation">;</span>
+    CreateInfo<span class="token punctuation">.</span>dwExStyle <span class="token operator">=</span> WS_EX_NONE<span class="token punctuation">;</span>
+    CreateInfo<span class="token punctuation">.</span>spCaption <span class="token operator">=</span> <span class="token string">"HelloWorld"</span><span class="token punctuation">;</span>
+    CreateInfo<span class="token punctuation">.</span>hMenu <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    CreateInfo<span class="token punctuation">.</span>hCursor <span class="token operator">=</span> <span class="token function">GetSystemCursor</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    CreateInfo<span class="token punctuation">.</span>hIcon <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    CreateInfo<span class="token punctuation">.</span>MainWindowProc <span class="token operator">=</span> HelloWinProc<span class="token punctuation">;</span>
+    CreateInfo<span class="token punctuation">.</span>lx <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    CreateInfo<span class="token punctuation">.</span>ty <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    CreateInfo<span class="token punctuation">.</span>rx <span class="token operator">=</span> <span class="token number">240</span><span class="token punctuation">;</span>
+    CreateInfo<span class="token punctuation">.</span>by <span class="token operator">=</span> <span class="token number">180</span><span class="token punctuation">;</span>
+    CreateInfo<span class="token punctuation">.</span>iBkColor <span class="token operator">=</span> COLOR_lightwhite<span class="token punctuation">;</span>
+    CreateInfo<span class="token punctuation">.</span>dwAddData <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    CreateInfo<span class="token punctuation">.</span>hHosting <span class="token operator">=</span> HWND_DESKTOP<span class="token punctuation">;</span>
+    hMainWnd <span class="token operator">=</span> <span class="token function">CreateMainWindow</span> <span class="token punctuation">(</span><span class="token operator">&amp;</span>CreateInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>hMainWnd <span class="token operator">==</span> HWND_INVALID<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+    <span class="token function">ShowWindow</span> <span class="token punctuation">(</span>hMainWnd<span class="token punctuation">,</span> SW_SHOWNORMAL<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">GetMessage</span> <span class="token punctuation">(</span><span class="token operator">&amp;</span>Msg<span class="token punctuation">,</span> hMainWnd<span class="token punctuation">)</span><span class="token punctuation">)</span> 
+    <span class="token punctuation">{</span>
+        <span class="token function">TranslateMessage</span> <span class="token punctuation">(</span><span class="token operator">&amp;</span>Msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">DispatchMessage</span> <span class="token punctuation">(</span><span class="token operator">&amp;</span>Msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">MainWindowThreadCleanup</span> <span class="token punctuation">(</span>hMainWnd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token macro property">#<span class="token directive keyword">ifndef</span> _MGRM_PROCESSES</span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;minigui/dti.c></span></span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span></code></pre>
+<p>编译</p>
+<pre class=" language-bash"><code class="language-bash">arm-linux-gcc -o helloworld helloworld.c -lminigui -lpthread -ljpeg -lpng –lttf</code></pre>
+<p>查看是不是ARM平台的。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">file</span> helloworld
+helloworld: ELF 32-bit LSB executable, ARM, version 1 <span class="token punctuation">(</span>ARM<span class="token punctuation">)</span>, <span class="token keyword">for</span> GNU/Linux 2.0.0, dynamically linked <span class="token punctuation">(</span>uses shared libs<span class="token punctuation">)</span>, not stripped</code></pre>
+<p>这样我们就可以在宿主机上编译 <code>minigui</code> 代码了，把这个可执行文件放到移植了 <code>minigui</code> 的开发板上就可以跑了。</p>
+<p>注：如果当前目录下有 <code>MiniGUI.cf</code> 还需要更改这个文件，我这里的改法是基于 <code>JXARM9-2410</code> 的。</p>
+<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201109121149958.png"></p>
+<p>这里的 <code>ial_engine</code> 要改为 <code>SMDK2410</code> <code>fbcon</code> 大小要改为 640×480，不然会报错的。</p>
+<p>如果当前目录下没有，前面讲过了，就会到 <code>/usr/local/etc</code> 默认目录下寻找这个文件。</p>
+<p>如果出现这个错误 <code>GAL ENGINE: Can't open /dev/tty0: No such file or directory</code> 等跟设备有关的错误</p>
+<p>试试这个 <code>mknod /dev/tty0 c 4 0</code></p>
+<h2 id="Ⅲ-参考文章"><a href="#Ⅲ-参考文章" class="headerlink" title="Ⅲ. 参考文章"></a>Ⅲ. 参考文章</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/liaoxinmeng/article/details/5123014">MiniGUI 移植到pc和arm开发板全过程详解 及错误解答</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/datase/article/details/77862823">ubuntu下JPEG的交叉编译</a></li>
+</ol>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">incipe</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://incipe-win.github.io/2020/11/08/linux/2020/jxarm9-2410-3-shi-yan-san/">https://incipe-win.github.io/2020/11/08/linux/2020/jxarm9-2410-3-shi-yan-san/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">incipe</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/ARM/">
+                                    <span class="chip bg-color">ARM</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'YgGc464YaWRlU2g4vTcQfqyG-gzGzoHsz',
+        appKey: 'nvdkrqaI3TPxylG8xPR3SjKA',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/11/08/linux/2020/jxarm9-2410-3-shi-yan-san/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="JXARM9-2410-3实验三">
+                        
+                        <span class="card-title">JXARM9-2410-3实验三</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            JXARM9-2410-3实验三
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/IOT/" class="post-category">
+                                    IOT
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ARM/">
+                        <span class="chip bg-color">ARM</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/11/02/leetcode/2020/jian-zhi-offer-39.shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="剑指 Offer 39. 数组中出现次数超过一半的数字">
+                        
+                        <span class="card-title">剑指 Offer 39. 数组中出现次数超过一半的数字</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Leetcode/" class="post-category">
+                                    Leetcode
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">
+                        <span class="chip bg-color">滑动窗口</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: incipe<br />'
+            + '文章作者: incipe<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">incipe</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">87.3k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "8";
+                    var startDate = "16";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Incipe-win" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2439346050" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2439346050" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
