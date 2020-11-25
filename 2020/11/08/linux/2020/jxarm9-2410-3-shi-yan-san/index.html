@@ -467,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-09
+                    2020-11-13
                 </div>
                 
 
@@ -501,6 +501,9 @@
 <li>先在虚拟机上编译安装好 <code>minigui</code> 能够在虚拟机上看到实验现象（显示Hello World）。</li>
 <li>移植到开发板上，在开发板上可以看到实验现象。</li>
 </ol>
+<p>实验所用到的包可在此下载</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/16vRq2C9BM5gj2rYHvgBhbw">https://pan.baidu.com/s/16vRq2C9BM5gj2rYHvgBhbw</a> </p>
+<p>提取码: t72u</p>
 <h2 id="Ⅰ-虚拟机安装-minigui"><a href="#Ⅰ-虚拟机安装-minigui" class="headerlink" title="Ⅰ. 虚拟机安装 minigui"></a>Ⅰ. 虚拟机安装 minigui</h2><p>如果安装 <code>red hat</code> 的时候选的是 <code>everything</code> 的话，是不需要安装这几个库 <code>zlib, png, jpeg, ttf</code> 只有移植到开发板上才需要。</p>
 <p>所以在虚拟机上我们只需要以下三个包就可以了。</p>
 <ul>
@@ -704,7 +707,8 @@ arm-linux-gcc -c -fPIC -O2 freetype.c
 arm-linux-gcc -c -fPIC -O2 -I./ extend/*.c
 arm-linux-gcc --shared -o libttf.so *.o
 <span class="token function">mkdir</span> –p /usr/local/arm/2.95.3/arm-linux/include/freetype1/freetype
-<span class="token function">cp</span> *.h extend/*.h /usr/local/arm/2.95.3/arm-linux/include/freetype1/freetype</code></pre>
+<span class="token function">cp</span> *.h extend/*.h /usr/local/arm/2.95.3/arm-linux/include/freetype1/freetype
+<span class="token function">cp</span> libttf.so /usr/local/arm/2.95.3/arm-linux/lib -rf</code></pre>
 <p>到这里，<code>libttf</code> 库也安装成功了。</p>
 <h3 id="5-安装libminigui-1-6-10"><a href="#5-安装libminigui-1-6-10" class="headerlink" title="5. 安装libminigui-1.6.10"></a>5. 安装libminigui-1.6.10</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /home/minigui
 <span class="token function">cd</span> libminigui-1.6.10
@@ -1296,48 +1300,51 @@ helloworld: ELF 32-bit LSB executable, ARM, version 1 <span class="token punctua
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/11/08/linux/2020/jxarm9-2410-3-shi-yan-san/">
+                <a href="/2020/11/25/linux/2020/autotools-gong-ju-shi-yong-duo-wen-jian-tong-mu-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="JXARM9-2410-3实验三">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Autotools工具使用">
                         
-                        <span class="card-title">JXARM9-2410-3实验三</span>
+                        <span class="card-title">Autotools工具使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JXARM9-2410-3实验三
+                            1. 工具介绍Autoconf/Automake 工具用于自动创建功能完善的 Makefile 文件。
+Autotools 主要包括：autoconf、automake、perl 语言环境和 m4。
+2. 使用示范目录树：
+tree
+.
+|
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-08
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-25
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/IOT/" class="post-category">
-                                    IOT
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ARM/">
-                        <span class="chip bg-color">ARM</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -1583,7 +1590,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">87.4k</span>&nbsp;字
+                class="white-color">88k</span>&nbsp;字
             
             
             

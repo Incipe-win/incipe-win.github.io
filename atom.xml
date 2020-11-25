@@ -6,7 +6,7 @@
   <link href="https://incipe-win.github.io/atom.xml" rel="self"/>
   
   <link href="https://incipe-win.github.io/"/>
-  <updated>2020-11-09T13:27:29.871Z</updated>
+  <updated>2020-11-25T11:07:15.136Z</updated>
   <id>https://incipe-win.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Autotools工具使用</title>
+    <link href="https://incipe-win.github.io/2020/11/25/linux/2020/autotools-gong-ju-shi-yong-duo-wen-jian-tong-mu-lu/"/>
+    <id>https://incipe-win.github.io/2020/11/25/linux/2020/autotools-gong-ju-shi-yong-duo-wen-jian-tong-mu-lu/</id>
+    <published>2020-11-24T16:00:00.000Z</published>
+    <updated>2020-11-25T11:07:15.136Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-工具介绍&quot;&gt;&lt;a href=&quot;#1-工具介绍&quot; class=&quot;headerlink&quot; title=&quot;1. 工具介绍&quot;&gt;&lt;/a&gt;1. 工具介绍&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Autoconf/Automake&lt;/code&gt; 工具用于自动创建功能完善的</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://incipe-win.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://incipe-win.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JXARM9-2410-3实验三</title>
     <link href="https://incipe-win.github.io/2020/11/08/linux/2020/jxarm9-2410-3-shi-yan-san/"/>
     <id>https://incipe-win.github.io/2020/11/08/linux/2020/jxarm9-2410-3-shi-yan-san/</id>
     <published>2020-11-07T16:00:00.000Z</published>
-    <updated>2020-11-09T13:27:29.871Z</updated>
+    <updated>2020-11-13T07:07:56.112Z</updated>
     
     
       
@@ -30,10 +55,7 @@
         
     <summary type="html">&lt;p&gt;本次实验分两步走：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;先在虚拟机上编译安装好 &lt;code&gt;minigui&lt;/code&gt; 能够在虚拟机上看到实验现象（显示Hello World）。&lt;/li&gt;
-&lt;li&gt;移植到开发板上，在开发板上可以看到实验现象。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2</summary>
+&lt;li&gt;先在虚拟机上编译安装好 &lt;code&gt;minigui&lt;/code&gt; 能够在虚拟机上看到实验现象（显示Hello</summary>
         
       
     
@@ -149,6 +171,32 @@
   </entry>
   
   <entry>
+    <title>jetson nano刷机</title>
+    <link href="https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/"/>
+    <id>https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/</id>
+    <published>2020-10-26T16:00:00.000Z</published>
+    <updated>2020-10-27T16:11:58.803Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Ⅰ-需要准备的材料&quot;&gt;&lt;a href=&quot;#Ⅰ-需要准备的材料&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 需要准备的材料&quot;&gt;&lt;/a&gt;Ⅰ. 需要准备的材料&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Jetson nano&lt;/strong&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
+    
+    
+    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>剑指 Offer 26. 树的子结构</title>
     <link href="https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/"/>
     <id>https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/</id>
@@ -172,32 +220,6 @@
     
     
     <category term="二叉树" scheme="https://incipe-win.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jetson nano刷机</title>
-    <link href="https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/"/>
-    <id>https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/</id>
-    <published>2020-10-26T16:00:00.000Z</published>
-    <updated>2020-10-27T16:11:58.803Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Ⅰ-需要准备的材料&quot;&gt;&lt;a href=&quot;#Ⅰ-需要准备的材料&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 需要准备的材料&quot;&gt;&lt;/a&gt;Ⅰ. 需要准备的材料&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Jetson nano&lt;/strong&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
-    
-    
-    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
     
   </entry>
   
@@ -514,31 +536,6 @@
     <category term="Python" scheme="https://incipe-win.github.io/tags/Python/"/>
     
     <category term="Liunx" scheme="https://incipe-win.github.io/tags/Liunx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pandas入门</title>
-    <link href="https://incipe-win.github.io/2020/08/20/python/2020/pandas-ru-men/"/>
-    <id>https://incipe-win.github.io/2020/08/20/python/2020/pandas-ru-men/</id>
-    <published>2020-08-19T16:00:00.000Z</published>
-    <updated>2020-10-26T04:01:59.036Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;什么是pandas&quot;&gt;&lt;a href=&quot;#什么是pandas&quot; class=&quot;headerlink&quot; title=&quot;什么是pandas&quot;&gt;&lt;/a&gt;什么是pandas&lt;/h2&gt;&lt;p&gt;&lt;code&gt;pandas&lt;/code&gt; 是基于一种</summary>
-        
-      
-    
-    
-    
-    <category term="博客" scheme="https://incipe-win.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-    <category term="数据分析" scheme="https://incipe-win.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
