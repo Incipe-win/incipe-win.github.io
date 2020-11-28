@@ -467,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-27
+                    2020-11-28
                 </div>
                 
 
@@ -517,7 +517,7 @@ vim site.mm</code></pre>
 <p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201127223721889.png"></p>
 <p>因为这个系统 <code>lipo</code> 这个工具，所以静态库查看不了是基于哪个框架的。用 <code>arm-linux-gcc</code> 链接静态库编译下代码就清楚了。</p>
 <p><strong>切换到工作区</strong>，先把 <code>msql.h</code> 头文件和 <code>libmsql.a</code> 库文件拷贝到要编译的代码的同级目录下。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">cp</span> -rf /usr/local/arm/2.95.3/arm-linux/lib/libmsql.a /usr/local/arm/2.95.3/arm-linux/include/msql.h <span class="token keyword">.</span></code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cp</span> -rf /usr/local/arm/2.95.3/arm-linux/msql3/lib/libmsql.a /usr/local/arm/2.95.3/arm-linux/msql3/include/msql.h <span class="token keyword">.</span></code></pre>
 <pre class=" language-bash"><code class="language-bash">tree
 <span class="token keyword">.</span>
 <span class="token operator">|</span>-- insert_test.c
