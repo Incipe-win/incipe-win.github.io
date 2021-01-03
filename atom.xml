@@ -6,7 +6,7 @@
   <link href="https://incipe-win.github.io/atom.xml" rel="self"/>
   
   <link href="https://incipe-win.github.io/"/>
-  <updated>2020-11-28T07:02:45.079Z</updated>
+  <updated>2021-01-03T05:02:41.448Z</updated>
   <id>https://incipe-win.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>opencv移植</title>
+    <link href="https://incipe-win.github.io/2020/12/30/linux/2020/opencv-yi-zhi/"/>
+    <id>https://incipe-win.github.io/2020/12/30/linux/2020/opencv-yi-zhi/</id>
+    <published>2020-12-29T16:00:00.000Z</published>
+    <updated>2021-01-03T05:02:41.448Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一-移植依赖库&quot;&gt;&lt;a href=&quot;#一-移植依赖库&quot; class=&quot;headerlink&quot; title=&quot;一. 移植依赖库&quot;&gt;&lt;/a&gt;一.</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://incipe-win.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://incipe-win.github.io/tags/Linux/"/>
+    
+    <category term="移植" scheme="https://incipe-win.github.io/tags/%E7%A7%BB%E6%A4%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>虚拟机扩容</title>
+    <link href="https://incipe-win.github.io/2020/12/30/linux/2020/xu-ni-ji-kuo-rong/"/>
+    <id>https://incipe-win.github.io/2020/12/30/linux/2020/xu-ni-ji-kuo-rong/</id>
+    <published>2020-12-29T16:00:00.000Z</published>
+    <updated>2021-01-03T07:42:18.400Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;由于最开始安装linux时没考虑到容量问题，导致现在使用显示容量不足。&lt;/p&gt;
+&lt;p&gt;通过简单的虚拟机容量扩展，发现实际大小并没有改变。&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://incipe-win.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://incipe-win.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>MiniSQL实验</title>
@@ -173,6 +227,32 @@
   </entry>
   
   <entry>
+    <title>jetson nano刷机</title>
+    <link href="https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/"/>
+    <id>https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/</id>
+    <published>2020-10-26T16:00:00.000Z</published>
+    <updated>2020-10-27T16:11:58.803Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Ⅰ-需要准备的材料&quot;&gt;&lt;a href=&quot;#Ⅰ-需要准备的材料&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 需要准备的材料&quot;&gt;&lt;/a&gt;Ⅰ. 需要准备的材料&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Jetson nano&lt;/strong&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
+    
+    
+    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>剑指 Offer 26. 树的子结构</title>
     <link href="https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/"/>
     <id>https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/</id>
@@ -221,32 +301,6 @@
     
     
     <category term="二叉树" scheme="https://incipe-win.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jetson nano刷机</title>
-    <link href="https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/"/>
-    <id>https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/</id>
-    <published>2020-10-26T16:00:00.000Z</published>
-    <updated>2020-10-27T16:11:58.803Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Ⅰ-需要准备的材料&quot;&gt;&lt;a href=&quot;#Ⅰ-需要准备的材料&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 需要准备的材料&quot;&gt;&lt;/a&gt;Ⅰ. 需要准备的材料&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Jetson nano&lt;/strong&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
-    
-    
-    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
     
   </entry>
   
@@ -438,31 +492,6 @@
   </entry>
   
   <entry>
-    <title>GEC6818音乐播放器制作</title>
-    <link href="https://incipe-win.github.io/2020/09/28/iot/2020/gec6818-yin-le-bo-fang-qi-zhi-zuo/"/>
-    <id>https://incipe-win.github.io/2020/09/28/iot/2020/gec6818-yin-le-bo-fang-qi-zhi-zuo/</id>
-    <published>2020-09-27T16:00:00.000Z</published>
-    <updated>2020-10-26T03:56:58.286Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h2&gt;&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span</summary>
-        
-      
-    
-    
-    
-    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
-    
-    
-    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Ubuntu20.04安装arm-linux-gcc交叉编译器</title>
     <link href="https://incipe-win.github.io/2020/09/28/iot/2020/ubuntu20.04-an-zhuang-arm-linux-gcc-jiao-cha-bian-yi-qi/"/>
     <id>https://incipe-win.github.io/2020/09/28/iot/2020/ubuntu20.04-an-zhuang-arm-linux-gcc-jiao-cha-bian-yi-qi/</id>
@@ -488,54 +517,27 @@
   </entry>
   
   <entry>
-    <title>147. 对链表进行插入排序</title>
-    <link href="https://incipe-win.github.io/2020/09/24/leetcode/2020/147.dui-lian-biao-jin-xing-cha-ru-pai-xu/"/>
-    <id>https://incipe-win.github.io/2020/09/24/leetcode/2020/147.dui-lian-biao-jin-xing-cha-ru-pai-xu/</id>
-    <published>2020-09-23T16:00:00.000Z</published>
-    <updated>2020-10-26T03:59:09.763Z</updated>
+    <title>GEC6818音乐播放器制作</title>
+    <link href="https://incipe-win.github.io/2020/09/28/iot/2020/gec6818-yin-le-bo-fang-qi-zhi-zuo/"/>
+    <id>https://incipe-win.github.io/2020/09/28/iot/2020/gec6818-yin-le-bo-fang-qi-zhi-zuo/</id>
+    <published>2020-09-27T16:00:00.000Z</published>
+    <updated>2020-10-26T03:56:58.286Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;对链表进行插入排序。&lt;/p&gt;
-&lt;p&gt;&lt;img</summary>
+    <summary type="html">&lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h2&gt;&lt;pre class=&quot; language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span</summary>
         
       
     
     
     
-    <category term="Leetcode" scheme="https://incipe-win.github.io/categories/Leetcode/"/>
+    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
     
     
-    <category term="链表" scheme="https://incipe-win.github.io/tags/%E9%93%BE%E8%A1%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PicGo+Typora+Gitee搭建本地博客图片环境</title>
-    <link href="https://incipe-win.github.io/2020/08/26/software/2020/picgo-typora-gitee-da-jian-ben-di-bo-ke-huan-jing/"/>
-    <id>https://incipe-win.github.io/2020/08/26/software/2020/picgo-typora-gitee-da-jian-ben-di-bo-ke-huan-jing/</id>
-    <published>2020-08-25T16:00:00.000Z</published>
-    <updated>2020-10-26T04:02:49.507Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="软件使用" scheme="https://incipe-win.github.io/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/"/>
-    
-    
-    <category term="博客" scheme="https://incipe-win.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
     
   </entry>
   
