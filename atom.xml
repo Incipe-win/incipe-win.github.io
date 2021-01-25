@@ -6,7 +6,7 @@
   <link href="https://incipe-win.github.io/atom.xml" rel="self"/>
   
   <link href="https://incipe-win.github.io/"/>
-  <updated>2021-01-03T05:02:41.448Z</updated>
+  <updated>2021-01-25T03:02:46.427Z</updated>
   <id>https://incipe-win.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我在校园爬虫打卡</title>
+    <link href="https://incipe-win.github.io/2021/01/23/python/2020/wo-zai-xiao-yuan-pa-chong-da-qia/"/>
+    <id>https://incipe-win.github.io/2021/01/23/python/2020/wo-zai-xiao-yuan-pa-chong-da-qia/</id>
+    <published>2021-01-22T16:00:00.000Z</published>
+    <updated>2021-01-25T03:02:46.427Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Ⅰ-下载Fiddler抓取https包&quot;&gt;&lt;a href=&quot;#Ⅰ-下载Fiddler抓取https包&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 下载Fiddler抓取https包&quot;&gt;&lt;/a&gt;Ⅰ.</summary>
+        
+      
+    
+    
+    
+    <category term="博客" scheme="https://incipe-win.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="Python" scheme="https://incipe-win.github.io/tags/Python/"/>
+    
+    <category term="Liunx" scheme="https://incipe-win.github.io/tags/Liunx/"/>
+    
+  </entry>
   
   <entry>
     <title>opencv移植</title>
@@ -175,32 +202,6 @@
   </entry>
   
   <entry>
-    <title>JXARM9-2410-3实验一</title>
-    <link href="https://incipe-win.github.io/2020/11/01/linux/2020/jxarm9-2410-3-shi-yan-yi/"/>
-    <id>https://incipe-win.github.io/2020/11/01/linux/2020/jxarm9-2410-3-shi-yan-yi/</id>
-    <published>2020-10-31T16:00:00.000Z</published>
-    <updated>2020-11-01T11:33:26.506Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Ⅰ-实验准备&quot;&gt;&lt;a href=&quot;#Ⅰ-实验准备&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 实验准备&quot;&gt;&lt;/a&gt;Ⅰ. 实验准备&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Red Hat Enterprise&lt;/strong&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
-    
-    
-    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JXARM9-2410-3实验二</title>
     <link href="https://incipe-win.github.io/2020/11/01/linux/2020/jxarm9-2410-3-shi-yan-er/"/>
     <id>https://incipe-win.github.io/2020/11/01/linux/2020/jxarm9-2410-3-shi-yan-er/</id>
@@ -227,19 +228,19 @@
   </entry>
   
   <entry>
-    <title>jetson nano刷机</title>
-    <link href="https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/"/>
-    <id>https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/</id>
-    <published>2020-10-26T16:00:00.000Z</published>
-    <updated>2020-10-27T16:11:58.803Z</updated>
+    <title>JXARM9-2410-3实验一</title>
+    <link href="https://incipe-win.github.io/2020/11/01/linux/2020/jxarm9-2410-3-shi-yan-yi/"/>
+    <id>https://incipe-win.github.io/2020/11/01/linux/2020/jxarm9-2410-3-shi-yan-yi/</id>
+    <published>2020-10-31T16:00:00.000Z</published>
+    <updated>2020-11-01T11:33:26.506Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;Ⅰ-需要准备的材料&quot;&gt;&lt;a href=&quot;#Ⅰ-需要准备的材料&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 需要准备的材料&quot;&gt;&lt;/a&gt;Ⅰ. 需要准备的材料&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Jetson nano&lt;/strong&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;Ⅰ-实验准备&quot;&gt;&lt;a href=&quot;#Ⅰ-实验准备&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 实验准备&quot;&gt;&lt;/a&gt;Ⅰ. 实验准备&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Red Hat Enterprise&lt;/strong&gt;</summary>
         
       
     
@@ -301,6 +302,32 @@
     
     
     <category term="二叉树" scheme="https://incipe-win.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jetson nano刷机</title>
+    <link href="https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/"/>
+    <id>https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/</id>
+    <published>2020-10-26T16:00:00.000Z</published>
+    <updated>2020-10-27T16:11:58.803Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Ⅰ-需要准备的材料&quot;&gt;&lt;a href=&quot;#Ⅰ-需要准备的材料&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 需要准备的材料&quot;&gt;&lt;/a&gt;Ⅰ. 需要准备的材料&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Jetson nano&lt;/strong&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
+    
+    
+    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
     
   </entry>
   
@@ -488,31 +515,6 @@
     
     
     <category term="博客" scheme="https://incipe-win.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu20.04安装arm-linux-gcc交叉编译器</title>
-    <link href="https://incipe-win.github.io/2020/09/28/iot/2020/ubuntu20.04-an-zhuang-arm-linux-gcc-jiao-cha-bian-yi-qi/"/>
-    <id>https://incipe-win.github.io/2020/09/28/iot/2020/ubuntu20.04-an-zhuang-arm-linux-gcc-jiao-cha-bian-yi-qi/</id>
-    <published>2020-09-27T16:00:00.000Z</published>
-    <updated>2020-10-26T03:57:17.695Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h2&gt;&lt;p&gt;本文安装的交叉编译器是 &lt;strong&gt;arm-linux-gcc4.4.3&lt;/strong&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
-    
-    
-    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
     
   </entry>
   
