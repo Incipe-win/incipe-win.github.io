@@ -31,10 +31,10 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -532,10 +532,10 @@ plt<span class="token punctuation">.</span>xticks<span class="token punctuation"
 <pre class=" language-python"><code class="language-python">plt<span class="token punctuation">.</span>yticks<span class="token punctuation">(</span>range<span class="token punctuation">(</span>min<span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">,</span> max<span class="token punctuation">(</span>y<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
 <h4 id="设置字体"><a href="#设置字体" class="headerlink" title="设置字体"></a>设置字体</h4><p>查看 <code>linux</code> 有哪些字体： <code>fc-list</code> 有哪些中文字体 <code>fc-list :lang=zh</code></p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib
-font <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"family": "Noto Sans Mono",</span>
+font <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"family"</span><span class="token punctuation">:</span> <span class="token string">"Noto Sans Mono"</span><span class="token punctuation">,</span>
         <span class="token string">"weight"</span><span class="token punctuation">:</span> <span class="token string">"bold"</span><span class="token punctuation">,</span>
         <span class="token string">"size"</span><span class="token punctuation">:</span> <span class="token string">"larger"</span>
-        <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+        <span class="token punctuation">}</span>
 matplotlib<span class="token punctuation">.</span>rc<span class="token punctuation">(</span><span class="token string">"font"</span><span class="token punctuation">,</span> <span class="token operator">**</span>font<span class="token punctuation">)</span></code></pre>
 <p>或者：</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> matplotlib <span class="token keyword">import</span> font_manager
@@ -1396,7 +1396,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">98.3k</span>&nbsp;字
+                class="white-color">90.9k</span>&nbsp;字
             
             
             

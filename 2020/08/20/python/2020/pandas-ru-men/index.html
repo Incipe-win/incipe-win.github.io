@@ -31,10 +31,10 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3k
+                    2.9k
                 </div>
                 
 
@@ -535,7 +535,7 @@ d    4
 e    5
 dtype: int64
 """</span> 
-dic <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"name" : "incipe", "age" : 0, "tel" : "xxxxxxxxxxx"&amp;#125;</span>
+dic <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"name"</span> <span class="token punctuation">:</span> <span class="token string">"incipe"</span><span class="token punctuation">,</span> <span class="token string">"age"</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"tel"</span> <span class="token punctuation">:</span> <span class="token string">"xxxxxxxxxxx"</span><span class="token punctuation">}</span>
 t3 <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span>dic<span class="token punctuation">)</span>  
 <span class="token triple-quoted-string string">"""
 name         incipe
@@ -600,14 +600,14 @@ a  0  1   2   3
 b  4  5   6   7
 c  8  9  10  11
 """</span>
-dic <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"name" : ["incipe", "win"], "age" : [0, 0], "tel" : ["xxx", "xxx"]&amp;#125;</span>
+dic <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"name"</span> <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"incipe"</span><span class="token punctuation">,</span> <span class="token string">"win"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"age"</span> <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"tel"</span> <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"xxx"</span><span class="token punctuation">,</span> <span class="token string">"xxx"</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
 t7 <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>dic<span class="token punctuation">)</span>
 <span class="token triple-quoted-string string">"""
      name  age  tel
 0  incipe    0  xxx
 1     win    0  xxx
 """</span>
-l <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"name" : "incipe"&amp;#125;, &amp;#123;"age" : 0&amp;#125;, &amp;#123;"tel" : "xxx"&amp;#125;]</span>
+l <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">"name"</span> <span class="token punctuation">:</span> <span class="token string">"incipe"</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">"age"</span> <span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">"tel"</span> <span class="token punctuation">:</span> <span class="token string">"xxx"</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
 t8 <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>l<span class="token punctuation">)</span>
 <span class="token triple-quoted-string string">"""
      name  age  tel
@@ -653,7 +653,7 @@ max    8.0  9.0  10.0  11.0
 """</span> 
 t6<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token triple-quoted-string string">"""
-&lt;class 'pandas.core.frame.DataFrame'&gt;
+&lt;class 'pandas.core.frame.DataFrame'>
 Index: 3 entries, a to c
 Data columns (total 4 columns):
  #   Column  Non-Null Count  Dtype
@@ -755,21 +755,21 @@ b   6   7
 c  10  11
 """</span></code></pre>
 <p><code>这里的取多行多列跟NumPy的有区别，在NumPy中，[[1, 2], [3, 4]]表示取第2行第3列的元素和第3行第5列的元素，构成了一个一维数组，而在pandas中，表述取第2行第4列的元素，第2行第5列的元素和第3行第4列的元素，第3行第5列的元素，组成一个DataFrame的二维数组。</code></p>
-<h5 id="布尔索引"><a href="#布尔索引" class="headerlink" title="布尔索引"></a>布尔索引</h5><pre class=" language-python"><code class="language-python">t6 <span class="token operator">&gt;</span> <span class="token number">5</span>
+<h5 id="布尔索引"><a href="#布尔索引" class="headerlink" title="布尔索引"></a>布尔索引</h5><pre class=" language-python"><code class="language-python">t6 <span class="token operator">></span> <span class="token number">5</span>
 <span class="token triple-quoted-string string">"""
        e      f      g      h
 a  False  False  False  False
 b  False  False   True   True
 c   True   True   True   True
 """</span>
-t6<span class="token punctuation">[</span>t6 <span class="token operator">&gt;</span> <span class="token number">5</span><span class="token punctuation">]</span>
+t6<span class="token punctuation">[</span>t6 <span class="token operator">></span> <span class="token number">5</span><span class="token punctuation">]</span>
 <span class="token triple-quoted-string string">"""
      e    f     g     h
 a  NaN  NaN   NaN   NaN
 b  NaN  NaN   6.0   7.0
 c  8.0  9.0  10.0  11.0
 """</span>
-t6<span class="token punctuation">[</span>t6<span class="token punctuation">[</span><span class="token string">"e"</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">]</span>
+t6<span class="token punctuation">[</span>t6<span class="token punctuation">[</span><span class="token string">"e"</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">]</span>
 <span class="token triple-quoted-string string">"""
    e  f   g   h
 b  4  5   6   7
@@ -1028,7 +1028,7 @@ t2<span class="token punctuation">.</span>merge<span class="token punctuation">(
 <h3 id="Ⅶ-分组聚合"><a href="#Ⅶ-分组聚合" class="headerlink" title="Ⅶ. 分组聚合"></a>Ⅶ. 分组聚合</h3><p><code>groupby(by="columns_name")</code> </p>
 <p>返回值得到一个 <code>DataFrameGroupBy</code> 对象。</p>
 <p>也可以按照多列进行分组，参数传个列表进去就好了 <code>groupby(by=["columns_name1", "columns_name2"])</code> </p>
-<pre class=" language-python"><code class="language-python">l <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"Country" : "CN", "Custom" : "xxx"&amp;#125;, &amp;#123;"Country" : "ZA", "Custom" : "xxx1"&amp;#125;, &amp;#123;"Country" : "UK", "Custom" : "xxx2"&amp;#125;, &amp;#123;"Country" : "US", "Custom" : "xxx3"&amp;#125;] </span>
+<pre class=" language-python"><code class="language-python">l <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">"Country"</span> <span class="token punctuation">:</span> <span class="token string">"CN"</span><span class="token punctuation">,</span> <span class="token string">"Custom"</span> <span class="token punctuation">:</span> <span class="token string">"xxx"</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">"Country"</span> <span class="token punctuation">:</span> <span class="token string">"ZA"</span><span class="token punctuation">,</span> <span class="token string">"Custom"</span> <span class="token punctuation">:</span> <span class="token string">"xxx1"</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">"Country"</span> <span class="token punctuation">:</span> <span class="token string">"UK"</span><span class="token punctuation">,</span> <span class="token string">"Custom"</span> <span class="token punctuation">:</span> <span class="token string">"xxx2"</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">"Country"</span> <span class="token punctuation">:</span> <span class="token string">"US"</span><span class="token punctuation">,</span> <span class="token string">"Custom"</span> <span class="token punctuation">:</span> <span class="token string">"xxx3"</span><span class="token punctuation">}</span><span class="token punctuation">]</span> 
 df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>l<span class="token punctuation">)</span>
 <span class="token triple-quoted-string string">"""
   Country Custom
@@ -1039,7 +1039,7 @@ df <span class="token operator">=</span> pd<span class="token punctuation">.</sp
 """</span>
 group <span class="token operator">=</span> df<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token string">"Country"</span><span class="token punctuation">)</span> 
 <span class="token triple-quoted-string string">"""
-&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f92edc33940&gt;
+&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f92edc33940>
 """</span>
 <span class="token keyword">for</span> i <span class="token keyword">in</span> group<span class="token punctuation">:</span> 
     <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> 
@@ -1918,7 +1918,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">98.3k</span>&nbsp;字
+                class="white-color">90.9k</span>&nbsp;字
             
             
             

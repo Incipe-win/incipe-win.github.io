@@ -31,10 +31,10 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -474,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.9k
+                    3.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    19 分
+                    17 分
                 </div>
                 
 
@@ -517,9 +517,9 @@
 </li>
 </ul>
 <h3 id="open打开文件"><a href="#open打开文件" class="headerlink" title="open打开文件"></a>open打开文件</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">man</span> 2 <span class="token function">open</span>
-<span class="token comment" spellcheck="true">#include &lt;sys/types.h&gt;</span>
-<span class="token comment" spellcheck="true">#include &lt;sys/stat.h&gt;</span>
-<span class="token comment" spellcheck="true">#include &lt;fcntl.h&gt;</span>
+<span class="token comment" spellcheck="true">#include &lt;sys/types.h></span>
+<span class="token comment" spellcheck="true">#include &lt;sys/stat.h></span>
+<span class="token comment" spellcheck="true">#include &lt;fcntl.h></span>
 int open<span class="token punctuation">(</span>const char *pathname, int flags<span class="token punctuation">)</span><span class="token punctuation">;</span>
 int open<span class="token punctuation">(</span>const char *pathname, int flags, mode_t mode<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h4 id="参数介绍"><a href="#参数介绍" class="headerlink" title="参数介绍"></a>参数介绍</h4><ul>
@@ -549,7 +549,7 @@ int open<span class="token punctuation">(</span>const char *pathname, int flags,
 <li>失败返回-1，设置 <strong>errno</strong> </li>
 </ul>
 <h3 id="close关闭文件"><a href="#close关闭文件" class="headerlink" title="close关闭文件"></a>close关闭文件</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">man</span> 2 close
-<span class="token comment" spellcheck="true">#include &lt;unistd.h&gt;</span>
+<span class="token comment" spellcheck="true">#include &lt;unistd.h></span>
 int close<span class="token punctuation">(</span>int fd<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h4 id="参数介绍-1"><a href="#参数介绍-1" class="headerlink" title="参数介绍"></a>参数介绍</h4><ul>
 <li><strong>fd</strong> 文件描述符</li>
@@ -558,26 +558,26 @@ int close<span class="token punctuation">(</span>int fd<span class="token punctu
 <li>成功0</li>
 <li>失败-1，设置 <strong>errno</strong></li>
 </ul>
-<h3 id="open-和-close-实现-touch"><a href="#open-和-close-实现-touch" class="headerlink" title="open 和 close 实现 touch"></a>open 和 close 实现 touch</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<h3 id="open-和-close-实现-touch"><a href="#open-和-close-实现-touch" class="headerlink" title="open 和 close 实现 touch"></a>open 和 close 实现 touch</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"./a.out filename\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token keyword">int</span> fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> O_RDONLY <span class="token operator">|</span> O_CREAT<span class="token punctuation">,</span> <span class="token number">0666</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-bash"><code class="language-bash">编译后执行
 ./a.out newfile.cc
 即可创建newfile.cc文件</code></pre>
 <h3 id="read读取文件"><a href="#read读取文件" class="headerlink" title="read读取文件"></a>read读取文件</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">man</span> 2 <span class="token function">read</span>
-<span class="token comment" spellcheck="true">#include &lt;unistd.h&gt;</span>
+<span class="token comment" spellcheck="true">#include &lt;unistd.h></span>
 ssize_t read<span class="token punctuation">(</span>int fd, void *buf, size_t count<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h4 id="参数介绍-2"><a href="#参数介绍-2" class="headerlink" title="参数介绍"></a>参数介绍</h4><ul>
 <li><strong>fd</strong> 文件描述符</li>
@@ -593,7 +593,7 @@ ssize_t read<span class="token punctuation">(</span>int fd, void *buf, size_t co
 </li>
 </ul>
 <h3 id="write写文件"><a href="#write写文件" class="headerlink" title="write写文件"></a>write写文件</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">man</span> 2 <span class="token function">write</span>
-<span class="token comment" spellcheck="true">#include &lt;unistd.h&gt;</span>
+<span class="token comment" spellcheck="true">#include &lt;unistd.h></span>
 ssize_t write<span class="token punctuation">(</span>int fd, const void *buf, size_t count<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h4 id="参数介绍-3"><a href="#参数介绍-3" class="headerlink" title="参数介绍"></a>参数介绍</h4><ul>
 <li><strong>fd</strong> 文件描述符</li>
@@ -605,36 +605,36 @@ ssize_t write<span class="token punctuation">(</span>int fd, const void *buf, si
 <li>失败，返回-1</li>
 <li>0代表未写入</li>
 </ul>
-<h3 id="利用-read-和-write-可实现-cat"><a href="#利用-read-和-write-可实现-cat" class="headerlink" title="利用 read 和 write 可实现 cat"></a>利用 read 和 write 可实现 cat</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<h3 id="利用-read-和-write-可实现-cat"><a href="#利用-read-和-write-可实现-cat" class="headerlink" title="利用 read 和 write 可实现 cat"></a>利用 read 和 write 可实现 cat</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"./a.out filename\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token keyword">int</span> fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> O_RDONLY<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">char</span> buf<span class="token punctuation">[</span><span class="token number">250</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
   <span class="token keyword">int</span> ret <span class="token operator">=</span> <span class="token function">read</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">write</span><span class="token punctuation">(</span>STDOUT_FILENO<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> ret<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span>ret<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>ret<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     ret <span class="token operator">=</span> <span class="token function">read</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">write</span><span class="token punctuation">(</span>STDOUT_FILENO<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> ret<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-bash"><code class="language-bash">默认打开的三个文件描述符
 STDOUT_FILENO    0
 STDIN_FILENO    1
 STDERR_FILENO    2</code></pre>
 <p>请戳 <a href="%5Bhttps://baike.baidu.com/item/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6%5D(https://baike.baidu.com/item/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6)">文件描述符</a> </p>
 <h3 id="lseek"><a href="#lseek" class="headerlink" title="lseek"></a>lseek</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">man</span> 2 lseek
-<span class="token comment" spellcheck="true">#include &lt;sys/types.h&gt;</span>
-<span class="token comment" spellcheck="true">#include &lt;unistd.h&gt;</span>
+<span class="token comment" spellcheck="true">#include &lt;sys/types.h></span>
+<span class="token comment" spellcheck="true">#include &lt;unistd.h></span>
 off_t lseek<span class="token punctuation">(</span>int fd, off_t offset, int whence<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h4 id="参数介绍-4"><a href="#参数介绍-4" class="headerlink" title="参数介绍"></a>参数介绍</h4><ul>
 <li><strong>fd</strong> 文件描述符</li>
@@ -655,63 +655,63 @@ off_t lseek<span class="token punctuation">(</span>int fd, off_t offset, int whe
 <li>计算文件大小</li>
 <li>扩展文件</li>
 </ul>
-<h4 id="利用lseek移动读写文件位置"><a href="#利用lseek移动读写文件位置" class="headerlink" title="利用lseek移动读写文件位置"></a>利用lseek移动读写文件位置</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<h4 id="利用lseek移动读写文件位置"><a href="#利用lseek移动读写文件位置" class="headerlink" title="利用lseek移动读写文件位置"></a>利用lseek移动读写文件位置</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"./a.out filename\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token keyword">int</span> fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> O_RDWR <span class="token operator">|</span> O_CREAT<span class="token punctuation">,</span> <span class="token number">0666</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">write</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token function">strlen</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">write</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> <span class="token string">"\n"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// 此时文件已经到末尾了，需要移动读写位置</span>
   <span class="token function">lseek</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> SEEK_SET<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">char</span> buf<span class="token punctuation">[</span><span class="token number">256</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">0</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token keyword">char</span> buf<span class="token punctuation">[</span><span class="token number">256</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
   <span class="token keyword">int</span> ret <span class="token operator">=</span> <span class="token function">read</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">write</span><span class="token punctuation">(</span>STDOUT_FILENO<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> ret<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// STDOUT_FILENO, STDIN_FILENO, STDERR_FILENO</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span>ret<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>ret<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     ret <span class="token operator">=</span> <span class="token function">read</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">write</span><span class="token punctuation">(</span>STDOUT_FILENO<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> ret<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">// 功能，终端输入内容写入指定文件，并且屏幕输出</span></code></pre>
-<h4 id="计算文件大小"><a href="#计算文件大小" class="headerlink" title="计算文件大小"></a>计算文件大小</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<h4 id="计算文件大小"><a href="#计算文件大小" class="headerlink" title="计算文件大小"></a>计算文件大小</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"./a.out filename\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token keyword">int</span> fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> O_RDONLY<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">int</span> ret <span class="token operator">=</span> <span class="token function">lseek</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> SEEK_END<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"file size is: %d\n"</span><span class="token punctuation">,</span> ret<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">// 因为lseek返回值是从当前位置到开始的长度,所以可以计算文件大小</span></code></pre>
-<h4 id="扩展文件"><a href="#扩展文件" class="headerlink" title="扩展文件"></a>扩展文件</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<h4 id="扩展文件"><a href="#扩展文件" class="headerlink" title="扩展文件"></a>扩展文件</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"./a.out filename\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token keyword">int</span> fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> O_WRONLY <span class="token operator">|</span> O_CREAT<span class="token punctuation">,</span> <span class="token number">0666</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// int ret = lseek(fd, 1024, SEEK_END);</span>
   <span class="token function">lseek</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> <span class="token number">1024</span><span class="token punctuation">,</span> SEEK_END<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -719,44 +719,44 @@ off_t lseek<span class="token punctuation">(</span>int fd, off_t offset, int whe
   <span class="token function">write</span><span class="token punctuation">(</span>fd<span class="token punctuation">,</span> <span class="token string">"\n"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">// 此代码可以改变文件大小，即扩展文件</span></code></pre>
-<h3 id="实现-cp-命令"><a href="#实现-cp-命令" class="headerlink" title="实现 cp 命令"></a>实现 cp 命令</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<h3 id="实现-cp-命令"><a href="#实现-cp-命令" class="headerlink" title="实现 cp 命令"></a>实现 cp 命令</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"./a.out filename1 filename2\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token keyword">int</span> fd1 <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> O_RDONLY<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">int</span> fd2 <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> O_WRONLY <span class="token operator">|</span> O_CREAT<span class="token punctuation">,</span> <span class="token number">0666</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">char</span> buf<span class="token punctuation">[</span><span class="token number">256</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
   <span class="token keyword">int</span> ret <span class="token operator">=</span> <span class="token function">read</span><span class="token punctuation">(</span>fd1<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">write</span><span class="token punctuation">(</span>fd2<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> ret<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span>ret<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>ret<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     ret <span class="token operator">=</span> <span class="token function">read</span><span class="token punctuation">(</span>fd1<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">write</span><span class="token punctuation">(</span>fd2<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> ret<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token function">close</span><span class="token punctuation">(</span>fd1<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">close</span><span class="token punctuation">(</span>fd2<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">// 复制的本质就是打开一个文件，读取所有内容，写入另一个文件</span></code></pre>
 <h3 id="stat函数"><a href="#stat函数" class="headerlink" title="stat函数"></a>stat函数</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">man</span> 2 <span class="token function">stat</span>
-<span class="token comment" spellcheck="true">#include &lt;sys/types.h&gt;</span>
-<span class="token comment" spellcheck="true">#include &lt;sys/stat.h&gt;</span>
-<span class="token comment" spellcheck="true">#include &lt;unistd.h&gt;</span>
+<span class="token comment" spellcheck="true">#include &lt;sys/types.h></span>
+<span class="token comment" spellcheck="true">#include &lt;sys/stat.h></span>
+<span class="token comment" spellcheck="true">#include &lt;unistd.h></span>
 int stat<span class="token punctuation">(</span>const char *pathname, struct <span class="token function">stat</span> *statbuf<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h4 id="参数介绍-5"><a href="#参数介绍-5" class="headerlink" title="参数介绍"></a>参数介绍</h4><ul>
 <li><p><strong>pathname</strong> 文件名</p>
 </li>
 <li><p><strong>struct stat</strong></p>
 <ul>
-<li><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">struct</span> stat <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<li><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">struct</span> stat <span class="token punctuation">{</span>
   dev_t     st_dev<span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">/* ID of device containing file 文件设备编号*/</span>
   ino_t     st_ino<span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">/* Inode number 索引节点*/</span>
   mode_t    st_mode<span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">/* File type and mode 文件类型和存储权限*/</span>
@@ -779,7 +779,7 @@ int stat<span class="token punctuation">(</span>const char *pathname, struct <sp
 <span class="token macro property">#<span class="token directive keyword">define</span> st_atime st_atim.tv_sec      </span><span class="token comment" spellcheck="true">/* Backward compatibility */</span>
 <span class="token macro property">#<span class="token directive keyword">define</span> st_mtime st_mtim.tv_sec</span>
 <span class="token macro property">#<span class="token directive keyword">define</span> st_ctime st_ctim.tv_sec</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 </li>
 </ul>
 </li>
@@ -791,85 +791,85 @@ int stat<span class="token punctuation">(</span>const char *pathname, struct <sp
 <h4 id="stat作用"><a href="#stat作用" class="headerlink" title="stat作用"></a>stat作用</h4><ul>
 <li>获取文件状态</li>
 </ul>
-<h4 id="实现ls-l命令"><a href="#实现ls-l命令" class="headerlink" title="实现ls -l命令"></a>实现ls -l命令</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;grp.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;pwd.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;time.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<h4 id="实现ls-l命令"><a href="#实现ls-l命令" class="headerlink" title="实现ls -l命令"></a>实现ls -l命令</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;grp.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;pwd.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;time.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"./a.out filename\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token keyword">struct</span> stat sb<span class="token punctuation">;</span>
   <span class="token function">stat</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>sb<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">char</span> stmode<span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">0</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token keyword">char</span> stmode<span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
   <span class="token function">memset</span><span class="token punctuation">(</span>stmode<span class="token punctuation">,</span> <span class="token string">'-'</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>stmode<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">S_ISREG</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">S_ISREG</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     stmode<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'-'</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">S_ISDIR</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">S_ISDIR</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     stmode<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'d'</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">S_ISCHR</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">S_ISCHR</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     stmode<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'c'</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">S_ISBLK</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">S_ISBLK</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     stmode<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'b'</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">S_ISFIFO</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">S_ISFIFO</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     stmode<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'p'</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">S_ISLNK</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">S_ISLNK</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     stmode<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'l'</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">S_ISSOCK</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">S_ISSOCK</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     stmode<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'s'</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode <span class="token operator">&amp;</span> S_IRUSR<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode <span class="token operator">&amp;</span> S_IRUSR<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     stmode<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'r'</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode <span class="token operator">&amp;</span> S_IWUSR<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode <span class="token operator">&amp;</span> S_IWUSR<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     stmode<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'w'</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode <span class="token operator">&amp;</span> S_IXUSR<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode <span class="token operator">&amp;</span> S_IXUSR<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     stmode<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'x'</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode <span class="token operator">&amp;</span> S_IRGRP<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode <span class="token operator">&amp;</span> S_IRGRP<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     stmode<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'r'</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode <span class="token operator">&amp;</span> S_IWGRP<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode <span class="token operator">&amp;</span> S_IWGRP<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     stmode<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'w'</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode <span class="token operator">&amp;</span> S_IXGRP<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode <span class="token operator">&amp;</span> S_IXGRP<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     stmode<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'x'</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode <span class="token operator">&amp;</span> S_IROTH<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode <span class="token operator">&amp;</span> S_IROTH<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     stmode<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'r'</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode <span class="token operator">&amp;</span> S_IWOTH<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode <span class="token operator">&amp;</span> S_IWOTH<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     stmode<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'w'</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode <span class="token operator">&amp;</span> S_IXOTH<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_mode <span class="token operator">&amp;</span> S_IXOTH<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     stmode<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'x'</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token keyword">struct</span> tm <span class="token operator">*</span>filetm <span class="token operator">=</span> <span class="token function">localtime</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>sb<span class="token punctuation">.</span>st_atim<span class="token punctuation">.</span>tv_sec<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">char</span> timebuf<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">0</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-  <span class="token function">sprintf</span><span class="token punctuation">(</span>timebuf<span class="token punctuation">,</span> <span class="token string">"%d月  %d %02d:%02d"</span><span class="token punctuation">,</span> filetm<span class="token operator">-</span><span class="token operator">&gt;</span>tm_mon <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> filetm<span class="token operator">-</span><span class="token operator">&gt;</span>tm_mday<span class="token punctuation">,</span>
-          filetm<span class="token operator">-</span><span class="token operator">&gt;</span>tm_hour<span class="token punctuation">,</span> filetm<span class="token operator">-</span><span class="token operator">&gt;</span>tm_min<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">char</span> timebuf<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token function">sprintf</span><span class="token punctuation">(</span>timebuf<span class="token punctuation">,</span> <span class="token string">"%d月  %d %02d:%02d"</span><span class="token punctuation">,</span> filetm<span class="token operator">-</span><span class="token operator">></span>tm_mon <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> filetm<span class="token operator">-</span><span class="token operator">></span>tm_mday<span class="token punctuation">,</span>
+          filetm<span class="token operator">-</span><span class="token operator">></span>tm_hour<span class="token punctuation">,</span> filetm<span class="token operator">-</span><span class="token operator">></span>tm_min<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s %ld %s %s %ld %s %s\n"</span><span class="token punctuation">,</span> stmode<span class="token punctuation">,</span> sb<span class="token punctuation">.</span>st_nlink<span class="token punctuation">,</span>
-         <span class="token function">getpwuid</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_uid<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>pw_name<span class="token punctuation">,</span> <span class="token function">getgrgid</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_gid<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span>gr_name<span class="token punctuation">,</span> sb<span class="token punctuation">.</span>st_size<span class="token punctuation">,</span>
+         <span class="token function">getpwuid</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_uid<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span>pw_name<span class="token punctuation">,</span> <span class="token function">getgrgid</span><span class="token punctuation">(</span>sb<span class="token punctuation">.</span>st_gid<span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span>gr_name<span class="token punctuation">,</span> sb<span class="token punctuation">.</span>st_size<span class="token punctuation">,</span>
          timebuf<span class="token punctuation">,</span> argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">// 可通过man inode 查看st_mode的更多信息</span></code></pre>
 <h3 id="access"><a href="#access" class="headerlink" title="access"></a>access</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">man</span> 2 access
-<span class="token comment" spellcheck="true">#include &lt;unistd.h&gt;</span>
+<span class="token comment" spellcheck="true">#include &lt;unistd.h></span>
 int access<span class="token punctuation">(</span>const char *pathname, int mode<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h4 id="参数介绍-6"><a href="#参数介绍-6" class="headerlink" title="参数介绍"></a>参数介绍</h4><ul>
 <li><strong>pathname</strong> 文件名</li>
@@ -888,34 +888,34 @@ int access<span class="token punctuation">(</span>const char *pathname, int mode
 <h4 id="access作用"><a href="#access作用" class="headerlink" title="access作用"></a>access作用</h4><ul>
 <li>检查调用进程是否可以对指定的文件执行某种操作</li>
 </ul>
-<h4 id="判断文件的各种权限"><a href="#判断文件的各种权限" class="headerlink" title="判断文件的各种权限"></a>判断文件的各种权限</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<h4 id="判断文件的各种权限"><a href="#判断文件的各种权限" class="headerlink" title="判断文件的各种权限"></a>判断文件的各种权限</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"./a.out filename\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">access</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> R_OK<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">access</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> R_OK<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s read is ok!\n"</span><span class="token punctuation">,</span> argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">access</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> W_OK<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">access</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> W_OK<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s wirte is ok!\n"</span><span class="token punctuation">,</span> argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">access</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> X_OK<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">access</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> X_OK<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s exe is ok!\n"</span><span class="token punctuation">,</span> argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">access</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> F_OK<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">access</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> F_OK<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s file exists!\n"</span><span class="token punctuation">,</span> argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h3 id="truncate"><a href="#truncate" class="headerlink" title="truncate"></a>truncate</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">man</span> 2 truncate
-<span class="token comment" spellcheck="true">#include &lt;unistd.h&gt;</span>
-<span class="token comment" spellcheck="true">#include &lt;sys/types.h&gt;</span>
+<span class="token comment" spellcheck="true">#include &lt;unistd.h></span>
+<span class="token comment" spellcheck="true">#include &lt;sys/types.h></span>
 int truncate<span class="token punctuation">(</span>const char *path, off_t length<span class="token punctuation">)</span></code></pre>
 <h4 id="参数介绍-7"><a href="#参数介绍-7" class="headerlink" title="参数介绍"></a>参数介绍</h4><ul>
 <li><strong>path</strong> 文件名</li>
@@ -928,23 +928,23 @@ int truncate<span class="token punctuation">(</span>const char *path, off_t leng
 <h4 id="truncate作用"><a href="#truncate作用" class="headerlink" title="truncate作用"></a>truncate作用</h4><ul>
 <li>截取文件</li>
 </ul>
-<h4 id="truncate使用案例"><a href="#truncate使用案例" class="headerlink" title="truncate使用案例"></a>truncate使用案例</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<h4 id="truncate使用案例"><a href="#truncate使用案例" class="headerlink" title="truncate使用案例"></a>truncate使用案例</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"./a.out filename\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token function">truncate</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">// 执行完后文件大小变为1024，除此之外，如果设置的大小比原文件的小，会删除原文件内容</span></code></pre>
 <h3 id="link系列"><a href="#link系列" class="headerlink" title="link系列"></a>link系列</h3><h4 id="link"><a href="#link" class="headerlink" title="link"></a>link</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">man</span> 2 <span class="token function">link</span>
-<span class="token comment" spellcheck="true">#include &lt;unistd.h&gt;</span>
+<span class="token comment" spellcheck="true">#include &lt;unistd.h></span>
 int link<span class="token punctuation">(</span>const char *oldpath, const char *newpath<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h5 id="参数介绍-8"><a href="#参数介绍-8" class="headerlink" title="参数介绍"></a>参数介绍</h5><ul>
 <li><strong>oldpath</strong> 原文件</li>
@@ -954,28 +954,28 @@ int link<span class="token punctuation">(</span>const char *oldpath, const char 
 <li>成功返回0</li>
 <li>失败返回-1，设置 <strong>errno</strong> </li>
 </ul>
-<h5 id="link使用案例"><a href="#link使用案例" class="headerlink" title="link使用案例"></a>link使用案例</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;malloc.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<h5 id="link使用案例"><a href="#link使用案例" class="headerlink" title="link使用案例"></a>link使用案例</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;malloc.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"./a.out filename\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token keyword">char</span> <span class="token operator">*</span>newhard <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">strcpy</span><span class="token punctuation">(</span>newhard<span class="token punctuation">,</span> argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">strcat</span><span class="token punctuation">(</span>newhard<span class="token punctuation">,</span> <span class="token string">".hard"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">puts</span><span class="token punctuation">(</span>newhard<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">link</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> newhard<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h4 id="symlink"><a href="#symlink" class="headerlink" title="symlink"></a>symlink</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">man</span> 2 symlink
-<span class="token comment" spellcheck="true">#include &lt;unistd.h&gt;</span>
+<span class="token comment" spellcheck="true">#include &lt;unistd.h></span>
 int symlink<span class="token punctuation">(</span>const char *target, const char *linkpath<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h5 id="参数介绍-9"><a href="#参数介绍-9" class="headerlink" title="参数介绍"></a>参数介绍</h5><ul>
 <li><strong>target</strong> 原文件</li>
@@ -985,27 +985,27 @@ int symlink<span class="token punctuation">(</span>const char *target, const cha
 <li>成功返回0</li>
 <li>失败返回-1，设置 <strong>errno</strong></li>
 </ul>
-<h5 id="symlink使用案例"><a href="#symlink使用案例" class="headerlink" title="symlink使用案例"></a>symlink使用案例</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;malloc.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<h5 id="symlink使用案例"><a href="#symlink使用案例" class="headerlink" title="symlink使用案例"></a>symlink使用案例</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;malloc.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"./a.out filename\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token keyword">char</span> <span class="token operator">*</span>newsoft <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">strcpy</span><span class="token punctuation">(</span>newsoft<span class="token punctuation">,</span> argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">strcat</span><span class="token punctuation">(</span>newsoft<span class="token punctuation">,</span> <span class="token string">".soft"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">symlink</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> newsoft<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h4 id="readlink"><a href="#readlink" class="headerlink" title="readlink"></a>readlink</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">man</span> 2 readlink
-<span class="token comment" spellcheck="true">#include &lt;unistd.h&gt;</span>
+<span class="token comment" spellcheck="true">#include &lt;unistd.h></span>
 ssize_t readlink<span class="token punctuation">(</span>const char *pathname, char *buf, size_t bufsiz<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h5 id="参数介绍-10"><a href="#参数介绍-10" class="headerlink" title="参数介绍"></a>参数介绍</h5><ul>
 <li><strong>pathname</strong> 文件名</li>
@@ -1016,25 +1016,25 @@ ssize_t readlink<span class="token punctuation">(</span>const char *pathname, ch
 <li>成功返回 <strong>buf</strong> 填充的大小</li>
 <li>失败返回-1，设置 <strong>errno</strong></li>
 </ul>
-<h5 id="readlink使用案例"><a href="#readlink使用案例" class="headerlink" title="readlink使用案例"></a>readlink使用案例</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<h5 id="readlink使用案例"><a href="#readlink使用案例" class="headerlink" title="readlink使用案例"></a>readlink使用案例</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"./a.out filename\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">char</span> buf<span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">0</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">char</span> buf<span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// 只能读取软链接</span>
   <span class="token function">readlink</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> buf<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"buf is %s\n"</span><span class="token punctuation">,</span> buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h4 id="unlink"><a href="#unlink" class="headerlink" title="unlink"></a>unlink</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">man</span> 2 unlink
-<span class="token comment" spellcheck="true">#include &lt;unistd.h&gt;</span>
+<span class="token comment" spellcheck="true">#include &lt;unistd.h></span>
 int unlink<span class="token punctuation">(</span>const char *pathname<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h5 id="参数介绍-11"><a href="#参数介绍-11" class="headerlink" title="参数介绍"></a>参数介绍</h5><ul>
 <li><strong>pathname</strong> 文件名</li>
@@ -1043,24 +1043,24 @@ int unlink<span class="token punctuation">(</span>const char *pathname<span clas
 <li>成功返回0</li>
 <li>失败返回-1，设置 <strong>errno</strong></li>
 </ul>
-<h5 id="unlink使用案例"><a href="#unlink使用案例" class="headerlink" title="unlink使用案例"></a>unlink使用案例</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<h5 id="unlink使用案例"><a href="#unlink使用案例" class="headerlink" title="unlink使用案例"></a>unlink使用案例</h5><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"./a.out filename\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token comment" spellcheck="true">// 软硬都可以删除</span>
   <span class="token comment" spellcheck="true">// 还可以删除文件</span>
   <span class="token function">unlink</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h3 id="chdir"><a href="#chdir" class="headerlink" title="chdir"></a>chdir</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">man</span> 2 chdir
-<span class="token comment" spellcheck="true">#include &lt;unistd.h&gt;</span>
+<span class="token comment" spellcheck="true">#include &lt;unistd.h></span>
 int chdir<span class="token punctuation">(</span>const char *path<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h4 id="参数介绍-12"><a href="#参数介绍-12" class="headerlink" title="参数介绍"></a>参数介绍</h4><ul>
 <li><strong>path</strong> 路径</li>
@@ -1073,7 +1073,7 @@ int chdir<span class="token punctuation">(</span>const char *path<span class="to
 <li>切换路径</li>
 </ul>
 <h3 id="getcwd-得到路径"><a href="#getcwd-得到路径" class="headerlink" title="getcwd 得到路径"></a>getcwd 得到路径</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">man</span> 2 getcwd
-<span class="token comment" spellcheck="true">#include &lt;unistd.h&gt;</span>
+<span class="token comment" spellcheck="true">#include &lt;unistd.h></span>
 char *getcwd<span class="token punctuation">(</span>char *buf, size_t size<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h4 id="参数介绍-13"><a href="#参数介绍-13" class="headerlink" title="参数介绍"></a>参数介绍</h4><ul>
 <li><strong>buf</strong> 缓冲区，传出路径</li>
@@ -1083,26 +1083,26 @@ char *getcwd<span class="token punctuation">(</span>char *buf, size_t size<span 
 <li>成功返回目录指针（目录）</li>
 <li>失败返回-1，设置 <strong>errno</strong></li>
 </ul>
-<h3 id="chdir-和-getcwd-使用案例"><a href="#chdir-和-getcwd-使用案例" class="headerlink" title="chdir 和 getcwd 使用案例"></a>chdir 和 getcwd 使用案例</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<h3 id="chdir-和-getcwd-使用案例"><a href="#chdir-和-getcwd-使用案例" class="headerlink" title="chdir 和 getcwd 使用案例"></a>chdir 和 getcwd 使用案例</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"./a.out filename\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token function">chdir</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">char</span> buf<span class="token punctuation">[</span><span class="token number">256</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
   <span class="token function">getcwd</span><span class="token punctuation">(</span>buf<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"buf is [%s]\n"</span><span class="token punctuation">,</span> buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h3 id="opendir-打开目录"><a href="#opendir-打开目录" class="headerlink" title="opendir 打开目录"></a>opendir 打开目录</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">man</span> opendir
-<span class="token comment" spellcheck="true">#include &lt;sys/types.h&gt;</span>
-<span class="token comment" spellcheck="true">#include &lt;dirent.h&gt;</span>
+<span class="token comment" spellcheck="true">#include &lt;sys/types.h></span>
+<span class="token comment" spellcheck="true">#include &lt;dirent.h></span>
 DIR *opendir<span class="token punctuation">(</span>const char *name<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h4 id="参数介绍-14"><a href="#参数介绍-14" class="headerlink" title="参数介绍"></a>参数介绍</h4><ul>
 <li><strong>name</strong> 要打开的目录</li>
@@ -1112,7 +1112,7 @@ DIR *opendir<span class="token punctuation">(</span>const char *name<span class=
 <li>失败返回 <strong>NULL</strong> </li>
 </ul>
 <h3 id="readdir-读取目录内容"><a href="#readdir-读取目录内容" class="headerlink" title="readdir 读取目录内容"></a>readdir 读取目录内容</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">man</span> readdir
-<span class="token comment" spellcheck="true">#include &lt;dirent.h&gt;</span>
+<span class="token comment" spellcheck="true">#include &lt;dirent.h></span>
 struct dirent *readdir<span class="token punctuation">(</span>DIR *dirp<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h4 id="参数介绍-15"><a href="#参数介绍-15" class="headerlink" title="参数介绍"></a>参数介绍</h4><ul>
 <li><strong>dirp</strong> 目录流指针</li>
@@ -1120,21 +1120,21 @@ struct dirent *readdir<span class="token punctuation">(</span>DIR *dirp<span cla
 <h4 id="返回值-15"><a href="#返回值-15" class="headerlink" title="返回值"></a>返回值</h4><ul>
 <li><p>返回 <strong>dirent structure</strong> </p>
 <ul>
-<li><pre class=" language-bash"><code class="language-bash">struct dirent <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+<li><pre class=" language-bash"><code class="language-bash">struct dirent <span class="token punctuation">{</span>
                ino_t          d_ino<span class="token punctuation">;</span>       /* Inode number 索引节点*/
                off_t          d_off<span class="token punctuation">;</span>       /* Not an offset<span class="token punctuation">;</span> see below */
                unsigned short d_reclen<span class="token punctuation">;</span>    /* Length of this record 长度*/
                unsigned char  d_type<span class="token punctuation">;</span>      /* Type of <span class="token function">file</span><span class="token punctuation">;</span> not supported
                                               by all filesystem types 类型*/
                char           d_name<span class="token punctuation">[</span>256<span class="token punctuation">]</span><span class="token punctuation">;</span> /* Null-terminated filename 名字*/
-           <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;;</span></code></pre>
+           <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 </li>
 </ul>
 </li>
 </ul>
 <h3 id="closedir-关闭目录"><a href="#closedir-关闭目录" class="headerlink" title="closedir 关闭目录"></a>closedir 关闭目录</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">man</span> closedir
-<span class="token comment" spellcheck="true">#include &lt;sys/types.h&gt;</span>
-<span class="token comment" spellcheck="true">#include &lt;dirent.h&gt;</span>
+<span class="token comment" spellcheck="true">#include &lt;sys/types.h></span>
+<span class="token comment" spellcheck="true">#include &lt;dirent.h></span>
 int closedir<span class="token punctuation">(</span>DIR *dirp<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h4 id="参数介绍-16"><a href="#参数介绍-16" class="headerlink" title="参数介绍"></a>参数介绍</h4><ul>
 <li><strong>dirp</strong> 目录流指针</li>
@@ -1150,65 +1150,65 @@ int closedir<span class="token punctuation">(</span>DIR *dirp<span class="token 
 </li>
 </ul>
 </li>
-<li><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;dirent.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<li><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;dirent.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
 <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-<span class="token keyword">int</span> <span class="token function">dirCount</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>dirname<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">dirCount</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>dirname<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">// 打印路径</span>
   <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s\n"</span><span class="token punctuation">,</span> dirname<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// 打开目录</span>
   DIR <span class="token operator">*</span>dirp <span class="token operator">=</span> <span class="token function">opendir</span><span class="token punctuation">(</span>dirname<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>dirp <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>dirp <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"opendir err: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token keyword">struct</span> dirent <span class="token operator">*</span>dentp <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// 循环读目录，遇到普通文件个数++</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>dentp <span class="token operator">=</span> <span class="token function">readdir</span><span class="token punctuation">(</span>dirp<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>dentp <span class="token operator">=</span> <span class="token function">readdir</span><span class="token punctuation">(</span>dirp<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 如果是目录</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>dentp<span class="token operator">-</span><span class="token operator">&gt;</span>d_type <span class="token operator">==</span> DT_DIR<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>dentp<span class="token operator">-</span><span class="token operator">></span>d_type <span class="token operator">==</span> DT_DIR<span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token comment" spellcheck="true">// 遇到'.', '..'就跳过</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">,</span> dentp<span class="token operator">-</span><span class="token operator">&gt;</span>d_name<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token function">strcmp</span><span class="token punctuation">(</span><span class="token string">".."</span><span class="token punctuation">,</span> dentp<span class="token operator">-</span><span class="token operator">&gt;</span>d_name<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">,</span> dentp<span class="token operator">-</span><span class="token operator">></span>d_name<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token function">strcmp</span><span class="token punctuation">(</span><span class="token string">".."</span><span class="token punctuation">,</span> dentp<span class="token operator">-</span><span class="token operator">></span>d_name<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">continue</span><span class="token punctuation">;</span>
-      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
       <span class="token comment" spellcheck="true">// 拼接新路径，递归找文件</span>
-      <span class="token keyword">char</span> newdirname<span class="token punctuation">[</span><span class="token number">257</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">0</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-      <span class="token function">sprintf</span><span class="token punctuation">(</span>newdirname<span class="token punctuation">,</span> <span class="token string">"%s/%s"</span><span class="token punctuation">,</span> dirname<span class="token punctuation">,</span> dentp<span class="token operator">-</span><span class="token operator">&gt;</span>d_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">char</span> newdirname<span class="token punctuation">[</span><span class="token number">257</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+      <span class="token function">sprintf</span><span class="token punctuation">(</span>newdirname<span class="token punctuation">,</span> <span class="token string">"%s/%s"</span><span class="token punctuation">,</span> dirname<span class="token punctuation">,</span> dentp<span class="token operator">-</span><span class="token operator">></span>d_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token function">dirCount</span><span class="token punctuation">(</span>newdirname<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     <span class="token comment" spellcheck="true">// 是文件</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>dentp<span class="token operator">-</span><span class="token operator">&gt;</span>d_type <span class="token operator">==</span> DT_REG<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>dentp<span class="token operator">-</span><span class="token operator">></span>d_type <span class="token operator">==</span> DT_REG<span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token operator">++</span>count<span class="token punctuation">;</span>
       <span class="token comment" spellcheck="true">// 打印文件名字</span>
-      <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"dname : %s\n"</span><span class="token punctuation">,</span> dentp<span class="token operator">-</span><span class="token operator">&gt;</span>d_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+      <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"dname : %s\n"</span><span class="token punctuation">,</span> dentp<span class="token operator">-</span><span class="token operator">></span>d_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
   <span class="token comment" spellcheck="true">// 关闭目录</span>
   <span class="token function">closedir</span><span class="token punctuation">(</span>dirp<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> count<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"./.a.out filename\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
   <span class="token function">dirCount</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"count = %d\n"</span><span class="token punctuation">,</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">// ./a.out ./</span></code></pre>
 </li>
 </ul>
 <h3 id="dup"><a href="#dup" class="headerlink" title="dup"></a>dup</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">man</span> 2 dup
-<span class="token comment" spellcheck="true">#include &lt;unistd.h&gt;</span>
+<span class="token comment" spellcheck="true">#include &lt;unistd.h></span>
 int dup<span class="token punctuation">(</span>int oldfd<span class="token punctuation">)</span><span class="token punctuation">;</span>// 复制文件描述符
 int dup2<span class="token punctuation">(</span>int oldfd, int newfd<span class="token punctuation">)</span><span class="token punctuation">;</span>// 新的文件描述符指向旧的文件描述符</code></pre>
 <h4 id="参数介绍-17"><a href="#参数介绍-17" class="headerlink" title="参数介绍"></a>参数介绍</h4><ul>
@@ -1219,13 +1219,13 @@ int dup2<span class="token punctuation">(</span>int oldfd, int newfd<span class=
 <li>成功返回新的文件描述符</li>
 <li>失败返回-1，设置 <strong>errno</strong> </li>
 </ul>
-<h4 id="dup-和-dup2-使用案例"><a href="#dup-和-dup2-使用案例" class="headerlink" title="dup 和 dup2 使用案例"></a>dup 和 dup2 使用案例</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
+<h4 id="dup-和-dup2-使用案例"><a href="#dup-和-dup2-使用案例" class="headerlink" title="dup 和 dup2 使用案例"></a>dup 和 dup2 使用案例</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">// 复制文件描述符1</span>
   <span class="token keyword">int</span> outfd <span class="token operator">=</span> <span class="token function">dup</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">int</span> fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"world"</span><span class="token punctuation">,</span> O_WRONLY <span class="token operator">|</span> O_CREAT<span class="token punctuation">,</span> <span class="token number">0666</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1238,7 +1238,7 @@ int dup2<span class="token punctuation">(</span>int oldfd, int newfd<span class=
   <span class="token function">dup2</span><span class="token punctuation">(</span>outfd<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hello World!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">// 作用，一个printf输出到文件，一个输出到屏幕</span></code></pre>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>才疏学浅，还请雅正！</p>
 <p>把自己学习的过程记录下来，一是巩固自己所学，二是以后自己查看方便，三希望可以帮助到大家！</p>
@@ -2030,7 +2030,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">98.3k</span>&nbsp;字
+                class="white-color">90.9k</span>&nbsp;字
             
             
             

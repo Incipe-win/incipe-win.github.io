@@ -31,10 +31,10 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -478,7 +478,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    525
+                    453
                 </div>
                 
 
@@ -508,12 +508,12 @@
 <p>二叉树构造：</p>
 <pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
 * Definition for a binary tree node.
-* struct TreeNode &amp;#123;
+* struct TreeNode {
 *     int val;
 *     TreeNode *left;
 *     TreeNode *right;
-*     TreeNode(int x) : val(x), left(NULL), right(NULL) &amp;#123;&amp;#125;
-* &amp;#125;;
+*     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+* };
 */</span></code></pre>
 <p>要求层次遍历二叉树，用一个二维数组存放每一层的数值！</p>
 <p>层次遍历，一层一层的，所以很容易想到bfs，广度搜索遍历。</p>
@@ -522,61 +522,61 @@
 <p>话不多说，直接上代码，代码有注释，还有自己添加的辅助理解的语句。</p>
 <pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/**
  * Definition for a binary tree node.
- * struct TreeNode &amp;#123;
+ * struct TreeNode {
  *     int val;
  *     TreeNode *left;
  *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) &amp;#123;&amp;#125;
- * &amp;#125;;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
  */</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;&gt;</span> <span class="token function">levelOrder</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">levelOrder</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//我一直觉得代码就是做人之所想，可是要做到这一点很难！</span>
-        vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;&gt;</span> res<span class="token punctuation">;</span>
+        vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> res<span class="token punctuation">;</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span>root <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
             <span class="token keyword">return</span> res<span class="token punctuation">;</span>
         <span class="token function">bfs</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> res<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> res<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token keyword">void</span> <span class="token function">bfs</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;&gt;</span><span class="token operator">&amp;</span> res<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">bfs</span><span class="token punctuation">(</span>TreeNode<span class="token operator">*</span> root<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">&amp;</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//既然是层次遍历，就是一层一层的！</span>
-        queue<span class="token operator">&lt;</span>TreeNode<span class="token operator">*</span><span class="token operator">&gt;</span> que<span class="token punctuation">;</span>
+        queue<span class="token operator">&lt;</span>TreeNode<span class="token operator">*</span><span class="token operator">></span> que<span class="token punctuation">;</span>
         que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//压入整个二叉树！</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>que<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> ans<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">!</span>que<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> ans<span class="token punctuation">;</span>
             <span class="token keyword">int</span> len <span class="token operator">=</span> que<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//根节点下有多少个子树</span>
             <span class="token comment" spellcheck="true">//std::cout &lt;&lt; "长度:" &lt;&lt; len &lt;&lt; std::endl;</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 TreeNode<span class="token operator">*</span> node <span class="token operator">=</span> que<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
                 <span class="token comment" spellcheck="true">//std::cout &lt;&lt; "树结构:";</span>
                 <span class="token comment" spellcheck="true">//Print(node);</span>
                 <span class="token comment" spellcheck="true">//std::cout &lt;&lt; std::endl;</span>
                 que<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                ans<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">&gt;</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">&gt;</span>left<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                ans<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span> <span class="token punctuation">{</span>
                     <span class="token comment" spellcheck="true">//std::cout &lt;&lt; "///////" &lt;&lt; std::endl;</span>
-                    que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">&gt;</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">&gt;</span>right<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                    que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
                     <span class="token comment" spellcheck="true">//std::cout &lt;&lt; "///////" &lt;&lt; std::endl;</span>
-                    que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">&gt;</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+                    que<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>node<span class="token operator">-</span><span class="token operator">></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
             res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>ans<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// void Print(TreeNode* T) &amp;#123;</span>
-    <span class="token comment" spellcheck="true">//     if(T) &amp;#123;</span>
-    <span class="token comment" spellcheck="true">//         Print(T-&gt;left);</span>
-    <span class="token comment" spellcheck="true">//         std::cout &lt;&lt; T-&gt;val &lt;&lt;" ";</span>
-    <span class="token comment" spellcheck="true">//         Print(T-&gt;right);</span>
-    <span class="token comment" spellcheck="true">//     &amp;#125;</span>
-    <span class="token comment" spellcheck="true">//     else &amp;#123;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// void Print(TreeNode* T) {</span>
+    <span class="token comment" spellcheck="true">//     if(T) {</span>
+    <span class="token comment" spellcheck="true">//         Print(T->left);</span>
+    <span class="token comment" spellcheck="true">//         std::cout &lt;&lt; T->val &lt;&lt;" ";</span>
+    <span class="token comment" spellcheck="true">//         Print(T->right);</span>
+    <span class="token comment" spellcheck="true">//     }</span>
+    <span class="token comment" spellcheck="true">//     else {</span>
     <span class="token comment" spellcheck="true">//         std::cout &lt;&lt; "";</span>
-    <span class="token comment" spellcheck="true">//     &amp;#125;</span>
-    <span class="token comment" spellcheck="true">// &amp;#125;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span></code></pre>
+    <span class="token comment" spellcheck="true">//     }</span>
+    <span class="token comment" spellcheck="true">// }</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p>代码本身没什么不好理解的，可是一到自己做就不会，还是缺乏练习导致！</p>
 <p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/">同类题</a></p>
 <p>*<em>才疏学浅，望雅正**</em></p>
@@ -1371,7 +1371,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">98.3k</span>&nbsp;字
+                class="white-color">90.9k</span>&nbsp;字
             
             
             

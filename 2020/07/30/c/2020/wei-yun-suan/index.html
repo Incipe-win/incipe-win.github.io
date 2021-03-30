@@ -31,10 +31,10 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-</head>
+<link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -474,7 +474,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    982
+                    944
                 </div>
                 
 
@@ -574,17 +574,17 @@
 </tbody></table>
 <h3 id="奇技淫巧"><a href="#奇技淫巧" class="headerlink" title="奇技淫巧"></a>奇技淫巧</h3><h4 id="按位与"><a href="#按位与" class="headerlink" title="按位与"></a>按位与</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*
 判断奇偶, n &amp; 1 
-if (n &amp; 1) &amp;#123;
+if (n &amp; 1) {
     odd(奇数);
-&amp;#125; else &amp;#123;
+} else {
     even(偶数);
-&amp;#125;
-清空最低位的1 ---&gt; n &amp; (n - 1)
+}
+清空最低位的1 ---> n &amp; (n - 1)
 n &amp; (n - 1)还可以判断一个数是不是2的幂
-bool isPowerOfTwo(int n) &amp;#123;
-    return n &gt; 0 ? (n &amp; (n - 1)) == 0 : false;
-&amp;#125;
-得到最低位的1 ---&gt; n &amp; -n
+bool isPowerOfTwo(int n) {
+    return n > 0 ? (n &amp; (n - 1)) == 0 : false;
+}
+得到最低位的1 ---> n &amp; -n
 n &amp; ~n = 0
 */</span></code></pre>
 <p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/power-of-two/">231. 2的幂</a></p>
@@ -602,7 +602,7 @@ a ^= b;
 char ch = 'a'; // ch = 'A'
 a ^= (1 &lt;&lt; 5)
 cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; endl;
-&gt;&gt;&gt; a = 'A' // 'a'
+>>> a = 'A' // 'a'
 */</span></code></pre>
 <p>解释下其中几个</p>
 <p><code>x ^ ~0 = ~x</code></p>
@@ -611,9 +611,9 @@ cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; endl;
 <p>x与~x的每一位肯定不相同，所以异或出来就是1。</p>
 <p><code>a ^= b; b ^= a; a ^= b;</code></p>
 <pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*
-a ^= b ---&gt; a = a ^ b;
-b ^= a ---&gt; b = b ^ (a ^ b) = b ^ b ^ a = 0 ^ a = a;
-a ^= b ---&gt; a = (a ^ b) ^ a = a ^ a ^ b = 0 ^ b = b;
+a ^= b ---> a = a ^ b;
+b ^= a ---> b = b ^ (a ^ b) = b ^ b ^ a = 0 ^ a = a;
+a ^= b ---> a = (a ^ b) ^ a = a ^ a ^ b = 0 ^ b = b;
 */</span></code></pre>
 <p>根据异或的性质容易得知，<code>奇数个1异或为1， 偶数个1异或为0</code></p>
 <p>推广 —&gt; <code>奇数个相同的数异或为这个数，偶数个相同的数异或为0</code></p>
@@ -635,16 +635,16 @@ a ^= b ---&gt; a = (a ^ b) ^ a = a ^ a ^ b = 0 ^ b = b;
 <p>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/single-number">https://leetcode-cn.com/problems/single-number</a></p>
 </blockquote>
 <p>我们知道出现了偶数次的数字，最后肯定会抵消掉，<code>2 ^ 2 = 0</code>， 而奇数次的肯定会保留。</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">int</span> <span class="token function">singleNumber</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> <span class="token function">singleNumber</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">int</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> <span class="token operator">&amp;</span>num <span class="token operator">:</span> nums<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> <span class="token operator">&amp;</span>num <span class="token operator">:</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             ans <span class="token operator">^</span><span class="token operator">=</span> num<span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
         <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span></code></pre>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/single-number-ii/">137. 只出现一次的数字 II</a></p>
 <p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/single-number-iii/">260. 只出现一次的数字 III</a></p>
 <h4 id="左移"><a href="#左移" class="headerlink" title="左移"></a>左移</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*
@@ -652,11 +652,11 @@ a ^= b ---&gt; a = (a ^ b) ^ a = a ^ a ^ b = 0 ^ b = b;
 */</span></code></pre>
 <h4 id="右移"><a href="#右移" class="headerlink" title="右移"></a>右移</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*
 一个数字右移一位÷2，右移n位÷2的n次方
-取中间值 int mid = (left + right) &gt;&gt; 1
+取中间值 int mid = (left + right) >> 1
 */</span></code></pre>
 <h4 id="混合起来的一些技巧"><a href="#混合起来的一些技巧" class="headerlink" title="混合起来的一些技巧"></a>混合起来的一些技巧</h4><pre class=" language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">/*
 将x最右边的n位清0, x &amp; (~0 &lt;&lt; n)
-获取x的第n值, (x &gt;&gt; n) &amp;&amp; 1
+获取x的第n值, (x >> n) &amp;&amp; 1
 获取x的第n位的幂值, x &amp; (1 &lt;&lt; (n - 1))
 仅将第n位置为1, x | (1 &lt;&lt; n)
 仅将第n位置为0, x &amp; (~(1 &lt;&lt; n))
@@ -1453,7 +1453,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">98.3k</span>&nbsp;字
+                class="white-color">90.9k</span>&nbsp;字
             
             
             
