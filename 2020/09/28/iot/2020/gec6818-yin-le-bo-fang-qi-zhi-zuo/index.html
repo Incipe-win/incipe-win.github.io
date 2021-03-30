@@ -31,10 +31,10 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -474,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.6k
+                    2.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    14 分
                 </div>
                 
 
@@ -511,11 +511,11 @@ gcc version 4.4.3 <span class="token punctuation">(</span>ctng-1.6.1<span class=
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="Ⅰ-总体框架"><a href="#Ⅰ-总体框架" class="headerlink" title="Ⅰ. 总体框架"></a>Ⅰ. 总体框架</h3><p><img src="https://gitee.com/incipe-win/images/raw/master/image-20200928220250419.png" alt="image-20200928220250419"></p>
 <h3 id="Ⅱ-目录结构"><a href="#Ⅱ-目录结构" class="headerlink" title="Ⅱ. 目录结构"></a>Ⅱ. 目录结构</h3><pre class=" language-bash"><code class="language-bash"><span class="token keyword">.</span>
 ├── include
-│<span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> ├── get_touch.h
-│<span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> ├── lcd.h
-│<span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> ├── play_music.h
-│<span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> ├── show_bmp.h
-│<span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> └── ts_init.h
+│   ├── get_touch.h
+│   ├── lcd.h
+│   ├── play_music.h
+│   ├── show_bmp.h
+│   └── ts_init.h
 ├── Makefile
 ├── README.md
 └── sources
@@ -534,13 +534,13 @@ gcc version 4.4.3 <span class="token punctuation">(</span>ctng-1.6.1<span class=
 </ol>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>接下来详细讲解每个模块的具体功能与作用。</p>
 <h3 id="Ⅰ-LCD模块"><a href="#Ⅰ-LCD模块" class="headerlink" title="Ⅰ. LCD模块"></a>Ⅰ. LCD模块</h3><p>LCD是GEC6818的显示屏，要想展示图片就必须打开LCD显示屏。</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/mman.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/mman.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
 
 <span class="token comment" spellcheck="true">// lcd 文件描述符</span>
 <span class="token keyword">int</span> fd <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -550,30 +550,30 @@ gcc version 4.4.3 <span class="token punctuation">(</span>ctng-1.6.1<span class=
 <span class="token comment" spellcheck="true">/**
  *  打开lcd屏幕和共享映射区
  * */</span>
-<span class="token keyword">void</span> <span class="token function">lcd_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">void</span> <span class="token function">lcd_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   fd <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"/dev/fb0"</span><span class="token punctuation">,</span> O_RDWR<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>fd <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>fd <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"lcd open error: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// 打开共享映射区</span>
   plcd <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">mmap</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token number">800</span> <span class="token operator">*</span> <span class="token number">480</span> <span class="token operator">*</span> <span class="token number">4</span><span class="token punctuation">,</span> PROT_READ <span class="token operator">|</span> PROT_WRITE<span class="token punctuation">,</span>
                               MAP_SHARED<span class="token punctuation">,</span> fd<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>plcd <span class="token operator">==</span> MAP_FAILED<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>plcd <span class="token operator">==</span> MAP_FAILED<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"mmap error: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">/**
  *  关闭lcd屏幕和映射区
  * */</span>
-<span class="token keyword">void</span> <span class="token function">lcd_uninit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">void</span> <span class="token function">lcd_uninit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// 关闭共享映射区</span>
   <span class="token function">munmap</span><span class="token punctuation">(</span>plcd<span class="token punctuation">,</span> <span class="token number">800</span> <span class="token operator">*</span> <span class="token number">480</span> <span class="token operator">*</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// 关闭文件描述符</span>
   <span class="token function">close</span><span class="token punctuation">(</span>fd<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
 <p>打开映射区的目的是为了加快显示图片的速度，直接使用 <code>write</code> 函数也是可以的。</p>
 <h3 id="Ⅱ-显示图片模块"><a href="#Ⅱ-显示图片模块" class="headerlink" title="Ⅱ. 显示图片模块"></a>Ⅱ. 显示图片模块</h3><p>在这之前先简单介绍下 <strong>bmp</strong> 图片的存储格式。</p>
@@ -589,13 +589,13 @@ gcc version 4.4.3 <span class="token punctuation">(</span>ctng-1.6.1<span class=
 
 <p>例如，偏移量从 <code>0x02 ~ 0x05</code> 表示图片大小，<code>0x12 ~ 0x15</code> 表示图片宽， <code>0x16 ~ 0x19</code> 表示图片高， <code>0x1c ~ 0x1d</code> 表示图片的位深。</p>
 <p>把这按照小端拼接起来就可以得到图片大小，宽高和位深信息。</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/mman.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/mman.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
 
 <span class="token keyword">extern</span> <span class="token keyword">int</span> fd<span class="token punctuation">;</span>
 <span class="token keyword">extern</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span><span class="token operator">*</span> plcd<span class="token punctuation">;</span>
@@ -603,35 +603,35 @@ gcc version 4.4.3 <span class="token punctuation">(</span>ctng-1.6.1<span class=
 <span class="token comment" spellcheck="true">/**
  *  绘制图片
  * */</span>
-<span class="token keyword">void</span> <span class="token function">lcd_drawpoint</span><span class="token punctuation">(</span><span class="token keyword">int</span> w<span class="token punctuation">,</span> <span class="token keyword">int</span> h<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> color<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">void</span> <span class="token function">lcd_drawpoint</span><span class="token punctuation">(</span><span class="token keyword">int</span> w<span class="token punctuation">,</span> <span class="token keyword">int</span> h<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> color<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">//(w,h)显示了color色</span>
   <span class="token operator">*</span><span class="token punctuation">(</span>plcd <span class="token operator">+</span> w <span class="token operator">+</span> h <span class="token operator">*</span> <span class="token number">800</span><span class="token punctuation">)</span> <span class="token operator">=</span> color<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">/**
  *  读取bmp图片数据
  *  从x0，y0处开始显示一张宽w高h的图片
  * */</span>
-<span class="token keyword">void</span> <span class="token function">show_bmp</span><span class="token punctuation">(</span><span class="token keyword">int</span> x0<span class="token punctuation">,</span> <span class="token keyword">int</span> y0<span class="token punctuation">,</span> <span class="token keyword">int</span> w<span class="token punctuation">,</span> <span class="token keyword">int</span> h<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> bmp_file<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">void</span> <span class="token function">show_bmp</span><span class="token punctuation">(</span><span class="token keyword">int</span> x0<span class="token punctuation">,</span> <span class="token keyword">int</span> y0<span class="token punctuation">,</span> <span class="token keyword">int</span> w<span class="token punctuation">,</span> <span class="token keyword">int</span> h<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> bmp_file<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token keyword">int</span> bmp <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
   bmp <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span>bmp_file<span class="token punctuation">,</span> O_RDONLY<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> bmp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> bmp<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"open bmp error"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
   <span class="token comment" spellcheck="true">//读取BMP和DIB数据</span>
   <span class="token keyword">int</span> ret <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// BMP头和DIB数据</span>
-  <span class="token keyword">unsigned</span> <span class="token keyword">char</span> ch<span class="token punctuation">[</span><span class="token number">64</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">unsigned</span> <span class="token keyword">char</span> ch<span class="token punctuation">[</span><span class="token number">64</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">0</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
   ret <span class="token operator">=</span> <span class="token function">read</span><span class="token punctuation">(</span>bmp<span class="token punctuation">,</span> ch<span class="token punctuation">,</span> <span class="token number">54</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> ret<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> ret<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"read bmp error"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">==</span> ret<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">==</span> ret<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"no read data or file end\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
   <span class="token comment" spellcheck="true">// 3.处理数据</span>
   <span class="token keyword">int</span> file_size <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -640,7 +640,7 @@ gcc version 4.4.3 <span class="token punctuation">(</span>ctng-1.6.1<span class=
   <span class="token comment" spellcheck="true">// rgba位图</span>
   <span class="token keyword">unsigned</span> <span class="token keyword">char</span> a<span class="token punctuation">,</span> r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b<span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">//存储图像的位图数据(各个像素点颜色值分量)</span>
-  <span class="token keyword">unsigned</span> <span class="token keyword">char</span> pix<span class="token punctuation">[</span><span class="token number">800</span> <span class="token operator">*</span> <span class="token number">480</span> <span class="token operator">*</span> <span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">unsigned</span> <span class="token keyword">char</span> pix<span class="token punctuation">[</span><span class="token number">800</span> <span class="token operator">*</span> <span class="token number">480</span> <span class="token operator">*</span> <span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">0</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
   file_size <span class="token operator">=</span> ch<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">|</span> ch<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token number">8</span> <span class="token operator">|</span> ch<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token number">16</span> <span class="token operator">|</span> ch<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token number">24</span><span class="token punctuation">;</span>
   width <span class="token operator">=</span> ch<span class="token punctuation">[</span><span class="token number">0x12</span><span class="token punctuation">]</span> <span class="token operator">|</span> ch<span class="token punctuation">[</span><span class="token number">0x13</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token number">8</span> <span class="token operator">|</span> ch<span class="token punctuation">[</span><span class="token number">0x14</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token number">16</span> <span class="token operator">|</span> ch<span class="token punctuation">[</span><span class="token number">0x15</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token number">24</span><span class="token punctuation">;</span>
   hight <span class="token operator">=</span> ch<span class="token punctuation">[</span><span class="token number">0x16</span><span class="token punctuation">]</span> <span class="token operator">|</span> ch<span class="token punctuation">[</span><span class="token number">0x17</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token number">8</span> <span class="token operator">|</span> ch<span class="token punctuation">[</span><span class="token number">0x18</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token number">16</span> <span class="token operator">|</span> ch<span class="token punctuation">[</span><span class="token number">0x19</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token number">24</span><span class="token punctuation">;</span>
@@ -650,30 +650,30 @@ gcc version 4.4.3 <span class="token punctuation">(</span>ctng-1.6.1<span class=
   <span class="token function">read</span><span class="token punctuation">(</span>bmp<span class="token punctuation">,</span> pix<span class="token punctuation">,</span> w <span class="token operator">*</span> h <span class="token operator">*</span> pix_bit <span class="token operator">/</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
   <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> y <span class="token operator">&lt;</span> h<span class="token punctuation">;</span> y<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> x <span class="token operator">&lt;</span> w<span class="token punctuation">;</span> x<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> y <span class="token operator">&lt;</span> h<span class="token punctuation">;</span> y<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> x <span class="token operator">&lt;</span> w<span class="token punctuation">;</span> x<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
       b <span class="token operator">=</span> pix<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
       g <span class="token operator">=</span> pix<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
       r <span class="token operator">=</span> pix<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
       a <span class="token operator">=</span> <span class="token punctuation">(</span>pix_bit <span class="token operator">==</span> <span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">?</span> pix<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
       color <span class="token operator">=</span> a <span class="token operator">&lt;&lt;</span> <span class="token number">24</span> <span class="token operator">|</span> r <span class="token operator">&lt;&lt;</span> <span class="token number">16</span> <span class="token operator">|</span> g <span class="token operator">&lt;&lt;</span> <span class="token number">8</span> <span class="token operator">|</span> b<span class="token punctuation">;</span>
       <span class="token function">lcd_drawpoint</span><span class="token punctuation">(</span>x0 <span class="token operator">+</span> x<span class="token punctuation">,</span> y0 <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>h <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">-</span> y<span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token function">close</span><span class="token punctuation">(</span>bmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p>因为前54个字节，我们是不需要的，所以，文件要偏移54个字节，或者把这54个字节读取出来。</p>
 <p>注：<strong>bmp</strong> 图片是没有透明度选项的，即 <strong>rgb</strong> 颜色标准。</p>
 <h3 id="Ⅲ-打开触屏文件"><a href="#Ⅲ-打开触屏文件" class="headerlink" title="Ⅲ. 打开触屏文件"></a>Ⅲ. 打开触屏文件</h3><p>打开触屏的主要目的是实现上一首下一首，播放暂停功能的实现。</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;linux/input.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdbool.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/mman.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;linux/input.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdbool.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/mman.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
 
 <span class="token keyword">int</span> ts <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token keyword">extern</span> <span class="token keyword">bool</span> flag<span class="token punctuation">;</span>
@@ -681,43 +681,43 @@ gcc version 4.4.3 <span class="token punctuation">(</span>ctng-1.6.1<span class=
 <span class="token comment" spellcheck="true">/**
  *  获取触摸的x，y坐标
  * */</span>
-<span class="token keyword">void</span> <span class="token function">get_touch</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span>x<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">void</span> <span class="token function">get_touch</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span>x<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>y<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token keyword">int</span> ret<span class="token punctuation">;</span>
   <span class="token keyword">struct</span> input_event ev<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//输入事件结构体变量,用来保存读取的输入事件</span>
 
   <span class="token comment" spellcheck="true">// 1) 打开触摸屏文件</span>
   ts <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"/dev/input/event0"</span><span class="token punctuation">,</span> O_RDWR<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> ts<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">==</span> ts<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">"open input error"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">exit</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
   <span class="token comment" spellcheck="true">// 2) 读取触摸屏事件</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>flag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>flag<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
       <span class="token keyword">break</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
     ret <span class="token operator">=</span> <span class="token function">read</span><span class="token punctuation">(</span>ts<span class="token punctuation">,</span> <span class="token operator">&amp;</span>ev<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ev<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//读取输入事件保存到结构体ev中</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>ret <span class="token operator">==</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ev<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>ev<span class="token punctuation">.</span>type <span class="token operator">==</span> EV_ABS <span class="token operator">&amp;&amp;</span> ev<span class="token punctuation">.</span>code <span class="token operator">==</span> ABS_X<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>ret <span class="token operator">==</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ev<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>ev<span class="token punctuation">.</span>type <span class="token operator">==</span> EV_ABS <span class="token operator">&amp;&amp;</span> ev<span class="token punctuation">.</span>code <span class="token operator">==</span> ABS_X<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token operator">*</span>x <span class="token operator">=</span> ev<span class="token punctuation">.</span>value <span class="token operator">*</span> <span class="token number">0.8</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//此时的value是触摸点X轴的坐标</span>
-      <span class="token punctuation">}</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>ev<span class="token punctuation">.</span>type <span class="token operator">==</span> EV_ABS <span class="token operator">&amp;&amp;</span> ev<span class="token punctuation">.</span>code <span class="token operator">==</span> ABS_Y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>ev<span class="token punctuation">.</span>type <span class="token operator">==</span> EV_ABS <span class="token operator">&amp;&amp;</span> ev<span class="token punctuation">.</span>code <span class="token operator">==</span> ABS_Y<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token operator">*</span>y <span class="token operator">=</span> ev<span class="token punctuation">.</span>value <span class="token operator">*</span> <span class="token number">0.8</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//此时的value是触摸点Y轴的坐标</span>
-      <span class="token punctuation">}</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>ev<span class="token punctuation">.</span>type <span class="token operator">==</span> EV_KEY <span class="token operator">&amp;&amp;</span> ev<span class="token punctuation">.</span>code <span class="token operator">==</span> BTN_TOUCH <span class="token operator">&amp;&amp;</span> ev<span class="token punctuation">.</span>value <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>ev<span class="token punctuation">.</span>type <span class="token operator">==</span> EV_KEY <span class="token operator">&amp;&amp;</span> ev<span class="token punctuation">.</span>code <span class="token operator">==</span> BTN_TOUCH <span class="token operator">&amp;&amp;</span> ev<span class="token punctuation">.</span>value <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">//手指从触摸屏 离开</span>
         <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"(x = %d, y = %d)\n"</span><span class="token punctuation">,</span> <span class="token operator">*</span>x<span class="token punctuation">,</span> <span class="token operator">*</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">break</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">/**
  *  关闭触屏板
  * */</span>
-<span class="token keyword">void</span> <span class="token function">close_ts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">close</span><span class="token punctuation">(</span>ts<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span></code></pre>
+<span class="token keyword">void</span> <span class="token function">close_ts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token function">close</span><span class="token punctuation">(</span>ts<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <h3 id="Ⅳ-实现音乐播放器功能"><a href="#Ⅳ-实现音乐播放器功能" class="headerlink" title="Ⅳ. 实现音乐播放器功能"></a>Ⅳ. 实现音乐播放器功能</h3><p>介绍下 <code>madplay</code> 的使用。</p>
 <pre class=" language-cpp"><code class="language-cpp">
 管理madplay的主程序，包括播放，暂停播放，恢复播放，停止播放
@@ -743,19 +743,19 @@ gcc version 4.4.3 <span class="token punctuation">(</span>ctng-1.6.1<span class=
 -ABRT    -BUS     -CONT    -HUP     -INT     -PIPE    -PROF    -QUIT    -STKFLT  -SYS     -TRAP    -TTIN    -URG     -USR2    -WINCH   -XFSZ                  
 -ALRM    -CHLD    -FPE     -ILL     -KILL    -POLL    -PWR     -SEGV    -STOP    -TERM    -TSTP    -TTOU    -USR1    -VTALRM  -XCPU</code></pre>
 <p>代码：</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;linux/input.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdbool.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/mman.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;linux/input.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdbool.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/mman.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
 
-<span class="token keyword">char</span> music<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"1.mp3"</span><span class="token punctuation">,</span> <span class="token string">"2.mp3"</span><span class="token punctuation">,</span> <span class="token string">"3.mp3"</span><span class="token punctuation">,</span> <span class="token string">"4.mp3"</span><span class="token punctuation">,</span>
-                    <span class="token string">"5.mp3"</span><span class="token punctuation">,</span> <span class="token string">"6.mp3"</span><span class="token punctuation">,</span> <span class="token string">"7.mp3"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span> music<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"1.mp3"</span><span class="token punctuation">,</span> <span class="token string">"2.mp3"</span><span class="token punctuation">,</span> <span class="token string">"3.mp3"</span><span class="token punctuation">,</span> <span class="token string">"4.mp3"</span><span class="token punctuation">,</span>
+                    <span class="token string">"5.mp3"</span><span class="token punctuation">,</span> <span class="token string">"6.mp3"</span><span class="token punctuation">,</span> <span class="token string">"7.mp3"</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
 
 <span class="token keyword">int</span> order <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
@@ -768,61 +768,61 @@ gcc version 4.4.3 <span class="token punctuation">(</span>ctng-1.6.1<span class=
  *  如果是第一次播放就开始播放
  *  如果不是，就继续播放
  * */</span>
-<span class="token keyword">void</span> <span class="token function">play_music</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>isFirst<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">char</span> command<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">play_music</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>isFirst<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> command<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">0</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
     <span class="token function">sprintf</span><span class="token punctuation">(</span>command<span class="token punctuation">,</span> <span class="token string">"madplay %s -a %d &amp;"</span><span class="token punctuation">,</span> music<span class="token punctuation">[</span>order<span class="token punctuation">]</span><span class="token punctuation">,</span> vol<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s\n"</span><span class="token punctuation">,</span> command<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">system</span><span class="token punctuation">(</span>command<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"killall -CONT madplay &amp;"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">/**
  *  暂停音乐
  * */</span>
-<span class="token keyword">void</span> <span class="token function">stop_music</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"killall -STOP madplay &amp;"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">stop_music</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"killall -STOP madplay &amp;"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">/**
  *  下一首
  * */</span>
-<span class="token keyword">void</span> <span class="token function">next_music</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">void</span> <span class="token function">next_music</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"killall -9 madplay"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>order <span class="token operator">==</span> <span class="token number">6</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>order <span class="token operator">==</span> <span class="token number">6</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     order <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  <span class="token keyword">char</span> command<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token keyword">char</span> command<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">0</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
   <span class="token function">sprintf</span><span class="token punctuation">(</span>command<span class="token punctuation">,</span> <span class="token string">"madplay %s -a %d &amp;"</span><span class="token punctuation">,</span> music<span class="token punctuation">[</span><span class="token operator">++</span>order<span class="token punctuation">]</span><span class="token punctuation">,</span> vol<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s\n"</span><span class="token punctuation">,</span> command<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">system</span><span class="token punctuation">(</span>command<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">/**
  *  上一首
  * */</span>
-<span class="token keyword">void</span> <span class="token function">pre_music</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">void</span> <span class="token function">pre_music</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"killall -9 madplay"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>order <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>order <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     order <span class="token operator">=</span> <span class="token number">7</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  <span class="token keyword">char</span> command<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token keyword">char</span> command<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">0</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
   <span class="token function">sprintf</span><span class="token punctuation">(</span>command<span class="token punctuation">,</span> <span class="token string">"madplay %s -a %d &amp;"</span><span class="token punctuation">,</span> music<span class="token punctuation">[</span><span class="token operator">--</span>order<span class="token punctuation">]</span><span class="token punctuation">,</span> vol<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s\n"</span><span class="token punctuation">,</span> command<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">system</span><span class="token punctuation">(</span>command<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p>这里播放音乐有个逻辑，就是如果是第一次播放的话，就要开始播放音乐，如果不是的话，就要继续播放音乐。</p>
 <p>另外，上一首下一首功能，要防止数组越界，更简单的直接取模也是可以的。</p>
-<h3 id="Ⅴ-主函数逻辑功能"><a href="#Ⅴ-主函数逻辑功能" class="headerlink" title="Ⅴ. 主函数逻辑功能"></a>Ⅴ. 主函数逻辑功能</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;signal.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdbool.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/mman.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
+<h3 id="Ⅴ-主函数逻辑功能"><a href="#Ⅴ-主函数逻辑功能" class="headerlink" title="Ⅴ. 主函数逻辑功能"></a>Ⅴ. 主函数逻辑功能</h3><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;fcntl.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;signal.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdbool.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/mman.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/stat.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;sys/types.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h&gt;</span></span>
 
 <span class="token keyword">extern</span> <span class="token keyword">void</span> <span class="token function">lcd_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">extern</span> <span class="token keyword">void</span> <span class="token function">lcd_uninit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -842,18 +842,18 @@ gcc version 4.4.3 <span class="token punctuation">(</span>ctng-1.6.1<span class=
 <span class="token comment" spellcheck="true">/**
  *  处理信号函数
  * */</span>
-<span class="token keyword">void</span> <span class="token function">my_handler</span><span class="token punctuation">(</span><span class="token keyword">int</span> sig<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">void</span> <span class="token function">my_handler</span><span class="token punctuation">(</span><span class="token keyword">int</span> sig<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// 最好不加</span>
   <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"End of program, end of code: %d\n"</span><span class="token punctuation">,</span> sig<span class="token punctuation">)</span><span class="token punctuation">;</span>
   flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// argv[0] 文件名 argv[1] 音量大小</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     vol <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-    <span class="token keyword">switch</span> <span class="token punctuation">(</span><span class="token function">atoi</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span><span class="token function">atoi</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
       <span class="token keyword">case</span> <span class="token number">0</span><span class="token operator">:</span>
         vol <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">175</span><span class="token punctuation">;</span>
         <span class="token keyword">break</span><span class="token punctuation">;</span>
@@ -866,8 +866,8 @@ gcc version 4.4.3 <span class="token punctuation">(</span>ctng-1.6.1<span class=
       <span class="token keyword">case</span> <span class="token number">3</span><span class="token operator">:</span>
         vol <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
         <span class="token keyword">break</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token function">signal</span><span class="token punctuation">(</span>SIGINT<span class="token punctuation">,</span> my_handler<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>background_bmp <span class="token operator">=</span> <span class="token string">"./bmp/background.bmp"</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>next_bmp <span class="token operator">=</span> <span class="token string">"./bmp/next.bmp"</span><span class="token punctuation">;</span>
@@ -881,50 +881,50 @@ gcc version 4.4.3 <span class="token punctuation">(</span>ctng-1.6.1<span class=
   <span class="token function">show_bmp</span><span class="token punctuation">(</span><span class="token number">639</span><span class="token punctuation">,</span> <span class="token number">340</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> next_bmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// 触屏得到的坐标</span>
   <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>flag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>flag<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
       <span class="token comment" spellcheck="true">// 不让程序自动处理ctrl + z/c</span>
       <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"killall -9 madplay"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token function">show_bmp</span><span class="token punctuation">(</span><span class="token number">375</span><span class="token punctuation">,</span> <span class="token number">340</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> pause_bmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
       flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
       <span class="token keyword">break</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
     <span class="token function">get_touch</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>x<span class="token punctuation">,</span> <span class="token operator">&amp;</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>flag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">375</span> <span class="token operator">&lt;</span> x <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;</span> <span class="token number">475</span> <span class="token operator">&amp;&amp;</span> <span class="token number">340</span> <span class="token operator">&lt;</span> y <span class="token operator">&amp;&amp;</span> y <span class="token operator">&lt;</span> <span class="token number">440</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>flag<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">375</span> <span class="token operator">&lt;</span> x <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;</span> <span class="token number">475</span> <span class="token operator">&amp;&amp;</span> <span class="token number">340</span> <span class="token operator">&lt;</span> y <span class="token operator">&amp;&amp;</span> y <span class="token operator">&lt;</span> <span class="token number">440</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 如果正在播放音乐，就停止播放音乐</span>
         <span class="token comment" spellcheck="true">// 如果音乐没有播放，就开始播放音乐</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>isPlay<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>isPlay<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
           <span class="token function">stop_music</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
           <span class="token function">show_bmp</span><span class="token punctuation">(</span><span class="token number">375</span><span class="token punctuation">,</span> <span class="token number">340</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> pause_bmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
           isPlay <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
           <span class="token function">play_music</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
           <span class="token function">show_bmp</span><span class="token punctuation">(</span><span class="token number">375</span><span class="token punctuation">,</span> <span class="token number">340</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> play_bmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
           isPlay <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
           isFirst <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
       <span class="token comment" spellcheck="true">// 上一首音乐</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">45</span> <span class="token operator">&lt;</span> x <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;</span> <span class="token number">145</span> <span class="token operator">&amp;&amp;</span> <span class="token number">340</span> <span class="token operator">&lt;</span> y <span class="token operator">&amp;&amp;</span> y <span class="token operator">&lt;</span> <span class="token number">440</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">45</span> <span class="token operator">&lt;</span> x <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;</span> <span class="token number">145</span> <span class="token operator">&amp;&amp;</span> <span class="token number">340</span> <span class="token operator">&lt;</span> y <span class="token operator">&amp;&amp;</span> y <span class="token operator">&lt;</span> <span class="token number">440</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token function">pre_music</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">show_bmp</span><span class="token punctuation">(</span><span class="token number">375</span><span class="token punctuation">,</span> <span class="token number">340</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> play_bmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
         isFirst <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
         isPlay <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
+      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
       <span class="token comment" spellcheck="true">// 下一首音乐</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">639</span> <span class="token operator">&lt;</span> x <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;</span> <span class="token number">739</span> <span class="token operator">&amp;&amp;</span> <span class="token number">340</span> <span class="token operator">&lt;</span> y <span class="token operator">&amp;&amp;</span> y <span class="token operator">&lt;</span> <span class="token number">440</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">639</span> <span class="token operator">&lt;</span> x <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;</span> <span class="token number">739</span> <span class="token operator">&amp;&amp;</span> <span class="token number">340</span> <span class="token operator">&lt;</span> y <span class="token operator">&amp;&amp;</span> y <span class="token operator">&lt;</span> <span class="token number">440</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token function">next_music</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">show_bmp</span><span class="token punctuation">(</span><span class="token number">375</span><span class="token punctuation">,</span> <span class="token number">340</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> play_bmp<span class="token punctuation">)</span><span class="token punctuation">;</span>
         isFirst <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
         isPlay <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
+      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token function">close_ts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">lcd_uninit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p>主函数增加了一个 <code>ctrl + c/z</code> 信号处理，不想让程序帮我处理这个信号，我要自己处理，目的是为了解决直接使用 <code>ctrl + c</code> 结束程序，<code>madplay</code> 还在播放音乐的情况。</p>
 <p>其次就是通过触摸屏得到的触摸点，进行相应的操作逻辑。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>代码经过编译，可以成功移植到 <strong>GEC1818</strong> 开发板上，具体操作，可见 <strong>README.md</strong> 文件。</p>
@@ -1723,7 +1723,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">90.9k</span>&nbsp;字
+                class="white-color">98.3k</span>&nbsp;字
             
             
             

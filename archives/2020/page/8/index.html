@@ -31,10 +31,10 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -1026,24 +1026,20 @@ git是分布式版本控制系统，官网下载地址：
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2020/05/15/software/2020/dian-nao-wang-qia-shi-fou-zhi-chi-5ghz-pin-duan/">
+                        <a href="/2020/05/15/software/2020/yong-fiddler-gou-zao-http-qing-qiu/">
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="电脑网卡是否支持5Ghz频段">
+                                <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="用Fiddler构造http请求">
                                 
-                                <span class="card-title">电脑网卡是否支持5Ghz频段</span>
+                                <span class="card-title">用Fiddler构造http请求</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    win + r 键入
-netsh wlan show drivers
-
-可查看网卡支持的无线电类型
-
-1）802.11b、802.11g只支持2.4GHz2）802.11a、802.11ac支持5GHz3）802.11n 采用了多重输入/输
+                                    用Fiddler构造http请求时，发现 $_POST数组中怎么也获取不到值，以为自己操作错了，但也没发现什么问题，后来得知，原来缺少了一个请求头，Fiddler不会为我们自动添加。
+Content-Type: application/x-
                                 
                             </div>
                             <div class="publish-info">
@@ -1119,7 +1115,7 @@ netsh wlan show drivers
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">90.9k</span>&nbsp;字
+                class="white-color">98.3k</span>&nbsp;字
             
             
             

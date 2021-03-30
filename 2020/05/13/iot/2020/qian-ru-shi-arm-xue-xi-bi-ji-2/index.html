@@ -31,10 +31,10 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -662,9 +662,9 @@
 <h3 id="ARM异常处理"><a href="#ARM异常处理" class="headerlink" title="ARM异常处理"></a>ARM异常处理</h3><h4 id="R14-LInk-Register链接寄存器"><a href="#R14-LInk-Register链接寄存器" class="headerlink" title="R14(LInk Register链接寄存器)"></a>R14(LInk Register链接寄存器)</h4><ul>
 <li><p>R14保存的是程序的地址(程序的返回地址)</p>
 <pre class=" language-armasm"><code class="language-armasm"># 调用子程序(异常)
-STMFD SP!,{<Regs>,LR}
+STMFD SP!,{<regs>,LR}
 # 子程序返回(异常返回)
-LDMFD SP!,{<Regs>,PC}</code></pre>
+LDMFD SP!,{<regs>,PC}</regs></regs></code></pre>
 </li>
 </ul>
 <p>当前程序状态寄存器(Current Program Status Register)</p>
@@ -1198,64 +1198,6 @@ LDMFD SP!,{<Regs>,PC}</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/14/mcu/2020/ru-he-yong-proteus-fang-zhen-8086/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="如何用proteus仿真8086">
-                        
-                        <span class="card-title">如何用proteus仿真8086</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            岁月不饶人，我亦未曾饶过岁月。
-1.需要的工具proteus
-过低版本不可以仿真8086，请下载7.8版本及以上的
-下载地址(附教程)
-提取码：rh8j
-emu8086
-官网地址
-网盘地址
-提取码：j5qn
-2.编译汇编代码打开emu808
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-14
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" class="post-category">
-                                    软件使用
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/IOT/">
-                        <span class="chip bg-color">IOT</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-xue-xi-bi-ji-1/">
                     <div class="card-image">
                         
@@ -1281,6 +1223,65 @@ emu8086
 Server
 Personal Computer
 Embe
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/IOT/" class="post-category">
+                                    IOT
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ARM/">
+                        <span class="chip bg-color">ARM</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/05/13/iot/2020/qian-ru-shi-arm-xue-xi-bi-ji-3/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="嵌入式学习笔记(3)">
+                        
+                        <span class="card-title">嵌入式学习笔记(3)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            ARM指令集精简指令集设计理念(The  RISC design philosophy)
+设计原则(Design rules)
+指令”短小精悍”
+应用流水线技术设计
+大量采用寄存器
+Load/Store存储结构
+
+
+
+ARM指令集特点
+所有
                         
                     </div>
                     <div class="publish-info">
@@ -1500,7 +1501,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">90.9k</span>&nbsp;字
+                class="white-color">98.3k</span>&nbsp;字
             
             
             

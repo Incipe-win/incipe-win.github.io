@@ -31,10 +31,10 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -474,14 +474,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -531,12 +531,12 @@
 <p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201018160729324.png"></p>
 <p>特别注意：下面所有出现 <code>mingw64</code> 的地方都要改成你电脑 <code>mingw64</code> 的目录。</p>
 <p><code>c_cpp_properties.json</code> 内容：</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
+<pre class=" language-json"><code class="language-json">&amp;#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token property">"configurations"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>
+    &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
       <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Win64"</span><span class="token punctuation">,</span>
       <span class="token property">"includePath"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-        <span class="token string">"${workspaceFolder}/**"</span>
+        <span class="token string">"$&amp;#123;workspaceFolder&amp;#125;/**"</span>
       <span class="token punctuation">]</span><span class="token punctuation">,</span>
       <span class="token property">"defines"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
         <span class="token string">"_DEBUG"</span><span class="token punctuation">,</span>
@@ -547,42 +547,42 @@
       <span class="token property">"cStandard"</span><span class="token operator">:</span> <span class="token string">"c11"</span><span class="token punctuation">,</span>
       <span class="token property">"cppStandard"</span><span class="token operator">:</span> <span class="token string">"gnu++20"</span><span class="token punctuation">,</span>
       <span class="token property">"intelliSenseMode"</span><span class="token operator">:</span> <span class="token string">"gcc-x64"</span>
-    <span class="token punctuation">}</span>
+    &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token property">"version"</span><span class="token operator">:</span> <span class="token number">4</span>
-<span class="token punctuation">}</span></code></pre>
+&amp;#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p><code>launch.json</code> 内容：</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
+<pre class=" language-json"><code class="language-json">&amp;#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.2.0"</span><span class="token punctuation">,</span>
   <span class="token property">"configurations"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>
+    &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
       <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"g++.exe build and debug active file"</span><span class="token punctuation">,</span>
       <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"cppdbg"</span><span class="token punctuation">,</span>
       <span class="token property">"request"</span><span class="token operator">:</span> <span class="token string">"launch"</span><span class="token punctuation">,</span>
-      <span class="token property">"program"</span><span class="token operator">:</span> <span class="token string">"${fileDirname}\\${fileBasenameNoExtension}.exe"</span><span class="token punctuation">,</span>
+      <span class="token property">"program"</span><span class="token operator">:</span> <span class="token string">"$&amp;#123;fileDirname&amp;#125;\\$&amp;#123;fileBasenameNoExtension&amp;#125;.exe"</span><span class="token punctuation">,</span>
       <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
       <span class="token property">"stopAtEntry"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-      <span class="token property">"cwd"</span><span class="token operator">:</span> <span class="token string">"${workspaceFolder}"</span><span class="token punctuation">,</span>
+      <span class="token property">"cwd"</span><span class="token operator">:</span> <span class="token string">"$&amp;#123;workspaceFolder&amp;#125;"</span><span class="token punctuation">,</span>
       <span class="token property">"environment"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
       <span class="token property">"externalConsole"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
       <span class="token property">"MIMode"</span><span class="token operator">:</span> <span class="token string">"gdb"</span><span class="token punctuation">,</span>
       <span class="token property">"miDebuggerPath"</span><span class="token operator">:</span> <span class="token string">"E:\\mingw64\\bin\\gdb.exe"</span><span class="token punctuation">,</span>
       <span class="token property">"setupCommands"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-        <span class="token punctuation">{</span>
+        &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
           <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Enable pretty-printing for gdb"</span><span class="token punctuation">,</span>
           <span class="token property">"text"</span><span class="token operator">:</span> <span class="token string">"-enable-pretty-printing"</span><span class="token punctuation">,</span>
           <span class="token property">"ignoreFailures"</span><span class="token operator">:</span> <span class="token boolean">true</span>
-        <span class="token punctuation">}</span>
+        &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
       <span class="token punctuation">]</span><span class="token punctuation">,</span>
       <span class="token property">"preLaunchTask"</span><span class="token operator">:</span> <span class="token string">"g++.exe build active file"</span>
-    <span class="token punctuation">}</span>
+    &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token punctuation">]</span>
-<span class="token punctuation">}</span></code></pre>
+&amp;#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p><code>tasks.json</code> 内容：</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
+<pre class=" language-json"><code class="language-json">&amp;#<span class="token number">123</span><span class="token punctuation">;</span>
   <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"2.0.0"</span><span class="token punctuation">,</span>
   <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>
+    &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
       <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"shell"</span><span class="token punctuation">,</span>
       <span class="token property">"label"</span><span class="token operator">:</span> <span class="token string">"g++.exe build active file"</span><span class="token punctuation">,</span>
       <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"E:\\mingw64\\bin\\g++.exe"</span><span class="token punctuation">,</span>
@@ -591,23 +591,23 @@
         <span class="token string">"-Wall"</span><span class="token punctuation">,</span>
         <span class="token string">"-fexec-charset=GBK"</span><span class="token punctuation">,</span>
         <span class="token string">"-std=c++17"</span><span class="token punctuation">,</span>
-        <span class="token string">"${file}"</span><span class="token punctuation">,</span>
+        <span class="token string">"$&amp;#123;file&amp;#125;"</span><span class="token punctuation">,</span>
         <span class="token string">"-o"</span><span class="token punctuation">,</span>
-        <span class="token string">"${fileDirname}\\${fileBasenameNoExtension}.exe"</span>
+        <span class="token string">"$&amp;#123;fileDirname&amp;#125;\\$&amp;#123;fileBasenameNoExtension&amp;#125;.exe"</span>
       <span class="token punctuation">]</span><span class="token punctuation">,</span>
-      <span class="token property">"options"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"options"</span><span class="token operator">:</span> &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token property">"cwd"</span><span class="token operator">:</span> <span class="token string">"E:\\mingw64\\bin"</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      &amp;#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
       <span class="token property">"problemMatcher"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
         <span class="token string">"$gcc"</span>
       <span class="token punctuation">]</span><span class="token punctuation">,</span>
-      <span class="token property">"group"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"group"</span><span class="token operator">:</span> &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token property">"kind"</span><span class="token operator">:</span> <span class="token string">"build"</span><span class="token punctuation">,</span>
         <span class="token property">"isDefault"</span><span class="token operator">:</span> <span class="token boolean">true</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
+      &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+    &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
   <span class="token punctuation">]</span>
-<span class="token punctuation">}</span></code></pre>
+&amp;#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p>参考：<a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/cpp/config-mingw">GCC on Windows</a></p>
 <h2 id="Ⅴ-编写第一个程序："><a href="#Ⅴ-编写第一个程序：" class="headerlink" title="Ⅴ. 编写第一个程序："></a>Ⅴ. 编写第一个程序：</h2><pre><code>#include &lt;stdio.h&gt;
 
@@ -623,12 +623,12 @@ int main() {
 <p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201018161950419.png"></p>
 <p>点击这个图标就打开了 <code>vscode</code> 的全局配置区域。</p>
 <p>笔者配置如下：</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"code-runner.executorMap"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+<pre class=" language-json"><code class="language-json">&amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token property">"code-runner.executorMap"</span><span class="token operator">:</span> &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token property">"c"</span><span class="token operator">:</span> <span class="token string">"cd $dir &amp;&amp; gcc $fileName -Wall -fexec-charset=GBK -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt"</span><span class="token punctuation">,</span>
     <span class="token property">"cpp"</span><span class="token operator">:</span> <span class="token string">"cd $dir &amp;&amp; g++ $fileName -Wall -std=c++2a -fexec-charset=GBK -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt"</span><span class="token punctuation">,</span>
     <span class="token property">"cc"</span><span class="token operator">:</span> <span class="token string">"cd $dir &amp;&amp; g++ $fileName -Wall -std=c++2a -fexec-charset=GBK -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt"</span><span class="token punctuation">,</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  &amp;#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
   <span class="token property">"editor.cursorStyle"</span><span class="token operator">:</span> <span class="token string">"line"</span><span class="token punctuation">,</span>
   <span class="token property">"editor.mouseWheelZoom"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
   <span class="token property">"editor.formatOnSave"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
@@ -650,9 +650,9 @@ int main() {
   <span class="token property">"editor.wordWrap"</span><span class="token operator">:</span> <span class="token string">"on"</span><span class="token punctuation">,</span>
   <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
   <span class="token property">"code-runner.runInTerminal"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  <span class="token property">"workbench.colorCustomizations"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"workbench.colorCustomizations"</span><span class="token operator">:</span> &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token property">"editor.selectionBackground"</span><span class="token operator">:</span> <span class="token string">"#aa0000"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  &amp;#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
   <span class="token property">"workbench.iconTheme"</span><span class="token operator">:</span> <span class="token string">"vscode-icons"</span><span class="token punctuation">,</span>
   <span class="token property">"files.autoGuessEncoding"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
   <span class="token property">"files.autoSaveDelay"</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
@@ -672,17 +672,17 @@ int main() {
   <span class="token property">"workbench.sideBar.location"</span><span class="token operator">:</span> <span class="token string">"right"</span><span class="token punctuation">,</span>
   <span class="token property">"C_Cpp.clang_format_fallbackStyle"</span><span class="token operator">:</span> <span class="token string">"Google"</span><span class="token punctuation">,</span>
   <span class="token property">"editor.detectIndentation"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  <span class="token property">"[c]"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"[c]"</span><span class="token operator">:</span> &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token property">"editor.defaultFormatter"</span><span class="token operator">:</span> <span class="token string">"ms-vscode.cpptools"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">"[cpp]"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  &amp;#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+  <span class="token property">"[cpp]"</span><span class="token operator">:</span> &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token property">"editor.defaultFormatter"</span><span class="token operator">:</span> <span class="token string">"ms-vscode.cpptools"</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  &amp;#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
   <span class="token property">"vim.useSystemClipboard"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
   <span class="token property">"explorer.confirmDelete"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
   <span class="token property">"markdown.preview.breaks"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
   <span class="token property">"markdown.preview.fontFamily"</span><span class="token operator">:</span> <span class="token string">"Fira Code"</span><span class="token punctuation">,</span>
-  <span class="token property">"editor.tokenColorCustomizations"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"editor.tokenColorCustomizations"</span><span class="token operator">:</span> &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token property">"comments"</span><span class="token operator">:</span> <span class="token string">"#82e0aa"</span><span class="token punctuation">,</span> // 注释
     <span class="token property">"keywords"</span><span class="token operator">:</span> <span class="token string">"#0a0"</span><span class="token punctuation">,</span> // 关键字
     <span class="token property">"variables"</span><span class="token operator">:</span> <span class="token string">"#f00"</span><span class="token punctuation">,</span> // 变量名
@@ -690,7 +690,7 @@ int main() {
     <span class="token property">"functions"</span><span class="token operator">:</span> <span class="token string">"#5b99fcc9"</span><span class="token punctuation">,</span> // 函数名
     <span class="token property">"numbers"</span><span class="token operator">:</span> <span class="token string">"#AE81FF"</span><span class="token punctuation">,</span> // 数字
     <span class="token property">"textMateRules"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token punctuation">{</span>
+      &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"italic font"</span><span class="token punctuation">,</span>
         <span class="token property">"scope"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
           <span class="token string">"comment"</span><span class="token punctuation">,</span>
@@ -725,15 +725,15 @@ int main() {
           <span class="token string">"tag.decorator.js punctuation.definition.tag.js"</span><span class="token punctuation">,</span>
           <span class="token string">"source.js constant.other.object.key.js string.unquoted.label.js"</span><span class="token punctuation">,</span>
         <span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token property">"settings"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"settings"</span><span class="token operator">:</span> &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
           <span class="token property">"fontStyle"</span><span class="token operator">:</span> <span class="token string">"italic"</span><span class="token punctuation">,</span>
-        <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+      &amp;#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
     <span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  &amp;#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
   <span class="token property">"workbench.colorTheme"</span><span class="token operator">:</span> <span class="token string">"One Dark Pro"</span><span class="token punctuation">,</span>
   <span class="token property">"explorer.confirmDragAndDrop"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span></code></pre>
+&amp;#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
 <p>具体某一句的功能就不解释了，需要知道的把鼠标放到相应行，就会有提示的。</p>
 <h2 id="Ⅶ-总结"><a href="#Ⅶ-总结" class="headerlink" title="Ⅶ. 总结"></a>Ⅶ. 总结</h2><p>使用 <code>vscode</code> 一年多了，越用越爽，特别是 <code>wsl2</code> 出来后，在 <code>win</code> 上进行 <code>linux</code> 开发还是非常方便的。</p>
 
@@ -1521,7 +1521,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">90.9k</span>&nbsp;字
+                class="white-color">98.3k</span>&nbsp;字
             
             
             

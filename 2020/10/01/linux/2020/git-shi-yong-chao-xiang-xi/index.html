@@ -31,10 +31,10 @@
 
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="incipe" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -478,14 +478,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    8 分
                 </div>
                 
 
@@ -516,7 +516,7 @@ Initialized empty Git repository <span class="token keyword">in</span> /home/inc
 <span class="token keyword">.</span>  <span class="token punctuation">..</span>  .git</code></pre>
 <h3 id="添加到版本库"><a href="#添加到版本库" class="headerlink" title="添加到版本库"></a>添加到版本库</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">touch</span> first.md
 
-<span class="token keyword">echo</span> <span class="token string">"Hello git"</span> <span class="token operator">></span> first.md
+<span class="token keyword">echo</span> <span class="token string">"Hello git"</span> <span class="token operator">&gt;</span> first.md
 
 <span class="token function">cat</span> first.md 
  Hello <span class="token function">git</span>
@@ -530,8 +530,8 @@ Initialized empty Git repository <span class="token keyword">in</span> /home/inc
 <p><code>git commit</code> <code>-m</code> 后输入本次的提交信息，可以输入任何内容，最好是有意义的。</p>
 <p>查看版本记录。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> log <span class="token comment" spellcheck="true"># git log --graph --pretty=oneline</span>
-commit ff57502578c70c7fc5225e1fc5aa0b6dfe6d86fc <span class="token punctuation">(</span>HEAD -<span class="token operator">></span> master<span class="token punctuation">)</span>
-Author: Incipe-win <span class="token operator">&lt;</span>xxxxxx@163.com<span class="token operator">></span>
+commit ff57502578c70c7fc5225e1fc5aa0b6dfe6d86fc <span class="token punctuation">(</span>HEAD -<span class="token operator">&gt;</span> master<span class="token punctuation">)</span>
+Author: Incipe-win <span class="token operator">&lt;</span>xxxxxx@163.com<span class="token operator">&gt;</span>
 Date:   Thu Oct 1 19:50:09 2020 +0800
 
     first commit</code></pre>
@@ -547,14 +547,14 @@ That's the second line</code></pre>
  1 <span class="token function">file</span> changed, 1 insertion<span class="token punctuation">(</span>+<span class="token punctuation">)</span>
 
 <span class="token function">git</span> log
-commit f732109700ff998f243b67fef59976bf0c7c7ace <span class="token punctuation">(</span>HEAD -<span class="token operator">></span> master<span class="token punctuation">)</span>
-Author: Incipe-win <span class="token operator">&lt;</span>xxxx@163.com<span class="token operator">></span>
+commit f732109700ff998f243b67fef59976bf0c7c7ace <span class="token punctuation">(</span>HEAD -<span class="token operator">&gt;</span> master<span class="token punctuation">)</span>
+Author: Incipe-win <span class="token operator">&lt;</span>xxxx@163.com<span class="token operator">&gt;</span>
 Date:   Thu Oct 1 20:05:53 2020 +0800
 
     second commit
 
 commit ff57502578c70c7fc5225e1fc5aa0b6dfe6d86fc
-Author: Incipe-win <span class="token operator">&lt;</span>xxxx@163.com<span class="token operator">></span>
+Author: Incipe-win <span class="token operator">&lt;</span>xxxx@163.com<span class="token operator">&gt;</span>
 Date:   Thu Oct 1 19:50:09 2020 +0800
 
     first commit</code></pre>
@@ -569,11 +569,11 @@ Hello <span class="token function">git</span></code></pre>
 <p>如果，此时我想回到版本二应该怎么做，<code>git rest --hard f732109700ff998f243b67fef59976bf0c7c7ace </code> ，这串字符就是版本序列号，可以不要复制全部，只复制一部分也是可以的，跟这个命令等价 <code>git rest --hard f732109</code>  </p>
 <p>如果找不到版本序列号应该怎么回到版本二呢？</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> reflog
-ff57502 <span class="token punctuation">(</span>HEAD -<span class="token operator">></span> master<span class="token punctuation">)</span> HEAD@<span class="token punctuation">{</span>0<span class="token punctuation">}</span>: reset: moving to HEAD^
-f732109 HEAD@<span class="token punctuation">{</span>1<span class="token punctuation">}</span>: commit: second commit
-ff57502 <span class="token punctuation">(</span>HEAD -<span class="token operator">></span> master<span class="token punctuation">)</span> HEAD@<span class="token punctuation">{</span>2<span class="token punctuation">}</span>: reset: moving to HEAD
-ff57502 <span class="token punctuation">(</span>HEAD -<span class="token operator">></span> master<span class="token punctuation">)</span> HEAD@<span class="token punctuation">{</span>3<span class="token punctuation">}</span>: reset: moving to HEAD
-ff57502 <span class="token punctuation">(</span>HEAD -<span class="token operator">></span> master<span class="token punctuation">)</span> HEAD@<span class="token punctuation">{</span>4<span class="token punctuation">}</span>: commit <span class="token punctuation">(</span>initial<span class="token punctuation">)</span>: first commit
+ff57502 <span class="token punctuation">(</span>HEAD -<span class="token operator">&gt;</span> master<span class="token punctuation">)</span> HEAD@<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;0&amp;#125;: reset: moving to HEAD^</span>
+f732109 HEAD@<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;1&amp;#125;: commit: second commit</span>
+ff57502 <span class="token punctuation">(</span>HEAD -<span class="token operator">&gt;</span> master<span class="token punctuation">)</span> HEAD@<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;2&amp;#125;: reset: moving to HEAD</span>
+ff57502 <span class="token punctuation">(</span>HEAD -<span class="token operator">&gt;</span> master<span class="token punctuation">)</span> HEAD@<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;3&amp;#125;: reset: moving to HEAD</span>
+ff57502 <span class="token punctuation">(</span>HEAD -<span class="token operator">&gt;</span> master<span class="token punctuation">)</span> HEAD@<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;4&amp;#125;: commit (initial): first commit</span>
 
 <span class="token function">git</span> reset --hard f732109     
 HEAD is now at f732109 second commit
@@ -597,8 +597,8 @@ Where there is a will, there is a way
 <span class="token function">git</span> status
 On branch master
 Changes not staged <span class="token keyword">for</span> commit:
-  <span class="token punctuation">(</span>use <span class="token string">"git add &lt;file>..."</span> to update what will be committed<span class="token punctuation">)</span>
-  <span class="token punctuation">(</span>use <span class="token string">"git restore &lt;file>..."</span> to discard changes <span class="token keyword">in</span> working directory<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span>use <span class="token string">"git add &lt;file&gt;..."</span> to update what will be committed<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span>use <span class="token string">"git restore &lt;file&gt;..."</span> to discard changes <span class="token keyword">in</span> working directory<span class="token punctuation">)</span>
     modified:   first.md
 
 no changes added to commit <span class="token punctuation">(</span>use <span class="token string">"git add"</span> and/or <span class="token string">"git commit -a"</span><span class="token punctuation">)</span>
@@ -608,7 +608,7 @@ no changes added to commit <span class="token punctuation">(</span>use <span cla
 <span class="token function">git</span> status
 On branch master
 Changes to be committed:
-  <span class="token punctuation">(</span>use <span class="token string">"git restore --staged &lt;file>..."</span> to unstage<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span>use <span class="token string">"git restore --staged &lt;file&gt;..."</span> to unstage<span class="token punctuation">)</span>
     modified:   first.md
 
 <span class="token function">git</span> commit -m <span class="token string">"version 3"</span>
@@ -632,8 +632,8 @@ This is the third line
 <span class="token function">git</span> status
 On branch master
 Changes not staged <span class="token keyword">for</span> commit:
-  <span class="token punctuation">(</span>use <span class="token string">"git add &lt;file>..."</span> to update what will be committed<span class="token punctuation">)</span>
-  <span class="token punctuation">(</span>use <span class="token string">"git restore &lt;file>..."</span> to discard changes <span class="token keyword">in</span> working directory<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span>use <span class="token string">"git add &lt;file&gt;..."</span> to update what will be committed<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span>use <span class="token string">"git restore &lt;file&gt;..."</span> to discard changes <span class="token keyword">in</span> working directory<span class="token punctuation">)</span>
     modified:   first.md
 
 no changes added to commit <span class="token punctuation">(</span>use <span class="token string">"git add"</span> and/or <span class="token string">"git commit -a"</span><span class="token punctuation">)</span>
@@ -663,8 +663,8 @@ This is new line
 <span class="token function">git</span> status
 On branch master
 Changes not staged <span class="token keyword">for</span> commit:
-  <span class="token punctuation">(</span>use <span class="token string">"git add &lt;file>..."</span> to update what will be committed<span class="token punctuation">)</span>
-  <span class="token punctuation">(</span>use <span class="token string">"git restore &lt;file>..."</span> to discard changes <span class="token keyword">in</span> working directory<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span>use <span class="token string">"git add &lt;file&gt;..."</span> to update what will be committed<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span>use <span class="token string">"git restore &lt;file&gt;..."</span> to discard changes <span class="token keyword">in</span> working directory<span class="token punctuation">)</span>
     modified:   second.md
 
 no changes added to commit <span class="token punctuation">(</span>use <span class="token string">"git add"</span> and/or <span class="token string">"git commit -a"</span><span class="token punctuation">)</span>
@@ -692,7 +692,7 @@ index f9c6e01<span class="token punctuation">..</span>0000000
 <p>每个版本的文件前面有 <code>+ -</code> 两个符号，相应的，文件内容出现那个符号，就表示是哪个文件说拥有的，如果没有，就代表是都有的。</p>
 <h2 id="Ⅱ-分支操作"><a href="#Ⅱ-分支操作" class="headerlink" title="Ⅱ. 分支操作"></a>Ⅱ. 分支操作</h2><h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout -b dev
 Switched to a new branch <span class="token string">'dev'</span>
-<span class="token comment" spellcheck="true"># &lt;=></span>
+<span class="token comment" spellcheck="true"># &lt;=&gt;</span>
 <span class="token comment" spellcheck="true"># git branch dev</span>
 <span class="token comment" spellcheck="true"># git checkout dev</span>
 
@@ -730,7 +730,7 @@ Where there is a will, there is a way
 This is a new line
 <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
 This is third line
-<span class="token operator">>></span><span class="token operator">>></span><span class="token operator">>></span><span class="token operator">></span> dev
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> dev
 
 <span class="token comment" spellcheck="true"># 修改为</span>
 Hello <span class="token function">git</span>
@@ -744,7 +744,7 @@ This is third line
 <span class="token punctuation">[</span>master b75d71c<span class="token punctuation">]</span> 解决冲突
 
 <span class="token function">git</span> log --graph --pretty<span class="token operator">=</span>oneline
-*   b75d71c42798ca48cf869cf6a0c3709c4dc8127e <span class="token punctuation">(</span>HEAD -<span class="token operator">></span> master<span class="token punctuation">)</span> 解决冲突
+*   b75d71c42798ca48cf869cf6a0c3709c4dc8127e <span class="token punctuation">(</span>HEAD -<span class="token operator">&gt;</span> master<span class="token punctuation">)</span> 解决冲突
 <span class="token operator">|</span>\  
 <span class="token operator">|</span> * f0bc35a5b50666bf709a0c510f7ab73f81d4cdb1 <span class="token punctuation">(</span>dev<span class="token punctuation">)</span> dev
 * <span class="token operator">|</span> 51d0b83dd8be9b3593f1effaaab82f54dd7b636c master
@@ -1548,7 +1548,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">90.9k</span>&nbsp;字
+                class="white-color">98.3k</span>&nbsp;字
             
             
             
