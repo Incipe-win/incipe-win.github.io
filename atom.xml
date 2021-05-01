@@ -6,7 +6,7 @@
   <link href="https://incipe-win.github.io/atom.xml" rel="self"/>
   
   <link href="https://incipe-win.github.io/"/>
-  <updated>2021-04-04T02:53:42.077Z</updated>
+  <updated>2021-05-01T08:57:24.257Z</updated>
   <id>https://incipe-win.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>移植opencv3.2.0含opencv_contrib</title>
+    <link href="https://incipe-win.github.io/2021/05/01/linux/2021/yi-zhi-opencv3.2.0-han-opencv-contrib/"/>
+    <id>https://incipe-win.github.io/2021/05/01/linux/2021/yi-zhi-opencv3.2.0-han-opencv-contrib/</id>
+    <published>2021-04-30T16:00:00.000Z</published>
+    <updated>2021-05-01T08:57:24.257Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;环境及工具准备&quot;&gt;&lt;a href=&quot;#环境及工具准备&quot; class=&quot;headerlink&quot; title=&quot;环境及工具准备&quot;&gt;&lt;/a&gt;环境及工具准备&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;个人电脑：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://incipe-win.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux Opencv" scheme="https://incipe-win.github.io/tags/Linux-Opencv/"/>
+    
+  </entry>
   
   <entry>
     <title>arm-none-linux-gnueabi-gcc Command not found</title>
@@ -98,14 +126,14 @@
     <link href="https://incipe-win.github.io/2020/12/30/linux/2020/opencv-yi-zhi/"/>
     <id>https://incipe-win.github.io/2020/12/30/linux/2020/opencv-yi-zhi/</id>
     <published>2020-12-29T16:00:00.000Z</published>
-    <updated>2021-04-26T09:59:10.815Z</updated>
+    <updated>2021-05-01T08:56:45.757Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;注：本篇博客已经弃用，请不要浪费时间阅读，笔者有空会更新最新的移植教程&quot;&gt;&lt;a href=&quot;#注：本篇博客已经弃用，请不要浪费时间阅读，笔者有空会更新最新的移植教程&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;注：本篇博客已经弃用，请不要浪费时间阅读，笔者有空会更新最新的移植教程-最新文章移植opencv3-2-0含opencv-contrib&quot;&gt;&lt;a</summary>
         
       
     
@@ -510,36 +538,6 @@
     <category term="中等" scheme="https://incipe-win.github.io/tags/%E4%B8%AD%E7%AD%89/"/>
     
     <category term="二分答案" scheme="https://incipe-win.github.io/tags/%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git常用命令</title>
-    <link href="https://incipe-win.github.io/2020/10/01/linux/2020/git-shi-yong-chao-xiang-xi/"/>
-    <id>https://incipe-win.github.io/2020/10/01/linux/2020/git-shi-yong-chao-xiang-xi/</id>
-    <published>2020-09-30T16:00:00.000Z</published>
-    <updated>2020-10-26T04:00:17.288Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;读完本文，你将了解git的常用操作。&lt;/p&gt;
-&lt;p&gt;注：本文不介绍git历史，也不介绍如何安装git，更不介绍如何使用github。&lt;/p&gt;
-&lt;p&gt;有需要的读者可以参考 &lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://incipe-win.github.io/categories/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://incipe-win.github.io/tags/Linux/"/>
-    
-    <category term="git" scheme="https://incipe-win.github.io/tags/git/"/>
     
   </entry>
   
