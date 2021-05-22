@@ -6,7 +6,7 @@
   <link href="https://incipe-win.github.io/atom.xml" rel="self"/>
   
   <link href="https://incipe-win.github.io/"/>
-  <updated>2021-05-01T08:57:24.257Z</updated>
+  <updated>2021-05-22T14:42:01.479Z</updated>
   <id>https://incipe-win.github.io/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GEC6818移植rtl8723bu wifi驱动</title>
+    <link href="https://incipe-win.github.io/2021/05/22/linux/2021/gec6818-yi-zhi-rtl8723bu-wifi-qu-dong/"/>
+    <id>https://incipe-win.github.io/2021/05/22/linux/2021/gec6818-yi-zhi-rtl8723bu-wifi-qu-dong/</id>
+    <published>2021-05-21T16:00:00.000Z</published>
+    <updated>2021-05-22T14:42:01.479Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-配置内核&quot;&gt;&lt;a href=&quot;#1-配置内核&quot; class=&quot;headerlink&quot; title=&quot;1. 配置内核&quot;&gt;&lt;/a&gt;1. 配置内核&lt;/h2&gt;&lt;p&gt;进入内核目录。&lt;/p&gt;
+&lt;p&gt;执行 &lt;code&gt;make</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://incipe-win.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://incipe-win.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu20.04搭建nfs服务</title>
+    <link href="https://incipe-win.github.io/2021/05/22/linux/2021/ubuntu20.04-da-jian-nfs-fu-wu/"/>
+    <id>https://incipe-win.github.io/2021/05/22/linux/2021/ubuntu20.04-da-jian-nfs-fu-wu/</id>
+    <published>2021-05-21T16:00:00.000Z</published>
+    <updated>2021-05-22T15:07:10.032Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Ubuntu20-04&quot;&gt;&lt;a href=&quot;#Ubuntu20-04&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu20.04&quot;&gt;&lt;/a&gt;Ubuntu20.04&lt;/h2&gt;&lt;p&gt;安装NFS服务器端&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://incipe-win.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://incipe-win.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>移植opencv3.2.0含opencv_contrib</title>
@@ -332,32 +384,6 @@
   </entry>
   
   <entry>
-    <title>jetson nano刷机</title>
-    <link href="https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/"/>
-    <id>https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/</id>
-    <published>2020-10-26T16:00:00.000Z</published>
-    <updated>2020-10-27T16:11:58.803Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Ⅰ-需要准备的材料&quot;&gt;&lt;a href=&quot;#Ⅰ-需要准备的材料&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 需要准备的材料&quot;&gt;&lt;/a&gt;Ⅰ. 需要准备的材料&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Jetson nano&lt;/strong&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
-    
-    
-    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
-    
-  </entry>
-  
-  <entry>
     <title>剑指 Offer 26. 树的子结构</title>
     <link href="https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/"/>
     <id>https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/</id>
@@ -410,6 +436,32 @@
   </entry>
   
   <entry>
+    <title>jetson nano刷机</title>
+    <link href="https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/"/>
+    <id>https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/</id>
+    <published>2020-10-26T16:00:00.000Z</published>
+    <updated>2020-10-27T16:11:58.803Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Ⅰ-需要准备的材料&quot;&gt;&lt;a href=&quot;#Ⅰ-需要准备的材料&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 需要准备的材料&quot;&gt;&lt;/a&gt;Ⅰ. 需要准备的材料&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Jetson nano&lt;/strong&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
+    
+    
+    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>978. 最长湍流子数组</title>
     <link href="https://incipe-win.github.io/2020/10/26/leetcode/2020/978.zui-chang-tuan-liu-zi-shu-zu/"/>
     <id>https://incipe-win.github.io/2020/10/26/leetcode/2020/978.zui-chang-tuan-liu-zi-shu-zu/</id>
@@ -432,33 +484,6 @@
     
     
     <category term="滑动窗口" scheme="https://incipe-win.github.io/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>56. 合并区间</title>
-    <link href="https://incipe-win.github.io/2020/10/22/leetcode/2020/56.he-bing-qu-jian/"/>
-    <id>https://incipe-win.github.io/2020/10/22/leetcode/2020/56.he-bing-qu-jian/</id>
-    <published>2020-10-21T16:00:00.000Z</published>
-    <updated>2020-10-26T03:59:00.749Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;给出一个区间的集合，请合并所有重叠的区间。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;示例</summary>
-        
-      
-    
-    
-    
-    <category term="Leetcode" scheme="https://incipe-win.github.io/categories/Leetcode/"/>
-    
-    
-    <category term="数组" scheme="https://incipe-win.github.io/tags/%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
@@ -489,36 +514,11 @@
   </entry>
   
   <entry>
-    <title>python爬取必应壁纸</title>
-    <link href="https://incipe-win.github.io/2020/10/13/python/2020/python-pa-qu-bi-ying-bi-zhi/"/>
-    <id>https://incipe-win.github.io/2020/10/13/python/2020/python-pa-qu-bi-ying-bi-zhi/</id>
-    <published>2020-10-12T16:00:00.000Z</published>
-    <updated>2020-10-26T04:02:01.529Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="博客" scheme="https://incipe-win.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-    <category term="爬虫" scheme="https://incipe-win.github.io/tags/%E7%88%AC%E8%99%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LCP 12. 小张刷题计划</title>
-    <link href="https://incipe-win.github.io/2020/10/02/leetcode/2020/lcp-12.xiao-zhang-shua-ti-ji-hua/"/>
-    <id>https://incipe-win.github.io/2020/10/02/leetcode/2020/lcp-12.xiao-zhang-shua-ti-ji-hua/</id>
-    <published>2020-10-01T16:00:00.000Z</published>
-    <updated>2020-10-26T03:58:23.922Z</updated>
+    <title>56. 合并区间</title>
+    <link href="https://incipe-win.github.io/2020/10/22/leetcode/2020/56.he-bing-qu-jian/"/>
+    <id>https://incipe-win.github.io/2020/10/22/leetcode/2020/56.he-bing-qu-jian/</id>
+    <published>2020-10-21T16:00:00.000Z</published>
+    <updated>2020-10-26T03:59:00.749Z</updated>
     
     
       
@@ -526,7 +526,8 @@
         
         
     <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;为了提高自己的代码能力，小张制定了 LeetCode 刷题计划，他选中了 LeetCode 题库中的 n</summary>
+&lt;p&gt;给出一个区间的集合，请合并所有重叠的区间。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例</summary>
         
       
     
@@ -535,9 +536,7 @@
     <category term="Leetcode" scheme="https://incipe-win.github.io/categories/Leetcode/"/>
     
     
-    <category term="中等" scheme="https://incipe-win.github.io/tags/%E4%B8%AD%E7%AD%89/"/>
-    
-    <category term="二分答案" scheme="https://incipe-win.github.io/tags/%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/"/>
+    <category term="数组" scheme="https://incipe-win.github.io/tags/%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
