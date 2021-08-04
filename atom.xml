@@ -224,33 +224,6 @@
   </entry>
   
   <entry>
-    <title>虚拟机扩容</title>
-    <link href="https://incipe-win.github.io/2020/12/30/linux/2020/xu-ni-ji-kuo-rong/"/>
-    <id>https://incipe-win.github.io/2020/12/30/linux/2020/xu-ni-ji-kuo-rong/</id>
-    <published>2020-12-29T16:00:00.000Z</published>
-    <updated>2021-01-03T07:42:18.400Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;由于最开始安装linux时没考虑到容量问题，导致现在使用显示容量不足。&lt;/p&gt;
-&lt;p&gt;通过简单的虚拟机容量扩展，发现实际大小并没有改变。&lt;/p&gt;
-&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://incipe-win.github.io/categories/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://incipe-win.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
     <title>opencv移植</title>
     <link href="https://incipe-win.github.io/2020/12/30/linux/2020/opencv-yi-zhi/"/>
     <id>https://incipe-win.github.io/2020/12/30/linux/2020/opencv-yi-zhi/</id>
@@ -274,6 +247,33 @@
     <category term="Linux" scheme="https://incipe-win.github.io/tags/Linux/"/>
     
     <category term="移植" scheme="https://incipe-win.github.io/tags/%E7%A7%BB%E6%A4%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>虚拟机扩容</title>
+    <link href="https://incipe-win.github.io/2020/12/30/linux/2020/xu-ni-ji-kuo-rong/"/>
+    <id>https://incipe-win.github.io/2020/12/30/linux/2020/xu-ni-ji-kuo-rong/</id>
+    <published>2020-12-29T16:00:00.000Z</published>
+    <updated>2021-01-03T07:42:18.400Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;由于最开始安装linux时没考虑到容量问题，导致现在使用显示容量不足。&lt;/p&gt;
+&lt;p&gt;通过简单的虚拟机容量扩展，发现实际大小并没有改变。&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://incipe-win.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://incipe-win.github.io/tags/Linux/"/>
     
   </entry>
   
@@ -434,6 +434,32 @@
   </entry>
   
   <entry>
+    <title>jetson nano刷机</title>
+    <link href="https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/"/>
+    <id>https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/</id>
+    <published>2020-10-26T16:00:00.000Z</published>
+    <updated>2020-10-27T16:11:58.803Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Ⅰ-需要准备的材料&quot;&gt;&lt;a href=&quot;#Ⅰ-需要准备的材料&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 需要准备的材料&quot;&gt;&lt;/a&gt;Ⅰ. 需要准备的材料&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Jetson nano&lt;/strong&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
+    
+    
+    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>剑指 Offer 26. 树的子结构</title>
     <link href="https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/"/>
     <id>https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/</id>
@@ -482,32 +508,6 @@
     
     
     <category term="二叉树" scheme="https://incipe-win.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jetson nano刷机</title>
-    <link href="https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/"/>
-    <id>https://incipe-win.github.io/2020/10/27/linux/2020/jetson-nano-shua-ji/</id>
-    <published>2020-10-26T16:00:00.000Z</published>
-    <updated>2020-10-27T16:11:58.803Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Ⅰ-需要准备的材料&quot;&gt;&lt;a href=&quot;#Ⅰ-需要准备的材料&quot; class=&quot;headerlink&quot; title=&quot;Ⅰ. 需要准备的材料&quot;&gt;&lt;/a&gt;Ⅰ. 需要准备的材料&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Jetson nano&lt;/strong&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="IOT" scheme="https://incipe-win.github.io/categories/IOT/"/>
-    
-    
-    <category term="ARM" scheme="https://incipe-win.github.io/tags/ARM/"/>
     
   </entry>
   
