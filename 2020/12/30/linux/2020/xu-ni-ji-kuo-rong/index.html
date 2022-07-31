@@ -467,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-03
+                    2022-07-31
                 </div>
                 
 
@@ -498,37 +498,37 @@
             <div id="articleContent">
                 <p>由于最开始安装linux时没考虑到容量问题，导致现在使用显示容量不足。</p>
 <p>通过简单的虚拟机容量扩展，发现实际大小并没有改变。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210103143326285.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210103143326285.png"></p>
 <p>可以看到，我虚拟机的磁盘大小是100GB，但是实际上并没有那么大。</p>
 <p>如果安装的linux分区简单的，直接扩容就好了，像我分了很多区，就比较麻烦了。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210103144223933.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210103144223933.png"></p>
 <h2 id="1-安装gparted"><a href="#1-安装gparted" class="headerlink" title="1. 安装gparted"></a>1. 安装gparted</h2><p><code>sudo apt-get install gparted</code></p>
 <p>运行 <code>gparted</code></p>
 <p>就会看到如上这个图~</p>
 <p>我们先把unallocated未分配的空间先扩展到 <code>/dev/sda2</code></p>
 <p>右键 <code>/dev/sda2</code></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210103144304728.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210103144323625.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210103144304728.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210103144323625.png"></p>
 <p>把鼠标放到图中位置，往右边拉满，点击Resize/Move</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210103144413924.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210103144428510.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210103144413924.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210103144428510.png"></p>
 <p>我们可以看到，<code>/dev/sda2 </code> 分区下多了50G空间</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210103144542637.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210103144542637.png"></p>
 <p>右键未分配空间，点击New</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210103144701924.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210103144701924.png"></p>
 <p>右键未分配空间，点击Format to</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210103144820661.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210103144948967.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210103144820661.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210103144948967.png"></p>
 <p>点击绿色的✔，就会出现如图所示的分区。</p>
 <p>退出 <code>gparted</code> 挂载分区即可！</p>
 <h2 id="2-挂载分区"><a href="#2-挂载分区" class="headerlink" title="2. 挂载分区"></a>2. 挂载分区</h2><p>现在查看下，发现还是没有扩容，这时候我们需要把刚刚的 <code>/dev/sda9</code> 挂载就好了。（注意：你的电脑可能不是 <code>/dev/sda9</code> 根据自己电脑而定）</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210103145305251.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210103145305251.png"></p>
 <p><code>sudo mount  /dev/sda9 /home/incipe/expend</code></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210103153546497.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210103153546497.png"></p>
 <p>可以看到挂载成功了。</p>
 <h2 id="3-开机自动挂载"><a href="#3-开机自动挂载" class="headerlink" title="3. 开机自动挂载"></a>3. 开机自动挂载</h2><p>因为笔者的电脑无法把整个50G空间放到 <code>/home</code> 目录下，所以只能采取这种上面这种办法了。</p>
 <p>修改 <code>/etc/fstab</code> 如下</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210103153811199.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210103153811199.png"></p>
 <p>这个 <code>UUID</code> 直接改为 <code>/dev/sda9</code> 也是可以的，也可以通过 <code>gparted</code> 查看。</p>
 <p><code>/dev/sda9 /home/incipe/expend ext4 defaults 0 0</code></p>
 <p>重启就能看到挂载成功了。</p>

@@ -471,7 +471,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-01
+                    2022-07-31
                 </div>
                 
 
@@ -512,14 +512,14 @@
 </ol>
 <p>下载地址，链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1X_Dogbvo_vY4X8zLBRpVcA">https://pan.baidu.com/s/1X_Dogbvo_vY4X8zLBRpVcA</a> 提取码: m6f2</p>
 <p>编译器版本：</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210103115213895.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210103115213895.png"></p>
 <p>虚拟机：</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210103115131905.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210103115131905.png"></p>
 <p>安装编译器可以参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43826212/article/details/108858626?ops_request_misc=%25257B%252522request%25255Fid%252522%25253A%252522160964613216780288748348%252522%25252C%252522scm%252522%25253A%25252220140713.130102334.pc%25255Fblog.%252522%25257D&amp;request_id=160964613216780288748348&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_v2~rank_v29-1-108858626.pc_v2_rank_blog_default&amp;utm_term=%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%99%A8">Ubuntu20.04安装arm-linux-gcc4.4.3交叉编译器</a></p>
 <h3 id="1-zlib交叉编译"><a href="#1-zlib交叉编译" class="headerlink" title="1. zlib交叉编译"></a>1. zlib交叉编译</h3><p>先确定好依赖库安装的路径，笔者是 <code>/home/incipe/opencv_depend</code></p>
 <p><code>./configure --prefix=/home/incipe/opencv_depend</code></p>
 <p>修改 <code>Makefile</code></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210103121509806.png" alt="image-20210103121509806"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210103121509806.png" alt="image-20210103121509806"></p>
 <p><code>make &amp;&amp; make install</code></p>
 <h3 id="2-libjpeg交叉编译"><a href="#2-libjpeg交叉编译" class="headerlink" title="2. libjpeg交叉编译"></a>2. libjpeg交叉编译</h3><p><code>./configure --host=arm-linux-gnueabi CC=arm-linux-gnueabi-gcc --prefix=/home/incipe/opencv_depend --enable-shared --enable-static</code></p>
 <p><code>make &amp;&amp; make install</code></p>
@@ -557,7 +557,7 @@ set<span class="token punctuation">(</span> CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ON
 <h3 id="配置cmake"><a href="#配置cmake" class="headerlink" title="配置cmake"></a>配置cmake</h3><p>如果没有 <code>cmake-gui</code> 先安装：</p>
 <p><code>sudo apt-get install cmake-qt-gui</code></p>
 <p>在 <code>build</code> 目录下运行 <code>cmake-gui</code></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210103124254329.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210103124254329.png"></p>
 <p>增加源代码路径，编译路径和安装路径。</p>
 <p>接下来取消这些选项：</p>
 <ul>
@@ -575,7 +575,7 @@ set<span class="token punctuation">(</span> CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ON
 </ul>
 <p>取消之后点击 <code>Configure</code> 之后再点击 <code>Generate</code> 即可。</p>
 <p>关闭 <code>cmake-gui</code></p>
-<h3 id="修改CMakeCache-txt"><a href="#修改CMakeCache-txt" class="headerlink" title="修改CMakeCache.txt"></a>修改CMakeCache.txt</h3><p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210103124652228.png"></p>
+<h3 id="修改CMakeCache-txt"><a href="#修改CMakeCache-txt" class="headerlink" title="修改CMakeCache.txt"></a>修改CMakeCache.txt</h3><p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210103124652228.png"></p>
 <h3 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h3><p><code>sudo make</code></p>
 <p><code>sudo make install</code></p>
 <p>这个耗时非常长！！！</p>

@@ -471,7 +471,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-26
+                    2022-07-31
                 </div>
                 
 
@@ -582,8 +582,8 @@ HEAD is now at f732109 second commit
 Hello <span class="token function">git</span>
 That's the second line</code></pre>
 <p> <code>git reflog</code> 查看所有的操作记录。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%BB%98%E5%9B%BE1.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%BB%98%E5%9B%BE.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%BB%98%E5%9B%BE1.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%BB%98%E5%9B%BE.png"></p>
 <p>每次提交，回退都是 <code>HEAD</code> 指针的修改。</p>
 <h3 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h3><p>查看当前工作树状态，  <code>git status</code> </p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">cat</span> first.md 
@@ -619,7 +619,7 @@ Changes to be committed:
 On branch master
 nothing to commit, working tree clean</code></pre>
 <p>总的来讲，我们操作的目录就叫工作区，<code>git add</code> 就是把工作区的文件体检到暂存区， <code>git commit -m</code> 就是把暂存区所有的修改记录创建一个版本记录。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/w1.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/w1.png"></p>
 <h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">cat</span> first.md 
 Hello <span class="token function">git</span>
 Where there is a will, there is a way
@@ -699,8 +699,8 @@ Switched to a new branch <span class="token string">'dev'</span>
 <span class="token function">git</span> branch
 * dev
   master</code></pre>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/branch.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/fdd.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/branch.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/fdd.png"></p>
 <p>合并分支，<code>git</code> 默认会采用快速合并的方法，如果不想采用的话，可以使用 <code>git merge --no-ff -m "合并信息" 分支</code></p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 切换回master</span>
 <span class="token function">git</span> checkout master
@@ -715,9 +715,9 @@ Deleted branch dev <span class="token punctuation">(</span>was 24df10d<span clas
 
 <span class="token function">git</span> branch
 * master</code></pre>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/wds.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/wds.png"></p>
 <h3 id="分支冲突"><a href="#分支冲突" class="headerlink" title="分支冲突"></a>分支冲突</h3><p>比如下图，在 <code>dev</code> 分支上对某个文件进行了修改并且进行了提交，切换回 <code>master</code> 分支又对这个文件进行修改并且进行了提交，然后合并分支会导致冲突。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/wfdfd.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/wfdfd.png"></p>
 <p>手动解决冲突即可。这个时候合并分支会出现如下信息：</p>
 <pre class=" language-bash"><code class="language-bash">Auto-merging second.md
 CONFLICT <span class="token punctuation">(</span>content<span class="token punctuation">)</span>: Merge conflict <span class="token keyword">in</span> second.md

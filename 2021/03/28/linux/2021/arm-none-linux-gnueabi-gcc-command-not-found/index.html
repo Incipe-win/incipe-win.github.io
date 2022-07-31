@@ -467,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-04
+                    2022-07-31
                 </div>
                 
 
@@ -498,7 +498,7 @@
             <div id="articleContent">
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近遇到个超级大坑，移植中间件时，交叉编译总是出现 <code>arm-none-linux-gnueabi-gcc: Command not found</code> 报错，明明自己已经安装并且设置了交叉编译器的环境变量。却还是报这个错！！！</p>
 <h2 id="问题产生"><a href="#问题产生" class="headerlink" title="问题产生"></a>问题产生</h2><p>笔者安装了 <code>zsh shell</code> 但是超级用户默认的终端可不是 <code>zsh</code> </p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210328160704836.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210328160704836.png"></p>
 <p>而笔者是在 <code>zsh</code> 的配置文件 <code>~/.zshrc</code> 里面添加的环境变量，所以，但我使用 带有 <code>sudo</code> 命令的时候，会切换到 <code>bash</code> 结果当然就找不到 <code>arm-none-linux-gnueabi-gcc</code> 交叉编译器了。</p>
 <h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><ol>
 <li><code>sudo -s</code> 切换到超级用户 <code>export PATH=$PATH:交叉编译器路径</code> 然后直接 <code>make &amp;&amp; make install</code></li>

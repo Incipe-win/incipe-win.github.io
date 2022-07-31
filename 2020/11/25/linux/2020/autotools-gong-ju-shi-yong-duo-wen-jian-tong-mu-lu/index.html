@@ -467,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-25
+                    2022-07-31
                 </div>
                 
 
@@ -537,16 +537,16 @@ tree
 
 0 directories, 8 files</code></pre>
 <h3 id="Ⅱ-修改configure-ac文件"><a href="#Ⅱ-修改configure-ac文件" class="headerlink" title="Ⅱ. 修改configure.ac文件"></a>Ⅱ. 修改configure.ac文件</h3><p><code>configure.ac</code> 文件内容如下：</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201125184040454.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201125184040454.png"></p>
 <p>修改为如下图所示：</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201125184315303.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201125184315303.png"></p>
 <h3 id="Ⅲ-创建Makefile-am文件"><a href="#Ⅲ-创建Makefile-am文件" class="headerlink" title="Ⅲ. 创建Makefile.am文件"></a>Ⅲ. 创建Makefile.am文件</h3><p><code>Automake</code> 工具会根据 <code>configure.in</code> 中的参量把 <code>Makefile.am</code> 转换成 <code>Makefile.in</code> 文件。所以在使用之前要先创建 <code>Makefile.am</code> 文件。</p>
 <pre class=" language-bash"><code class="language-bash">vim Makefile.am</code></pre>
 <p>内容如下：</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201125184638410.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201125184638410.png"></p>
 <h3 id="Ⅳ-创建autogen-sh脚本"><a href="#Ⅳ-创建autogen-sh脚本" class="headerlink" title="Ⅳ. 创建autogen.sh脚本"></a>Ⅳ. 创建autogen.sh脚本</h3><pre class=" language-bash"><code class="language-bash">vim autogen.sh</code></pre>
 <p>内容如下：</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201125184858938.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201125184858938.png"></p>
 <p><code>aclocal</code> 命令用于扫描 <code>configure.ac</code> 文件生成 <code>aclocal.m4</code>，此工具根据已经安装的宏、用户定义宏和 <code>acinclude.m4</code> 文件中的宏将<code>configure.ac</code> 文件需要的宏，集中定义到文件 <code>aclocal.m4</code> 中。</p>
 <p><code>autoconf</code> 工具生成生成 <code>configure</code> 文件，将 <code>configure.ac</code> 中的宏展开，生成 <code>configure</code> 脚本。这个过程可能用到 <code>aclocal.m4</code> 中定义的宏。</p>
 <p><code>autoheader</code> 工具生成 <code>config.h.in</code> 文件，这个步骤对于本项目可不加。</p>
@@ -554,17 +554,17 @@ tree
 <pre class=" language-bash"><code class="language-bash"><span class="token function">chmod</span> +x autogen.sh
 ./autogen.sh</code></pre>
 <p>会看到如下信息，忽略即可。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201125185415154.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201125185415154.png"></p>
 <p>查看目录下是否生成了 <code>configure Makefile.in</code> 文件。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201125185538893.png"> </p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201125185538893.png"> </p>
 <h3 id="Ⅴ-运行configure生成Makefile"><a href="#Ⅴ-运行configure生成Makefile" class="headerlink" title="Ⅴ. 运行configure生成Makefile"></a>Ⅴ. 运行configure生成Makefile</h3><p>因为 <code>minigui</code> 代码编译需要链接 <code>minigui,pthread,png,jpeg,ttf</code> 几个库，所以运行 <code>configure</code> 时需要加入编译选项。</p>
 <pre class=" language-bash"><code class="language-bash">./configure CFLAGS<span class="token operator">=</span><span class="token string">'-lminigui -lpthread -ljpeg -lpng -lttf'</span></code></pre>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201125185818676.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201125185818676.png"></p>
 <p>查看下当前目录是否有 <code>Makefile</code> 文件</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201125185900105.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201125185900105.png"></p>
 <h3 id="Ⅵ-编译"><a href="#Ⅵ-编译" class="headerlink" title="Ⅵ. 编译"></a>Ⅵ. 编译</h3><p>运行 <code>make</code> 编译代码即可（前提是代码没问题）</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201125190009748.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201125190038185.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201125190009748.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201125190038185.png"></p>
 <p>可以看到，在当前目录下已经生成了可执行文件 <code>login</code> 说明整个配置没有问题。</p>
 <h2 id="3-总结"><a href="#3-总结" class="headerlink" title="3. 总结"></a>3. 总结</h2><p>本文只介绍了多文件同级目录的使用，更多可以参考这篇文章 <a target="_blank" rel="noopener" href="https://blog.csdn.net/initphp/article/details/43705765?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160630228319724847132317%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&amp;request_id=160630228319724847132317&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_v2~rank_blog_default-1-43705765.pc_v2_rank_blog_default&amp;utm_term=Autotools%E4%BD%BF%E7%94%A8%E8%AF%A6%E7%BB%86%E8%A7%A3%E8%AF%BB&amp;spm=1018.2118.3001.4450">Linux c 开发 - Autotools使用详细解读</a> 写的十分详细。</p>
 

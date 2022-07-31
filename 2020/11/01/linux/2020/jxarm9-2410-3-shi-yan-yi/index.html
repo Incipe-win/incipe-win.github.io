@@ -467,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-01
+                    2022-07-31
                 </div>
                 
 
@@ -510,9 +510,9 @@ Linux localhost.localdomain 2.4.20-8 <span class="token comment" spellcheck="tru
 <p>改为如下：</p>
 <pre><code>/tftpboot (rw)</code></pre>
 <h3 id="重启nfs服务"><a href="#重启nfs服务" class="headerlink" title="重启nfs服务"></a>重启nfs服务</h3><pre class=" language-bash"><code class="language-bash">/etc/init.d/nfs restart</code></pre>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201030121805933.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201030121805933.png"></p>
 <p>遇到这个情况再重新执行一次即可。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201030121839249.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201030121839249.png"></p>
 <p>到这里，<strong>NFS</strong> 服务就可以了。</p>
 <h2 id="Ⅲ-配置ip"><a href="#Ⅲ-配置ip" class="headerlink" title="Ⅲ. 配置ip"></a>Ⅲ. 配置ip</h2><p>用网线连接好开发板和pc机，主要对是 <strong>linux</strong> ，<strong>win10</strong> 和 <strong>arm</strong> 板子进行静态配置 <strong>ip</strong> 地址！</p>
 <p>Linux：<code>192.168.1.180</code></p>
@@ -522,19 +522,19 @@ Linux localhost.localdomain 2.4.20-8 <span class="token comment" spellcheck="tru
 <p>把 <strong>linux</strong> 防火墙关闭，<strong>win10</strong> 防火墙也关闭，把 <strong>wifi</strong> 也关闭。</p>
 <p><code>linux:</code></p>
 <p>输入 <code>setup</code></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201101190338053.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201101190412234.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201101190338053.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201101190412234.png"></p>
 <p><code>win10:</code></p>
 <p>打开控制面板：</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201101191044887.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201101191124787.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201101191149635.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201101191044887.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201101191124787.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201101191149635.png"></p>
 <p>理论上只要是在 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%90%8C%E4%B8%80%E7%BD%91%E6%AE%B5">同一个网段</a> 就没问题了的。</p>
 <p>最好是自己 <code>ping</code> 一下，如果可以 <code>ping</code> 通就没问题啦。</p>
 <p>注：不保证一定可以成功，因为这个具体问题要具体分析，不同电脑遇到的问题也不尽相同，有的电脑确实是有很大的坑~</p>
 <p>（要是是 <strong>usb</strong> 转 <strong>rj45</strong> 的估计虚拟机和板子 <code>ping</code> 不通，但是 <strong>pc</strong> 和开发板可以 <code>ping</code> 通，虚拟机和 <strong>pc</strong> 可以 <code>ping</code> 通，笔者就是这个情况！这个问题还没有解决）</p>
 <h2 id="Ⅳ-测试"><a href="#Ⅳ-测试" class="headerlink" title="Ⅳ. 测试"></a>Ⅳ. 测试</h2><p>使用超级终端连接上开发板。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201101191941338.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201101191941338.png"></p>
 <p>这里的端口自行查看：</p>
 <p><code>win + s</code> 查找设备管理器，会有个串口，点击就可以查看是哪个端口了。</p>
 <p>运行 <code>linux</code> </p>

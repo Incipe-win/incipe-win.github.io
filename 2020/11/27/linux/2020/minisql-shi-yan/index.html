@@ -467,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-28
+                    2022-07-31
                 </div>
                 
 
@@ -497,7 +497,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>本次实验需要用到的包：</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201127221359907.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201127221359907.png"></p>
 <h2 id="Ⅰ-交叉编译msql库"><a href="#Ⅰ-交叉编译msql库" class="headerlink" title="Ⅰ. 交叉编译msql库"></a>Ⅰ. 交叉编译msql库</h2><p>因为最终代码要到开发板上去跑，所以要用 <code>arm-linux-gcc</code> 编译好 <code>msql</code> 代码才可以到板子上执行，编译的过程是需要链接 <code>arm</code> 编译好的库的。</p>
 <p><code>msql</code> 十分小巧，编译的库是静态库，这就很舒服了。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">mkdir</span> -p /home/msql</code></pre>
@@ -509,12 +509,12 @@
 <span class="token function">cd</span> src
 vim site.mm</code></pre>
 <p>改成如下所示</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201127223222427.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201127223222427.png"></p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">make</span> all
 <span class="token function">make</span> <span class="token function">install</span></code></pre>
 <p>接下来到 <code>/usr/local/arm/2.95.3/arm-linux</code> 看下是否生成了 <code>msql3</code> 文件夹。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /usr/local/arm/2.95.3/arm-linux/</code></pre>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201127223721889.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201127223721889.png"></p>
 <p>因为这个系统 <code>lipo</code> 这个工具，所以静态库查看不了是基于哪个框架的。用 <code>arm-linux-gcc</code> 链接静态库编译下代码就清楚了。</p>
 <p><strong>切换到工作区</strong>，先把 <code>msql.h</code> 头文件和 <code>libmsql.a</code> 库文件拷贝到要编译的代码的同级目录下。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">cp</span> -rf /usr/local/arm/2.95.3/arm-linux/msql3/lib/libmsql.a /usr/local/arm/2.95.3/arm-linux/msql3/include/msql.h <span class="token keyword">.</span></code></pre>
@@ -527,7 +527,7 @@ vim site.mm</code></pre>
 
 0 directories, 4 files</code></pre>
 <p>修改下代码的头文件。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201127224427331.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201127224427331.png"></p>
 <p>现在开始编译代码。</p>
 <pre class=" language-bash"><code class="language-bash">arm-linux-gcc -o insert_test insert_test.c ./libmsql.a
 arm-linux-gcc -o select_test select_test.c ./libmsql.a</code></pre>
@@ -551,15 +551,15 @@ Preparing<span class="token punctuation">..</span>.                <span class="
 <span class="token function">make</span> all
 <span class="token function">make</span> <span class="token function">install</span></code></pre>
 <p>安装就成功了。</p>
-<h2 id="Ⅲ-更改文件权限"><a href="#Ⅲ-更改文件权限" class="headerlink" title="Ⅲ. 更改文件权限"></a>Ⅲ. 更改文件权限</h2><p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201127231715601.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201127231814681.png"></p>
+<h2 id="Ⅲ-更改文件权限"><a href="#Ⅲ-更改文件权限" class="headerlink" title="Ⅲ. 更改文件权限"></a>Ⅲ. 更改文件权限</h2><p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201127231715601.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201127231814681.png"></p>
 <p>右键，点击属性。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201127231945559.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201127232021181.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201127232117145.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201127231945559.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201127232021181.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201127232117145.png"></p>
 <h2 id="Ⅳ-修改配置文件"><a href="#Ⅳ-修改配置文件" class="headerlink" title="Ⅳ. 修改配置文件"></a>Ⅳ. 修改配置文件</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /usr/local/msql3/
 vim msql.conf</code></pre>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201127232324811.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201127232324811.png"></p>
 <p>主要是为了板子可以连接上虚拟机的数据库。</p>
 <h2 id="Ⅴ-创建数据库，数据表"><a href="#Ⅴ-创建数据库，数据表" class="headerlink" title="Ⅴ. 创建数据库，数据表"></a>Ⅴ. 创建数据库，数据表</h2><p>进入 <code>msql</code> 的 <code>bin</code> 目录。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /usr/local/msql3/bin
@@ -615,7 +615,7 @@ item 9,9 </code></pre>
 <h2 id="Ⅶ-在开发板上连接虚拟机的数据库"><a href="#Ⅶ-在开发板上连接虚拟机的数据库" class="headerlink" title="Ⅶ. 在开发板上连接虚拟机的数据库"></a>Ⅶ. 在开发板上连接虚拟机的数据库</h2><p>配置文件都改了的话，只需要执行 <code>arm</code> 平台的代码就好了。</p>
 <pre class=" language-bash"><code class="language-bash">./select_test -h 192.168.1.180 student 10</code></pre>
 <p><code>select_test</code> 是用交叉编译器编译好的查询数据库代码~</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201127233214857.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201127233214857.png"></p>
 
             </div>
             <hr/>

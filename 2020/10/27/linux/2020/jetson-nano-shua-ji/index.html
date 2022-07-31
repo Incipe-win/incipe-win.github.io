@@ -467,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-28
+                    2022-07-31
                 </div>
                 
 
@@ -503,13 +503,13 @@
 </ol>
 <h2 id="Ⅱ-下载jetson-nano系统镜像"><a href="#Ⅱ-下载jetson-nano系统镜像" class="headerlink" title="Ⅱ. 下载jetson nano系统镜像"></a>Ⅱ. 下载jetson nano系统镜像</h2><p>官网下载地址： <a target="_blank" rel="noopener" href="https://developer.nvidia.com/jetson-nano-sd-card-image">Jetson Nano Developer Kit SD Card Image</a></p>
 <h2 id="Ⅲ-格式化SD卡"><a href="#Ⅲ-格式化SD卡" class="headerlink" title="Ⅲ.  格式化SD卡"></a>Ⅲ.  格式化SD卡</h2><p>利用 [SD Card Formatter](SD Card Formatter) 进行格式化即可，如下图所示：</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201027163849832.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201027163849832.png"></p>
 <p>这里的 <strong>Volume label</strong> （卷标）请留空！</p>
 <p>点击 <strong>Format</strong> 即可快速格式化SD卡。</p>
 <h2 id="Ⅳ-镜像文件写入SD卡"><a href="#Ⅳ-镜像文件写入SD卡" class="headerlink" title="Ⅳ. 镜像文件写入SD卡"></a>Ⅳ. 镜像文件写入SD卡</h2><p>下载，安装和启动 <a target="_blank" rel="noopener" href="https://www.balena.io/etcher/">Etcher</a></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201027164257675.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201027164257675.png"></p>
 <p>注：这里还有便携式版本，请不要下载，利用便携式版本写入镜像文件会报错。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201027164535154.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201027164535154.png"></p>
 <p>①选择镜像文件，就是第二步下载好的。</p>
 <p>②选择烧写的设备，就是电脑的SD卡。</p>
 <p>③点击，等待即可烧写完毕。</p>
@@ -523,16 +523,16 @@
 <p>如何短接J48跳线帽，首先应该仔细阅读前面的底板资源文档，找到J48跳线帽在哪，会提供一个跳线帽，把这两个接口套上就好了。</p>
 <p>通电，等待一小会显示器即可显示安装 <strong>Ubuntu</strong> 界面。</p>
 <p>安装完 <strong>Ubuntu</strong> 看到如下界面，恭喜，刷机成功~</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/Jetson_Nano-Getting_Started-desktop.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/Jetson_Nano-Getting_Started-desktop.png"></p>
 <p>图片来源：<a target="_blank" rel="noopener" href="https://developer.nvidia.cn/embedded/learn/get-started-jetson-nano-devkit#setup">Setup and First Boot</a></p>
 <h2 id="Ⅵ-无头模式安装"><a href="#Ⅵ-无头模式安装" class="headerlink" title="Ⅵ. 无头模式安装"></a>Ⅵ. 无头模式安装</h2><p>找一个安卓数据线，一端连接电脑 <strong>usb</strong> 口，一端连接 <strong>jetson nano</strong> 的 <strong>microUSb</strong> 口。</p>
 <p>等待会，此电脑会多出个盘，打开，里面有用各种模块连接的信息文档。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201027235529982.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201027235529982.png"></p>
 <p>选择一个最简单的，利用 <a target="_blank" rel="noopener" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTy</a> 进行连接。</p>
 <p>打开 <strong>README-usb-dev-mode.txt</strong> 文件，找到 <strong>jetson nano</strong> 的 <strong>ip</strong></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201027235713278.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201027235713278.png"></p>
 <p>打开 <strong>PuTTy</strong>  输入 <strong>ip</strong> 地址即可进行安装系统引导，只不过这个安装引导是没有图形化界面的。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201027235830345.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201027235830345.png"></p>
 <p>安装完系统后，也可以通过<strong>PuTTy</strong> 进行连接。</p>
 <h2 id="Ⅶ-总结"><a href="#Ⅶ-总结" class="headerlink" title="Ⅶ. 总结"></a>Ⅶ. 总结</h2><p>初次刷机还是十分简单的，就是有时候看的英文文档有点头痛，还是要多记单词才行。</p>
 <p>本文在无头模式连接上只介绍了通过 <strong>PuTTy</strong> 进行连接，实际上还支持 <strong>VNC 和 wifi</strong> 进行连接的，大致原理一样，阅读相应的文档即可解决。</p>
@@ -1041,74 +1041,25 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/11/01/linux/2020/jxarm9-2410-3-shi-yan-er/">
+                <a href="/2020/10/27/leetcode/2020/jian-zhi-offer-28.dui-cheng-de-er-cha-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="JXARM9-2410-3实验二">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="剑指 Offer 28. 对称的二叉树">
                         
-                        <span class="card-title">JXARM9-2410-3实验二</span>
+                        <span class="card-title">剑指 Offer 28. 对称的二叉树</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JXARM9-2410-3实验二
+                            请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-01
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-27
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/IOT/" class="post-category">
-                                    IOT
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/ARM/">
-                        <span class="chip bg-color">ARM</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="剑指 Offer 26. 树的子结构">
-                        
-                        <span class="card-title">剑指 Offer 26. 树的子结构</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            输入两棵二叉树A和B，判断B是不是A的子结构。(约定空树不是任意一个树的子结构)
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-27
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1126,6 +1077,55 @@
                     
                     <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
                         <span class="chip bg-color">二叉树</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/10/26/leetcode/2020/978.zui-chang-tuan-liu-zi-shu-zu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="978. 最长湍流子数组">
+                        
+                        <span class="card-title">978. 最长湍流子数组</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            当 A 的子数组 A[i], A[i+1], ..., A[j] 满足下列条件时，我们称其为湍流子数组
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Leetcode/" class="post-category">
+                                    Leetcode
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">
+                        <span class="chip bg-color">滑动窗口</span>
                     </a>
                     
                 </div>

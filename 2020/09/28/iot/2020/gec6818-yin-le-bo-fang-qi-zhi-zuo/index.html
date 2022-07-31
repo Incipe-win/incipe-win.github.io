@@ -467,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-26
+                    2022-07-31
                 </div>
                 
 
@@ -508,7 +508,7 @@ Configured with: /opt/FriendlyARM/mini2440/build-toolschain/working/src/gcc-4.4.
 Thread model: posix
 gcc version 4.4.3 <span class="token punctuation">(</span>ctng-1.6.1<span class="token punctuation">)</span> </code></pre>
 <p>开发板 <strong>GEC6818</strong> ，<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41768362/article/details/96891717">详情介绍</a></p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="Ⅰ-总体框架"><a href="#Ⅰ-总体框架" class="headerlink" title="Ⅰ. 总体框架"></a>Ⅰ. 总体框架</h3><p><img src="https://gitee.com/incipe-win/images/raw/master/image-20200928220250419.png" alt="image-20200928220250419"></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="Ⅰ-总体框架"><a href="#Ⅰ-总体框架" class="headerlink" title="Ⅰ. 总体框架"></a>Ⅰ. 总体框架</h3><p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20200928220250419.png" alt="image-20200928220250419"></p>
 <h3 id="Ⅱ-目录结构"><a href="#Ⅱ-目录结构" class="headerlink" title="Ⅱ. 目录结构"></a>Ⅱ. 目录结构</h3><pre class=" language-bash"><code class="language-bash"><span class="token keyword">.</span>
 ├── include
 │<span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span> ├── get_touch.h
@@ -524,7 +524,7 @@ gcc version 4.4.3 <span class="token punctuation">(</span>ctng-1.6.1<span class=
     ├── play_music.c
     ├── show_bmp.c
     └── ts_init.c</code></pre>
-<h3 id="Ⅲ-流程图"><a href="#Ⅲ-流程图" class="headerlink" title="Ⅲ. 流程图"></a>Ⅲ. 流程图</h3><p><img src="https://gitee.com/incipe-win/images/raw/master/image-20200928220610937.png" alt="image-20200928220610937"></p>
+<h3 id="Ⅲ-流程图"><a href="#Ⅲ-流程图" class="headerlink" title="Ⅲ. 流程图"></a>Ⅲ. 流程图</h3><p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20200928220610937.png" alt="image-20200928220610937"></p>
 <h3 id="Ⅳ-需要用的知识"><a href="#Ⅳ-需要用的知识" class="headerlink" title="Ⅳ.  需要用的知识"></a>Ⅳ.  需要用的知识</h3><ol>
 <li>Linux系统API，可以参考此文，<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43826212/article/details/106106508">你会linux系统API吗？</a></li>
 <li>Makefile文件编写，可以参考此文，<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43826212/article/details/105973943">简简单单学会写makefile</a></li>
@@ -584,7 +584,7 @@ gcc version 4.4.3 <span class="token punctuation">(</span>ctng-1.6.1<span class=
 <li>颜色表，可用索引来表示图像。</li>
 <li>位图数据，即图像数据。</li>
 </ol>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F.png" alt="文件格式"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F.png" alt="文件格式"></p>
 <center>图片来源：粤嵌课设老师</center>
 
 <p>例如，偏移量从 <code>0x02 ~ 0x05</code> 表示图片大小，<code>0x12 ~ 0x15</code> 表示图片宽， <code>0x16 ~ 0x19</code> 表示图片高， <code>0x1c ~ 0x1d</code> 表示图片的位深。</p>

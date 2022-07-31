@@ -467,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-09
+                    2022-07-31
                 </div>
                 
 
@@ -498,26 +498,26 @@
             <div id="articleContent">
                 <h2 id="Ⅰ-前言"><a href="#Ⅰ-前言" class="headerlink" title="Ⅰ. 前言"></a>Ⅰ. 前言</h2><p>买了块1.8寸的tft液晶屏，之前一直用 <code>Adafruit_ST7735</code> 和 <code>Adafruit_GFX</code> 库驱动，使用还挺简单的，但是有些功能使用起来还是不太方便，也不太通用，换成 <code>Tft_eSPI</code> 库驱动，遇到了不少问题，记录下。</p>
 <h2 id="Ⅱ-接线"><a href="#Ⅱ-接线" class="headerlink" title="Ⅱ. 接线"></a>Ⅱ. 接线</h2><p>ST7735的1.8寸的tft屏幕接线按照1.4寸的来就好了。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210609153246631.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210609153246631.png"></p>
 <p>图片来源：<a target="_blank" rel="noopener" href="http://www.lcdwiki.com/zh/1.44inch_SPI_Arduino_Module_Black_SKU:MAR1442#.E4.BA.A7.E5.93.81.E5.9B.BE.E7.89.87">1.44inch SPI Arduino Module Black SKU:MAR1442</a></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210609153609435.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210609153609435.png"></p>
 <p>图片来源：<a target="_blank" rel="noopener" href="http://www.lcdwiki.com/zh/1.8inch_Arduino_SPI_Module_ST7735S_SKU:MAR1801">1.8inch Arduino SPI Module ST7735S SKU:MAR1801</a></p>
 <p>1.8寸的屏幕接口是没有 <code>SDI</code> 和 <code>LED</code> 两个接口的，但是问题不大，<code>SDI</code> 换成了 <code>SDA</code> <code>LED</code> 换成了 <code>NC</code></p>
 <p>然后所有的 <code>NC</code> 接口都不需要接。</p>
 <h2 id="Ⅲ-Tft-eSPI配置"><a href="#Ⅲ-Tft-eSPI配置" class="headerlink" title="Ⅲ. Tft_eSPI配置"></a>Ⅲ. Tft_eSPI配置</h2><p>打开 <code>User_Setup.h</code> 文件</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210609153856936.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210609153856936.png"></p>
 <p>路径如图所示。</p>
 <h3 id="更改配置文件第一步"><a href="#更改配置文件第一步" class="headerlink" title="更改配置文件第一步"></a>更改配置文件第一步</h3><p> <code>*// Section 1. Call up the right driver file and any options for it*</code></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210609153952063.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210609153952063.png"></p>
 <p>这里选择屏幕的驱动，其它的注释掉即可。</p>
 <p>对于 <code>*ST7789, ST7735, ILI9163 and GC9A01*</code> 来说还要设置宽和高。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210609154138460.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210609154138460.png"></p>
 <p>如果你的是1.4寸的屏幕，就是 <code>128 × 128 </code></p>
 <p>对于 <code>*ST7735*</code> 来说，还要设置所谓的 <code>tc , tc is tab</code> </p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210609154358118.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210609154358118.png"></p>
 <h3 id="更改配置文件第二步"><a href="#更改配置文件第二步" class="headerlink" title="更改配置文件第二步"></a>更改配置文件第二步</h3><p><code>*Section 2. Define the pins that are used to interface with the display here*</code></p>
 <p>把现有的那部分注释去掉，随便找个地方定义下自己的引脚就好了。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210609154526275.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210609154526275.png"></p>
 <h3 id="第三步-第四步保持默认-需要时再修改就可以"><a href="#第三步-第四步保持默认-需要时再修改就可以" class="headerlink" title="第三步.第四步保持默认, 需要时再修改就可以"></a>第三步.第四步保持默认, 需要时再修改就可以</h3><p>第三步是配置字库, 都带着就行<br>第四步是 配置SPI的频率 / 配置用VSPI(默认)还是HSPI /</p>
 <h2 id="Ⅳ-测试代码"><a href="#Ⅳ-测试代码" class="headerlink" title="Ⅳ. 测试代码"></a>Ⅳ. 测试代码</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;Arduino.h></span></span>
 <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;ArduinoJson.h></span></span>

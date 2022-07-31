@@ -467,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-13
+                    2022-07-31
                 </div>
                 
 
@@ -523,15 +523,15 @@
 <span class="token function">cd</span> libminigui-1.6.10
 ./configure    <span class="token comment" spellcheck="true"># 默认安装即可</span></code></pre>
 <p>这里留意下终端信息：</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201108124532605.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201108124532605.png"></p>
 <p>红框框内的后面的字必须是 <code>yes</code> 不然后面程序会有问题的。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
 <span class="token comment" spellcheck="true"># 等待安装完毕即可</span></code></pre>
 <p>现在 <code>minigui</code> 已经全部安装成功了，可以去 <code>/usr/local/lib</code> 目录下检查下是不是有一堆 <code>.so</code> 的动态库。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201108124921350.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201108124921350.png"></p>
 <h3 id="3-修改配置文件"><a href="#3-修改配置文件" class="headerlink" title="3. 修改配置文件"></a>3. 修改配置文件</h3><p>如果程序当前路径有 <code>MiniGUI.cfg</code> 这个文件，就会使用当前路径下的这个文件，如果没有，回到默认路径 <code>/usr/local/etc</code> 目录下寻找这个文件。</p>
 <p>我们更改 <code>MiniGUI.cfg</code> 文件如下：</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201108125516131.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201108125516131.png"></p>
 <p>红色圈圈的表示我注释掉的内容（不用管），红色圈圈的就是添加的内容（自己手动添加进去即可）。</p>
 <p>注：在添加这个 <code>defaultmode</code> 的时候，我们不要手打，直接 <code>Shift + v</code> 复制一行，<code>p</code> 粘贴，或者直接在原有的基础上改，因为这个 <code>×</code> 符号貌似打不出来。</p>
 <h3 id="4-添加库进-etc-ld-so-conf"><a href="#4-添加库进-etc-ld-so-conf" class="headerlink" title="4. 添加库进 /etc/ld.so.conf"></a>4. 添加库进 /etc/ld.so.conf</h3><p>只有把刚刚的动态库，添加到这个里面，才能找的到。</p>
@@ -557,14 +557,14 @@
 <pre class=" language-bash"><code class="language-bash">qvfb <span class="token operator">&amp;</span>
 <span class="token comment" spellcheck="true"># 不占用终端</span></code></pre>
 <p>这个时候会弹出一个窗口，点击 <code>File-&gt;configure</code> 设置窗口大小，即刚刚在 <code>MiniGUI.cfg</code> 设置的 <code>800×600</code> 色深为 16位。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201108131432522.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201108131432522.png"></p>
 <p>接下来把这个窗口拉小一点，不然看不到保存的按钮。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201108131630357.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201108131630357.png"></p>
 <p>点击 OK 即可。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> bomb
 ./bomb</code></pre>
 <p>然后打开 <code>qvfb</code> 即可看到扫雷程序了。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201108133743083.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201108133743083.png"></p>
 <p>至此，虚拟机上的 <code>minigui</code> 可以正常运行了，如果虚拟机上可以正常运行，那么移植到开发板上也基本上没什么问题的。</p>
 <h2 id="Ⅱ-移植minigui"><a href="#Ⅱ-移植minigui" class="headerlink" title="Ⅱ. 移植minigui"></a>Ⅱ. 移植minigui</h2><p>需要的包如下：</p>
 <ul>
@@ -583,7 +583,7 @@
 <span class="token function">tar</span> -zxvf zlib-1.2.2.tar.gz
 <span class="token function">cd</span> zlib-1.2.2</code></pre>
 <p><code>zlib</code> 库的 <code>configure</code> 不支持交叉编译选项。采取“曲线救国”策略。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201109111138383.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201109111138383.png"></p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /usr/bin
 <span class="token function">mv</span> gcc gcc_back
 <span class="token function">ln</span> -s /usr/local/arm/2.95.3/bin/arm-linux-gcc ./gcc
@@ -796,7 +796,7 @@ vim config.linux
 helloworld: ELF 32-bit LSB executable, ARM, version 1 <span class="token punctuation">(</span>ARM<span class="token punctuation">)</span>, <span class="token keyword">for</span> GNU/Linux 2.0.0, dynamically linked <span class="token punctuation">(</span>uses shared libs<span class="token punctuation">)</span>, not stripped</code></pre>
 <p>这样我们就可以在宿主机上编译 <code>minigui</code> 代码了，把这个可执行文件放到移植了 <code>minigui</code> 的开发板上就可以跑了。</p>
 <p>注：如果当前目录下有 <code>MiniGUI.cf</code> 还需要更改这个文件，我这里的改法是基于 <code>JXARM9-2410</code> 的。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20201109121149958.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20201109121149958.png"></p>
 <p>这里的 <code>ial_engine</code> 要改为 <code>SMDK2410</code> <code>fbcon</code> 大小要改为 640×480，不然会报错的。</p>
 <p>如果当前目录下没有，前面讲过了，就会到 <code>/usr/local/etc</code> 默认目录下寻找这个文件。</p>
 <p>如果出现这个错误 <code>GAL ENGINE: Can't open /dev/tty0: No such file or directory</code> 等跟设备有关的错误</p>

@@ -467,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-09
+                    2022-07-31
                 </div>
                 
 
@@ -498,14 +498,14 @@
             <div id="articleContent">
                 <h2 id="Ⅰ-安装"><a href="#Ⅰ-安装" class="headerlink" title="Ⅰ. 安装"></a>Ⅰ. 安装</h2><p>VSCode就不介绍如何安装了，安装好VSCode后，直接打开Extensions，搜索PlatformIO点击install即可。</p>
 <p>安装成功后重启便会多了个蚂蚁头样的栏目。并且状态栏会多出如下的图标。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210609144527959.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210609144527959.png"></p>
 <h2 id="Ⅱ-安装平台支持"><a href="#Ⅱ-安装平台支持" class="headerlink" title="Ⅱ. 安装平台支持"></a>Ⅱ. 安装平台支持</h2><p>点击状态栏的家的那个图标，点击Platforms，搜索ESP，就会出来Espressif 8266，点击安装即可。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210609144852596.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210609144852596.png"></p>
 <p>这样PlatformIO就安装完成了。</p>
-<h2 id="Ⅲ-创建项目"><a href="#Ⅲ-创建项目" class="headerlink" title="Ⅲ.  创建项目"></a>Ⅲ.  创建项目</h2><p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210609145011920.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210609145105638.png"></p>
+<h2 id="Ⅲ-创建项目"><a href="#Ⅲ-创建项目" class="headerlink" title="Ⅲ.  创建项目"></a>Ⅲ.  创建项目</h2><p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210609145011920.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210609145105638.png"></p>
 <p>创建完成之后PlatformIO会自动进行项目配置，并且出现在Exporter中。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210609145337495.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210609145337495.png"></p>
 <p>目录解释：</p>
 <ul>
 <li><code>.pio</code> 一些系统库的路径和后期安装的第三方库路径。</li>
@@ -557,16 +557,16 @@ pio settings <span class="token keyword">set</span> enable_telemetry Yes
 pio settings reset</code></pre>
 <p>参考 <a target="_blank" rel="noopener" href="https://nu-ll.github.io/2021/02/24/PlatformIO%E4%BD%BF%E7%94%A8%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/#%E4%BF%AE%E6%94%B9PlatformIO-Core%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95">PlatformIO使用中遇到的坑</a></p>
 <h3 id="4-安装第三方库"><a href="#4-安装第三方库" class="headerlink" title="4. 安装第三方库"></a>4. 安装第三方库</h3><p>点击状态栏的家按钮，找到libraries，搜索想要安装的库。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210609151535921.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210609151535921.png"></p>
 <p>点击这个库，然后点击 <code>Add to Project</code> 即可。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210609151707646.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210609151748450.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210609151707646.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210609151748450.png"></p>
 <p>然后PlatformIO就会对这个工程进行配置，用户只需使用就好了。</p>
 <h3 id="5-上传littleFS文件到esp8266"><a href="#5-上传littleFS文件到esp8266" class="headerlink" title="5.  上传littleFS文件到esp8266"></a>5.  上传littleFS文件到esp8266</h3><p>首先对工程进行配置，不然会失败。</p>
 <p>加上这句就好了 <code>board_build.filesystem = littlefs</code></p>
 <p>然后在 <code>src</code> 的同级目录创建 <code>data</code> 文件夹，把要上传的数据放到 <code>data</code> 文件夹下。</p>
 <p>然后点击右边的蚂蚁头样，点击 <code>Upload Filesystem Image</code> 即可。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210609152219518.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210609152219518.png"></p>
 <p>然后会连接esp8266的串口把 <code>data</code> 的文件传上去。</p>
 <h2 id="Ⅵ-总结"><a href="#Ⅵ-总结" class="headerlink" title="Ⅵ. 总结"></a>Ⅵ. 总结</h2><p>学习汇总，记录问题，希望有帮助。</p>
 

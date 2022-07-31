@@ -467,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-22
+                    2022-07-31
                 </div>
                 
 
@@ -508,8 +508,8 @@
 <p>解压 <code>tar -zxvf rtl8723BU_WiFi_linux_v4.3.9.3_13200.20150106_BTCOEX20140929-5443.tar.gz</code></p>
 <p><code>cd rtl8723BU_WiFi_linux_v4.3.9.3_13200.20150106_BTCOEX20140929-5443</code></p>
 <p>修改 <code>Makefile</code> 文件。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210522195844361.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210522200612727.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210522195844361.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210522200612727.png"></p>
 <pre class=" language-makefile"><code class="language-makefile"><span class="token keyword">ifeq</span> <span class="token punctuation">(</span><span class="token variable">$</span><span class="token punctuation">(</span>CONFIG_PLATFORM_GEC6818<span class="token punctuation">)</span>, y<span class="token punctuation">)</span>
     EXTRA_CFLAGS <span class="token operator">+=</span> -DCONFIG_LITTLE_ENDIAN
     EXTRA_CFLAGS <span class="token operator">+=</span> -DCONFIG_IOCTL_CFG80211 -DRTW_USE_CFG80211_STA_EVENT -DCONFIG_CONCURRENT_MODE
@@ -526,21 +526,21 @@
 <h3 id="openssl移植"><a href="#openssl移植" class="headerlink" title="openssl移植"></a>openssl移植</h3><p>解压 <code>tar -zxvf openssl-1.0.2k.tar.gz</code></p>
 <p>进入源码目录 <code>cd openssl-1.0.2k</code></p>
 <p>配置 <code>./config no-asm shared no-async --prefix=/opt/wifi_depend/openssl_lib --cross-compile-prefix=arm-linux-</code></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210522203810332.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210522203228344.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210522203810332.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210522203228344.png"></p>
 <p>去掉这些 <code>-m64</code></p>
 <p><code>make</code> 等待编译完成执行 <code>make install</code> 即可在 <code>/opt/wifi_depend/openssl_lib</code> 目录下看到安装好的 <code>openssl</code> 了。</p>
 <h3 id="libnl移植"><a href="#libnl移植" class="headerlink" title="libnl移植"></a>libnl移植</h3><p>解压 <code>tar -zxvf libnl-3.2.29.tar.gz</code></p>
 <p>进入源码目录配置 <code>./configure --prefix=/opt/wifi_depend/libnl_lib --host=arm-linux</code></p>
 <p>然后 <code>make</code> 报错</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210522213926086.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210522213926086.png"></p>
 <p>修改 <code>include/linux-private/linux/ipv6.h</code> <code>include/linux-private/linux/if_bridge.h</code> 的 <code>#include&lt;linux/in6.h&gt;</code> 为 <code>#include &lt;netinet/in.h&gt;</code></p>
 <p>然后 <code>make &amp;&amp; make install</code> 即可。</p>
 <h3 id="wpa-supplicant移植"><a href="#wpa-supplicant移植" class="headerlink" title="wpa_supplicant移植"></a>wpa_supplicant移植</h3><p>解压 <code>tar -zxvf wpa_supplicant-2.6.tar.gz</code></p>
 <p>进入源码目录 <code>cd wpa_supplicant-2.6/wpa_supplicant</code></p>
 <p>拷贝一份默认配置文件 <code>cp defconfig .config</code></p>
 <p>修改 <code>.config</code> 文件如下：</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210522215839847.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210522215839847.png"></p>
 <p>修改 <code>Makefile</code> 如下内容：</p>
 <pre class=" language-makefile"><code class="language-makefile">CFLAGS <span class="token operator">+=</span> -I/opt/wifi_depend/openssl_lib/<span class="token keyword">include</span> -I/opt/wifi_depend/libnl_lib/<span class="token keyword">include</span>/libnl3
 LIBS <span class="token operator">+=</span> -L/opt/wifi_depend/openssl_lib/lib -L/opt/wifi_depend/libnl_lib/lib -ldl

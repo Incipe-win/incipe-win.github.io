@@ -467,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-26
+                    2022-07-31
                 </div>
                 
 
@@ -517,8 +517,8 @@
 <h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p>这道题还是有意思的，题目并没有说数组中不包含重复元素，那就是可能存在重复元素，加上这个题目就不那么简单了。</p>
 <p>我们定义 $left, right$ 指向 $numbers$ 的两端，$mid = left + (right - left) / 2$，现在我们用二分查找的主要的一个目标就是判断最小值在哪一个数组中。</p>
 <p>任何一个旋转数组，肯定会被 $mid$ 分成两个部分(这两个部分，有一部分是有序的，另一部分是无序的，或者这两部分都是有序的)。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/offer11-1.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/offer11-2.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/offer11-1.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/offer11-2.png"></p>
 <p>我们怎么判断这这个旋转数组哪个部分有序呢？通过比较 $numbers[mid]$ 与 $numbers[right]$ 的大小来判断。</p>
 <ul>
 <li>如果 $numbers[mid] &lt; numbers[right]$， 说明 $mid$ 右边有序；</li>
@@ -552,7 +552,7 @@
 <p>当$numbers[mid] == numbers[right]$时，我们通过缩小判断范围来解决，即 $–right$</p>
 </blockquote>
 <p>参考 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/solution/mian-shi-ti-11-xuan-zhuan-shu-zu-de-zui-xiao-shu-3/">面试题11. 旋转数组的最小数字（二分法，清晰图解）</a></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/offer11-3.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/offer11-3.png"></p>
 <ul>
 <li>C++代码</li>
 </ul>

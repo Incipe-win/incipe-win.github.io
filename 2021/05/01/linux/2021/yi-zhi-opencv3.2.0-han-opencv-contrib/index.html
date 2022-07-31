@@ -467,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-01
+                    2022-07-31
                 </div>
                 
 
@@ -499,16 +499,16 @@
                 <h2 id="环境及工具准备"><a href="#环境及工具准备" class="headerlink" title="环境及工具准备"></a>环境及工具准备</h2><ul>
 <li>个人电脑：</li>
 </ul>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210501103510859.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210501103510859.png"></p>
 <ul>
 <li>GEC6818嵌入式开发板</li>
 <li>Opencv3.2.0</li>
 </ul>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210501103709791.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210501103709791.png"></p>
 <ul>
 <li>交叉编译器</li>
 </ul>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210501114805596.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210501114805596.png"></p>
 <h2 id="交叉编译Opencv3-2-0"><a href="#交叉编译Opencv3-2-0" class="headerlink" title="交叉编译Opencv3.2.0"></a>交叉编译Opencv3.2.0</h2><p>1.解压opencv3.2.0</p>
 <p><code>unzip opencv-3.2.0.zip</code></p>
 <p>2.解压opencv_contrib-3.2.0</p>
@@ -518,7 +518,7 @@
 <p><code>mv opencv-3.2.0 opencv_contrib-3.2.0 ./opencv_build/</code></p>
 <p><code>cd opencv_build</code></p>
 <p><code>cd opencv-3.2.0</code></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210501104259455.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210501104259455.png"></p>
 <p>4.新建一个build文件并切换到这个目录</p>
 <p><code>mkdir -p build &amp;&amp; cd build</code></p>
 <p>5.配置cmake</p>
@@ -526,10 +526,10 @@
 <p><code>sudo apt-get install cmake-qt-gui</code></p>
 <p>在 <code>build</code> 目录下运行 <code>cmake-gui</code></p>
 <p>安装路径如图所示：</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210501112957701.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210501112957701.png"></p>
 <p>点击 <code>Configure</code> </p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210501113056441.png"></p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210501113526677.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210501113056441.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210501113526677.png"></p>
 <p>选择交叉编译器的路径，点击Finish即可</p>
 <p>接下来增加选项</p>
 <pre class=" language-shell"><code class="language-shell">BUILD_ZLIB
@@ -549,30 +549,30 @@ WITH_OPENCL
 BUILD_opencv_freetype
 WITH_LIBV4L</code></pre>
 <p>修改安装路径</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210501114141058.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210501114141058.png"></p>
 <p>最后加上opencv_contrib-3.2.0</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210501113852848.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210501113852848.png"></p>
 <p>然后点击点击 <code>Configure</code> 之后再点击 <code>Generate</code> </p>
 <p>请注意，一定要连接网络，不然报错。</p>
 <p>修改CMakeCache.txt</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210501114437759.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210501114437759.png"></p>
 <p>保存退出</p>
 <p>执行 <code>sudo make -j4</code></p>
 <p>报错了</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210501114935164.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210501114935164.png"></p>
 <p>关闭WITH_GPHOTO2选项</p>
 <p>又报错</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210501123321388.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210501123321388.png"></p>
 <p>在 <code>~/expend/others/opencv3.2.0/opencv_build/opencv-3.2.0/modules/stitching</code> 目录下修改 <code>CMakeLists.txt</code>  文件。</p>
 <p>加上 <code>INCLUDE_DIRECTORIES("/home/incipe/expend/others/opencv3.2.0/opencv_build/opencv_contrib-3.2.0/modules/xfeatures2d/include")</code> 即可。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210501124504453.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210501124504453.png"></p>
 <p>还是报错了</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210501124839309.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210501124839309.png"></p>
 <p>这个错改了我好久。。。。。%（&amp;<em>（…%￥</em>&amp;￥#！</p>
 <p>最后实在没办法了，把 <code>BUILD_opencv_world</code> 选项去掉，轻松秒杀。</p>
 <p>本来我是想着全编译成一个动态库，方便些的，做不到，就只能算了啊。</p>
 <p>然后一路无阻，成功。</p>
-<p><img src="https://gitee.com/incipe-win/images/raw/master/image-20210501141151481.png"></p>
+<p><img src="https://incipe.oss-cn-shenzhen.aliyuncs.com/image-20210501141151481.png"></p>
 <p>完成执行 <code>sudo make install</code> 即可。</p>
 <p>最后所有编译好的库都在 <code>/opt/opencv3.2.0/lib</code> 里面了。</p>
 <h2 id="完结"><a href="#完结" class="headerlink" title="完结"></a>完结</h2><p>这是第三次交叉编译 <code>opencv</code> 了，第一次最艰难，能成功真是运气好，第二次就单纯想再复现一次，结果也折腾了很久，不过次数越多，感觉对这东西的理解就越深刻，学习不仅仅只是学习课本知识，更重要的是提高自己发现问题，解决问题的能力。</p>
