@@ -434,31 +434,6 @@
   </entry>
   
   <entry>
-    <title>剑指 Offer 28. 对称的二叉树</title>
-    <link href="https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-28.dui-cheng-de-er-cha-shu/"/>
-    <id>https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-28.dui-cheng-de-er-cha-shu/</id>
-    <published>2020-10-26T16:00:00.000Z</published>
-    <updated>2022-07-31T14:38:11.930Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Leetcode" scheme="https://incipe-win.github.io/categories/Leetcode/"/>
-    
-    
-    <category term="二叉树" scheme="https://incipe-win.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
     <title>剑指 Offer 26. 树的子结构</title>
     <link href="https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/"/>
     <id>https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-26.shu-de-zi-jie-gou/</id>
@@ -473,6 +448,31 @@
     <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;输入两棵二叉树A和B，判断B是不是A的子结构。(约定空树不是任意一个树的子结构)&lt;/p&gt;
 &lt;p&gt;B是A的子结构，</summary>
+        
+      
+    
+    
+    
+    <category term="Leetcode" scheme="https://incipe-win.github.io/categories/Leetcode/"/>
+    
+    
+    <category term="二叉树" scheme="https://incipe-win.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>剑指 Offer 28. 对称的二叉树</title>
+    <link href="https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-28.dui-cheng-de-er-cha-shu/"/>
+    <id>https://incipe-win.github.io/2020/10/27/leetcode/2020/jian-zhi-offer-28.dui-cheng-de-er-cha-shu/</id>
+    <published>2020-10-26T16:00:00.000Z</published>
+    <updated>2022-07-31T14:38:11.930Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot;</summary>
         
       
     
